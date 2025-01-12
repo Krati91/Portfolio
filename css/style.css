@@ -1029,7 +1029,7 @@ ol {
 -----------------------*/
 .about {
   background: #100028;
-  padding-bottom: 150px;
+  /* padding-bottom: 150px; */
 }
 
 .about__pic__item {
