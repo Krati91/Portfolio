@@ -129,9 +129,7 @@
                     <div class="contact__form">
                         <h3>Get in touch</h3>
                         <form action="#">
-                            <input type="text" placeholder="Name">
-                            <input type="text" placeholder="Email">
-                            <input type="text" placeholder="Website">
+                            <input type="text" placeholder="Subject" id="subject">
                             <textarea placeholder="Message"></textarea>
                             <button type="submit" class="site-btn">Send Message</button>
                         </form>
@@ -236,5 +234,16 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
 </body>
+<script>
+    $(document).ready(function(){
+        $('.site-btn').click(function(e){
+            e.preventDefault();
+            let subject = $('#subject').val().trim();
+            let body = $('.contact__form > form > textarea').val().trim();
+            console.log(body);
+            window.open(`mailto:kcfantastic@gmail.com?subject=${subject}&body=${body}`);
+        })
+    });
+</script>
 
 </html>
