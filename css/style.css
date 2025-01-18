@@ -1099,6 +1099,19 @@ ol {
 .about__text {
   padding-left: 30px;
 }
+
+.education{
+  margin-left: -25px;
+}
+
+.education .section-title h2{
+  margin-left: -30px;
+}
+
+.courses{
+  margin-left: -44px;
+}
+
 .about__text .services__item .services__item__icon:after {
   border-color: #281A3E;
 }
@@ -1991,6 +2004,14 @@ ol {
     padding-left: 0;
   }
 
+  .education{
+    margin-left: auto !important;
+  }
+
+  .education .section-title h2{
+    margin-left:0 !important;
+  }
+
   .portfolio__filter li {
     padding: 6px 15px;
   }
@@ -2110,6 +2131,15 @@ ol {
 
   .about__text {
     padding-left: 0;
+  }
+
+  .education{
+    margin-left: auto !important;
+    padding-bottom: 100px;
+  }
+
+  .education .section-title h2{
+    margin-left:0 !important;
   }
 
   .hero__slider.owl-carousel .owl-dots {
