@@ -225,7 +225,7 @@ ol {
   width: 30px;
   border-left: 2px solid #100028;
   border-top: 2px solid #100028;
-  background-color: #100028;
+  background: transparent;
   content: "";
   z-index: -1;
   -webkit-transition: all, 0.7s;
@@ -240,7 +240,7 @@ ol {
   width: 30px;
   border-right: 2px solid #100028;
   border-bottom: 2px solid #100028;
-  background-color: #100028; 
+  background: transparent;
   content: "";
   z-index: -1;
   -webkit-transition: all, 0.7s;
