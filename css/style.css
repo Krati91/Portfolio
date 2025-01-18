@@ -217,6 +217,51 @@ ol {
   transition: all, 0.7s;
 }
 
+.primary-btn:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 30px;
+  width: 30px;
+  border-left: 2px solid #100028;
+  border-top: 2px solid #100028;
+  background-color: #100028;
+  content: "";
+  z-index: -1;
+  -webkit-transition: all, 0.7s;
+  -o-transition: all, 0.7s;
+  transition: all, 0.7s;
+}
+.primary-btn:after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 30px;
+  width: 30px;
+  border-right: 2px solid #100028;
+  border-bottom: 2px solid #100028;
+  background-color: #100028; 
+  content: "";
+  z-index: -1;
+  -webkit-transition: all, 0.7s;
+  -o-transition: all, 0.7s;
+  transition: all, 0.7s;
+}
+
+.skills-btn:before{
+  border-left: 2px solid #30c3f4 !important;
+  border-top: 2px solid #30c3f4 !important;
+  background: transparent !important;
+}
+
+.skills-btn:after{
+  border-right: 2px solid #30c3f4 !important;
+  border-bottom: 2px solid #30c3f4 !important;
+  background: transparent !important;
+}
+
+
+
 .site-btn {
   font-size: 15px;
   color: #ffffff;
