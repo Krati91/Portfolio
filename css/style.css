@@ -276,6 +276,7 @@ ol {
   width: 100%;
 }
 
+
 /* Preloder */
 #preloder {
   position: fixed;
@@ -2118,7 +2119,7 @@ ol {
   }
 
   .slicknav_nav {
-    background: #222222;
+    background: #100028;
   }
 
   .slicknav_btn {
@@ -2253,7 +2254,7 @@ ol {
   }
 
   .slicknav_nav {
-    background: #222222;
+    background: #100028;
   }
 
   .slicknav_btn {
