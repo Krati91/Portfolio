@@ -63,11 +63,33 @@
                             <a href="#" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Instagram">
                                 <i class="fa fa-instagram"></i>
                             </a>
+                            <a href="resume.pdf" class="resume" target="_blank">
+                                <span>Resume</span><small><i class="fa fa-download"></i></small>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
             <div id="mobile-menu-wrap"></div>
+            <div id="mobile-social">
+                <div class="header__nav__social">
+                    <a href="https://in.linkedin.com/in/kartik-chaturvedi-960a4a186" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Linkedin">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Mecha-NOX" target="_blank" data-toggle="tooltip" data-placement="bottom" title="GitHub">
+                        <i class="fa fa-github"></i>
+                    </a>
+                    <a href="#" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Youtube">
+                        <i class="fa fa-youtube-play"></i>
+                    </a>
+                    <a href="#" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Instagram">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                    <a href="resume.pdf" class="resume" target="_blank">
+                        <span>Resume</span><small><i class="fa fa-download"></i></small>
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
     <!-- Header End -->
@@ -176,17 +198,17 @@
      <section class="work">
         <div class="work__gallery">
             <div class="grid-sizer"></div>
-            <div class="work__item wide__item set-bg" data-setbg="img/work/work-1.jpg">
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
-                        class="fa fa-play"></i></a>
-                <div class="work__item__hover">
-                    <h4>VIP Auto Tires & Service</h4>
-                    <ul>
-                        <li>eCommerce</li>
-                        <li>Magento</li>
-                    </ul>
+            <a href="" class="play-btn" data-toggle="modal" data-target="#exampleModalCenter">
+                <div class="work__item wide__item set-bg" data-setbg="img/work/work-1.jpg">
+                    <div class="work__item__hover">
+                        <h4>VIP Auto Tires & Service</h4>
+                        <ul>
+                            <li>eCommerce</li>
+                            <li>Magento</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
+            </a>
             <div class="work__item small__item set-bg" data-setbg="img/work/work-2.jpg">
                 <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                         class="fa fa-play"></i></a>
@@ -228,6 +250,34 @@
         </div>
     </section>
     <!-- Work Section End -->
+
+    <!-- Modal Section Begin -->
+    <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLongTitle">Modal title</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Video</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Description</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>  
+        </div>
+    </div>
+    <!-- Modal Section End -->
 
     <!-- Counter Section Begin -->
     <!-- <section class="counter">

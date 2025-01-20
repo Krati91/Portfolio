@@ -341,17 +341,19 @@ ol {
   Header
 -----------------------*/
 .header {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
-  background-color: rgb(24 24 24 / 13%);;
+  background-color: #100028;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 9;
+  opacity: 0.9;
 }
 
 .header__logo {
-  padding: 30px 0;
+  padding: 18px 0;
+  width: max-content;
 }
 .header__logo a {
   display: inline-block;
@@ -453,15 +455,16 @@ ol {
   position: absolute;
   left: 0;
   top: 4px;
-  height: 13px;
+  height: 24px;
   width: 1px;
   background: rgba(225, 225, 225, 0.2);
   content: "";
 }
 .header__nav__social a {
   color: #ffffff;
-  font-size: 15px;
+  font-size: 24px;
   margin-right: 18px;
+  vertical-align: -webkit-baseline-middle;
 }
 .header__nav__social a:last-child {
   margin-right: 0;
@@ -469,6 +472,21 @@ ol {
 
 .slicknav_menu {
   display: none;
+}
+
+.resume{
+  font-size: 15px !important;
+  font-family: "Play", sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  position: relative;
+  padding: 6px 10px;
+  border: 1px solid #00bfe7;
+  margin-right: 18px;
+}
+
+.resume i{
+  padding:7px;
 }
 
 /*---------------------
@@ -666,6 +684,49 @@ ol {
   display: none;
 }
 
+.btn-outline-primary{
+  color: #fff !important;
+  border-color: #30c3f4 !important;
+  border-radius: 0 !important;
+  font-size: 15px !important;
+}
+
+.btn-outline-primary:hover{
+  background-color: #30c3f4 !important;
+}
+
+.modal-content{
+  background-color: #100028;
+}
+
+.modal-header{
+  border-bottom: none;
+}
+
+.modal-title{
+  color: #fff;
+}
+
+.modal-footer{
+  border-top: none;
+}
+
+.close{
+  opacity: 1;
+  color: #ffffff;
+}
+
+.close:hover{
+  color:#ffffff;
+}
+
+#mobile-social{
+  display:none;
+}
+
+#mobile-social .header__nav__social{
+  padding-left: 13px;
+}
 /*---------------------
   Counter
 -----------------------*/
@@ -2016,6 +2077,10 @@ ol {
     padding: 6px 15px;
   }
 
+  #mobile-social{
+    display:inline-block;
+  }
+
   .slicknav_menu {
     background: transparent;
     padding: 0;
@@ -2145,6 +2210,10 @@ ol {
   .hero__slider.owl-carousel .owl-dots {
     max-width: auto;
     padding: 0 15px;
+  }
+
+  #mobile-social{
+    display:inline-block;
   }
 
   .slicknav_menu {
@@ -2296,5 +2365,7 @@ ol {
     padding: 30px 40px 35px 35px;
   }
 
-  
+  #mobile-social{
+    display:inline-block;
+  }  
 }
