@@ -460,6 +460,11 @@ ol {
   background: rgba(225, 225, 225, 0.2);
   content: "";
 }
+
+#mobile-social .header__nav__social:before{
+  width:0px;
+}
+
 .header__nav__social a {
   color: #ffffff;
   font-size: 24px;
