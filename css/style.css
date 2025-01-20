@@ -2338,6 +2338,10 @@ ol {
     line-height: 40px;
   }
 
+  .about__pic__item--large.set-bg{
+    background-position: bottom !important;
+  }
+
   .grid-sizer {
     width: 100%;
   }
