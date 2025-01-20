@@ -2338,6 +2338,10 @@ ol {
     line-height: 40px;
   }
 
+  .courses{
+    margin-left: auto;
+  }
+
   .about__pic__item--large.set-bg{
     background-position: bottom !important;
   }
