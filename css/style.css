@@ -1337,7 +1337,7 @@ ol {
 .d-flex.col-lg-3{
   margin: -100px 0; 
   padding-right: 5px; 
-  scrollbar-color: #573988 black;
+  scrollbar-color: #482aa1 black;
   scrollbar-width: thin;
   flex: 1;
   flex-basis: 0.000000001px;
@@ -1369,14 +1369,14 @@ ol {
 
 .sidebar-link:hover {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.3);
   transform: translateX(5px);
   cursor: pointer;
 }
 
 .sidebar-link.active {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .sidebar-link .thumbnail{
@@ -1399,6 +1399,10 @@ ol {
   overflow: hidden;
   display: block;
   flex: none;
+}
+
+.thumbnail__title{
+  margin: auto;
 }
 
 .thumbnail__title h4{
