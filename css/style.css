@@ -1448,6 +1448,9 @@ ol {
   background-color: #00bfe7;
   color: #ffffff;
   opacity: 1;
+  z-index: 12;
+  position: sticky;
+  top: 0;
 }
 /*---------------------
   Logo
