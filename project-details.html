@@ -325,13 +325,20 @@
         let elem = $(this).find('a[href="#' + divID + '"]');
         let projectName = $(elem).attr('data-name');
         let parentDiv = $('div:has(a[href="#' + divID + '"])').last();
-
+        let elemID = $(elem).index();
+        
         $('.breadcrumb__text h2').text(projectName);
         $('.breadcrumb__text span').text(projectName);
         $(parentDiv).prev().addClass('active-list-group-item');
         $(parentDiv).collapse('show');
         $(elem).addClass('active');
+        $('.sidebar').focus();
+        $('.sidebar').animate({
+            scrollTop: elemID * 90
+        }, 500);
     })
+
+
     $('.sidebar-link').click(function(){
         $('.sidebar a').removeClass('active');
         $(this).toggleClass('active');
