@@ -119,9 +119,9 @@
             <div class="d-flex col-lg-3">
                 <nav class="sidebar d-flex flex-column flex-shrink-0">  
                     <div class="nav flex-column">
-                        <h4 class="list-group-item active-list-group-item" data-toggle="collapse" href="#ue-5-list" role="button" aria-expanded="false" aria-controls="ue-5-list">Unreal Engine 5</h4>
-                        <div class="container collapse show" id="ue-5-list">
-                            <a class="sidebar-link active">
+                        <h4 class="list-group-item" data-toggle="collapse" href="#ue-5-list" role="button" aria-expanded="false" aria-controls="ue-5-list">Unreal Engine 5</h4>
+                        <div class="container collapse" id="ue-5-list">
+                            <a class="sidebar-link">
                                 <div class="col-lg-4 thumbnail set-bg" data-setbg="img/portfolio/portfolio-1.jpg">
                                 </div>
                                 <div class="col-lg-8 thumbnail__title">
@@ -141,7 +141,7 @@
                         <h4 class="list-group-item" data-toggle="collapse" href="#ue-4-list" role="button" aria-expanded="false" aria-controls="ue-4-list">Unreal Engine 4</h4>
                         <div class="container collapse" id="ue-4-list">
                             <a class="sidebar-link">
-                                <div class="col-lg-4 thumbnail set-bg" data-setbg="img/portfolio/portfolio-1.jpg">
+                                <div class="col-lg-4 thumbnail set-bg" data-setbg="img/assets/Dapper-Dash.gif">
                                 </div>
                                 <div class="col-lg-8 thumbnail__title">
                                     <h4>VIP Auto Tires & Service</h4>
@@ -149,7 +149,7 @@
                                 </div>
                             </a>
                             <a class="sidebar-link">
-                                <div class="col-lg-4 thumbnail set-bg" data-setbg="img/portfolio/portfolio-1.jpg">
+                                <div class="col-lg-4 thumbnail set-bg" data-setbg="img/assets/Ping-Pong.gif">
                                 </div>
                                 <div class="col-lg-8 thumbnail__title">
                                     <h4>VIP Auto Tires & Service</h4>
@@ -159,43 +159,43 @@
                         </div>
                         <h4 class="list-group-item" data-toggle="collapse" href="#raylib-list" role="button" aria-expanded="false" aria-controls="raylib-list">Raylib</h4>
                         <div class="container collapse" id="raylib-list">
-                            <a class="sidebar-link">
-                                <div class="col-lg-4 thumbnail set-bg" data-setbg="img/portfolio/portfolio-1.jpg">
+                            <a class="sidebar-link" href="#dapper-dasher">
+                                <div class="col-lg-4 thumbnail set-bg" data-setbg="assets/Dapper-Dasher.gif">
                                 </div>
                                 <div class="col-lg-8 thumbnail__title">
-                                    <h4>VIP Auto Tires & Service</h4>
+                                    <h4>Dapper Dasher</h4>
                                     <small>eCommerce</small>
                                 </div>
                             </a>
-                            <a class="sidebar-link">
-                                <div class="col-lg-4 thumbnail set-bg" data-setbg="img/portfolio/portfolio-1.jpg">
+                            <a class="sidebar-link" href="#space-invader">
+                                <div class="col-lg-4 thumbnail set-bg" data-setbg="assets/Space-Invaders.gif">
                                 </div>
                                 <div class="col-lg-8 thumbnail__title">
-                                    <h4>VIP Auto Tires & Service</h4>
+                                    <h4>Space Invaders</h4>
                                     <small>eCommerce</small>
                                 </div>
                             </a>
-                            <a class="sidebar-link">
-                                <div class="col-lg-4 thumbnail set-bg" data-setbg="img/portfolio/portfolio-1.jpg">
+                            <a class="sidebar-link" href="#retro-ping-pong">
+                                <div class="col-lg-4 thumbnail set-bg" data-setbg="assets/Ping-Pong.gif" style="background-size: 114px 90px;">
                                 </div>
                                 <div class="col-lg-8 thumbnail__title">
-                                    <h4>VIP Auto Tires & Service</h4>
+                                    <h4>Retro Ping Pong</h4>
                                     <small>eCommerce</small>
                                 </div>
                             </a>
-                            <a class="sidebar-link">
-                                <div class="col-lg-4 thumbnail set-bg" data-setbg="img/portfolio/portfolio-1.jpg">
+                            <a class="sidebar-link" href="#retro-snake">
+                                <div class="col-lg-4 thumbnail set-bg" data-setbg="assets/Retro-Snake.gif">
                                 </div>
                                 <div class="col-lg-8 thumbnail__title">
-                                    <h4>VIP Auto Tires & Service</h4>
+                                    <h4>Retro Snake</h4>
                                     <small>eCommerce</small>
                                 </div>
                             </a>
-                            <a class="sidebar-link">
-                                <div class="col-lg-4 thumbnail set-bg" data-setbg="img/portfolio/portfolio-1.jpg">
+                            <a class="sidebar-link" href="#retro-tetris">
+                                <div class="col-lg-4 thumbnail set-bg" data-setbg="assets/Retro-Tetris.gif">
                                 </div>
                                 <div class="col-lg-8 thumbnail__title">
-                                    <h4>VIP Auto Tires & Service</h4>
+                                    <h4>Retro Tetris</h4>
                                     <small>eCommerce</small>
                                 </div>
                             </a>
@@ -315,6 +315,20 @@
 </body>
 
 <script>
+    $(document).ready(function(){
+        $('a').removeClass('active');       
+        $('h4').removeClass('active-list-group-item');
+        $('.list-group-item + div').collapse('hide');
+
+        let urlArray = $(location).prop('href').split('#');
+        let divID = urlArray[urlArray.length - 1];
+        let elem = $(this).find('a[href="#' + divID + '"]');
+        let parentDiv = $('div:has(a[href="#' + divID + '"])').last();
+
+        $(parentDiv).prev().addClass('active-list-group-item');
+        $(parentDiv).collapse('show');
+        $(elem).addClass('active');
+    })
     $('.sidebar-link').click(function(){
         $('.sidebar a').removeClass('active');
         $(this).toggleClass('active');
