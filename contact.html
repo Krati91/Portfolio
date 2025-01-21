@@ -278,6 +278,8 @@
             let body = $('.contact__form > form > textarea').val().trim();
             console.log(body);
             window.open(`mailto:kartik.chaturvedi.dev@gmail.com?subject=${subject}&body=${body}`);
+            $('#subject').val('');
+            $('.contact__form > form > textarea').val('');
         })
     });
 </script>
