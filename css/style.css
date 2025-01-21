@@ -1339,14 +1339,18 @@ ol {
   padding-right: 5px; 
   scrollbar-color: #573988 black;
   scrollbar-width: thin;
+  flex: 1;
+  flex-basis: 0.000000001px;
 }
 
 .sidebar {
   width: 100%;
   height: 575px;
-  background: transparent;
+  background: #0a0119;
+  opacity: 0.7;
   transition: all 0.3s ease;
   padding: 0 0 4px 0;
+  overflow: hidden;
   overflow-y: auto;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -1367,6 +1371,7 @@ ol {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.1);
   transform: translateX(5px);
+  cursor: pointer;
 }
 
 .sidebar-link.active {
@@ -1423,7 +1428,8 @@ ol {
 }
 
 .list-group-item{
-  background-color: transparent;
+  background-color: #0a0119;
+  opacity: 0.6;
   border: 1px solid #00bfe7;
   color: #adadad;
   font-size: 18px;
@@ -1432,11 +1438,13 @@ ol {
 .list-group-item:hover{
   background-color: #00bfe7;
   color: #ffffff;
+  opacity: 1;
 }
 
 .active-list-group-item{
   background-color: #00bfe7;
   color: #ffffff;
+  opacity: 1;
 }
 /*---------------------
   Logo
