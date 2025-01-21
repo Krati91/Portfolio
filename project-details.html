@@ -159,7 +159,7 @@
                         </div>
                         <h4 class="list-group-item" data-toggle="collapse" href="#raylib-list" role="button" aria-expanded="false" aria-controls="raylib-list">Raylib</h4>
                         <div class="container collapse" id="raylib-list">
-                            <a class="sidebar-link" href="#dapper-dasher">
+                            <a class="sidebar-link" href="#dapper-dasher" data-name="Dapper Dasher">
                                 <div class="col-lg-4 thumbnail set-bg" data-setbg="assets/Dapper-Dasher.gif">
                                 </div>
                                 <div class="col-lg-8 thumbnail__title">
@@ -167,7 +167,7 @@
                                     <small>eCommerce</small>
                                 </div>
                             </a>
-                            <a class="sidebar-link" href="#space-invader">
+                            <a class="sidebar-link" href="#space-invader" data-name="Space Invaders">
                                 <div class="col-lg-4 thumbnail set-bg" data-setbg="assets/Space-Invaders.gif">
                                 </div>
                                 <div class="col-lg-8 thumbnail__title">
@@ -175,7 +175,7 @@
                                     <small>eCommerce</small>
                                 </div>
                             </a>
-                            <a class="sidebar-link" href="#retro-ping-pong">
+                            <a class="sidebar-link" href="#retro-ping-pong" data-name="Retro Ping Pong">
                                 <div class="col-lg-4 thumbnail set-bg" data-setbg="assets/Ping-Pong.gif" style="background-size: 116px 90px;">
                                 </div>
                                 <div class="col-lg-8 thumbnail__title">
@@ -183,7 +183,7 @@
                                     <small>eCommerce</small>
                                 </div>
                             </a>
-                            <a class="sidebar-link" href="#retro-snake">
+                            <a class="sidebar-link" href="#retro-snake" data-name="Retro Snake">
                                 <div class="col-lg-4 thumbnail set-bg" data-setbg="assets/Retro-Snake.gif">
                                 </div>
                                 <div class="col-lg-8 thumbnail__title">
@@ -191,7 +191,7 @@
                                     <small>eCommerce</small>
                                 </div>
                             </a>
-                            <a class="sidebar-link" href="#retro-tetris">
+                            <a class="sidebar-link" href="#retro-tetris" data-name="Retro Tetris">
                                 <div class="col-lg-4 thumbnail set-bg" data-setbg="assets/Retro-Tetris.gif">
                                 </div>
                                 <div class="col-lg-8 thumbnail__title">
@@ -323,8 +323,11 @@
         let urlArray = $(location).prop('href').split('#');
         let divID = urlArray[urlArray.length - 1];
         let elem = $(this).find('a[href="#' + divID + '"]');
+        let projectName = $(elem).attr('data-name');
         let parentDiv = $('div:has(a[href="#' + divID + '"])').last();
 
+        $('.breadcrumb__text h2').text(projectName);
+        $('.breadcrumb__text span').text(projectName);
         $(parentDiv).prev().addClass('active-list-group-item');
         $(parentDiv).collapse('show');
         $(elem).addClass('active');
@@ -332,6 +335,10 @@
     $('.sidebar-link').click(function(){
         $('.sidebar a').removeClass('active');
         $(this).toggleClass('active');
+        let projectName = $(this).attr('data-name');
+
+        $('.breadcrumb__text h2').text(projectName);
+        $('.breadcrumb__text span').text(projectName);
     });
 
     $('.list-group-item').click(function(){
