@@ -29,9 +29,7 @@
             var containerEl = document.querySelector('.portfolio__gallery');
             var mixer = mixitup(containerEl);
         }
-        $("div.set-bg").lazyload({
-            effect : "fadeIn"
-      });
+        
     });
 
     /*------------------
