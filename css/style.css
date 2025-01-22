@@ -1489,6 +1489,14 @@ ol {
   opacity: 1;
   visibility: visible;
 }
+
+.large__gif{
+  position: relative;
+  width: 100%;
+  display: inline-flex;
+  background-color: rgb(37, 37, 37);
+  overflow: hidden;
+}
 /*---------------------
   Logo
 -----------------------*/
