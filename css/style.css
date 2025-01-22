@@ -1404,7 +1404,7 @@ ol {
   margin: auto;
 }
 
-.thumbnail__title h5{
+.thumbnail__title h5, .job-card h4{
   color: #ffffff;
   margin: 0 0 4px 0;
   font-size: 1.4rem;
@@ -1490,13 +1490,63 @@ ol {
   visibility: visible;
 }
 
+.row__margin{
+  margin-top: 10px;
+}
+
 .large__gif{
   position: relative;
   width: 100%;
   display: inline-flex;
   background-color: rgb(37, 37, 37);
   overflow: hidden;
+  height: 90px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  display: block;
+  flex: none;
 }
+
+.job-card{
+  position: relative;
+  background-color: rgb(37, 37, 37);
+  font-size: 1.125rem;
+  width: calc(100% - -15px);
+  padding: 24px;
+  text-align: left;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  background-color: rgb(30, 30, 30);
+  font-size: 1rem;
+  line-height: 1.44;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  border-radius: 4px;
+}
+
+.large__gif h4{
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  bottom: -300px;
+  width: 100%;
+  padding: 25px 30px 20px;
+  -webkit-transition: all, 0.5s;
+  -o-transition: all, 0.5s;
+  transition: all, 0.5s;
+  font-size: 22px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+
 /*---------------------
   Logo
 -----------------------*/
