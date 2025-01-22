@@ -348,7 +348,7 @@ ol {
   width: 100%;
   background-color: #100028;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 9;
+  z-index: 20;
   opacity: 0.9;
 }
 
@@ -669,7 +669,7 @@ ol {
   color: #ffffff;
   font-weight: 700;
 }
-.work__item__hover ul li .item__hover ul li {
+.work__item__hover ul li, .item__hover ul li {
   color: #adadad;
   list-style: none;
   font-size: 16px;
@@ -1345,7 +1345,7 @@ ol {
 
 .sidebar {
   width: 100%;
-  height: 575px;
+  height: calc(100% - -1px);
   background: #0a0119;
   transition: all 0.3s ease;
   padding: 0 0 4px 0;
@@ -1516,7 +1516,8 @@ ol {
   position: relative;
   background-color: rgb(37, 37, 37);
   font-size: 1.125rem;
-  width: calc(100% - -15px);
+  width: calc(100% - -2.8px);
+  height: 148px;
   padding: 24px;
   text-align: left;
   color: rgb(255, 255, 255);
@@ -1528,14 +1529,42 @@ ol {
   border-style: none;
   border-color: initial;
   border-image: initial;
-  border-radius: 4px;
+}
+
+.job-card h4{
+  margin-bottom: 15px;
+}
+
+.job-card ul li{
+  list-style: none;
+  font-size: 16px;
+  color: #adadad;
+  display: block;
+  padding: 3px 0;
+}
+
+.description{
+  width:100%;
+  margin:auto;
+}
+
+.description p{
+  font-size: 16px;
+  color: #ffffff;
+  display: block;
+  padding: 6px 0;
+}
+
+.list-icon{
+  font-size: 1.125rem;
+  margin-right: 4px;
 }
 
 .large__gif h4{
   background: rgba(0, 0, 0, 0.5);
   position: absolute;
   left: 0;
-  bottom: -300px;
+  bottom: 0;
   width: 100%;
   padding: 25px 30px 20px;
   -webkit-transition: all, 0.5s;
@@ -1544,6 +1573,15 @@ ol {
   font-size: 22px;
   color: #ffffff;
   font-weight: 700;
+}
+
+.github{
+  color:#007bff;
+  font-size: large;
+  font-weight: 400;
+}
+.github:hover{  
+  color: #00bfe7;
 }
 
 
