@@ -973,6 +973,9 @@
         $(parentDiv).collapse('show');
         $(elem).addClass('active');
         $('div' + divID).show();
+        $('html, body').animate({
+             scrollTop: 0
+        }, 300);
     })
 
 
