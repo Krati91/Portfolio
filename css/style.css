@@ -1563,7 +1563,10 @@ ol {
 }
 
 .description ul{
-  padding-bottom: 20px;
+  padding-bottom: 24px;
+  text-align: left;
+  display: inline-block;
+  width: 100%;
 }
 
 .description ul li{
