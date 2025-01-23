@@ -1526,6 +1526,7 @@ ol {
   flex-basis: 0.000000001px;
   height: 90vh;
 }
+
 .job-card{
   position: relative;
   background-color: rgb(37, 37, 37);
@@ -1577,7 +1578,7 @@ ol {
   padding: 0 20px;
 }
 
-.description h3{
+.description h4{
   color: #ffffff;
   font-weight: 700;
   text-transform: uppercase;
