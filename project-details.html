@@ -124,7 +124,7 @@
                     <div class="nav flex-column">
                         <h4 class="list-group-item" data-toggle="collapse" href="#ue-5-list" role="button" aria-expanded="false" aria-controls="ue-5-list">Unreal Engine 5</h4>
                         <div class="container collapse" id="ue-5-list">
-                            <a class="sidebar-link" href="#battle-blasters" data-name="Battle Blasters">
+                            <a class="sidebar-link" href="?name=battle-blasters" data-name="Battle Blasters">
                                 <div class="col-lg-4 thumbnail set-bg" data-setbg="assets/Battle-Blasters_Cover.gif">
                                 </div>
                                 <div class="col-lg-8 thumbnail__title">
@@ -132,7 +132,7 @@
                                     <small>Multiplayer Shooter</small>
                                 </div>
                             </a>
-                            <a class="sidebar-link" href="#echoes-of-the-lost-sands" data-name="Echoes of the Lost Sands">
+                            <a class="sidebar-link" href="?name=echoes-of-the-lost-sands" data-name="Echoes of the Lost Sands">
                                 <div class="col-lg-4 thumbnail set-bg" data-setbg="assets/EchoesOfTheLostSands_Cover.gif">
                                 </div>
                                 <div class="col-lg-8 thumbnail__title">
@@ -140,7 +140,7 @@
                                     <small>Soulslike RPG</small>
                                 </div>
                             </a>
-                            <a class="sidebar-link" href="#countdown-carnage" data-name="Countdown Carnage">
+                            <a class="sidebar-link" href="?name=countdown-carnage" data-name="Countdown Carnage">
                                 <div class="col-lg-4 thumbnail set-bg" data-setbg="assets/Countdown-Carnage_Cover.gif">
                                 </div>
                                 <div class="col-lg-8 thumbnail__title">
@@ -151,7 +151,7 @@
                         </div>    
                         <h4 class="list-group-item" data-toggle="collapse" href="#ue-4-list" role="button" aria-expanded="false" aria-controls="ue-4-list">Unreal Engine 4</h4>
                         <div class="container collapse" id="ue-4-list">
-                            <a class="sidebar-link" href="#apex-ruin" data-name="Apex Ruin">
+                            <a class="sidebar-link" href="?name=apex-ruin" data-name="Apex Ruin">
                                 <div class="col-lg-4 thumbnail set-bg" data-setbg="assets/Apex-Ruin_Cover.gif">
                                 </div>
                                 <div class="col-lg-8 thumbnail__title">
@@ -159,7 +159,7 @@
                                     <small>TPP Shooter</small>
                                 </div>
                             </a>
-                            <a class="sidebar-link" href="#crimson-reign" data-name="Crimson Reign">
+                            <a class="sidebar-link" href="?name=crimson-reign" data-name="Crimson Reign">
                                 <div class="col-lg-4 thumbnail set-bg" data-setbg="assets/Crimson-Reign.gif">
                                 </div>
                                 <div class="col-lg-8 thumbnail__title">
@@ -960,10 +960,12 @@
         $('h4').removeClass('active-list-group-item');
         $('.list-group-item + div').collapse('hide');
 
-        let divID = window.location.hash;
-        let elem = $(this).find('a[href="' + divID + '"]');
+        let divID = new URLSearchParams(window.location.search).get("name");
+        let elem = $(this).find('a[href="?name=' + divID + '"]');
+        
+        console.log(elem);
         let projectName = $(elem).attr('data-name');
-        let parentDiv = $('div:has(a[href="' + divID + '"])').last();
+        let parentDiv = $('div:has(a[href="?name=' + divID + '"])').last();
         let elemID = $(elem).index();
         
         $('.breadcrumb__text h2').text(projectName);
@@ -972,10 +974,7 @@
         $(parentDiv).prev().addClass('active-list-group-item');
         $(parentDiv).collapse('show');
         $(elem).addClass('active');
-        $('div' + divID).show();
-        $('html, body').animate({
-             scrollTop: 0
-        }, 300);
+        $('div#' + divID).show();
     })
 
 
@@ -986,7 +985,7 @@
         $('.project-details').hide();
         $(this).toggleClass('active');
         let projectName = $(this).attr('data-name');
-        let urlArray = $(this).prop('href').split('#');
+        let urlArray = $(this).prop('href').split('?name=');
         let divID = urlArray[urlArray.length - 1];
 
         $('div#' + divID).show();
