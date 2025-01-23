@@ -1623,6 +1623,10 @@ ol {
 .github:hover{  
   color: #00bfe7;
 }
+.github::after{
+  content: "\f0c1";
+  font-family: FontAwesome;
+}
 
 /*---------------------
   Logo
