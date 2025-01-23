@@ -1593,6 +1593,11 @@ ol {
   padding-bottom: 12px;
 }
 
+.description iframe{
+  width:100%;
+  height: 430px;
+}
+
 
 .list-icon{
   font-size: 1.125rem;
