@@ -755,69 +755,78 @@
                                                         matchmaking and replication techniques ensuring smooth, fast-paced 
                                                         gameplay for multiple players.
                                                     </li>
-                                                    <li><span class="heading">Enemy AI</span>
-                                                        AI behavior is powered by Behavior Trees and basic state logic,
-                                                         enabling enemies to patrol, chase, and attack the player based on defined 
-                                                         conditions. Navigation meshes facilitate enemy pathfinding.
+                                                    <li><span class="heading">Weapon Pickups</span>
+                                                        Players can pick up a variety of weapons scattered across the map, 
+                                                        including pistols, SMGs, shotguns, sniper rifles, rocket launchers, 
+                                                        and grenades, adding strategic depth to the gameplay.
+                                                    </li>
+                                                    <li><span class="heading">Game Modes</span>
+                                                        Battle Blasters offers multiple game modes, 
+                                                        including Deathmatch and Capture the Flag, each with unique 
+                                                        challenges and competitive elements.
                                                     </li>
                                                     <li><span class="heading">User Interface (UI)</span>
-                                                        The game features a responsive melee combat system, allowing 
-                                                        the player to execute various attacks with intuitive user input, 
-                                                        paired with smooth animations for each action.
+                                                        The game features a comprehensive HUD with health, shield, 
+                                                        and ammo bars, alongside a score display and game timers to track progress.
                                                     </li>
                                                 </ul>
                                                 <h4>Game Mechanics</h4>
                                                 <ul>
-                                                    <li><span class="heading">Damage System</span>
-                                                        A straightforward health and damage system allows players 
-                                                        to track their progress and encounters.
+                                                    <li><span class="heading">Weapon System</span>
+                                                        A variety of weapons are available for players to pick up 
+                                                        throughout the map, each with unique characteristics and usage.
                                                     </li>
-                                                    <li><span class="heading">Timers</span>
-                                                        Timers are used for delayed actions, such as bomb explosions 
-                                                        or environmental interactions.
+                                                    <li><span class="heading">Weapon Pickups</span>
+                                                        Health, shield, speed buffs, and ammo pickups are scattered 
+                                                        across the map to aid players during battle, adding a layer of strategy.
                                                     </li>
-                                                    <li><span class="heading">Interactive Platforms</span>
-                                                        Floating platforms and triggers are driven by interpolation 
-                                                        for smooth transitions.
+                                                    <li><span class="heading">Matchmaking & Replication</span>
+                                                        The game utilizes advanced matchmaking for player connection and 
+                                                        replication techniques for fast-paced action, ensuring smooth multiplayer sessions.
+                                                    </li>
+                                                    <li><span class="heading">Lag Compensation</span>
+                                                        Client-side prediction and server-side rewind techniques are implemented 
+                                                        to minimize the effects of lag and ensure smooth gameplay.
                                                     </li>
                                                 </ul>
                                                 <h4>Programming Concepts Applied</h4>
                                                 <ul>
-                                                    <li><span class="heading">Object-Oriented Programming</span>
-                                                        Applied fundamental concepts such as inheritance, polymorphism, and encapsulation 
-                                                        to create reusable and extendable gameplay classes (Actors, Characters, etc.).
+                                                    <li><span class="heading">Networking</span>
+                                                        Used Unreal Engine's online subsystem to implement multiplayer matchmaking and 
+                                                        optimize network performance, ensuring fluid gameplay for multiple players.
                                                     </li>
-                                                    <li><span class="heading">AI Logic</span>
-                                                        Employed Behavior Trees to program enemy AI for patrol, chase, and attack behavior.
+                                                    <li><span class="heading">Replication</span>
+                                                        Implemented replication techniques to sync player actions and game events, 
+                                                        making sure that all players experience the game in real-time.
                                                     </li>
-                                                    <li><span class="heading">HUD & AI</span>
-                                                        Designed and implemented basic HUD elements, including health and 
-                                                        stamina bars, along with interactive menus.
+                                                    <li><span class="heading">Game Modes & States</span>
+                                                        Developed custom match states and game modes to manage gameplay flow, 
+                                                        including countdown timers, warm-up stages, and winner announcements.
                                                     </li>
                                                 </ul>
                                                 <h4>Challenges & Solutions</h4>
                                                 <ul>
-                                                    <li><span class="heading">AI Pathfinding</span>
-                                                        Integrating effective enemy pathfinding with navigation meshes 
-                                                        and ensuring smooth navigation during combat and exploration.
+                                                    <li><span class="heading">Lag Compensation</span>
+                                                        Overcame lag-related challenges by implementing client-side prediction and 
+                                                        server-side rewinding to maintain smooth gameplay even with high latency.
                                                     </li>
-                                                    <li><span class="heading">Combat Feedback</span>
-                                                        Balancing combat feedback (e.g., hit reactions, damage indicators) 
-                                                        to ensure a satisfying player experience.
+                                                    <li><span class="heading">Matchmaking Optimization</span>
+                                                        Ensured optimized matchmaking and player connections by programming 
+                                                        custom online subsystems to handle player sessions and matchmaking logic.
                                                     </li>
-                                                    <li><span class="heading">Debugging & Optimization</span>
-                                                        Used logging and sphere drawing for debugging gameplay features 
-                                                        like AI pathfinding and damage systems to ensure correct behavior during testing.
+                                                    <li><span class="heading">Weapon Balance</span>
+                                                        Fine-tuned weapon behavior and balance to ensure a fun, fair experience 
+                                                        for all players, adjusting stats for competitive gameplay.
                                                     </li>
                                                 </ul>
                                                 <div class="d-flex">
-                                                    <div class="job-card set-bg" data-setbg="assets/Crimson-Reign_Second.gif" style="margin-right: 8px;"></div>
-                                                    <div class="job-card set-bg" data-setbg="assets/Crimson-Reign_Third.gif" style="margin-left: 8px;"></div>
+                                                    <div class="job-card set-bg" data-setbg="assets/Battle-Blasters_Second.gif" style="margin-right: 8px;"></div>
+                                                    <div class="job-card set-bg" data-setbg="assets/Battle-Blasters_Third.gif" style="margin-left: 8px;"></div>
                                                 </div>
                                                 <h4>Acknowledgments</h4>
                                                 <ul>
-                                                    <li>Special thanks to Stephen Ulibarri for his Unreal Engine 4 C++ The Ultimate Game 
-                                                        Developer Course, which provided the foundation for many of the concepts used in this project.
+                                                    <li>Special thanks to Stephen Ulibarri for his Unreal Engine 5 C++ Multiplayer Shooter course, which 
+                                                        provided the foundation for many of the networking techniques used in this project.
                                                     </li>
                                                 </ul>
                                                 <h4>Repository</h4>
