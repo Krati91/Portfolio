@@ -1550,25 +1550,42 @@ ol {
   margin-bottom: 15px;
 }
 
-.job-card ul li{
+.job-card ul li, .description ul li{
   list-style: none;
   font-size: 16px;
   color: #adadad;
   display: block;
   padding: 3px 0;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.description ul li{
+  font-size: 14px;  
+  margin: 0 0 15px 0;
+}
+
+.heading{
+  font-size: 15px;
+  display: block;
 }
 
 .description{
   width:100%;
   margin:auto;
+  padding: 0 20px;
 }
 
-.description p{
-  font-size: 14px;
+.description h3{
   color: #ffffff;
-  display: block;
-  padding: 6px 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 25px;
+  padding-bottom: 12px;
 }
+
 
 .list-icon{
   font-size: 1.125rem;
