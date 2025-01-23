@@ -55,9 +55,17 @@
     /*------------------
         Background Set
     --------------------*/
+    function isInViewport(element) {
+        var rect = element[0].getBoundingClientRect();
+        return rect.top >= 0 && rect.left >= 0 && rect.bottom <= ($(window).height()) && rect.right <= ($(window).width());
+      }
+
+
     $('.set-bg').each(function () {
-        var bg = $(this).data('setbg');
-        $(this).css('background-image', 'url(' + bg + ')');
+        if (isInViewport($(this))) {
+            var bg = $(this).data('setbg');
+            $(this).css('background-image', 'url(' + bg + ')'); 
+        }    
     });
 
     //Masonary
