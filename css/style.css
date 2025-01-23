@@ -1348,7 +1348,6 @@ ol {
   background: #0a0119;
   transition: all 0.3s ease;
   padding: 0 0 4px 0;
-  overflow: hidden;
   overflow-y: auto;
   border: 1px solid rgba(255, 255, 255, 0.2);
   height: 100%;
