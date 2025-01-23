@@ -685,7 +685,7 @@ ol {
   position: absolute;
   right: -18px;
   top: 1px;
-  content: "/";
+  content: "|";
 }
 .work__item__hover ul li:last-child {
   margin-right: 0;
@@ -1752,7 +1752,7 @@ ol {
   position: absolute;
   right: -16px;
   top: 0;
-  content: "/";
+  content: "|";
 }
 .portfolio__item__text ul li:last-child {
   margin-right: 0;
