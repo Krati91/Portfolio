@@ -1335,23 +1335,24 @@ ol {
     Project Page
 ----------------------*/
 .d-flex.col-lg-3{
-  margin: -100px 0; 
   padding-right: 5px; 
   scrollbar-color: #482aa1 black;
   scrollbar-width: thin;
   flex: 1;
   flex-basis: 0.000000001px;
+  height: 90vh;
 }
 
 .sidebar {
-  width: 100%;
-  height: calc(100% - -1px);
+  position: absolute;
   background: #0a0119;
   transition: all 0.3s ease;
   padding: 0 0 4px 0;
   overflow: hidden;
   overflow-y: auto;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  height: 100%;
+  width: 100%;
 }
 
 .sidebar-link {
@@ -1407,7 +1408,7 @@ ol {
 .thumbnail__title h5, .job-card h4{
   color: #ffffff;
   margin: 0 0 4px 0;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   line-height: 2rem;
   font-weight: 500;
   overflow: hidden;
@@ -1495,9 +1496,7 @@ ol {
 }
 
 .large__gif{
-  position: relative;
   width: 100%;
-  display: inline-flex;
   background-color: rgb(37, 37, 37);
   overflow: hidden;
   height: 90px;
@@ -1512,12 +1511,27 @@ ol {
   flex: none;
 }
 
+.project-block{
+  overflow: hidden;
+  overflow-y: auto;
+  padding-bottom: 70px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  scrollbar-color: #482aa1 black;
+  flex: 1;
+  flex-basis: 0.000000001px;
+  height: 90vh;
+}
 .job-card{
   position: relative;
   background-color: rgb(37, 37, 37);
   font-size: 1.125rem;
-  width: calc(100% - -2.8px);
-  height: 148px;
+  width: calc(100% - -1px);
+  height: calc(100% - 20px);
   padding: 24px;
   text-align: left;
   color: rgb(255, 255, 255);
@@ -1529,6 +1543,7 @@ ol {
   border-style: none;
   border-color: initial;
   border-image: initial;
+  border-radius: 4px;
 }
 
 .job-card h4{
@@ -1549,10 +1564,10 @@ ol {
 }
 
 .description p{
-  font-size: 16px;
+  font-size: 14px;
   color: #ffffff;
   display: block;
-  padding: 6px 0;
+  padding: 6px 9px;
 }
 
 .list-icon{
@@ -1566,7 +1581,7 @@ ol {
   left: 0;
   bottom: 0;
   width: 100%;
-  padding: 25px 30px 20px;
+  padding: 25px 24px 20px;
   -webkit-transition: all, 0.5s;
   -o-transition: all, 0.5s;
   transition: all, 0.5s;
@@ -1583,7 +1598,6 @@ ol {
 .github:hover{  
   color: #00bfe7;
 }
-
 
 /*---------------------
   Logo
