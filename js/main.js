@@ -55,15 +55,14 @@
     /*------------------
         Background Set
     --------------------*/
-    function isInViewport(element) {
-        var rect = element[0].getBoundingClientRect();
-        return rect.top >= 0 && rect.left >= 0 && rect.bottom <= ($(window).height()) && rect.right <= ($(window).width());
-      }
-
-
+    
     $('.set-bg').each(function () {
-        if (isInViewport($(this))) {
+        var elementTop = $(this).offset().top;
+        var windowBottom = $(document).scrollTop() + $(document).height();
+      // Check if the element is in the viewport
+      if (elementTop < windowBottom) {
             var bg = $(this).data('setbg');
+            $(this).removeClass('lazy-background');
             $(this).css('background-image', 'url(' + bg + ')'); 
         }    
     });

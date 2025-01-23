@@ -142,10 +142,14 @@ ol {
 }
 
 .set-bg {
-  background-color: #f0f0f0;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
+}
+
+.lazy-background {
+  background-color: #333;
+  background-image: url('../img/loader.gif');
 }
 
 .spad {
