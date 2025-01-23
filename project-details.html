@@ -175,7 +175,7 @@
                                 </div>
                                 <div class="col-lg-8 thumbnail__title">
                                     <h5>Retro Games Collection</h5>
-                                    <small>eCommerce</small>
+                                    <small>Collision Detection</small>
                                 </div>
                             </a>
                         </div>
@@ -834,10 +834,10 @@
                                             <div class="job-card">
                                                 <h4>Project Info</h4>
                                                 <ul>
-                                                    <li><small><i class="fa fa-clock-o" aria-hidden="true"></i>Time Frame: Ongoing</small></li>
-                                                    <li><small><i class="fa fa-gear"></i>Engine: Unreal Engine 5.2</small></li>
-                                                    <li><small><i class="fa fa-gamepad" aria-hidden="true"></i>Genre: Multiplayer Shooter</small></li>
-                                                    <li><small><i class="fa fa-users" aria-hidden="true"></i>Game Mode:  Deathmatch, Capture the Flag</small></li>
+                                                    <li><small><i class="fa fa-clock-o" aria-hidden="true"></i>Time Frame: 2 weeks</small></li>
+                                                    <li><small><i class="fa fa-gear"></i>Engine: Raylib</small></li>
+                                                    <li><small><i class="fa fa-gamepad" aria-hidden="true"></i>Genre: Arcade</small></li>
+                                                    <li><small><i class="fa fa-users" aria-hidden="true"></i>Game Mode:  Single Player</small></li>
                                                     <li><small><i class="fa fa-desktop" aria-hidden="true"></i>Platform: Windows (PC)</small></li>
                                                 </ul>
                                             </div>
@@ -883,68 +883,70 @@
                                                             </div>
                                                         </div>
                                                     </li>
-                                                    <li><span class="heading">User Interface (UI)</span>
-                                                        The game features a comprehensive HUD with health, shield, 
-                                                        and ammo bars, alongside a score display and game timers to track progress.
+                                                    <li><span class="heading">Ping Pong</span>
+                                                        <div class="d-flex">
+                                                            <div style="margin: 65px 0;">
+                                                                <p>
+                                                                    A dynamic two-player game where players control paddles to bounce the ball 
+                                                                    and score by getting it past their opponent.                                                                </p>   
+                                                            </div>
+                                                            <div class="job-card set-bg" data-setbg="./assets/Ping-Pong_HighRes.gif" style="margin-left: 10px;"></div>
+                                                        </div>
+                                                    </li>
+                                                    <li><span class="heading">Dapper Dasher</span>
+                                                        <div class="d-flex">
+                                                            <div class="job-card set-bg" data-setbg="./assets/Dapper-Dasher_HighRes.gif" style="margin-right: 10px;"></div>
+                                                            <div style="margin: 65px 0;">
+                                                                <p>
+                                                                    A fast-paced platformer where players dodge obstacles and collect 
+                                                                    rewards while navigating challenging levels.
+                                                                </p>   
+                                                            </div>
+                                                        </div>
                                                     </li>
                                                 </ul>
                                                 <h4>Game Mechanics</h4>
                                                 <ul>
-                                                    <li><span class="heading">Weapon System</span>
-                                                        A variety of weapons are available for players to pick up 
-                                                        throughout the map, each with unique characteristics and usage.
+                                                    <li><span class="heading">Animation</span>
+                                                        Smooth 2D character and object animations bring the games to life, ensuring visually engaging gameplay.
                                                     </li>
-                                                    <li><span class="heading">Weapon Pickups</span>
-                                                        Health, shield, speed buffs, and ammo pickups are scattered 
-                                                        across the map to aid players during battle, adding a layer of strategy.
+                                                    <li><span class="heading">Collision Handling</span>
+                                                        Implemented robust collision detection for accurate interactions, such as 
+                                                        paddle-ball dynamics or snake-wall contact.
                                                     </li>
-                                                    <li><span class="heading">Matchmaking & Replication</span>
-                                                        The game utilizes advanced matchmaking for player connection and 
-                                                        replication techniques for fast-paced action, ensuring smooth multiplayer sessions.
-                                                    </li>
-                                                    <li><span class="heading">Lag Compensation</span>
-                                                        Client-side prediction and server-side rewind techniques are implemented 
-                                                        to minimize the effects of lag and ensure smooth gameplay.
+                                                    <li><span class="heading">Score System</span>
+                                                        A simple yet effective scoring system tracks player achievements across all games, enhancing replayability.
                                                     </li>
                                                 </ul>
                                                 <h4>Programming Concepts Applied</h4>
                                                 <ul>
-                                                    <li><span class="heading">Networking</span>
-                                                        Used Unreal Engine's online subsystem to implement multiplayer matchmaking and 
-                                                        optimize network performance, ensuring fluid gameplay for multiple players.
+                                                    <li><span class="heading">Object-Oriented Programmin (OOP)</span>
+                                                        Used OOP principles like encapsulation and inheritance to create modular, 
+                                                        reusable game components.
                                                     </li>
-                                                    <li><span class="heading">Replication</span>
-                                                        Implemented replication techniques to sync player actions and game events, 
-                                                        making sure that all players experience the game in real-time.
+                                                    <li><span class="heading">Clean Coding Practices</span>
+                                                        Followed clean coding principles to ensure maintainability and readability throughout the project.
                                                     </li>
-                                                    <li><span class="heading">Game Modes & States</span>
-                                                        Developed custom match states and game modes to manage gameplay flow, 
-                                                        including countdown timers, warm-up stages, and winner announcements.
+                                                    <li><span class="heading">Raylib Integration</span>
+                                                        Leveraged the Raylib library for 2D graphics rendering, input handling, and basic sound effects.
                                                     </li>
                                                 </ul>
                                                 <h4>Challenges & Solutions</h4>
                                                 <ul>
-                                                    <li><span class="heading">Lag Compensation</span>
-                                                        Overcame lag-related challenges by implementing client-side prediction and 
-                                                        server-side rewinding to maintain smooth gameplay even with high latency.
+                                                    <li><span class="heading">Animating 2D Characters</span>
+                                                        Faced challenges in implementing smooth animations, which were resolved by utilizing 
+                                                        Raylib’s animation capabilities effectively.
                                                     </li>
-                                                    <li><span class="heading">Matchmaking Optimization</span>
-                                                        Ensured optimized matchmaking and player connections by programming 
-                                                        custom online subsystems to handle player sessions and matchmaking logic.
-                                                    </li>
-                                                    <li><span class="heading">Weapon Balance</span>
-                                                        Fine-tuned weapon behavior and balance to ensure a fun, fair experience 
-                                                        for all players, adjusting stats for competitive gameplay.
+                                                    <li><span class="heading">Debugging Complex Interactions</span>
+                                                        Resolved gameplay bugs using systematic debugging techniques, such as tracing logic flows and 
+                                                        testing individual modules.
                                                     </li>
                                                 </ul>
-                                                <div class="d-flex">
-                                                    <div class="job-card set-bg" data-setbg="assets/Battle-Blasters_Second.gif" style="margin-right: 8px;"></div>
-                                                    <div class="job-card set-bg" data-setbg="assets/Battle-Blasters_Third.gif" style="margin-left: 8px;"></div>
-                                                </div>
                                                 <h4>Acknowledgments</h4>
                                                 <ul>
-                                                    <li>Special thanks to Stephen Ulibarri for his Unreal Engine 5 C++ Multiplayer Shooter course, which 
-                                                        provided the foundation for many of the networking techniques used in this project.
+                                                    <li>Special thanks to Stephen Ulibarri for his course "C++ Fundamentals: Game Programming for Beginners".<br>
+                                                        This project was built while completing course which provided valuable insights into C++ game development, 
+                                                        Raylib usage, and problem-solving techniques.                                                      
                                                     </li>
                                                 </ul>
                                                 <h4>Repository</h4>
@@ -953,9 +955,6 @@
                                                         and source code.
                                                     </li>
                                                 </ul>
-                                                <iframe src="https://www.youtube.com/embed/tLNkaF6ZHlk?si=Zyjq8XHLG_-HEGTM" title="YouTube video player" 
-                                                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                             </div>
                                         </div>
                                     </div>
