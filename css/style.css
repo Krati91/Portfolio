@@ -1576,6 +1576,7 @@ ol {
 .heading{
   font-size: 15px;
   display: block;
+  font-weight: 900;
 }
 
 .description{
