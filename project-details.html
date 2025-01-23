@@ -955,28 +955,30 @@
 
 <script>
     $(document).ready(function(){
-        $(this).scrollTop(0);
+        $(window).scrollTop(0);
         $('a').removeClass('active');       
         $('h4').removeClass('active-list-group-item');
         $('.list-group-item + div').collapse('hide');
 
-        let urlArray = $(location).prop('href').split('#');
-        let divID = urlArray[urlArray.length - 1];
-        let elem = $(this).find('a[href="#' + divID + '"]');
+        let divID = window.location.hash;
+        let elem = $(this).find('a[href="' + divID + '"]');
         let projectName = $(elem).attr('data-name');
-        let parentDiv = $('div:has(a[href="#' + divID + '"])').last();
+        let parentDiv = $('div:has(a[href="' + divID + '"])').last();
         let elemID = $(elem).index();
         
         $('.breadcrumb__text h2').text(projectName);
         $('.breadcrumb__text span').text(projectName);
+
         $(parentDiv).prev().addClass('active-list-group-item');
         $(parentDiv).collapse('show');
         $(elem).addClass('active');
-        $('div#' + divID).show();
+        $('div' + divID).show();
     })
 
 
-    $('.sidebar-link').click(function(){
+    $('.sidebar-link').click(function(e){
+        e.preventDefault();
+        $(window).scrollTop(0);
         $('.sidebar a').removeClass('active');
         $('.project-details').hide();
         $(this).toggleClass('active');
@@ -985,12 +987,12 @@
         let divID = urlArray[urlArray.length - 1];
 
         $('div#' + divID).show();
-        $(document).scrollTop();
         $('.breadcrumb__text h2').text(projectName);
         $('.breadcrumb__text span').text(projectName);
     });
 
-    $('.list-group-item').click(function(){
+    $('.list-group-item').click(function(e){
+        e.preventDefault();
         $('.list-group-item').removeClass('active-list-group-item');
         $('.list-group-item + div').collapse('hide');
         $(this).addClass('active-list-group-item');
