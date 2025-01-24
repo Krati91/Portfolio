@@ -1092,7 +1092,6 @@
 
 <script>
     $(document).ready(function(){
-        $(window).scrollTop(0);
         $('a').removeClass('active');       
         $('h4').removeClass('active-list-group-item');
         $('.list-group-item + div').collapse('hide');
@@ -1109,12 +1108,12 @@
         $(parentDiv).collapse('show');
         $(elem).addClass('active');
         $('div#' + divID).show();
+        $(document).scrollTop(0);
     })
 
 
     $('.sidebar-link').click(function(e){
         e.preventDefault();
-        $(window).scrollTop(0);
         $('.sidebar a').removeClass('active');
         $('.project-details').hide();
         $(this).toggleClass('active');
@@ -1123,6 +1122,7 @@
         let divID = urlArray[urlArray.length - 1];
 
         $('div#' + divID).show();
+        $(document).scrollTop(0);
         let newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?name=' + divID;    
         // Update the URL without reloading the page
         window.history.pushState({ path: newUrl }, '', newUrl);
