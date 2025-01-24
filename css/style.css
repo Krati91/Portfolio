@@ -1339,12 +1339,17 @@ ol {
     Project Page
 ----------------------*/
 .d-flex.col-lg-3{
+  position: relative;
+  top: 97px;
+  left: 0;
   padding-right: 5px; 
   scrollbar-color: #482aa1 black;
   scrollbar-width: thin;
   flex: 1;
   flex-basis: 0.000000001px;
-  height: 90vh;
+  height: calc(100vh - 97px);
+  padding-left:0;
+  box-sizing: border-box;
 }
 
 .sidebar {
@@ -1356,6 +1361,7 @@ ol {
   border: 1px solid rgba(255, 255, 255, 0.2);
   height: 100%;
   width: 100%;
+  border-bottom: 0;
 }
 
 .sidebar-link {
@@ -1515,9 +1521,10 @@ ol {
 }
 
 .project-block{
+  position: relative;
+  top: 97px;
   overflow: hidden;
   overflow-y: auto;
-  padding-bottom: 70px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1527,7 +1534,8 @@ ol {
   scrollbar-color: #482aa1 black;
   flex: 1;
   flex-basis: 0.000000001px;
-  height: 90vh;
+  height: calc(100vh - 97px);
+  box-sizing: border-box;
 }
 
 .job-card{
@@ -2311,6 +2319,16 @@ ol {
   .hero__slider.owl-carousel .owl-dots {
     max-width: 930px !important;
   }
+
+  .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+  }
+
+  .project-block {
+      margin-top: 20px;
+}
 }
 /* Tablet Device = 768px */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -2641,6 +2659,19 @@ ol {
 
   .blog__details__quote {
     padding: 30px 45px 35px 35px;
+  }
+
+  .sidebar h4 {
+    font-size: 16px;
+  }
+
+  .sidebar-link {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .thumbnail__title {
+      padding-left: 10px;
   }
 }
 /* Small Device = 320px */
