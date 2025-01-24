@@ -637,6 +637,12 @@ ol {
   height: 633px !important;
   width: calc(33.33% - 10px);
 }
+
+.work__item.large__item video{
+  width: inherit;
+  height: inherit;
+}
+
 .work__item.wide__item {
   width: calc(33.33% - 10px);
   height: 311px !important;
@@ -1518,6 +1524,10 @@ ol {
   position: relative;
   display: block;
   flex: none;
+}
+
+.large__gif video{
+  width: inherit;
 }
 
 .project-block{
