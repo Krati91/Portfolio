@@ -32,6 +32,8 @@ body {
   height: 100%;
   font-family: "Josefin Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
+  scrollbar-color: #482aa1 black;
+  scrollbar-width: thin;
 }
 
 h1,
@@ -1349,8 +1351,6 @@ ol {
   top: 97px;
   left: 0;
   padding-right: 5px; 
-  scrollbar-color: #482aa1 black;
-  scrollbar-width: thin;
   flex: 1;
   flex-basis: 0.000000001px;
   height: calc(100vh - 97px);
@@ -1541,7 +1541,6 @@ ol {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  scrollbar-color: #482aa1 black;
   flex: 1;
   flex-basis: 0.000000001px;
   height: calc(100vh - 97px);
