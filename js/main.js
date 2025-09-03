@@ -207,4 +207,31 @@
         });
     });
 
+	/*---------------------
+ 		Lazy Load
+   -----------------------*/
+	const lazyDivs = $("[data-setbg]");
+
+	  if ("IntersectionObserver" in window) {
+	    let observer = new IntersectionObserver(function (entries, obs) {
+	      entries.forEach(function (entry) {
+	        if (entry.isIntersecting) {
+	          let $div = $(entry.target);
+	          $div.css("background-image", "url(" + $div.data("bg") + ")");
+	          obs.unobserve(entry.target);
+	        }
+	      });
+	    });
+	
+	    lazyDivs.each(function () {
+	      observer.observe(this);
+	    });
+	  } else {
+	    // Fallback for old browsers: just load all backgrounds
+	    lazyDivs.each(function () {
+	      let $div = $(this);
+	      $div.css("background-image", "url(" + $div.data("setbg") + ")");
+	    });
+	  }
+
 })(jQuery);
