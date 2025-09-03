@@ -30,7 +30,7 @@
 html,
 body {
   height: 100%;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   scrollbar-color: #482aa1 black;
   scrollbar-width: thin;
@@ -45,7 +45,7 @@ h6 {
   margin: 0;
   color: #111111;
   font-weight: 400;
-  font-family: "Play", sans-serif;
+  font-family: "Orbitron", sans-serif;
 }
 
 h1 {
