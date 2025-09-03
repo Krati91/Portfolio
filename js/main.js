@@ -210,14 +210,14 @@
 	/*---------------------
  		Lazy Load
    -----------------------*/
-	const lazyDivs = $("[data-setbg]");
+	const lazyDivs = $("div[data-setbg]");
 
 	  if ("IntersectionObserver" in window) {
 	    let observer = new IntersectionObserver(function (entries, obs) {
 	      entries.forEach(function (entry) {
 	        if (entry.isIntersecting) {
 	          let $div = $(entry.target);
-	          $div.css("background-image", "url(" + $div.data("bg") + ")");
+	          $div.css("background-image", "url(" + $div.data("setbg") + ")");
 	          obs.unobserve(entry.target);
 	        }
 	      });
