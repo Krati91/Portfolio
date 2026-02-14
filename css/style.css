@@ -510,6 +510,7 @@ ol {
   border: none !important;
   border-radius: 6px !important;
   margin-right: 0 !important;
+  width: auto !important;
   height: auto !important;
   min-height: 32px !important;
   transition: background 0.3s ease;
