@@ -1113,12 +1113,21 @@ ol {
 .footer__copyright__text {
   margin-bottom: 0;
   font-weight: 300;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
 }
 .footer__copyright__text i {
   color: #00bfe7;
 }
 .footer__copyright__text a {
   color: #00bfe7;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+.footer__copyright__text a:hover {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 /*---------------------

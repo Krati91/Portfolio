@@ -497,7 +497,7 @@
     }
     
     .hero__item {
-        padding-top: 110px !important;
+        padding-top: 140px !important;
     }
     
     /* Fix breadcrumb padding on mobile */
@@ -601,6 +601,41 @@
     .thumbnail__title small {
         font-size: 16px !important;
     }
+    
+    /* About page content - increase font sizes for readability */
+    .about__text__desc p {
+        font-size: 20px !important;
+        line-height: 1.9 !important;
+    }
+    
+    .section-title h2 {
+        font-size: 32px !important;
+    }
+    
+    .section-title span {
+        font-size: 18px !important;
+    }
+    
+    /* Experience and Courses sections */
+    .experience-box h4 {
+        font-size: 22px !important;
+        line-height: 1.5 !important;
+    }
+    
+    .experience-box small,
+    .experience-box li small {
+        font-size: 18px !important;
+        line-height: 1.8 !important;
+    }
+    
+    /* Skills and Education sections */
+    .text-top {
+        font-size: 18px !important;
+    }
+    
+    .text-top small {
+        font-size: 16px !important;
+    }
 }
 
 /* ========================================
@@ -681,6 +716,7 @@
         max-height: 50px !important;
         overflow: hidden !important;
         padding: 15px !important;
+        padding-bottom: 0px !important;
     }
     
     /* Expanded state */
@@ -952,8 +988,8 @@
         visibility: visible !important;
     }
     
-    /* Job card styling for mobile */
-    .row__margin .job-card {
+    /* Job card styling for mobile - but NOT for image containers */
+    .row__margin .job-card:not(.set-bg) {
         padding: 20px 15px !important;
         margin-bottom: 0 !important;
         height: auto !important; /* Remove fixed height */
@@ -1052,6 +1088,8 @@
     .description .d-flex {
         flex-direction: column !important;
         gap: 0 !important;
+        height: auto !important;
+        margin-bottom: 30px !important;
     }
     
     .description .d-flex .job-card.set-bg,
@@ -1060,18 +1098,20 @@
         margin-left: 0 !important;
         margin-right: 0 !important;
         margin-bottom: 15px !important;
-        height: 200px !important;
+        height: auto !important;
         min-height: 200px !important;
+        max-height: 250px !important;
         padding: 0 !important;
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
         display: block !important;
+        position: relative !important;
         /* Do NOT set background color - let set-bg work */
     }
     
     .description .d-flex .job-card:last-child {
-        margin-bottom: 20px !important; /* Extra space after last image */
+        margin-bottom: 0 !important;
     }
     
     /* YouTube iframes */
@@ -1151,6 +1191,39 @@
     /* Contact map spacing */
     .contact__map {
         margin-bottom: 40px;
+    }
+    
+    /* About page font sizes for 767px */
+    .about__text__desc p {
+        font-size: 15px !important;
+        line-height: 1.8 !important;
+    }
+    
+    .section-title h2 {
+        font-size: 24px !important;
+    }
+    
+    .section-title span {
+        font-size: 15px !important;
+    }
+    
+    .experience-box h4 {
+        font-size: 17px !important;
+        line-height: 1.4 !important;
+    }
+    
+    .experience-box small,
+    .experience-box li small {
+        font-size: 15px !important;
+        line-height: 1.75 !important;
+    }
+    
+    .text-top {
+        font-size: 15px !important;
+    }
+    
+    .text-top small {
+        font-size: 13px !important;
     }
 }
 
@@ -1668,6 +1741,31 @@
     /* Large about image - adjust background position */
     .about__pic__item--large.set-bg {
         background-position: bottom !important;
+    }
+    
+    /* About page font sizes for 479px */
+    .about__text__desc p {
+        font-size: 16px !important;
+        line-height: 1.8 !important;
+    }
+    
+    .experience-box h4 {
+        font-size: 18px !important;
+        line-height: 1.5 !important;
+    }
+    
+    .experience-box small,
+    .experience-box li small {
+        font-size: 16px !important;
+        line-height: 1.8 !important;
+    }
+    
+    .text-top {
+        font-size: 16px !important;
+    }
+    
+    .text-top small {
+        font-size: 14px !important;
     }
     
     /* Portfolio grid - full width on very small screens */

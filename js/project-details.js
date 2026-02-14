@@ -15,6 +15,15 @@ $(document).ready(function(){
     $parentDiv.collapse('show');
     $elem.addClass('active');
     $('#' + divID).show();
+    
+    // Load lazy backgrounds for the initial project
+    $('#' + divID).find('.set-bg').each(function() {
+        const bg = $(this).data('setbg');
+        if (bg) {
+            $(this).css('background-image', 'url(' + bg + ')');
+        }
+    });
+    
     $(document).scrollTop(0);
 });
 
@@ -29,6 +38,15 @@ $('.sidebar-link').click(function(e){
     $('.project-details').hide();
     $(this).addClass('active');
     $('#' + divID).show();
+    
+    // Load lazy backgrounds for the newly visible project
+    $('#' + divID).find('.set-bg').each(function() {
+        const bg = $(this).data('setbg');
+        if (bg) {
+            $(this).css('background-image', 'url(' + bg + ')');
+        }
+    });
+    
     $(document).scrollTop(0);
     
     // Update URL without page reload
