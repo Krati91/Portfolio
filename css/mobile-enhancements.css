@@ -566,6 +566,29 @@
    ======================================== */
 
 @media only screen and (min-width: 820px) {
+    /* Header social icons - increase size for larger viewports */
+    .header__nav__social a {
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 22px !important;
+        margin-right: 12px !important;
+    }
+    
+    /* Resume button - increase size for larger viewports */
+    .resume {
+        font-size: 16px !important;
+        padding: 11px 20px !important;
+        min-height: 48px !important;
+    }
+    
+    .resume span {
+        font-size: 16px !important;
+    }
+    
+    .resume i {
+        font-size: 14px !important;
+    }
+    
     /* Project details content - increase font sizes for readability */
     .project-details p,
     .project-details small,
