@@ -1234,12 +1234,50 @@
 @media only screen and (max-width: 991px) {
     .services__title {
         margin-bottom: 40px;
-        text-align: center;
+        text-align: left;
     }
     
     .services__title .skills-btn {
-        margin: 0 auto;
-        display: table;
+        margin: 0;
+        display: inline-block;
+    }
+    
+    /* Make services items consistent with desktop */
+    .services__item {
+        text-align: left;
+    }
+    
+    .services__item__icon {
+        position: relative;
+        height: 70px;
+        width: 70px;
+        line-height: 70px;
+        text-align: center;
+        margin: 0;
+    }
+    
+    .services__item__icon:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #00bfe7;
+        content: "";
+        -webkit-transition: all, 0.5s;
+        -o-transition: all, 0.5s;
+        transition: all, 0.5s;
+    }
+    
+    .services__item:hover .services__item__icon:after {
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    
+    .services__item h4 {
+        margin-top: 26px;
+        margin-bottom: 18px;
     }
     
     /* Fix skills and education sections on mobile */
