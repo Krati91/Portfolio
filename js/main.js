@@ -137,6 +137,17 @@
     });
 
     /*------------------
+        Mobile Menu - Auto Close on Resize
+    --------------------*/
+    // Close mobile menu when resizing above mobile breakpoint
+    $(window).on('resize', function() {
+        if ($(window).width() > 991) {
+            $('#mobile-social').hide();
+            $('.slicknav_btn').removeClass('slicknav_open');
+        }
+    });
+
+    /*------------------
 		Hero Slider
 	--------------------*/
     $('.hero__slider').owlCarousel({

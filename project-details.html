@@ -1028,64 +1028,7 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/project-details.js"></script>
 </body>
-
-<!-- Project Details Dynamic Content Script -->
-<!-- Handles URL parameter-based project display and sidebar navigation -->
-<script>
-    // Initialize page on load - show project based on URL parameter
-    $(document).ready(function(){
-        // Reset all active states
-        $('a').removeClass('active');       
-        $('h4').removeClass('active-list-group-item');
-        $('.list-group-item + div').collapse('hide');
-
-        // Get project name from URL parameter (?name=project-name)
-        let divID = new URLSearchParams(window.location.search).get("name");
-        let elem = $(this).find('a[href="?name=' + divID + '"]');
-        
-        let projectName = $(elem).attr('data-name');
-        let parentDiv = $('div:has(a[href="?name=' + divID + '"])').last();
-        let elemID = $(elem).index();
-
-        // Activate selected project in sidebar and expand its category
-        $(parentDiv).prev().addClass('active-list-group-item');
-        $(parentDiv).collapse('show');
-        $(elem).addClass('active');
-        $('div#' + divID).show();
-        $(document).scrollTop(0);
-    })
-
-    // Handle sidebar project link clicks
-    $('.sidebar-link').click(function(e){
-        e.preventDefault();
-        
-        // Reset all active states and hide all project details
-        $('.sidebar a').removeClass('active');
-        $('.project-details').hide();
-        $(this).toggleClass('active');
-        
-        // Extract project ID from href and display corresponding project
-        let projectName = $(this).attr('data-name');
-        let urlArray = $(this).prop('href').split('=');
-        let divID = urlArray[urlArray.length - 1];
-
-        $('div#' + divID).show();
-        $(document).scrollTop(0);
-        
-        // Update URL without page reload for better UX
-        let newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?name=' + divID;
-        window.history.pushState({ path: newUrl }, '', newUrl);
-    });
-
-    // Handle category header clicks to expand/collapse project lists
-    $('.list-group-item').click(function(e){
-        e.preventDefault();
-        $('.list-group-item').removeClass('active-list-group-item');
-        $('.list-group-item + div').collapse('hide');
-        $(this).addClass('active-list-group-item');
-        $(this + '+ div').collapse('show');
-    })
-</script>
 
 </html>
