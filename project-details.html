@@ -1,3 +1,4 @@
+<!-- Dynamic project details - Displays project information via URL parameters -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -130,24 +131,7 @@
     </header>
     <!-- Header End -->
 
-    <!-- Breadcrumb Begin -->
-    <!-- <div class="breadcrumb-option spad set-bg" data-setbg="img/breadcrumb-bg.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>Project Name</h2>
-                        <div class="breadcrumb__links">
-                            <a href="./index.html">Home</a>
-                            <a href="./portfolio.html">Portfolio</a>
-                            <span>Project Name</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Breadcrumb End -->
+    
     
     <div class="portfolio" style="height: 100vh;">
         <div class="row d-flex" style="margin-right: auto; min-height: 78vh;">
@@ -1024,87 +1008,15 @@
                     <!-- Footer Section Begin -->
                     <footer class="footer">
                         <div class="container">
-                            <!-- <div class="footer__top">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="footer__top__logo">
-                                            <a href="#"><img src="img/logo.png" alt=""></a>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="footer__top__social">
-                                            <a href="https://in.linkedin.com/in/kartik-chaturvedi-960a4a186" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Linkedin">
-                                                <i class="fa fa-linkedin"></i>
-                                            </a>
-                                            <a href="https://github.com/Mecha-NOX" target="_blank" data-toggle="tooltip" data-placement="bottom" title="GitHub">
-                                                <i class="fa fa-github"></i>
-                                            </a>
-                                            <a href="#" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Youtube">
-                                                <i class="fa fa-youtube-play"></i>
-                                            </a>
-                                            <a href="#" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Instagram">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- <div class="footer__option">
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-6 col-sm-6">
-                                        <div class="footer__option__item">
-                                            <h5>About us</h5>
-                                            <p>Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning, full-service
-                                                production company specializing.</p>
-                                            <a href="#" class="read__more">Read more <span class="arrow_right"></span></a>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-3 col-sm-3">
-                                        <div class="footer__option__item">
-                                            <h5>Who we are</h5>
-                                            <ul>
-                                                <li><a href="#">Team</a></li>
-                                                <li><a href="#">Carrers</a></li>
-                                                <li><a href="#">Contact us</a></li>
-                                                <li><a href="#">Locations</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-3 col-sm-3">
-                                        <div class="footer__option__item">
-                                            <h5>Our work</h5>
-                                            <ul>
-                                                <li><a href="#">Feature</a></li>
-                                                <li><a href="#">Latest</a></li>
-                                                <li><a href="#">Browse Archive</a></li>
-                                                <li><a href="#">Video for web</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-12">
-                                        <div class="footer__option__item">
-                                            <h5>Newsletter</h5>
-                                            <p>Videoprah is an award-winning, full-service production company specializing.</p>
-                                            <form action="#">
-                                                <input type="text" placeholder="Email">
-                                                <button type="submit"><i class="fa fa-send"></i></button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                             <div class="footer__copyright">
                                 <div class="row">
                                     <div class="col-lg-12 text-center">
-                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                         <p class="footer__copyright__text">Copyright &copy;
                                             <script>
                                                 document.write(new Date().getFullYear());
                                             </script>
-                                            All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                            Kartik Chaturvedi | Template by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                                         </p>
-                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                     </div>
                                 </div>
                             </div>
@@ -1128,20 +1040,25 @@
     <script src="js/main.js"></script>
 </body>
 
+<!-- Project Details Dynamic Content Script -->
+<!-- Handles URL parameter-based project display and sidebar navigation -->
 <script>
+    // Initialize page on load - show project based on URL parameter
     $(document).ready(function(){
+        // Reset all active states
         $('a').removeClass('active');       
         $('h4').removeClass('active-list-group-item');
         $('.list-group-item + div').collapse('hide');
 
+        // Get project name from URL parameter (?name=project-name)
         let divID = new URLSearchParams(window.location.search).get("name");
         let elem = $(this).find('a[href="?name=' + divID + '"]');
         
-        console.log(elem);
         let projectName = $(elem).attr('data-name');
         let parentDiv = $('div:has(a[href="?name=' + divID + '"])').last();
         let elemID = $(elem).index();
 
+        // Activate selected project in sidebar and expand its category
         $(parentDiv).prev().addClass('active-list-group-item');
         $(parentDiv).collapse('show');
         $(elem).addClass('active');
@@ -1149,23 +1066,29 @@
         $(document).scrollTop(0);
     })
 
-
+    // Handle sidebar project link clicks
     $('.sidebar-link').click(function(e){
         e.preventDefault();
+        
+        // Reset all active states and hide all project details
         $('.sidebar a').removeClass('active');
         $('.project-details').hide();
         $(this).toggleClass('active');
+        
+        // Extract project ID from href and display corresponding project
         let projectName = $(this).attr('data-name');
         let urlArray = $(this).prop('href').split('=');
         let divID = urlArray[urlArray.length - 1];
 
         $('div#' + divID).show();
         $(document).scrollTop(0);
-        let newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?name=' + divID;    
-        // Update the URL without reloading the page
+        
+        // Update URL without page reload for better UX
+        let newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?name=' + divID;
         window.history.pushState({ path: newUrl }, '', newUrl);
     });
 
+    // Handle category header clicks to expand/collapse project lists
     $('.list-group-item').click(function(e){
         e.preventDefault();
         $('.list-group-item').removeClass('active-list-group-item');
