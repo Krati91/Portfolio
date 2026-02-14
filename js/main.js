@@ -83,6 +83,60 @@
     });
 
     /*------------------
+        Mobile Menu Toggle for Custom Menu
+    --------------------*/
+    // Toggle mobile-social visibility when hamburger is clicked
+    // Use setTimeout to ensure slicknav button is created
+    setTimeout(function() {
+        console.log('SlickNav button exists:', $('.slicknav_btn').length);
+        
+        $(document).on('click', '.slicknav_btn', function(e) {
+            console.log('Hamburger clicked!'); // Debug
+            e.preventDefault();
+            e.stopPropagation();
+            $('#mobile-social').slideToggle(300);
+            $(this).toggleClass('slicknav_open');
+        });
+        
+        // Also try direct binding as backup
+        $('.slicknav_btn').off('click').on('click', function(e) {
+            console.log('Direct click handler!');
+            e.preventDefault();
+            e.stopPropagation();
+            $('#mobile-social').slideToggle(300);
+            $(this).toggleClass('slicknav_open');
+        });
+    }, 100);
+
+    /*------------------
+        Mobile Menu - Auto Close on Outside Click
+    --------------------*/
+    // Close mobile menu when clicking/tapping outside
+    $(document).on('click touchstart', function(e) {
+        var mobileMenu = $('.slicknav_menu');
+        var mobileMenuWrap = $('#mobile-menu-wrap');
+        var mobileSocial = $('#mobile-social');
+        
+        // Check if menu is open
+        if (mobileMenu.hasClass('slicknav_open')) {
+            // If click is outside menu, close it
+            if (!mobileMenu.is(e.target) && 
+                mobileMenu.has(e.target).length === 0 &&
+                !mobileMenuWrap.is(e.target) && 
+                mobileMenuWrap.has(e.target).length === 0 &&
+                !mobileSocial.is(e.target) && 
+                mobileSocial.has(e.target).length === 0) {
+                $('.slicknav_btn').click(); // Toggle menu closed
+            }
+        }
+    });
+
+    // Prevent menu from closing when clicking inside it
+    $('.slicknav_menu, #mobile-menu-wrap, #mobile-social').on('click touchstart', function(e) {
+        e.stopPropagation();
+    });
+
+    /*------------------
 		Hero Slider
 	--------------------*/
     $('.hero__slider').owlCarousel({

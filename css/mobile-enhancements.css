@@ -1,0 +1,1390 @@
+/* Mobile Enhancements for Portfolio */
+/* Author: Kartik Chaturvedi */
+
+/* ========================================
+   Responsive Breakpoints
+   ======================================== */
+
+/* Desktop - Hide mobile menu */
+@media only screen and (min-width: 992px) {
+    #mobile-social,
+    .slicknav_menu,
+    .slicknav_btn {
+        display: none !important;
+    }
+}
+
+/* Mobile & Tablet - Show hamburger menu */
+@media only screen and (max-width: 991px) {
+
+/* ========================================
+   Mobile Menu - Simple Working Setup
+   ======================================== */
+
+/* Hamburger button - positioned in header */
+.slicknav_btn {
+    background: transparent !important;
+    padding: 8px 12px !important;
+    cursor: pointer !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    border: none !important;
+    outline: none !important;
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: 10000 !important;
+}
+
+.slicknav_icon-bar {
+    background-color: #ffffff !important;
+    display: block !important;
+    width: 25px !important;
+    height: 3px !important;
+    margin: 4px 0 !important;
+    border-radius: 2px !important;
+    pointer-events: none !important;
+}
+
+.slicknav_menu {
+    background: transparent !important;
+    padding: 0 !important;
+    pointer-events: none !important;
+}
+
+.slicknav_menu .slicknav_btn {
+    pointer-events: auto !important;
+}
+
+/* Hide the default slicknav nav (we're using custom menu) */
+.slicknav_nav {
+    display: none !important;
+}
+
+/* Mobile menu wrap */
+#mobile-menu-wrap {
+    position: relative;
+    min-height: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* Mobile social section - contains both nav and social icons */
+#mobile-social {
+    background: #0a0119 !important;
+    padding: 15px 15px 0 15px !important;
+    margin: 0 !important;
+    border-radius: 12px !important;
+    overflow-y: auto !important;
+    display: none; /* Hidden by default, shown when menu is open - NO !important so slideToggle works */
+    position: fixed !important;
+    top: 60px !important;
+    left: 15px !important;
+    right: 15px !important;
+    z-index: 9998 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    max-height: calc(100vh - 80px) !important;
+}
+
+#mobile-social.open,
+#mobile-social.slicknav_open {
+    display: block !important;
+}
+
+/* Navigation links section */
+#mobile-social .mobile-nav-links {
+    background: rgba(255, 255, 255, 0.03) !important;
+    padding: 20px 15px !important;
+    border-bottom: 2px solid rgba(0, 191, 231, 0.3) !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+#mobile-social .mobile-nav-links a {
+    display: block !important;
+    padding: 15px 20px !important;
+    margin-bottom: 8px !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+}
+
+#mobile-social .mobile-nav-links a:last-child {
+    margin-bottom: 0 !important;
+}
+
+#mobile-social .mobile-nav-links a:hover,
+#mobile-social .mobile-nav-links a.active {
+    background: rgba(0, 191, 231, 0.15) !important;
+    color: #00bfe7 !important;
+    transform: translateX(5px) !important;
+}
+
+/* Direct navigation links (actual HTML structure) */
+#mobile-social > a {
+    display: block !important;
+    padding: 15px 20px !important;
+    margin-bottom: 8px !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+}
+
+#mobile-social > a:hover,
+#mobile-social > a.active {
+    background: rgba(0, 191, 231, 0.15) !important;
+    color: #00bfe7 !important;
+    transform: translateX(5px) !important;
+}
+
+/* ========================================
+   Responsive Breakpoints
+   ======================================== */
+
+/* Desktop - Hide mobile menu */
+@media only screen and (min-width: 992px) {
+    #mobile-social,
+    .slicknav_menu {
+        display: none !important;
+    }
+}
+
+/* Mobile & Tablet - Show hamburger menu */
+@media only screen and (max-width: 991px) {
+    /* Ensure proper page width */
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    /* Header overflow fix */
+    .header {
+        overflow: visible !important;
+    }
+    
+    /* Header row structure fix and reduce height */
+    .header .row {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
+        min-height: 45px;
+        overflow: visible !important;
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+    }
+    
+    .header__logo {
+        padding: 8px 0 12px 0 !important;
+    }
+    
+    /* Logo column shouldn't block hamburger */
+    .header .col-lg-2,
+    .header .col-lg-10 {
+        position: static;
+    }
+    
+    .header .col-lg-2 {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100px;
+        padding-right: 10px;
+        padding-left: 15px;
+    }
+    
+    .header .col-lg-10 {
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+        flex: 1 !important;
+        width: auto !important;
+        padding-right: 60px !important;
+    }
+    
+    .header__nav__option {
+        width: 100% !important;
+        text-align: right !important;
+    }
+    
+    .header__nav__menu {
+        display: none !important;
+    }
+    
+    /* Remove ALL header__nav__social dividers in mobile */
+    .header__nav__social:before,
+    .header__nav__social::before {
+        display: none !important;
+        content: none !important;
+        width: 0 !important;
+    }
+    
+    /* Show social icons in header */
+    .header .header__nav__option > .header__nav__social {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding: 0 !important;
+        flex-wrap: nowrap !important;
+    }
+    
+    .header .header__nav__option > .header__nav__social a {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 32px !important;
+        height: 32px !important;
+        color: #ffffff !important;
+        font-size: 14px !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border-radius: 6px !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin: 0 !important;
+    }
+    
+    .header .header__nav__option > .header__nav__social a i {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .header .header__nav__option > .header__nav__social .resume {
+        width: auto !important;
+        padding: 8px 12px !important;
+        background: #00bfe7 !important;
+        font-size: 12px !important;
+        height: 32px !important;
+    }
+    
+    .header .header__nav__option > .header__nav__social .resume span {
+        display: inline-block !important;
+        margin-right: 4px !important;
+    }
+    }
+    
+    .header .header__nav__option > .header__nav__social a {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        color: #ffffff !important;
+        font-size: 11px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        visibility: visible !important;
+        opacity: 1 !important;
+        flex-shrink: 0;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: relative !important;
+    }
+    
+    .header .header__nav__option > .header__nav__social a:first-child {
+        margin-left: 0 !important;
+    }
+    
+    .header .header__nav__option > .header__nav__social a:last-child {
+        margin-right: 0 !important;
+    }
+    
+    .header .header__nav__option > .header__nav__social a i {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        color: #ffffff !important;
+    }
+    
+    .header .header__nav__option > .header__nav__social a:hover {
+        background: #00bfe7;
+    }
+    
+    /* Style resume button in header - highlighted in blue */
+    .header .header__nav__option > .header__nav__social .resume {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        width: auto !important;
+        height: 24px;
+        padding: 0 8px !important;
+        background: #00bfe7 !important;
+        border-radius: 4px;
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+    
+    .header .header__nav__option > .header__nav__social .resume span {
+        display: inline-block !important;
+        color: #ffffff !important;
+        font-size: 10px;
+        font-weight: 500;
+    }
+    
+    .header .header__nav__option > .header__nav__social .resume small {
+        margin: 0 !important;
+        display: inline-flex !important;
+        align-items: center;
+    }
+    
+    .header .header__nav__option > .header__nav__social .resume:hover {
+        background: #0099c2 !important;
+    }
+    
+    /* Header positioning context */
+    .header .container {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        overflow: visible !important;
+    }
+    
+    /* Keep header nav option visible - override template's display: none */
+    .header__nav__option {
+        display: block !important;
+        text-align: right !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100%;
+        overflow: visible !important;
+        height: 38px !important;
+        line-height: 38px !important;
+    }
+    
+    .header__nav__option .header__nav__menu {
+        display: none !important;
+    }
+    
+    /* Mobile menu wrap must be visible */
+    #mobile-menu-wrap {
+        position: relative;
+        min-height: 0;
+        height: 0;
+        overflow: hidden;
+    }
+    
+    /* Show slicknav menu */
+    .slicknav_menu {
+        display: block !important;
+        position: relative !important;
+        background: transparent !important;
+    }
+    
+    .slicknav_btn {
+        display: block !important;
+        position: fixed !important;
+        right: 15px !important;
+        top: 20px !important;
+        z-index: 10000 !important;
+        background: transparent !important;
+        border: none !important;
+        padding: 8px 12px !important;
+        cursor: pointer !important;
+        pointer-events: auto !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    .slicknav_icon-bar {
+        display: block !important;
+        background-color: #ffffff !important;
+        width: 25px !important;
+        height: 3px !important;
+        margin: 4px 0 !important;
+        pointer-events: none !important;
+    }
+    
+    /* Mobile social dropdown - override style.css inline-block */
+    #mobile-social {
+        display: none;
+        background: #0a0119;
+        padding: 15px 15px 0 15px;
+        margin: 0;
+        border-radius: 12px;
+        position: fixed;
+        top: 60px;
+        left: 15px;
+        right: 15px;
+        z-index: 9998;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+    
+    /* Navigation links styling */
+    #mobile-social .mobile-nav-links {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 20px 15px;
+        border-bottom: 2px solid rgba(0, 191, 231, 0.3);
+        display: block;
+    }
+    
+    #mobile-social .mobile-nav-links a {
+        display: block;
+        padding: 15px 20px;
+        margin-bottom: 8px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 500;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+        text-decoration: none;
+    }
+    
+    /* Direct navigation links (actual HTML structure) */
+    #mobile-social > a {
+        display: block;
+        padding: 15px 20px;
+        margin-bottom: 8px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 500;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    #mobile-social > a:hover,
+    #mobile-social > a.active {
+        background: rgba(0, 191, 231, 0.15);
+        color: #00bfe7;
+        transform: translateX(5px);
+    }
+    
+    /* Social icons styling */
+    #mobile-social .header__nav__social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        padding: 15px 0;
+        background: rgba(0, 0, 0, 0.2);
+    }
+    
+    #mobile-social .header__nav__social a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+    }
+    
+    /* Fix hero slider width and top spacing */
+    .hero__slider,
+    .hero__item {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .hero__item {
+        padding-top: 110px !important;
+    }
+    
+    /* Fix breadcrumb padding on mobile */
+    .breadcrumb-option {
+        padding-top: 150px !important;
+        padding-bottom: 20px !important;
+        min-height: 250px;
+    }
+    
+    .breadcrumb-option .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    .breadcrumb__text {
+        text-align: center !important;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .breadcrumb__text h2 {
+        font-size: 32px !important;
+        margin-bottom: 10px;
+    }
+    
+    .breadcrumb__links {
+        text-align: center !important;
+    }
+}
+
+/* ========================================
+   Tablet (768px-991px) Adjustments
+   ======================================== */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    /* Education section alignment on tablet */
+    .education {
+        margin-left: auto !important;
+    }
+    
+    .education .section-title h2 {
+        margin-left: 0 !important;
+    }
+    
+    /* About section spacing */
+    .about__pic {
+        margin-bottom: 50px;
+    }
+    
+    .about__text {
+        padding-left: 0;
+    }
+    
+    /* Mobile menu on tablet */
+    #mobile-social {
+        display: inline-block;
+    }
+    
+    .slicknav_menu {
+        display: block;
+    }
+}
+
+/* ========================================
+   Project Details Sidebar - Mobile Fix
+   ======================================== */
+
+/* Mobile: Horizontal scrolling sidebar */
+@media only screen and (max-width: 991px) {
+    .portfolio {
+        height: auto !important;
+        min-height: 100vh;
+    }
+    
+    .portfolio .row {
+        min-height: auto !important;
+    }
+    
+    /* Make sidebar horizontal scrollable */
+    .sidebar {
+        width: 100% !important;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #333;
+        padding-bottom: 15px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Horizontal nav container */
+    .sidebar .nav {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap;
+        gap: 15px;
+        min-width: max-content;
+    }
+    
+    /* Category headers - horizontal display */
+    .sidebar .list-group-item {
+        font-size: 14px;
+        padding: 10px 15px;
+        white-space: nowrap;
+        min-width: max-content;
+        margin-bottom: 0;
+    }
+    
+    /* Collapsed project lists - horizontal scrolling */
+    .sidebar .collapse,
+    .sidebar .collapsing {
+        position: relative;
+        width: auto;
+        display: inline-block;
+    }
+    
+    .sidebar .collapse.show,
+    .sidebar .collapsing {
+        display: inline-flex !important;
+        flex-direction: row;
+        gap: 10px;
+    }
+    
+    /* Individual project links - compact horizontal cards */
+    .sidebar-link {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
+        width: 150px;
+        min-width: 150px;
+        padding: 8px;
+        margin: 0;
+    }
+    
+    /* Project thumbnails - square format */
+    .sidebar .thumbnail {
+        width: 134px !important;
+        height: 100px !important;
+        margin-bottom: 8px;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+    
+    /* Thumbnail titles - centered below image */
+    .thumbnail__title {
+        padding: 0 !important;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .thumbnail__title h5 {
+        font-size: 12px !important;
+        margin-bottom: 2px;
+        line-height: 1.2;
+    }
+    
+    .thumbnail__title small {
+        font-size: 10px !important;
+    }
+    
+    /* Ensure sidebar and description stack vertically */
+    .portfolio .row.d-flex {
+        flex-direction: column !important;
+    }
+    
+    /* Sidebar container - full width on top */
+    .col-lg-3 {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        margin-bottom: 20px;
+    }
+    
+    /* Project block - full width below sidebar */
+    .col-lg-9.project-block,
+    .project-block {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* Project details content */
+    .project-details {
+        padding: 20px 15px;
+    }
+    
+    /* Fix project block positioning */
+    .project-block .col-lg-9 {
+        right: 0 !important;
+    }
+    
+    .project-block .col-lg-1 {
+        display: none; /* Hide the empty spacing column on mobile */
+    }
+    
+    /* About and Project Info sections - Stack vertically on mobile */
+    .row__margin {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-top: 15px !important;
+        margin-bottom: 15px !important;
+        overflow: visible !important;
+    }
+    
+    .row__margin:first-of-type {
+        margin-bottom: 20px !important; /* Extra space after About/Project Info section */
+    }
+    
+    .row__margin .container.d-flex {
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        gap: 8px; /* Controlled gap between About and Project Info */
+        overflow: visible !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .row__margin .col-lg-6 {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 0 !important;
+        overflow: visible !important;
+    }
+    
+    /* Ensure About comes first, then Project Info */
+    .row__margin .col-lg-6:first-child {
+        order: 1;
+    }
+    
+    .row__margin .col-lg-6:nth-child(2) {
+        order: 2;
+    }
+    
+    /* Job card styling for mobile */
+    .job-card {
+        padding: 20px 15px !important;
+        margin-bottom: 0 !important;
+        height: auto !important; /* Remove fixed height */
+        min-height: auto !important;
+    }
+    
+    .job-card h4 {
+        font-size: 18px !important;
+        margin-bottom: 12px;
+    }
+    
+    .job-card p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+    .job-card p small {
+        font-size: 14px;
+    }
+    
+    .job-card ul {
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+    
+    .job-card ul li {
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 8px;
+    }
+    
+    .job-card ul li small {
+        font-size: 14px;
+    }
+    
+    .job-card i {
+        margin-right: 8px;
+        width: 16px;
+        text-align: center;
+    }
+    
+    /* Videos and images in project details */
+    .project-details video,
+    .project-details .large__gif {
+        width: 100%;
+        height: auto;
+    }
+    
+    .large__gif h4 {
+        font-size: 20px;
+    }
+    
+    /* Description section styling */
+    .description h4 {
+        font-size: 18px !important;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+    
+    .description ul {
+        padding-left: 0;
+    }
+    
+    .description ul li {
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 15px;
+    }
+    
+    .description .heading {
+        font-size: 15px !important;
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    /* Two image layout in description */
+    .description .d-flex {
+        flex-direction: column !important;
+    }
+    
+    .description .d-flex .job-card {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-bottom: 15px;
+    }
+    
+    /* YouTube iframes */
+    .description iframe {
+        width: 100%;
+        height: 250px;
+        margin-top: 20px;
+    }
+    
+    /* Repository and acknowledgment links */
+    .description .github {
+        word-break: break-word;
+    }
+    
+    /* Hide scrollbar but keep functionality */
+    .sidebar::-webkit-scrollbar {
+        height: 6px;
+    }
+    
+    .sidebar::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 3px;
+    }
+    
+    .sidebar::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+    }
+    
+    .sidebar::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* ========================================
+   Contact Form - Mobile Improvements
+   ======================================== */
+
+@media only screen and (max-width: 767px) {
+    .contact__form input,
+    .contact__form textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .contact__widget__item {
+        margin-bottom: 30px;
+    }
+    
+    #formFeedback {
+        font-size: 14px;
+    }
+    
+    /* Contact input list - full width on mobile */
+    .input__list {
+        margin-right: 0;
+    }
+    
+    .input__list input {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    /* Contact map spacing */
+    .contact__map {
+        margin-bottom: 40px;
+    }
+}
+
+/* ========================================
+   Skills Section - Mobile Layout
+   ======================================== */
+
+@media only screen and (max-width: 991px) {
+    .services__title {
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    .services__title .skills-btn {
+        margin: 0 auto;
+        display: table;
+    }
+    
+    /* Fix skills and education sections on mobile */
+    #skills,
+    .education {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+    
+    /* Add proper spacing to education and skills titles */
+    .education .section-title,
+    #skills .section-title {
+        margin-bottom: 25px !important;
+    }
+    
+    .education .section-title h2,
+    #skills .section-title h2 {
+        padding-bottom: 20px !important;
+    }
+    
+    /* Progress bars - ensure they don't overflow */
+    .progress {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .progress-bar {
+        max-width: 100%;
+    }
+    
+    /* Text labels above progress bars */
+    .text-top {
+        width: 100%;
+        padding-right: 0 !important;
+        margin-bottom: 8px;
+    }
+    
+    .text-top small {
+        float: right !important;
+    }
+}
+
+/* ========================================
+   About Page - Mobile Spacing
+   ======================================== */
+
+@media only screen and (max-width: 767px) {
+    .about__text__desc {
+        text-align: left;
+        padding: 20px 0;
+        line-height: 1.8;
+        letter-spacing: 0.3px;
+    }
+    
+    .about__text__desc p {
+        margin-bottom: 18px;
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.8;
+    }
+    
+    .about__text__desc p:last-child {
+        margin-bottom: 0;
+    }
+    
+    .about__text {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    /* About section text - ensure no left padding on mobile */
+    .about .about__text {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    .about__text .section-title {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* Specifically target About section's section-title */
+    .about .section-title {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .about .section-title span,
+    .about .section-title h2 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    
+    .about .section-title h2 {
+        padding-bottom: 20px !important;
+    }
+    
+    /* About section */
+    .about.spad {
+        padding: 60px 0 30px;
+    }
+    
+    /* About section row - remove Bootstrap margins */
+    .about > .container > .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    /* About section columns - remove Bootstrap default padding */
+    .about .col-lg-6 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    /* About images collage on mobile */
+    .about__pic {
+        margin-bottom: 30px;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    .about__pic .row {
+        margin-left: -5px !important;
+        margin-right: -5px !important;
+    }
+    
+    .about__pic [class*="col-"] {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+    
+    .about__pic__item {
+        height: 180px !important;
+        margin-right: 0 !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .about__pic__item--large {
+        height: 370px !important;
+    }
+    
+    /* Ensure large about image shows full content on mobile */
+    .about__pic__item--large.set-bg {
+        background-position: center !important;
+    }
+    
+    /* Hide the right column images on mobile */
+    .about__pic .col-lg-6:last-child {
+        display: none !important;
+    }
+    
+    /* Make the left column (large image) full width on mobile */
+    .about__pic .col-lg-6:first-child {
+        width: 100% !important;
+    }
+    
+    /* Skills progress bars */
+    .progress-bar-container {
+        margin-bottom: 25px;
+    }
+    
+    /* Experience and Courses sections */
+    .services-page .col-md-6 {
+        margin-bottom: 25px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    /* Add class for experience boxes */
+    .experience-box,
+    .services-page .col-md-6.wow {
+        background-color: rgba(255, 255, 255, 0.05) !important;
+        border-radius: 8px;
+        padding: 25px 20px !important;
+        margin-left: 0 !important;
+        margin-bottom: 25px !important;
+    }
+    
+    /* Experience and courses headings */
+    .services-page .col-md-6 h4 {
+        font-size: 16px !important;
+        line-height: 1.4 !important;
+        padding: 0 0 12px 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Lists in experience/courses */
+    .services-page .col-md-6 ul {
+        padding: 12px 0 8px 20px !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .services-page .col-md-6 li {
+        margin-bottom: 8px;
+    }
+    
+    /* Section spacing */
+    .services-page.spad {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+    
+    /* Section titles in experience/courses */
+    .services-page .section-title {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-bottom: 25px;
+    }
+    
+    .services-page .section-title h2 {
+        padding-bottom: 20px !important;
+    }
+    
+    /* Reset courses negative margin on mobile */
+    .courses {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    .services-page .about__text {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-bottom: 15px;
+    }
+    
+    /* Education section mobile */
+    .education .col-md-12 {
+        margin-bottom: 15px;
+    }
+    
+    .education .text-top small {
+        float: none !important;
+        display: block;
+        margin-top: 5px;
+        opacity: 0.8;
+    }
+    
+    /* Education and skills - ensure no overflow on mobile */
+    .education,
+    #skills {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    /* Nested about__text in education/skills shouldn't add extra padding */
+    .education .about__text,
+    #skills .about__text {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+/* ========================================
+   Portfolio Grid - Mobile Optimization
+   ======================================== */
+
+@media only screen and (max-width: 767px) {
+    .portfolio__filter {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .portfolio__filter li {
+        display: inline-block;
+        margin: 5px;
+        margin-bottom: 10px;
+    }
+    
+    /* Portfolio grid items - 2 columns on mobile */
+    .grid-sizer,
+    .work__item,
+    .work__item.wide__item,
+    .work__item.large__item {
+        width: calc(50% - 10px) !important;
+    }
+    
+    /* Footer adjustments */
+    .footer__top__social {
+        text-align: left;
+        padding-top: 30px;
+    }
+}
+
+/* ========================================
+   Hero Section - Mobile Text Size
+   ======================================== */
+
+@media only screen and (max-width: 576px) {
+    .hero__text h2 {
+        font-size: 32px !important;
+        line-height: 38px !important;
+    }
+    
+    .hero__text span {
+        font-size: 14px;
+    }
+}
+
+/* Mobile hero slider dots adjustment */
+@media only screen and (max-width: 767px) {
+    .hero__slider.owl-carousel .owl-dots {
+        max-width: auto;
+        padding: 0 15px;
+    }
+}
+
+/* ========================================
+   Footer - Mobile Spacing
+   ======================================== */
+
+@media only screen and (max-width: 991px) {
+    /* Make footer full width on mobile */
+    .footer {
+        width: 100vw !important;
+        margin-left: calc(-50vw + 50%) !important;
+        margin-right: calc(-50vw + 50%) !important;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .footer .container {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .footer__copyright__text {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+}
+
+/* ========================================
+   General Mobile Improvements
+   ======================================== */
+
+/* Prevent horizontal scroll */
+@media only screen and (max-width: 767px) {
+    body {
+        overflow-x: hidden;
+    }
+    
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    /* Services page sections */
+    .services-page {
+        overflow-x: hidden;
+    }
+    
+    /* Services page rows */
+    .services-page .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    /* Services page container */
+    .services-page .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    /* About section container */
+    .about .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    /* All columns on mobile - no extra padding */
+    .col-md-6,
+    .col-md-12,
+    .col-xs-12 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* Ensure images are responsive */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Better touch targets for mobile */
+    a, button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* ========================================
+   Small Mobile (< 480px)
+   ======================================== */
+
+@media only screen and (max-width: 479px) {
+    /* Reduce padding on containers */
+    .spad {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    
+    /* Section titles */
+    .section-title h2 {
+        font-size: 28px;
+    }
+    
+    /* Services/Skills items */
+    .services__item {
+        margin-bottom: 30px;
+    }
+    
+    /* Buttons */
+    .primary-btn, .site-btn {
+        padding: 14px 25px;
+        font-size: 13px;
+    }
+    
+    /* Hero text - smaller on very small screens */
+    .hero__text h2 {
+        font-size: 30px !important;
+        line-height: 36px !important;
+    }
+    
+    /* Courses section alignment */
+    .courses {
+        margin-left: auto;
+    }
+    
+    /* Large about image - adjust background position */
+    .about__pic__item--large.set-bg {
+        background-position: bottom !important;
+    }
+    
+    /* Portfolio grid - full width on very small screens */
+    .grid-sizer,
+    .work__item,
+    .work__item.wide__item,
+    .work__item.large__item {
+        width: 100% !important;
+        margin-right: 0 !important;
+    }
+    
+    .work__gallery {
+        margin-right: 0;
+    }
+    
+    /* Pagination adjustments */
+    .pagination__option .arrow__pagination.left__arrow {
+        margin-right: 15px;
+    }
+    
+    .pagination__option .arrow__pagination.right__arrow {
+        margin-left: 10px;
+    }
+}

@@ -1196,7 +1196,19 @@ ol {
 }
 
 .about__text__desc {
-  margin-top: -10px;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.about__text__desc p {
+  line-height: 1.8;
+  margin-bottom: 18px;
+  letter-spacing: 0.3px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.about__text__desc p:last-child {
+  margin-bottom: 0;
 }
 
 .about-title h2:after {
