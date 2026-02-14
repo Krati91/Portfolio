@@ -182,12 +182,103 @@ function initDrawerToggle() {
             drawerInitialized = true;
         }
     } else {
-        // Reset on desktop
+        // Desktop view - accordion functionality
         const sidebar = $('.sidebar');
         const body = $('body');
         sidebar.removeClass('collapsed expanded');
         body.removeClass('drawer-expanded');
         drawerInitialized = false;
+        
+        // Desktop accordion: Only expand section with active project
+        if (!window.desktopAccordionInitialized) {
+            // On page load, collapse all sections except the one with active project
+            const activeProject = $('.sidebar-link.active');
+            if (activeProject.length > 0) {
+                const parentCategory = activeProject.closest('.collapse');
+                const categoryHeader = parentCategory.prev('.list-group-item');
+                
+                // Collapse all categories first
+                $('.list-group-item + div').collapse('hide');
+                $('.list-group-item').removeClass('active-list-group-item');
+                
+                // Then expand only the active one
+                parentCategory.collapse('show');
+                categoryHeader.addClass('active-list-group-item');
+            } else {
+                // No active project - collapse all by default
+                $('.list-group-item + div').collapse('hide');
+                $('.list-group-item').removeClass('active-list-group-item');
+            }
+            
+            // Handle category header clicks - accordion behavior
+            $('.list-group-item').off('click.desktop').on('click.desktop', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const targetId = $(this).attr('href');
+                const targetCollapse = $(targetId);
+                const isCurrentlyOpen = targetCollapse.hasClass('show');
+                
+                // Collapse all other categories
+                $('.list-group-item + div').not(targetCollapse).collapse('hide');
+                $('.list-group-item').not(this).removeClass('active-list-group-item');
+                
+                // Toggle the clicked category
+                if (isCurrentlyOpen) {
+                    targetCollapse.collapse('hide');
+                    $(this).removeClass('active-list-group-item');
+                } else {
+                    targetCollapse.collapse('show');
+                    $(this).addClass('active-list-group-item');
+                }
+            });
+            
+            // Handle project link clicks - update active state and expand its section
+            $('.sidebar-link').off('click.desktop').on('click.desktop', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Update active state
+                $('.sidebar-link').removeClass('active');
+                $(this).addClass('active');
+                
+                // Find and ensure parent category stays open
+                const parentCategory = $(this).closest('.collapse');
+                const categoryHeader = parentCategory.prev('.list-group-item');
+                
+                // Collapse all other categories
+                $('.list-group-item + div').not(parentCategory).collapse('hide');
+                $('.list-group-item').removeClass('active-list-group-item');
+                
+                // Keep this category open and highlighted
+                parentCategory.collapse('show');
+                categoryHeader.addClass('active-list-group-item');
+                
+                // Extract project ID and display
+                let urlArray = $(this).prop('href').split('=');
+                let divID = urlArray[urlArray.length - 1];
+                
+                // Hide all projects and show selected one
+                $('.project-details').hide();
+                $('div#' + divID).show();
+                
+                // Load lazy backgrounds
+                $('#' + divID).find('.set-bg').each(function() {
+                    const bg = $(this).data('setbg');
+                    if (bg) {
+                        $(this).css('background-image', 'url(' + bg + ')');
+                    }
+                });
+                
+                $(document).scrollTop(0);
+                
+                // Update URL
+                let newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?name=' + divID;
+                window.history.pushState({ path: newUrl }, '', newUrl);
+            });
+            
+            window.desktopAccordionInitialized = true;
+        }
     }
 }
 
@@ -199,6 +290,10 @@ let resizeTimer;
 $(window).on('resize', function() {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
+        // Reset desktop initialization flag on resize to allow re-initialization
+        if (window.innerWidth > 991) {
+            window.desktopAccordionInitialized = false;
+        }
         initDrawerToggle();
     }, 250);
 });

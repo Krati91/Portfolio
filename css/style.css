@@ -505,16 +505,18 @@ ol {
   font-family: "Play", sans-serif;
   color: #ffffff !important;
   text-transform: uppercase;
-  padding: 7px 14px !important;
+  padding: 7px 16px !important;
   background: #00bfe7 !important;
   border: none !important;
   border-radius: 6px !important;
   margin-right: 0 !important;
+  min-width: fit-content !important;
   width: auto !important;
   height: auto !important;
   min-height: 32px !important;
   transition: background 0.3s ease;
   text-decoration: none !important;
+  white-space: nowrap !important;
 }
 
 .resume:hover {
@@ -524,16 +526,19 @@ ol {
 .resume span {
   font-size: 13px !important;
   line-height: 1 !important;
+  flex-shrink: 0 !important;
 }
 
 .resume small {
   display: inline-flex !important;
   align-items: center !important;
+  flex-shrink: 0 !important;
 }
 
 .resume i{
   font-size: 11px !important;
   line-height: 1 !important;
+  flex-shrink: 0 !important;
 }
 
 /*---------------------
@@ -1223,12 +1228,98 @@ ol {
   padding-left: 30px;
 }
 
-.education{
-  margin-left: -25px;
+/* ========================================
+   Education Timeline (Desktop)
+   ======================================== */
+
+.education {
+    position: relative;
+    padding-left: 30px;
+    padding-right: 0;
+    margin-left: -25px;
 }
 
-.education .section-title h2{
-  margin-left: -30px;
+.education .section-title h2 {
+    margin-left: -30px;
+}
+
+/* Gradient timeline rail */
+.education::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 191, 231, 0.0),
+        rgba(0, 191, 231, 0.6),
+        rgba(0, 191, 231, 0.0)
+    );
+    z-index: 0;
+}
+
+/* Education entry cards */
+.education .edu-entry {
+    position: relative;
+    margin-bottom: 24px;
+    margin-left: 8px;
+    padding: 18px 26px 18px 24px;
+    background: #0d0118;
+    border: 1px solid rgba(0, 191, 231, 0.12);
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.education .edu-entry:hover {
+    border-color: rgba(0, 191, 231, 0.45);
+    transform: translateX(4px);
+    background: #12021f;
+}
+
+.education .edu-entry:last-child {
+    margin-bottom: 0;
+}
+
+/* Timeline dots */
+.education .edu-entry::before {
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: 22px;
+    width: 10px;
+    height: 10px;
+    background: #00bfe7;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(0, 191, 231, 0.2);
+    transition: all 0.3s ease;
+    z-index: 3;
+}
+
+.education .edu-entry:hover::before {
+    box-shadow: 0 0 0 5px rgba(0, 191, 231, 0.35);
+    transform: scale(1.1);
+}
+
+/* Typography */
+.education .degree-name {
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 6px;
+    line-height: 1.4;
+    font-size: 20px;
+    letter-spacing: 0.3px;
+}
+
+.education .school-year {
+    text-align: left;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 .courses{
@@ -1539,7 +1630,7 @@ ol {
     opacity .5s, visibility .5s;
   opacity: 0;
   visibility: hidden;
-  z-index: 1000;
+  z-index: 9999999 !important;
 }
 #button::after {
   content: "\f077";
@@ -1558,8 +1649,8 @@ ol {
   background-color: #555;
 }
 #button.show {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .row__margin{
