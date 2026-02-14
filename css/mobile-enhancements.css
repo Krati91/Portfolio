@@ -1301,19 +1301,27 @@
    ======================================== */
 
 @media only screen and (max-width: 991px) {
-    /* Make footer full width on mobile */
+    /* Make footer centered and proper width on mobile */
     .footer {
-        width: 100vw !important;
-        margin-left: calc(-50vw + 50%) !important;
-        margin-right: calc(-50vw + 50%) !important;
-        padding-left: 15px;
-        padding-right: 15px;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 20px 15px !important;
     }
     
     .footer .container {
         max-width: 100%;
-        padding-left: 0;
-        padding-right: 0;
+        padding: 0 15px;
+    }
+    
+    .footer__copyright {
+        text-align: center;
+    }
+    
+    .footer__copyright__text {
+        font-size: 14px;
+        line-height: 1.6;
+        padding: 0;
     }
 }
 
