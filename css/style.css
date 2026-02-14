@@ -505,16 +505,18 @@ ol {
   font-family: "Play", sans-serif;
   color: #ffffff !important;
   text-transform: uppercase;
-  padding: 7px 14px !important;
+  padding: 7px 16px !important;
   background: #00bfe7 !important;
   border: none !important;
   border-radius: 6px !important;
   margin-right: 0 !important;
+  min-width: fit-content !important;
   width: auto !important;
   height: auto !important;
   min-height: 32px !important;
   transition: background 0.3s ease;
   text-decoration: none !important;
+  white-space: nowrap !important;
 }
 
 .resume:hover {
@@ -524,16 +526,19 @@ ol {
 .resume span {
   font-size: 13px !important;
   line-height: 1 !important;
+  flex-shrink: 0 !important;
 }
 
 .resume small {
   display: inline-flex !important;
   align-items: center !important;
+  flex-shrink: 0 !important;
 }
 
 .resume i{
   font-size: 11px !important;
   line-height: 1 !important;
+  flex-shrink: 0 !important;
 }
 
 /*---------------------
