@@ -1625,17 +1625,18 @@ ol {
 
 .job-card h4{
   margin-bottom: 15px;
+  font-size: 26px;
 }
 
 .job-card ul li, .description ul li{
   list-style: none;
-  font-size: 16px;
+  font-size: 19px;
   color: #adadad;
   display: block;
   padding: 3px 0;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
-  line-height: 26px;
+  line-height: 1.85;
 }
 
 .description ul{
@@ -1646,12 +1647,13 @@ ol {
 }
 
 .description ul li{
-  font-size: 14px;  
+  font-size: 19px;  
   margin: 0 0 15px 0;
+  line-height: 1.85;
 }
 
 .heading{
-  font-size: 15px;
+  font-size: 20px;
   display: block;
   font-weight: 900;
 }
@@ -1664,6 +1666,7 @@ ol {
 
 .description h4{
   color: #ffffff;
+  font-size: 28px;
   font-weight: 700;
   text-transform: uppercase;
   position: relative;
