@@ -12,11 +12,32 @@
 (function ($) {
 
     /*------------------
+        Initialize Mobile Menu State
+    --------------------*/
+    $(document).ready(function() {
+        // Ensure mobile menu is hidden on page load
+        $('#mobile-social').hide();
+        $('.slicknav_btn').removeClass('slicknav_open');
+    });
+
+    // Also handle browser back/forward button
+    $(window).on('pageshow', function(event) {
+        if (event.originalEvent.persisted) {
+            $('#mobile-social').hide();
+            $('.slicknav_btn').removeClass('slicknav_open');
+        }
+    });
+
+    /*------------------
         Preloader
     --------------------*/
     $(window).on('load', function () {
         $(".loader").fadeOut();
         $("#preloder").delay(200).fadeOut("slow");
+
+        // Ensure mobile menu is hidden after page load
+        $('#mobile-social').hide();
+        $('.slicknav_btn').removeClass('slicknav_open');
 
         /*------------------
             Portfolio filter
@@ -134,6 +155,15 @@
     // Prevent menu from closing when clicking inside it
     $('.slicknav_menu, #mobile-menu-wrap, #mobile-social').on('click touchstart', function(e) {
         e.stopPropagation();
+    });
+
+    /*------------------
+        Mobile Menu - Close on Navigation Link Click
+    --------------------*/
+    // Close mobile menu when clicking navigation links
+    $('#mobile-social .mobile-nav-links a').on('click', function() {
+        $('#mobile-social').slideUp(300);
+        $('.slicknav_btn').removeClass('slicknav_open');
     });
 
     /*------------------

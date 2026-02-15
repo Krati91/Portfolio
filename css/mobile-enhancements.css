@@ -1974,3 +1974,29 @@
         margin-left: 10px;
     }
 }
+
+/* ========================================
+   412px and below - Override all previous rules
+   ======================================== */
+
+@media only screen and (max-width: 412px) {
+    /* Hero text spacing */
+    .hero__text {
+        margin-top: 30px;
+    }
+    
+    /* Consistent padding for all about page sections - override all other rules */
+    .services-page,
+    .services-page.spad,
+    .spad.services-page {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+    
+    /* Education column - add bottom border for separation on mobile */
+    .education {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+}
