@@ -7,6 +7,21 @@
    Author: Kartik Chaturvedi
    ===================================================== */
 
+/* Contact Page Spacing */
+.contact-widget.spad {
+  padding-top: 40px !important;
+  padding-bottom: 15px !important;
+}
+
+.contact.spad {
+  padding-top: 40px !important;
+  padding-bottom: 50px !important;
+}
+
+.contact__form {
+  margin-top: 0px !important;
+}
+
 /* Services Section */
 .services__title {
   margin-bottom: 50px;
