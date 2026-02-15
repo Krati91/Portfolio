@@ -96,6 +96,15 @@
   padding-bottom: 100px;
 }
 
+/* Override tablet - show timeline in mobile */
+.education::before {
+  display: block !important;
+}
+
+.education .edu-entry::before {
+  display: block !important;
+}
+
 .education .section-title h2 {
   margin-left: 0 !important;
 }
@@ -316,18 +325,18 @@
   margin-bottom: 20px !important;
   margin-left: 10px !important;
   padding: 15px 18px 15px 20px !important;
-  background: #0d0118;
-  border: 1px solid rgba(0, 191, 231, 0.12);
-  border-radius: 8px;
+  background: #0d0118 !important;
+  border: 1px solid rgba(0, 191, 231, 0.12) !important;
+  border-radius: 8px !important;
   backdrop-filter: blur(6px);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease !important;
   z-index: 2;
 }
 
 .education .edu-entry:hover {
-  border-color: rgba(0, 191, 231, 0.45);
-  transform: translateX(3px);
-  background: #12021f;
+  border-color: rgba(0, 191, 231, 0.45) !important;
+  transform: translateX(3px) !important;
+  background: #12021f !important;
 }
 
 .education .edu-entry:last-child {
@@ -338,7 +347,7 @@
   content: "";
   position: absolute;
   left: -12px;
-  top: 18px;
+  top: 24px;
   width: 8px;
   height: 8px;
   background: #00bfe7;
@@ -349,8 +358,8 @@
 }
 
 .education .edu-entry:hover::before {
-  box-shadow: 0 0 0 4px rgba(0, 191, 231, 0.35);
-  transform: scale(1.15);
+  box-shadow: 0 0 0 4px rgba(0, 191, 231, 0.35) !important;
+  transform: scale(1.15) !important;
 }
 
 .education .degree-name {
