@@ -1,14 +1,20 @@
 @media only screen and (max-width: 991px) {
 
-/* =============================================================================
+/* =====================================================
    RESPONSIVE TABLET STYLES
-   Consolidated from style.css and mobile-enhancements.css
-   Media queries: 768px-991px, max-width: 991px, max-width: 819px
-   ============================================================================= */
+   Target viewport: max-width 991px (768px - 991px range)
+   Applies to: All tablet devices
+   Author: Kartik Chaturvedi
+   ===================================================== */
 
-/* =============================================================================
-   TABLET RANGE: 768px - 991px
-   ============================================================================= */
+/* Contact Page Spacing Fix */
+.contact.spad {
+  padding-bottom: 135px !important;
+}
+
+.contact__form {
+  margin-top: 80px !important;
+}
 
 /* Hero Slider */
 .hero__slider.owl-carousel .owl-dots {
@@ -84,13 +90,62 @@
   padding-left: 0;
 }
 
-/* Education Section */
+/* Experience Section */
+.experience-box {
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+}
+
+/* Alternating background colors for stacked boxes in tablet view */
+/* Reset all backgrounds in spad sections */
+.services-page.spad .row .experience-box {
+  background-color: transparent !important;
+}
+
+/* Make first box in each row colored, second box transparent */
+/* This creates alternating pattern when boxes stack vertically */
+.services-page.spad .row .experience-box:first-child {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.services-page.spad .row .experience-box:last-child {
+  background-color: transparent !important;
+}
+
+/* Education Section - Simplified (No Timeline) */
 .education {
   margin-left: auto !important;
+  padding-left: 0 !important;
+}
+
+/* Hide timeline rail */
+.education::before {
+  display: none !important;
 }
 
 .education .section-title h2 {
   margin-left: 0 !important;
+}
+
+/* Simplify education cards */
+.education .edu-entry {
+  margin-left: 0 !important;
+  padding: 16px 20px !important;
+  border: 1px solid rgba(0, 191, 231, 0.15) !important;
+  background: #0d0118 !important;
+  max-width: calc(100% - 30px) !important;
+}
+
+/* Remove timeline dots */
+.education .edu-entry::before {
+  display: none !important;
+}
+
+/* Remove hover effects */
+.education .edu-entry:hover {
+  transform: none !important;
+  background: #0d0118 !important;
+  border-color: rgba(0, 191, 231, 0.15) !important;
 }
 
 .education .degree-name {
@@ -167,9 +222,9 @@
   display: none;
 }
 
-/* =============================================================================
-   MOBILE & TABLET: Max-Width 991px
-   ============================================================================= */
+/* =================================================
+   MOBILE MENU & NAVIGATION
+   ================================================= */
 
 /* Mobile Menu - Simple Working Setup */
 .slicknav_btn {
@@ -1223,9 +1278,7 @@ body > * {
   padding: 0;
 }
 
-/* =============================================================================
-   COMPACT RESUME BUTTON: Max-Width 819px
-   ============================================================================= */
+/* Resume Button Sizing */
 
 .header .header__nav__option > .header__nav__social .resume {
   height: 32px !important;

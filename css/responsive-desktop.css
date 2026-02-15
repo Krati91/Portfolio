@@ -1,74 +1,24 @@
 /* =====================================================
    RESPONSIVE DESKTOP STYLES
    Consolidated from style.css and mobile-enhancements.css
-   Target viewports: 820px+, 992px+, 1200px+
+   Target viewport: min-width 992px
    Author: Kartik Chaturvedi
    ===================================================== */
 
-/* =====================================================
-   SECTION 1: CONTAINER & LAYOUT (1200px+)
-   ===================================================== */
-
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 992px) {
+  
+  /* =================================================
+     CONTAINER & LAYOUT
+     ================================================= */
+  
   .container {
     max-width: 1170px;
   }
-}
-
-/* =====================================================
-   SECTION 2: HEADER & NAVIGATION (992px-1199px)
-   ===================================================== */
-
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .header__nav__menu {
-    margin-right: 25px;
-  }
-
-  .header__nav__menu ul li {
-    margin-right: 25px;
-  }
-
-  .header__nav__social {
-    padding-left: 25px;
-  }
-
-  .counter__item::before {
-    display: none;
-  }
-
-  .counter__content {
-    padding: 0px 145px 0 50px;
-  }
-
-  .counter__item.second__item {
-    margin-top: -210px;
-  }
-
-  .counter__item.four__item {
-    margin-top: -210px;
-  }
-
-  .hero__slider.owl-carousel .owl-dots {
-    max-width: 930px !important;
-  }
-
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-
-  .project-block {
-    margin-top: 20px;
-  }
-}
-
-/* =====================================================
-   SECTION 3: DESKTOP-ONLY FEATURES (992px+)
-   ===================================================== */
-
-@media only screen and (min-width: 992px) {
-  /* Header navigation alignment */
+  
+  /* =================================================
+     HEADER & NAVIGATION
+     ================================================= */
+  
   .header__nav__option {
     display: flex;
     align-items: center;
@@ -91,6 +41,27 @@
     flex-shrink: 0;
     padding-left: 50px;
   }
+  
+  .header__nav__social a {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 14px !important;
+    margin-right: 12px !important;
+  }
+
+  .header__nav__social .resume {
+    height: 32px !important;
+    font-size: 13px !important;
+    padding: 7px 16px !important;
+  }
+
+  .header__nav__social .resume span {
+    font-size: 18px !important;
+  }
+
+  .header__nav__social .resume i {
+    font-size: 16px !important;
+  }
 
   /* Hide mobile menu */
   #mobile-social,
@@ -98,7 +69,49 @@
   .slicknav_btn {
     display: none !important;
   }
+  
+  /* =================================================
+     HERO SLIDER
+     ================================================= */
+  
+  .hero__slider.owl-carousel .owl-dots {
+    max-width: 930px !important;
+  }
+  
+  /* =================================================
+     COUNTER SECTION
+     ================================================= */
+  
+  .counter__item::before {
+    display: none;
+  }
 
+  .counter__content {
+    padding: 0px 145px 0 50px;
+  }
+
+  .counter__item.second__item {
+    margin-top: -210px;
+  }
+
+  .counter__item.four__item {
+    margin-top: -210px;
+  }
+  
+  /* =================================================
+     SIDEBAR & PROJECT DETAILS
+     ================================================= */
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .project-block {
+    margin-top: 20px;
+  }
+  
   /* Desktop Sidebar Accordion */
   .sidebar .list-group-item {
     position: relative;
@@ -130,36 +143,11 @@
   .sidebar .collapse {
     transition: all 0.3s ease;
   }
-}
-
-/* =====================================================
-   SECTION 4: LARGER VIEWPORT TYPOGRAPHY (820px+)
-   ===================================================== */
-
-@media only screen and (min-width: 820px) {
-  /* Header social icons */
-  .header__nav__social a {
-    width: 32px !important;
-    height: 32px !important;
-    font-size: 14px !important;
-    margin-right: 12px !important;
-  }
-
-  .header__nav__social .resume {
-    height: 32px !important;
-    font-size: 13px !important;
-    padding: 7px 16px !important;
-  }
-
-  .header__nav__social .resume span {
-    font-size: 18px !important;
-  }
-
-  .header__nav__social .resume i {
-    font-size: 16px !important;
-  }
-
-  /* Project details content */
+  
+  /* =================================================
+     PROJECT DETAILS CONTENT
+     ================================================= */
+  
   .project-details p,
   .project-details small,
   .description ul li {
@@ -193,8 +181,11 @@
   .thumbnail__title small {
     font-size: 16px !important;
   }
-
-  /* About page content */
+  
+  /* =================================================
+     ABOUT PAGE CONTENT
+     ================================================= */
+  
   .about__text__desc p {
     font-size: 20px !important;
     line-height: 1.9 !important;
@@ -225,5 +216,21 @@
 
   .text-top small {
     font-size: 16px !important;
+  }
+  
+  /* Education Column */
+  .education {
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  /* Skills Column */
+  #skills {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+
+  #skills .about__text {
+    padding-left: 0px !important;
   }
 }

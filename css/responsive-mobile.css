@@ -1,20 +1,11 @@
 @media only screen and (max-width: 767px) {
 
-/* ========================================
+/* =====================================================
    RESPONSIVE MOBILE STYLES
-   This file contains all mobile-specific CSS rules
-   consolidated from style.css and mobile-enhancements.css
-   
-   Organized by viewport breakpoint (general to specific):
-   - 767px and below (base mobile)
-   - 576px and below
-   - 479px and below  
-   - 412px and below (most specific)
-   ======================================== */
-
-/* ========================================
-   BASE MOBILE STYLES (767px and below)
-   ======================================== */
+   Target viewport: max-width 767px
+   Applies to: All mobile devices
+   Author: Kartik Chaturvedi
+   ===================================================== */
 
 /* Services Section */
 .services__title {
@@ -1586,22 +1577,7 @@ body.drawer-expanded .project-block {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* ========================================
-   576px and below
-   ======================================== */
-
-.hero__text h2 {
-  font-size: 32px !important;
-  line-height: 38px !important;
-}
-
-.hero__text span {
-  font-size: 14px;
-}
-
-/* ========================================
-   479px and below
-   ======================================== */
+/* Hero Text - Smaller Screens */
 
 .hero__text h2 {
   font-size: 30px;
@@ -1695,9 +1671,7 @@ body.drawer-expanded .project-block {
   font-size: 13px;
 }
 
-/* ========================================
-   412px and below
-   ======================================== */
+/* Mobile-Specific Overrides */
 
 .hero__text {
   margin-top: 30px;
