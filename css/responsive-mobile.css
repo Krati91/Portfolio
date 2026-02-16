@@ -578,8 +578,8 @@
 #skills {
   width: 100%;
   max-width: 100%;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
 }
 
 .education .about__text,
@@ -1101,7 +1101,7 @@ html, body {
   padding-right: 0;
   padding-bottom: 40px;
   margin-bottom: 30px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .education .section-title,
@@ -1713,14 +1713,12 @@ body.drawer-expanded .project-block {
 .services-page {
   padding-top: 50px !important;
   padding-bottom: 0px !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .services-page.spad,
 .spad.services-page {
   padding-top: 50px !important;
   padding-bottom: 0px !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Back to Top Button - Position above bottom drawer */
