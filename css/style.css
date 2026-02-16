@@ -544,6 +544,28 @@ ol {
 /*---------------------
   Hero
 -----------------------*/
+/* Hero text styles (works without carousel) */
+.hero__slider .hero__text {
+ background-color: rgb(24 24 24 / 13%);
+ border-radius: 4%;
+ padding: 2vw;
+}
+
+.hero__slider .hero__text span {
+  top: 0;
+  opacity: 1;
+  font-size:x-large
+}
+.hero__slider .hero__text h2 {
+  top: 0;
+  opacity: 1;
+}
+.hero__slider .hero__text .primary-btn {
+  top: 0;
+  opacity: 1;
+}
+
+/* Legacy carousel styles (not in use) */
 .hero__slider.owl-carousel .owl-item.active .hero__text {
  background-color: rgb(24 24 24 / 13%);
  border-radius: 4%;
