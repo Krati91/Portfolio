@@ -47,16 +47,18 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></noscript>
 
     <!-- Css Styles -->
+    <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/responsive-desktop.css" type="text/css">
-    <link rel="stylesheet" href="css/responsive-tablet.css" type="text/css">
-    <link rel="stylesheet" href="css/responsive-mobile.css" type="text/css">
+    <link rel="stylesheet" href="css/responsive-desktop.css" type="text/css" media="(min-width: 1200px)">
+    <link rel="stylesheet" href="css/responsive-tablet.css" type="text/css" media="(min-width: 768px) and (max-width: 1199px)">
+    <link rel="stylesheet" href="css/responsive-mobile.css" type="text/css" media="(max-width: 767px)">
 </head>
 
 <body>
@@ -74,7 +76,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="./index.html"><img src="img/logo.png" alt="Kartik Chaturvedi Logo" width="120" height="40" loading="eager"></a>
                     </div>
                 </div>
                 <div class="col-lg-10">
@@ -124,7 +126,7 @@
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider">
-            <div class="hero__item set-bg" data-setbg="img/hero/banner.png">
+            <div class="hero__item set-bg" data-setbg="img/hero/banner.webp" data-lazy="true">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
@@ -159,7 +161,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="services__item">
                                 <div class="services__item__icon">
-                                    <img src="img\about\unreal-engine-svgrepo-com.png" alt="" style="width:45px;">
+                                    <img src="img\about\unreal-engine-svgrepo-com.png" alt="Unreal Engine" width="45" height="45" loading="lazy">
                                 </div>
                                 <h4>Unreal Engine</h4>
                                 <p>Developing multiplayer systems, AI behaviors, HUDs, animations, and detailed levels with both Blueprint and C++</p>
@@ -168,7 +170,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="services__item">
                                 <div class="services__item__icon">
-                                    <img src="img/about/c-logo-svgrepo-com.png" alt="" style="width:45px;">
+                                    <img src="img/about/c-logo-svgrepo-com.png" alt="C++" width="45" height="45" loading="lazy">
                                 </div>
                                 <h4>C++</h4>
                                 <p>Designing gameplay mechanics, optimizing code, implementing AI, and debugging systems for seamless functionality and performance</p>
@@ -177,7 +179,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="services__item">
                                 <div class="services__item__icon">
-                                    <img src="img/about/git-svgrepo-com.png" alt="" style="width:45px;">
+                                    <img src="img/about/git-svgrepo-com.png" alt="Git" width="45" height="45" loading="lazy">
                                 </div>
                                 <h4>Git</h4>
                                 <p>Managing projects, tracking changes, resolving conflicts, and streamlining collaboration through branching, merging, and version control</p>
@@ -287,11 +289,11 @@
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/masonry.pkgd.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/bootstrap.min.js" defer></script>
+    <script src="js/mixitup.min.js" defer></script>
+    <script src="js/masonry.pkgd.min.js" defer></script>
+    <script src="js/jquery.slicknav.js" defer></script>
+    <script src="js/main.js" defer></script>
 </body>
 
 </html>

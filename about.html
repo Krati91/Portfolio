@@ -47,16 +47,18 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></noscript>
 
     <!-- Css Styles -->
+    <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/responsive-desktop.css" type="text/css">
-    <link rel="stylesheet" href="css/responsive-tablet.css" type="text/css">
-    <link rel="stylesheet" href="css/responsive-mobile.css" type="text/css">
+    <link rel="stylesheet" href="css/responsive-desktop.css" type="text/css" media="(min-width: 1200px)">
+    <link rel="stylesheet" href="css/responsive-tablet.css" type="text/css" media="(min-width: 768px) and (max-width: 1199px)">
+    <link rel="stylesheet" href="css/responsive-mobile.css" type="text/css" media="(max-width: 767px)">
 </head>
 
 <body>
@@ -147,15 +149,15 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                 <div class="about__pic__item about__pic__item--large set-bg"
-                                    data-setbg="img/about/about-4.jpg"></div>
+                                    data-setbg="img/about/about-4.webp"></div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div class="about__pic__item set-bg" data-setbg="img/about/about-5.png"></div>
+                                        <div class="about__pic__item set-bg" data-setbg="img/about/about-5.webp"></div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div class="about__pic__item set-bg" data-setbg="img/about/about-6.jpeg"></div>
+                                        <div class="about__pic__item set-bg" data-setbg="img/about/about-6.webp"></div>
                                     </div>
                                 </div>
                             </div>
@@ -464,11 +466,11 @@
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/masonry.pkgd.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/bootstrap.min.js" defer></script>
+    <script src="js/mixitup.min.js" defer></script>
+    <script src="js/masonry.pkgd.min.js" defer></script>
+    <script src="js/jquery.slicknav.js" defer></script>
+    <script src="js/main.js" defer></script>
 </body>
 
 </html>
