@@ -67,9 +67,23 @@
     }
     });
 
+    // For project-details page with scrolling content area
+    $('.project-block').scroll(function() {
+    if ($(this).scrollTop() > 300) {
+        btn.addClass('show');
+    } else {
+        btn.removeClass('show');
+    }
+    });
+
     btn.on('click', function(e) {
     e.preventDefault();
-    $('html, body').animate({scrollTop:0}, '300');
+    // Check if we're on project-details page
+    if ($('.project-block').length) {
+        $('.project-block').animate({scrollTop:0}, '300');
+    } else {
+        $('html, body').animate({scrollTop:0}, '300');
+    }
     });
 
 
