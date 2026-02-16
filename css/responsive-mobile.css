@@ -660,6 +660,7 @@ body > * {
   overflow: visible !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
+  padding-bottom: 0px !important;
 }
 
 .footer {
@@ -1367,7 +1368,7 @@ div[class*="col-lg-3"] {
   flex: 0 0 100% !important;
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 15px !important;
+  top: 130px;
 }
 
 body:not(.drawer-expanded) .col-lg-9.project-block,
@@ -1572,7 +1573,7 @@ body.drawer-expanded .project-block {
 .description iframe {
   width: 100%;
   height: 250px;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 .description .github {
