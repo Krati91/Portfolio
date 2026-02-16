@@ -1795,6 +1795,15 @@ ol {
   height: 430px;
 }
 
+/* Retro Games Collection - Desktop - Remove margin from text divs except Ping Pong */
+#retro-games-collection .description ul li:nth-child(1) .d-flex > div:not(.job-card),
+#retro-games-collection .description ul li:nth-child(2) .d-flex > div:not(.job-card),
+#retro-games-collection .description ul li:nth-child(3) .d-flex > div:not(.job-card),
+#retro-games-collection .description ul li:nth-child(4) .d-flex > div:not(.job-card),
+#retro-games-collection .description ul li:nth-child(5) .d-flex > div:not(.job-card) {
+  margin: 0px !important;
+}
+
 
 .job-card i{
   font-size: 1.125rem;

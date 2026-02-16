@@ -1110,6 +1110,32 @@ body.drawer-expanded .project-block {
   position: relative !important;
 }
 
+/* Retro Games Collection - Tablet Only Layout (768px-991px) */
+@media only screen and (min-width: 768px) {
+  #retro-games-collection .description .d-flex {
+    flex-direction: row !important;
+    gap: 10px !important;
+    align-items: flex-start !important;
+  }
+
+  #retro-games-collection .description .d-flex .job-card.set-bg,
+  #retro-games-collection .description .d-flex .job-card {
+    width: 30% !important;
+    flex-shrink: 0 !important;
+  }
+
+  #retro-games-collection .description .d-flex > div:not(.job-card) {
+    width: 70% !important;
+    flex-grow: 0 !important;
+    flex-shrink: 1 !important;
+  }
+
+  /* Ping Pong - Remove margin from text div */
+  #retro-games-collection .description ul li:nth-child(4) .d-flex > div:not(.job-card) {
+    margin: 0px !important;
+  }
+}
+
 .description .d-flex .job-card:last-child {
   margin-bottom: 0 !important;
 }

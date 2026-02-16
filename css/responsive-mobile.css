@@ -1566,6 +1566,31 @@ body.drawer-expanded .project-block {
   position: relative !important;
 }
 
+/* Retro Games Collection - Mobile Only - Fix order for Tetris and Ping Pong */
+#retro-games-collection .description ul li:nth-child(2) .d-flex,
+#retro-games-collection .description ul li:nth-child(4) .d-flex {
+  flex-direction: column-reverse !important;
+}
+
+/* Retro Games Collection - Mobile - Remove margin-bottom from d-flex containers */
+#retro-games-collection .description .d-flex {
+  margin-bottom: 0px !important;
+}
+
+/* Retro Games Collection - Mobile - Remove padding-bottom from ul */
+#retro-games-collection .description ul {
+  padding-bottom: 0px !important;
+}
+
+/* Retro Games Collection - Mobile - Restore margin for text divs */
+#retro-games-collection .description ul li:nth-child(1) .d-flex > div:not(.job-card),
+#retro-games-collection .description ul li:nth-child(2) .d-flex > div:not(.job-card),
+#retro-games-collection .description ul li:nth-child(3) .d-flex > div:not(.job-card),
+#retro-games-collection .description ul li:nth-child(4) .d-flex > div:not(.job-card),
+#retro-games-collection .description ul li:nth-child(5) .d-flex > div:not(.job-card) {
+  margin: 25px 0 !important;
+}
+
 .description .d-flex .job-card:last-child {
   margin-bottom: 0 !important;
 }
