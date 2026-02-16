@@ -1714,4 +1714,38 @@ body.drawer-expanded .project-block {
   margin-bottom: 30px;
 }
 
+/* Back to Top Button - Position above bottom drawer */
+#button {
+  bottom: 70px !important;
+  right: 15px !important;
+  width: 45px !important;
+  height: 45px !important;
+  z-index: 99999 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  background-color: #00bfe7 !important;
+}
+
+#button:hover,
+#button:active,
+#button:visited,
+#button:focus {
+  background-color: #00bfe7 !important;
+}
+
+#button.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#button::after {
+  font-size: 1.8em !important;
+  line-height: 45px !important;
+}
+
+/* When drawer is expanded, position button even higher */
+body.drawer-expanded #button {
+  bottom: calc(70vh + 20px) !important;
+}
+
 }

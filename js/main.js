@@ -59,31 +59,59 @@
 
     var btn = $('#button');
 
-    $(window).scroll(function() {
-    if ($(window).scrollTop() > 300) {
-        btn.addClass('show');
-    } else {
-        btn.removeClass('show');
+    // Function to check scroll position and show/hide button
+    function checkScroll() {
+        var windowScroll = $(window).scrollTop();
+        var bodyScroll = $(document.body).scrollTop();
+        var htmlScroll = $(document.documentElement).scrollTop();
+        var projectBlockScroll = $('.project-block').length ? $('.project-block').scrollTop() : 0;
+        
+        // Get the maximum scroll from all possible containers
+        var maxScroll = Math.max(windowScroll, bodyScroll, htmlScroll, projectBlockScroll);
+        
+        // Show button if any container has scrolled past 100px
+        if (maxScroll > 100) {
+            btn.addClass('show');
+        } else {
+            btn.removeClass('show');
+        }
     }
-    });
 
-    // For project-details page with scrolling content area
-    $('.project-block').scroll(function() {
-    if ($(this).scrollTop() > 300) {
-        btn.addClass('show');
-    } else {
-        btn.removeClass('show');
+    // Initial check on page load
+    checkScroll();
+
+    // Attach scroll listeners to all possible scrolling containers
+    $(window).on('scroll', checkScroll);
+    $(document).on('scroll', checkScroll);
+    $('.project-block').on('scroll', checkScroll);
+    
+    // For mobile/tablet - also listen to touchmove and set interval to check periodically
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    var isTablet = window.matchMedia("(max-width: 991px)").matches;
+    
+    if (isMobile || isTablet) {
+        $(document).on('touchmove', function() {
+            setTimeout(checkScroll, 100);
+        });
+        // Check scroll every 500ms on mobile/tablet as backup
+        setInterval(checkScroll, 500);
     }
-    });
 
+    // Back to top button click handler
     btn.on('click', function(e) {
-    e.preventDefault();
-    // Check if we're on project-details page
-    if ($('.project-block').length) {
-        $('.project-block').animate({scrollTop:0}, '300');
-    } else {
-        $('html, body').animate({scrollTop:0}, '300');
-    }
+        e.preventDefault();
+        
+        // Scroll all possible containers to top
+        var projectBlock = $('.project-block');
+        
+        // Scroll window, html, and body to top
+        $('html, body').animate({scrollTop: 0}, 300);
+        $(document.body).animate({scrollTop: 0}, 300);
+        
+        // If project-block exists, scroll it too
+        if (projectBlock.length) {
+            projectBlock.animate({scrollTop: 0}, 300);
+        }
     });
 
 
