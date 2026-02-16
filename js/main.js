@@ -222,13 +222,6 @@
     /* Carousel code removed - not in use */
 
     /*------------------
-        Video Popup
-    --------------------*/
-    $('.video-popup').magnificPopup({
-        type: 'iframe'
-    });
-
-    /*------------------
         Counter
     --------------------*/
     $('.counter_num').each(function () {
