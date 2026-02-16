@@ -298,10 +298,10 @@
 /* Education Timeline Mobile */
 .education {
   position: relative;
-  padding-left: 25px !important;
-  padding-right: 15px !important;
-  margin-left: 10px !important;
-  margin-right: 10px !important;
+  padding-left: 20px !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .education::before {
@@ -323,8 +323,8 @@
 .education .edu-entry {
   position: relative;
   margin-bottom: 20px !important;
-  margin-left: 10px !important;
-  padding: 15px 18px 15px 20px !important;
+  margin-left: 15px !important;
+  padding: 20px !important;
   background: #0d0118 !important;
   border: 1px solid rgba(0, 191, 231, 0.12) !important;
   border-radius: 8px !important;
@@ -346,7 +346,7 @@
 .education .edu-entry::before {
   content: "";
   position: absolute;
-  left: -12px;
+  left: -17px;
   top: 24px;
   width: 8px;
   height: 8px;
@@ -450,7 +450,7 @@
 }
 
 .about.spad {
-  padding: 60px 0 30px;
+  padding: 60px 0 10px !important;
 }
 
 .about > .container > .row {
@@ -508,7 +508,7 @@
 
 /* Experience & Courses */
 .services-page .col-md-6 {
-  margin-bottom: 25px !important;
+  margin-bottom: 20px !important;
   width: 100% !important;
   max-width: 100% !important;
   padding-left: 0 !important;
@@ -519,9 +519,9 @@
 .services-page .col-md-6.wow {
   background-color: rgba(255, 255, 255, 0.05) !important;
   border-radius: 8px;
-  padding: 25px 20px !important;
+  padding: 20px !important;
   margin-left: 0 !important;
-  margin-bottom: 25px !important;
+  margin-bottom: 20px !important;
 }
 
 .services-page .col-md-6 h4 {
@@ -537,12 +537,12 @@
 }
 
 .services-page .col-md-6 li {
-  margin-bottom: 8px;
+  marg1-12626in-bottom: 8px;
 }
 
 .services-page.spad {
-  padding-top: 40px !important;
-  padding-bottom: 40px !important;
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
 }
 
 .services-page .section-title {
@@ -550,7 +550,7 @@
   padding-right: 0 !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .services-page .section-title h2 {
@@ -567,11 +567,11 @@
   padding-right: 0 !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .education .col-md-12 {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .education,
@@ -1088,16 +1088,25 @@ html, body {
   margin-bottom: 18px;
 }
 
-#skills,
+#skills {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 30px;
+  padding-bottom: 0px;
+  margin-bottom: 0;
+}
+
 .education {
   padding-left: 0;
   padding-right: 0;
-  margin-bottom: 40px;
+  padding-bottom: 40px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .education .section-title,
 #skills .section-title {
-  margin-bottom: 25px !important;
+  margin-bottom: 20px !important;
 }
 
 .education .section-title h2,
@@ -1701,17 +1710,17 @@ body.drawer-expanded .project-block {
   margin-top: 30px;
 }
 
-.services-page,
+.services-page {
+  padding-top: 50px !important;
+  padding-bottom: 0px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
 .services-page.spad,
 .spad.services-page {
   padding-top: 50px !important;
-  padding-bottom: 50px !important;
-}
-
-.education {
+  padding-bottom: 0px !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  padding-bottom: 30px;
-  margin-bottom: 30px;
 }
 
 /* Back to Top Button - Position above bottom drawer */
