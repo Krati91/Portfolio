@@ -273,10 +273,10 @@
 
 /* Mobile Social Section */
 #mobile-social {
-  background: #0a0119 !important;
+  background: #100028 !important;
   padding: 15px 15px 0 15px !important;
   margin: 0 !important;
-  border-radius: 12px !important;
+  border-radius: 0px !important;
   overflow-y: auto !important;
   display: none;
   position: fixed !important;
@@ -310,7 +310,7 @@
   font-weight: 500 !important;
   text-align: center !important;
   background: rgba(255, 255, 255, 0.05) !important;
-  border-radius: 8px !important;
+  border-radius: 0px !important;
   text-decoration: none !important;
   transition: all 0.3s ease !important;
 }
@@ -335,7 +335,7 @@
   font-weight: 500 !important;
   text-align: center !important;
   background: rgba(255, 255, 255, 0.05) !important;
-  border-radius: 8px !important;
+  border-radius: 0px !important;
   text-decoration: none !important;
   transition: all 0.3s ease !important;
 }
@@ -607,7 +607,7 @@ html, body {
   height: 44px;
   color: #ffffff;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
+  border-radius: 0px;
 }
 
 #mobile-social .header__nav__social .resume {
