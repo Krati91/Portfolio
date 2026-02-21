@@ -1,0 +1,390 @@
+{
+  "categories": [
+    {
+      "id": "ue-5-list",
+      "name": "Unreal Engine 5",
+      "projects": [
+        {
+          "id": "battle-blasters",
+          "name": "Battle Blasters",
+          "status": "Ongoing",
+          "thumbnail": "assets/Battle-Blasters_Cover.gif",
+          "subtitle": "Multiplayer Shooter",
+          "coverVideo": "assets/Battle-Blasters_FrontPage.webm",
+          "about": [
+            "Battle Blasters is a multiplayer shooter prototype focused on implementing server-authoritative networking and gameplay synchronization in Unreal Engine 5.",
+            "The project explores player replication, match state management, and latency handling in real-time multiplayer gameplay."
+          ],
+          "projectInfo": {
+            "timeFrame": "Ongoing",
+            "engine": "Unreal Engine 5.2",
+            "genre": "Multiplayer Shooter",
+            "gameMode": "Deathmatch, Capture the Flag",
+            "platform": "Windows (PC)"
+          },
+          "coreSystems": [
+            {
+              "title": "Replication",
+              "description": "Implemented replicated player movement, firing, and state variables using Unreal networking framework."
+            },
+            {
+              "title": "Match Flow",
+              "description": "Designed game state transactions including lobby, warmup, match start, and match end handling."
+            },
+            {
+              "title": "Lag Compensation",
+              "description": "Implemented client-side prediction and server authority validation to reduce perceived latency."
+            },
+            {
+              "title": "Weapon Synchronization",
+              "description": "Server validated hits and synchronized damage events across connected clients."
+            },
+            {
+              "title": "Online Sessions",
+              "description": "Integrated Unreal Online Subsystem for session creation, joining, and matchmaking."
+            }
+          ],
+          "technicalChallenges": [
+            {
+              "title": "Network Desync",
+              "description": "Players experienced hit registeration delay. Resolved using server validation and corrected timing of RPC calls."
+            },
+            {
+              "title": "Latency",
+              "description": "Implemented prediction and reconciliation to maintain smooth player movement under higher ping."
+            },
+            {
+              "title": "Match Stability",
+              "description": "Handled player disconnections and ensured match state remained consistent across clients."
+            }
+          ],
+          "galleryImages": [
+            "assets/Battle-Blasters_Second.gif",
+            "assets/Battle-Blasters_Third.gif"
+          ],
+          "githubUrl": "https://github.com/Mecha-NOX/Battle-Blasters",
+          "youtubeEmbed": "https://www.youtube.com/embed/tLNkaF6ZHlk?si=Zyjq8XHLG_-HEGTM",
+          "systemsHeading": "Networking Systems"
+        },
+        {
+          "id": "echoes-of-the-lost-sands",
+          "name": "Echoes of the Lost Sands",
+          "status": "",
+          "thumbnail": "assets/EchoesOfTheLostSands_Cover.gif",
+          "subtitle": "Soulslike RPG",
+          "coverVideo": "assets/EchoesOfTheLostSands_Large.webm",
+          "about": [
+            "Echoes of the Lost Sands is an action RPG prototype focused on melee combat mechanics, enemy behavior, and animation-driven gameplay in Unreal Engine 5",
+            "The project explores character combat interactions, boss encounters, and environment navigation systems."
+          ],
+          "projectInfo": {
+            "timeFrame": "3 months",
+            "engine": "Unreal Engine 5.2",
+            "genre": "RPG",
+            "gameMode": "Single-player",
+            "platform": "Windows (PC)"
+          },
+          "coreSystems": [
+            {
+              "title": "Meele Combat",
+              "description": "Created attack combos, damage handling, and hit detection using animation notifies."
+            },
+            {
+              "title": "Enemy AI",
+              "description": "Behavior Trees control enemy patrol, detection, and attack behavior."
+            },
+            {
+              "title": "Boss Logic",
+              "description": "Implemented boss attack patterns and state transitions."
+            },
+            {
+              "title": "Animation Integration",
+              "description": "Used motion Warping and root motion animations for responsive combat."
+            }
+          ],
+          "technicalChallenges": [
+            {
+              "title": "Hit Detection",
+              "description": "Attack hits triggered incorrectly. Fixed using animation notify timing."
+            },
+            {
+              "title": "AI Aggro",
+              "description": "Enemies attacked too early. Balanced detection radius and attack distance."
+            }
+          ],
+          "galleryImages": [
+            "assets/EchoesOfTheLostSands_Second.gif",
+            "assets/EchoesOfTheLostSands_Third.gif"
+          ],
+          "githubUrl": "https://github.com/Mecha-NOX/Echoes-of-the-Lost-Sands",
+          "youtubeEmbed": "https://www.youtube.com/embed/lVcxVkBG1_8?si=zIZO_4piMP4zqY2U",
+          "systemsHeading": "Core Systems Implemented"
+        },
+        {
+          "id": "countdown-carnage",
+          "name": "Countdown Carnage",
+          "status": "",
+          "thumbnail": "assets/Countdown-Carnage_Cover.gif",
+          "subtitle": "First-Person Shooter",
+          "coverVideo": "assets/Countdown-Carnage_Large.webm",
+          "about": [
+            "Countdown Carnage is a single-player FPS prototype developed to practice rapid gameplay loop design and Blueprint-based systems in Unreal ENgine 5.",
+            "The project focuses on enemy spawning, timed gameplay mechanics, and responsive palyer feedback systems."
+          ],
+          "projectInfo": {
+            "timeFrame": "3 weeks",
+            "engine": "Unreal Engine 5.3",
+            "genre": "First-Person Shooter (FPS)",
+            "gameMode": "Single-player",
+            "platform": "Windows (PC)"
+          },
+          "coreSystems": [
+            {
+              "title": "Enemy Behavior",
+              "description": "AI drones detec, chase, and attack teh player using Blueprint logic and navigation meshes."
+            },
+            {
+              "title": "Timer Gameplay",
+              "description": "Implemented dynamic countdown systems that reqrds time bonuses for enemy eliminations."
+            },
+            {
+              "title": "Pickups",
+              "description": "Health and ammo pickups spawn and update player state variables."
+            },
+            {
+              "title": "HUD",
+              "description": "Created functional UI displaying player health, timer, and score."
+            }
+          ],
+          "technicalChallenges": [
+            {
+              "title": "AI Navigation",
+              "description": "Drones collided with level geometry. Fixed using improved navigation mesh setup."
+            },
+            {
+              "title": "Timer Accuracy",
+              "description": "Timer desynced during heavy combat events, Solved by moving timer logic to centralized controller."
+            }
+          ],
+          "galleryImages": [],
+          "githubUrl": "https://github.com/Mecha-NOX/Countdown-Carnage",
+          "youtubeEmbed": "https://www.youtube.com/embed/ouyf6i2yRZs?si=3sHCd6igFaClT_8i",
+          "systemsHeading": "Core Systems Implemented"
+        }
+      ]
+    },
+    {
+      "id": "ue-4-list",
+      "name": "Unreal Engine 4",
+      "projects": [
+        {
+          "id": "apex-ruin",
+          "name": "Apex Ruin",
+          "status": "",
+          "thumbnail": "assets/Apex-Ruin_Cover.gif",
+          "subtitle": "Third-Person Shooter",
+          "coverVideo": "assets/Apex-Ruin_Large.webm",
+          "about": [
+            "Apex Ruin is a third-person shooter prototype developed to explore player combat systems, AI behavior, and animation integration in Unreal ENgine 4.",
+            "The project focused on implementing gameplay mechanics in C++ and Blueprints, including combat logic, enemy behavior, animation systems, and player feedback loops."
+          ],
+          "projectInfo": {
+            "timeFrame": "3 months",
+            "engine": "Unreal Engine 4.26",
+            "genre": "Third-Person Shooter",
+            "gameMode": "Single-player",
+            "platform": "Windows (PC)"
+          },
+          "coreSystems": [
+            {
+              "title": "Combat System",
+              "description": "Implemented hitscan weapon firing, recoil handling, and reload logic using Blueprint and C++ interaction."
+            },
+            {
+              "title": "Enemy AI",
+              "description": "Created AI behaviors using Behavior Trees, including patrol, detection, chase, and attack states with navigation mesh pathfinding."
+            },
+            {
+              "title": "Animation System",
+              "description": "Integrated animation blueprints, blendspaces, aim offsets, and inverse kinematics to synchronize aiming and movement."
+            },
+            {
+              "title": "HUD & Feedback",
+              "description": "Implemented dynamic crosshair expansion, health UI, and hit reaction feedback to communicate player actions."
+            },
+            {
+              "title": "Inventory and Weapons",
+              "description": "Built weapon switching and inventory management logic with configurable weapon properties."
+            }
+          ],
+          "technicalChallenges": [
+            {
+              "title": "AI Tuning",
+              "description": "Enemies initially over-aggressively chased the player. Adjusted perception radius and attack cooldown logic to create balanced combat."
+            },
+            {
+              "title": "Animation Synchronization",
+              "description": "Faced issues with aim direction mismatching camera orientation. Resolved using Aim Offset blending and controller rotation alignment."
+            },
+            {
+              "title": "Performance",
+              "description": "Particle and material effects reduced performance during combat. Optimized update frequency and reduced dynamic material updates."
+            }
+          ],
+          "galleryImages": [
+            "assets/Apex-Ruin_Second.gif",
+            "assets/Apex-Ruin_Third.gif"
+          ],
+          "githubUrl": "https://github.com/Mecha-NOX/Apex-Ruin",
+          "youtubeEmbed": "https://www.youtube.com/embed/0dnEvv-QNS8?si=cR5NfQR7Np3qZIyC",
+          "systemsHeading": "Core Systems Implemented"
+        },
+        {
+          "id": "crimson-reign",
+          "name": "Crimson Reign",
+          "status": "",
+          "thumbnail": "assets/Crimson-Reign.gif",
+          "subtitle": "Hack-and-Slash",
+          "coverVideo": "assets/Crimson-Reign_Large.webm",
+          "about": [
+            "Crimson Reign is a third-person melee combat prototype developed in Unreal Engine 4 using C++. The project focuses on implementing core gameplay systems including combat interactions, AI behavior, player damage handling, and interactive world elements. It served as my first full gameplay project where I built reusable gameplay classes, enemy logic, and player combat mechanics using Unreal's gameplay famework."
+          ],
+          "projectInfo": {
+            "timeFrame": "2 months",
+            "engine": "Unreal Engine 4.25",
+            "genre": "Hack-and-Slash",
+            "gameMode": "Single-player",
+            "platform": "Windows (PC)"
+          },
+          "coreSystems": [
+            {
+              "title": "Meele Combat System",
+              "description": "Implemented player attack handling, hit detection, damage application, and animation-triggered combat events."
+            },
+            {
+              "title": "Enemy AI Behavior",
+              "description": "Created patrol, chase, and attack behaviors using Behavior Trees, Blackboard, and navigation meshes."
+            },
+            {
+              "title": "Player Health and Damage",
+              "description": "Built a modular health syste, supporting damage calculation, death handling, and combat feedback."
+            },
+            {
+              "title": "Interactive Environment",
+              "description": "Programmed triggers, moving platforms, and timed interactions using C++ gameplay actors."
+            },
+            {
+              "title": "HUD and Player Feedback",
+              "description": "Implemented player UI elements including health bars and combat indicators integrated with gameplay events."
+            }
+          ],
+          "technicalChallenges": [
+            {
+              "title": "AI Pathfinding",
+              "description": "Integrating effective enemy pathfinding with navigation meshes and ensuring smooth navigation during combat and exploration."
+            },
+            {
+              "title": "Combat Feedback",
+              "description": "Balancing combat feedback (e.g., hit reactions, damage indicators) to ensure a satisfying player experience."
+            },
+            {
+              "title": "Debugging & Optimization",
+              "description": "Used logging and sphere drawing for debugging gameplay features like AI pathfinding and damage systems to ensure correct behavior during testing."
+            }
+          ],
+          "galleryImages": [
+            "assets/Crimson-Reign_Second.gif",
+            "assets/Crimson-Reign_Third.gif"
+          ],
+          "githubUrl": "https://github.com/Mecha-NOX/Crimson-Reign",
+          "youtubeEmbed": "https://www.youtube.com/embed/D1x6mGoV0V0?si=TMk8ckTKqgUpOHCU",
+          "systemsHeading": "Core Systems Implemented"
+        }
+      ]
+    },
+    {
+      "id": "raylib-list",
+      "name": "Raylib",
+      "projects": [
+        {
+          "id": "retro-games-collection",
+          "name": "Retro Games Collection",
+          "status": "",
+          "thumbnail": "assets/Dapper-Dasher.gif",
+          "subtitle": "Retro Games Colletion",
+          "coverImage": "assets/Dapper-Dasher_HighRes.gif",
+          "about": [
+            "Retro Games Collection is a set of classic arcade games recreated in C++ using the Raylib library to practice low-level gameplay programming and collision systems."
+          ],
+          "projectInfo": {
+            "timeFrame": "2 weeks",
+            "engine": "Raylib",
+            "genre": "Arcade",
+            "gameMode": "Single Player",
+            "platform": "Windows (PC)"
+          },
+          "games": [
+            {
+              "name": "Snake",
+              "image": "./assets/Retro-Snake_HighRes.gif",
+              "description": "Navigate a snake to collect food while avoiding collisions. Each collected item increases the snake's length, adding a layer of strategy and challenge.",
+              "githubUrl": "https://github.com/Mecha-NOX/Retro-Snake"
+            },
+            {
+              "name": "Tetris",
+              "image": "./assets/Retro-Tetris_HighRes.gif",
+              "description": "Arrange falling blocks into complete rows to clear them and earn points. Increasing speeds add a thrilling challenge as players progress.",
+              "githubUrl": "https://github.com/Mecha-NOX/Retro-Tetris"
+            },
+            {
+              "name": "Space Invaders",
+              "image": "./assets/Space-Invaders_HighRes.gif",
+              "description": "Defend against waves of alien invaders in this classic arcade shooter. Aim, shoot, and survive as enemies accelerate over time.",
+              "githubUrl": "https://github.com/Mecha-NOX/Retro-Space-Invaders"
+            },
+            {
+              "name": "Ping Pong",
+              "image": "./assets/Ping-Pong_HighRes.gif",
+              "description": "A dynamic two-player game where players control paddles to bounce the ball and score by getting it past their opponent.",
+              "githubUrl": "https://github.com/Mecha-NOX/Retro-Ping-Pong"
+            },
+            {
+              "name": "Dapper Dasher",
+              "image": "./assets/Dapper-Dasher_HighRes.gif",
+              "description": "A fast-paced platformer where players dodge obstacles and collect rewards while navigating challenging levels.",
+              "githubUrl": "https://github.com/Mecha-NOX/Dapper-Dasher"
+            }
+          ],
+          "coreSystems": [
+            {
+              "title": "Collision Detection",
+              "description": "Handled player-object and object-object collisions manually using bounding boxes."
+            },
+            {
+              "title": "Game States",
+              "description": "Implemented menu, gameplay, and game-over states."
+            },
+            {
+              "title": "Input Handling",
+              "description": "Processed keyboard input for player movement and actions."
+            }
+          ],
+          "technicalChallenges": [
+            {
+              "title": "Animating 2D Characters",
+              "description": "Faced challenges in implementing smooth animations, which were resolved by utilizing Raylib's animation capabilities effectively."
+            },
+            {
+              "title": "Debugging Complex Interactions",
+              "description": "Resolved gameplay bugs using systematic debugging techniques, such as tracing logic flows and testing individual modules."
+            }
+          ],
+          "galleryImages": [],
+          "githubUrl": "",
+          "youtubeEmbed": "",
+          "systemsHeading": "Core Systems Implemented"
+        }
+      ]
+    }
+  ]
+}
