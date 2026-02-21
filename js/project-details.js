@@ -308,25 +308,28 @@ $(document).ready(function() {
         // Show project based on URL parameter
         const divID = new URLSearchParams(window.location.search).get("name");
         if (divID) {
-            const $elem = $('a[href="?name=' + divID + '"]');
-            const $parentDiv = $elem.closest('.collapse');
-            const $categoryHeader = $parentDiv.prev('.list-group-item');
+            // Use setTimeout to ensure DOM is fully updated
+            setTimeout(function() {
+                const $elem = $('a[href="?name=' + divID + '"]');
+                const $parentDiv = $elem.closest('.collapse');
+                const $categoryHeader = $parentDiv.prev('.list-group-item');
 
-            // Activate selected project in sidebar and expand its category
-            $categoryHeader.addClass('active-list-group-item');
-            $parentDiv.collapse('show');
-            $elem.addClass('active');
-            $('#' + divID).show();
-            
-            // Load lazy backgrounds for the initial project
-            $('#' + divID).find('.set-bg').each(function() {
-                const bg = $(this).data('setbg');
-                if (bg) {
-                    $(this).css('background-image', 'url(' + bg + ')');
-                }
-            });
-            
-            $(document).scrollTop(0);
+                // Activate selected project in sidebar and expand its category
+                $categoryHeader.addClass('active-list-group-item');
+                $parentDiv.addClass('show'); // Bootstrap collapse class
+                $elem.addClass('active');
+                $('#' + divID).show();
+                
+                // Load lazy backgrounds for the initial project
+                $('#' + divID).find('.set-bg').each(function() {
+                    const bg = $(this).data('setbg');
+                    if (bg) {
+                        $(this).css('background-image', 'url(' + bg + ')');
+                    }
+                });
+                
+                $(document).scrollTop(0);
+            }, 100);
         }
         
         // Initialize drawer toggle after rendering
