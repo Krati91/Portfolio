@@ -78,8 +78,10 @@
 }
 
 .hero__item {
-  height: 684px;
+  min-height: 684px;
+  height: auto;
   padding-top: 255px;
+  padding-bottom: 40px;
 }
 
 .hero__text {

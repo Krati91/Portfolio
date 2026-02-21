@@ -626,8 +626,10 @@ ol {
 }
 
 .hero__item {
-  height: 483px;
+  min-height: 483px;
+  height: auto;
   padding-top: 144px;
+  padding-bottom: 30px;
 }
 
 .hero__text span {

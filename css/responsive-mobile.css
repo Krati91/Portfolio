@@ -1014,6 +1014,9 @@ html, body {
 .hero__item {
   background-position: 50% !important;
   padding-top: 120px !important;
+  min-height: 550px !important;
+  height: auto !important;
+  padding-bottom: 50px !important;
 }
 
 .breadcrumb-option {

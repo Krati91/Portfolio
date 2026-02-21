@@ -1,11 +1,11 @@
 /* =====================================================
    RESPONSIVE DESKTOP STYLES
    Consolidated from style.css and mobile-enhancements.css
-   Target viewport: min-width 992px
+   Target viewport: min-width 1200px
    Author: Kartik Chaturvedi
    ===================================================== */
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1200px) {
   
   /* =================================================
      CONTAINER & LAYOUT

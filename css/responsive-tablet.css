@@ -1,9 +1,9 @@
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1199px) {
 
 /* =====================================================
    RESPONSIVE TABLET STYLES
-   Target viewport: max-width 991px (768px - 991px range)
-   Applies to: All tablet devices
+   Target viewport: max-width 1199px (768px - 1199px range)
+   Applies to: All tablet devices including iPad Pro
    Author: Kartik Chaturvedi
    ===================================================== */
 
@@ -645,8 +645,11 @@ html, body {
 }
 
 .hero__item {
-  background-position: 100% 100% !important;
+  background-position: 0% 100% !important;
   padding-top: 140px !important;
+  min-height: 500px !important;
+  height: auto !important;
+  padding-bottom: 40px !important;
 }
 
 /* Breadcrumb Section */
