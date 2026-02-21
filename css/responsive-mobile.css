@@ -1780,9 +1780,11 @@ body.drawer-expanded .project-block {
   line-height: 45px !important;
 }
 
-/* When drawer is expanded, position button even higher */
+/* When drawer is expanded, hide button to avoid conflicts */
 body.drawer-expanded #button {
-  bottom: calc(70vh + 20px) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 }

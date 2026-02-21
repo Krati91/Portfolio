@@ -328,7 +328,13 @@ $(document).ready(function() {
                     }
                 });
                 
-                $(document).scrollTop(0);
+                // Scroll to top (both desktop and mobile/tablet)
+                const projectBlockElement = document.querySelector('.project-block');
+                if (projectBlockElement) {
+                    projectBlockElement.scrollTop = 0;
+                }
+                window.scrollTo(0, 0);
+                $('html, body').scrollTop(0);
             }, 100);
         }
         
@@ -362,7 +368,13 @@ function setupEventHandlers() {
             }
         });
         
-        $(document).scrollTop(0);
+        // Scroll to top (both desktop and mobile/tablet)
+        const projectBlockElement = document.querySelector('.project-block');
+        if (projectBlockElement) {
+            projectBlockElement.scrollTop = 0;
+        }
+        window.scrollTo(0, 0);
+        $('html, body').scrollTop(0);
         
         // Update URL without page reload
         const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?name=' + divID;
@@ -484,7 +496,22 @@ function initDrawerToggle() {
             // Hide all projects and show selected one
             $('.project-details').hide();
             $('div#' + divID).show();
-            $(document).scrollTop(0);
+            
+            // Load lazy backgrounds for the newly visible project
+            $('#' + divID).find('.set-bg').each(function() {
+                const bg = $(this).data('setbg');
+                if (bg) {
+                    $(this).css('background-image', 'url(' + bg + ')');
+                }
+            });
+            
+            // Scroll to top (both desktop and mobile/tablet)
+            const projectBlockElement = document.querySelector('.project-block');
+            if (projectBlockElement) {
+                projectBlockElement.scrollTop = 0;
+            }
+            window.scrollTo(0, 0);
+            $('html, body').scrollTop(0);
             
             // Update URL
             let newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?name=' + divID;
@@ -586,7 +613,13 @@ function initDrawerToggle() {
                     }
                 });
                 
-                $(document).scrollTop(0);
+                // Scroll to top (both desktop and mobile/tablet)
+                const projectBlockElement = document.querySelector('.project-block');
+                if (projectBlockElement) {
+                    projectBlockElement.scrollTop = 0;
+                }
+                window.scrollTo(0, 0);
+                $('html, body').scrollTop(0);
                 
                 // Update URL
                 let newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?name=' + divID;
