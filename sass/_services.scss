@@ -39,6 +39,29 @@
     p {
         margin-bottom: 0;
     }
+
+    ul {
+        list-style-position: inside;
+        padding-left: 0;
+
+        li {
+            color: #c0d9e6;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            list-style: none;
+            display: flex;
+            align-items: flex-start;
+
+            &:before {
+                content: "▸";
+                color: $primary-color;
+                font-weight: bold;
+                margin-right: 8px;
+                flex-shrink: 0;
+            }
+        }
+    }
 }
 
 .services__item__icon {

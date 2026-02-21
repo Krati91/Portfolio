@@ -233,4 +233,12 @@
   #skills .about__text {
     padding-left: 0px !important;
   }
+
+  .top-spad{
+    padding-top:150px !important;
+  }
+
+  .breadcrumb-option {
+  display:none;
+}
 }

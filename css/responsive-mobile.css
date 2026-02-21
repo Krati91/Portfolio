@@ -1012,12 +1012,13 @@ html, body {
 }
 
 .hero__item {
-  padding-top: 140px !important;
+  background-position: 50% !important;
+  padding-top: 120px !important;
 }
 
 .breadcrumb-option {
   padding-top: 150px !important;
-  padding-bottom: 20px !important;
+  padding-bottom: 60px !important;
   min-height: 250px;
 }
 

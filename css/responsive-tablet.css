@@ -233,10 +233,6 @@
   position: relative;
 }
 
-.header__nav__option {
-  display: none;
-}
-
 /* =================================================
    MOBILE MENU & NAVIGATION
    ================================================= */
@@ -649,13 +645,14 @@ html, body {
 }
 
 .hero__item {
+  background-position: 100% 100% !important;
   padding-top: 140px !important;
 }
 
 /* Breadcrumb Section */
 .breadcrumb-option {
   padding-top: 150px !important;
-  padding-bottom: 20px !important;
+  padding-bottom: 60px !important;
   min-height: 250px;
 }
 
@@ -1351,6 +1348,10 @@ body > * {
 /* When drawer is expanded, position button even higher */
 body.drawer-expanded #button {
   bottom: calc(70vh + 20px) !important;
+}
+
+.about__pic__item {
+  background-position: 100% !important;
 }
 
 }

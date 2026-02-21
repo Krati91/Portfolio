@@ -154,10 +154,13 @@ ol {
   background-image: url('../img/loader.gif');
 }
 
+
 .spad {
   padding-top: 100px;
   padding-bottom: 100px;
 }
+
+
 
 .text-white h1,
 .text-white h2,
@@ -623,8 +626,8 @@ ol {
 }
 
 .hero__item {
-  height: 684px;
-  padding-top: 184px;
+  height: 483px;
+  padding-top: 144px;
 }
 
 .hero__text span {
@@ -1235,6 +1238,7 @@ ol {
 -----------------------*/
 .breadcrumb-option {
   padding-top: 180px;
+  padding-bottom: 100px;
 }
 
 .breadcrumb__text h2 {
@@ -1531,15 +1535,18 @@ ol {
 .services__item ul li {
   color: #c0d9e6;
   font-size: 14px;
-  line-height: 22px;
+  line-height: 1.6;
   margin-bottom: 8px;
   list-style: none;
+  display: flex;
+  align-items: flex-start;
 }
 .services__item ul li:before {
-  content: "▸ ";
+  content: "▸";
   color: #00bfe7;
   font-weight: bold;
   margin-right: 8px;
+  flex-shrink: 0;
 }
 
 .services__item__icon {
