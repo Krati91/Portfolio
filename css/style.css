@@ -1501,8 +1501,8 @@ ol {
 -----------------------*/
 .services {
   background: #100028;
-  padding-bottom: 60px;
-  padding-top: 110px;
+  padding-bottom: 50px;
+  padding-top: 50px;
 }
 
 .services__title p {
@@ -1510,7 +1510,7 @@ ol {
 }
 
 .services__item {
-  margin-bottom: 45px;
+  margin-bottom: 0px;
 }
 .services__item:hover .services__item__icon:after {
   -webkit-transform: rotate(45deg);

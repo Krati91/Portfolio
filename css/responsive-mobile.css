@@ -508,7 +508,7 @@
 
 /* Experience & Courses */
 .services-page .col-md-6 {
-  margin-bottom: 20px !important;
+  margin-bottom: 0px !important;
   width: 100% !important;
   max-width: 100% !important;
   padding-left: 0 !important;
@@ -1717,8 +1717,8 @@ body.drawer-expanded .project-block {
 }
 
 .spad {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .section-title h2 {

@@ -1229,6 +1229,11 @@ body.drawer-expanded .project-block {
   margin-bottom: 18px;
 }
 
+#skills .row > div:nth-child(1) .services__item h4,
+#skills .row > div:nth-child(2) .services__item h4 {
+  margin-top: 0px !important;
+}
+
 #skills,
 .education {
   padding-left: 0;

@@ -39,6 +39,24 @@
         $('#mobile-social').hide();
         $('.slicknav_btn').removeClass('slicknav_open');
 
+        // Handle hash navigation with offset
+        if (window.location.hash) {
+            // First scroll to top
+            $('html, body').scrollTop(0);
+            
+            setTimeout(function() {
+                var hash = window.location.hash;
+                var target = $(hash);
+                if (target.length) {
+                    var headerHeight = $('.header').outerHeight() || 80;
+                    var offset = target.offset().top - headerHeight - 20;
+                    $('html, body').animate({
+                        scrollTop: offset
+                    }, 800);
+                }
+            }, 300);
+        }
+
         /*------------------
             Portfolio filter
         --------------------*/
@@ -51,6 +69,23 @@
             var mixer = mixitup(containerEl);
         }
         
+    });
+
+    /*------------------
+        Smooth Scroll for Anchor Links
+    --------------------*/
+    $('a[href*="#"]:not([href="#"])').on('click', function(e) {
+        if (this.pathname === window.location.pathname) {
+            e.preventDefault();
+            var target = $(this.hash);
+            if (target.length) {
+                var headerHeight = $('.header').outerHeight() || 80;
+                var offset = target.offset().top - headerHeight - 20;
+                $('html, body').animate({
+                    scrollTop: offset
+                }, 500);
+            }
+        }
     });
 
     /*------------------

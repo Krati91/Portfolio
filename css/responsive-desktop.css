@@ -234,6 +234,11 @@
     padding-left: 0px !important;
   }
 
+  #skills .row > div:nth-child(1) .services__item h4,
+  #skills .row > div:nth-child(2) .services__item h4 {
+    margin-top: 0px !important;
+  }
+
   .top-spad{
     padding-top:150px !important;
   }
