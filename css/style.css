@@ -624,7 +624,7 @@ ol {
 
 .hero__item {
   height: 684px;
-  padding-top: 255px;
+  padding-top: 174px;
 }
 
 .hero__text span {
@@ -643,18 +643,42 @@ ol {
 }
 .hero__text h2 {
   color: #ffffff;
-  font-size: 60px;
-  font-weight: 700;
-  line-height: 70px;
+  font-size: 75px;
+  font-weight: 900;
+  line-height: 85px;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   position: relative;
   top: 100px;
   opacity: 0;
   -webkit-transition: all, 0.5s;
   -o-transition: all, 0.5s;
   transition: all, 0.5s;
+  letter-spacing: 2px;
 }
+
+.gradient-text {
+  background: ffffff;
+  background-clip: text;
+  display: inline-block;
+}
+
+.hero__name {
+  color: #ffffff !important;
+  font-size: 75px !important;
+  font-weight: 900 !important;
+  line-height: 85px !important;
+  text-transform: uppercase !important;
+  margin-bottom: 20px !important;
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  -webkit-transition: all, 0.5s;
+  -o-transition: all, 0.5s;
+  transition: all, 0.5s;
+  letter-spacing: 2px;
+}
+
 .hero__text .primary-btn {
   position: relative;
   top: 100px;
@@ -662,6 +686,20 @@ ol {
   -webkit-transition: all, 0.7s;
   -o-transition: all, 0.7s;
   transition: all, 0.7s;
+}
+
+.hero__text .hero__subtitle {
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  -webkit-transition: all, 0.6s;
+  -o-transition: all, 0.6s;
+  transition: all, 0.6s;
 }
 
 /*---------------------
@@ -1481,7 +1519,27 @@ ol {
   margin-bottom: 18px;
 }
 .services__item p {
-  margin-bottom: 0;
+  margin-bottom: 15px;
+  color: #d0d0d0;
+  font-size: 15px;
+  line-height: 24px;
+}
+.services__item ul {
+  list-style-position: inside;
+  padding-left: 0;
+}
+.services__item ul li {
+  color: #c0d9e6;
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 8px;
+  list-style: none;
+}
+.services__item ul li:before {
+  content: "▸ ";
+  color: #00bfe7;
+  font-weight: bold;
+  margin-right: 8px;
 }
 
 .services__item__icon {

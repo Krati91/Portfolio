@@ -187,7 +187,7 @@
      ================================================= */
   
   .about__text__desc p {
-    font-size: 20px !important;
+    font-size: 14px !important;
     line-height: 1.9 !important;
   }
 
@@ -206,7 +206,7 @@
 
   .experience-box small,
   .experience-box li small {
-    font-size: 18px !important;
+    font-size: 14px !important;
     line-height: 1.8 !important;
   }
 
