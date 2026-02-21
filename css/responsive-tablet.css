@@ -654,9 +654,9 @@ html, body {
 
 /* Breadcrumb Section */
 .breadcrumb-option {
-  padding-top: 150px !important;
-  padding-bottom: 60px !important;
-  min-height: 250px;
+  padding-top: 111px !important;
+  padding-bottom: 0px !important;
+  min-height: 218px;
 }
 
 .breadcrumb-option .container {
