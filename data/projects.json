@@ -47,7 +47,7 @@
           "technicalChallenges": [
             {
               "title": "Network Desync",
-              "description": "Players experienced hit registeration delay. Resolved using server validation and corrected timing of RPC calls."
+              "description": "Players experienced hit registration delay. Resolved using server validation and corrected timing of RPC calls."
             },
             {
               "title": "Latency",
@@ -86,7 +86,7 @@
           },
           "coreSystems": [
             {
-              "title": "Meele Combat",
+              "title": "Melee Combat",
               "description": "Created attack combos, damage handling, and hit detection using animation notifies."
             },
             {
@@ -128,8 +128,8 @@
           "subtitle": "First-Person Shooter",
           "coverVideo": "assets/Countdown-Carnage_Large.webm",
           "about": [
-            "Countdown Carnage is a single-player FPS prototype developed to practice rapid gameplay loop design and Blueprint-based systems in Unreal ENgine 5.",
-            "The project focuses on enemy spawning, timed gameplay mechanics, and responsive palyer feedback systems."
+            "Countdown Carnage is a single-player FPS prototype developed to practice rapid gameplay loop design and Blueprint-based systems in Unreal Engine 5.",
+            "The project focuses on enemy spawning, timed gameplay mechanics, and responsive player feedback systems."
           ],
           "projectInfo": {
             "timeFrame": "3 weeks",
@@ -141,11 +141,11 @@
           "coreSystems": [
             {
               "title": "Enemy Behavior",
-              "description": "AI drones detec, chase, and attack teh player using Blueprint logic and navigation meshes."
+              "description": "AI drones detect, chase, and attack the player using Blueprint logic and navigation meshes."
             },
             {
               "title": "Timer Gameplay",
-              "description": "Implemented dynamic countdown systems that reqrds time bonuses for enemy eliminations."
+              "description": "Implemented dynamic countdown systems that reward time bonuses for enemy eliminations."
             },
             {
               "title": "Pickups",
@@ -163,7 +163,7 @@
             },
             {
               "title": "Timer Accuracy",
-              "description": "Timer desynced during heavy combat events, Solved by moving timer logic to centralized controller."
+              "description": "Timer desynced during heavy combat events. Solved by moving timer logic to centralized controller."
             }
           ],
           "galleryImages": [],
@@ -185,7 +185,7 @@
           "subtitle": "Third-Person Shooter",
           "coverVideo": "assets/Apex-Ruin_Large.webm",
           "about": [
-            "Apex Ruin is a third-person shooter prototype developed to explore player combat systems, AI behavior, and animation integration in Unreal ENgine 4.",
+            "Apex Ruin is a third-person shooter prototype developed to explore player combat systems, AI behavior, and animation integration in Unreal Engine 4.",
             "The project focused on implementing gameplay mechanics in C++ and Blueprints, including combat logic, enemy behavior, animation systems, and player feedback loops."
           ],
           "projectInfo": {
@@ -247,7 +247,7 @@
           "subtitle": "Hack-and-Slash",
           "coverVideo": "assets/Crimson-Reign_Large.webm",
           "about": [
-            "Crimson Reign is a third-person melee combat prototype developed in Unreal Engine 4 using C++. The project focuses on implementing core gameplay systems including combat interactions, AI behavior, player damage handling, and interactive world elements. It served as my first full gameplay project where I built reusable gameplay classes, enemy logic, and player combat mechanics using Unreal's gameplay famework."
+            "Crimson Reign is a third-person melee combat prototype developed in Unreal Engine 4 using C++. The project focuses on implementing core gameplay systems including combat interactions, AI behavior, player damage handling, and interactive world elements. It served as my first full gameplay project where I built reusable gameplay classes, enemy logic, and player combat mechanics using Unreal's gameplay framework."
           ],
           "projectInfo": {
             "timeFrame": "2 months",
@@ -258,7 +258,7 @@
           },
           "coreSystems": [
             {
-              "title": "Meele Combat System",
+              "title": "Melee Combat System",
               "description": "Implemented player attack handling, hit detection, damage application, and animation-triggered combat events."
             },
             {
@@ -267,7 +267,7 @@
             },
             {
               "title": "Player Health and Damage",
-              "description": "Built a modular health syste, supporting damage calculation, death handling, and combat feedback."
+              "description": "Built a modular health system, supporting damage calculation, death handling, and combat feedback."
             },
             {
               "title": "Interactive Environment",
@@ -311,7 +311,7 @@
           "name": "Retro Games Collection",
           "status": "",
           "thumbnail": "assets/Dapper-Dasher.gif",
-          "subtitle": "Retro Games Colletion",
+          "subtitle": "Retro Games Collection",
           "coverImage": "assets/Dapper-Dasher_HighRes.gif",
           "about": [
             "Retro Games Collection is a set of classic arcade games recreated in C++ using the Raylib library to practice low-level gameplay programming and collision systems."

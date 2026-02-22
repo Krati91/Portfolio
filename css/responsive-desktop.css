@@ -244,6 +244,13 @@
   }
 
   .breadcrumb-option {
-  display:none;
-}
+    display:none;
+  }
+
+  /* Contact Page Spacing Fix */
+  .contact.spad {
+    padding-top: 50px;
+    padding-bottom: calc(100vh - 50.3%);
+    /* padding-bottom: 507.5px; */
+  }
 }
