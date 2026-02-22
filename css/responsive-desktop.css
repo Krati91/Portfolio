@@ -101,22 +101,40 @@
   /* =================================================
      SIDEBAR & PROJECT DETAILS
      ================================================= */
-  
+
+  /* Portfolio container for project details */
+  .portfolio {
+    height: 100vh !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .portfolio > .row {
+    flex: 1 !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    flex-wrap: nowrap !important;
+    margin: 0 !important;
+  }
+
+  .portfolio > .row > .col-lg-3 {
+    height: 100vh !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+  }
+
   .sidebar {
     width: 100%;
-    height: auto;
+    height: 100%;
     position: relative;
+    overflow-y: auto;
   }
 
   .project-block {
-    margin-top: 20px;
-  }
-  
-  /* Portfolio container for project details */
-  .portfolio {
-    height: auto !important;
-    min-height: 100vh;
-    overflow: visible !important;
+    margin-top: 0;
+    height: 100vh;
+    overflow-y: auto;
   }
   
   /* Desktop Sidebar Accordion */
