@@ -35,6 +35,7 @@ body {
   scrollbar-color: #482aa1 black;
   scrollbar-width: thin;
   background-color: #100028;
+  overflow-x: hidden;
 }
 
 h1,
