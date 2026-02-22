@@ -298,13 +298,13 @@
 
   /* Portfolio Section - Expand to fill space like contact page */
   section.portfolio.spad {
-    flex: 1 !important;
+    flex: 0 0 auto !important;
     padding-bottom: 50px !important;
   }
 
   /* Work Section - Expand to fill space on index page */
   section.work {
-    flex: 1 !important;
+    flex: 0 0 auto !important;
     padding-bottom: 0px !important;
     padding-top: 30px !important;
   }
@@ -328,11 +328,16 @@
   .contact-widget.spad {
     padding-top: 140px !important;
     padding-bottom: 20px !important;
+    flex: 0 0 auto !important;
   }
 
   .contact.spad {
     padding-top: 30px !important;
     padding-bottom: 40px !important;
-    flex: 1 !important;
+    flex: 0 0 auto !important;
+  }
+
+  .portfolio.top-spad{
+    height: auto !important;
   }
 }

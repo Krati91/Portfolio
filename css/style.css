@@ -29,11 +29,12 @@
 /*----------------------------------------*/
 html,
 body {
-  height: 100%;
+  height: auto;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   scrollbar-color: #482aa1 black;
   scrollbar-width: thin;
+  background-color: #100028;
 }
 
 h1,
@@ -1110,7 +1111,7 @@ ol {
   background: #0a0119;
   margin-top: 50px;
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
 
 .footer__top {
@@ -1937,11 +1938,18 @@ ol {
 -----------------------*/
 .portfolio {
   background: #100028;
-  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
 }
 
 .portfolio .row {
   min-height: auto;
+  overflow: visible;
+}
+
+.portfolio__gallery {
+  overflow: visible !important;
 }
 
 .portfolio__filter {

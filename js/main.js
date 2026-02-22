@@ -66,7 +66,17 @@
         });
         if ($('.portfolio__gallery').length > 0) {
             var containerEl = document.querySelector('.portfolio__gallery');
-            var mixer = mixitup(containerEl);
+            var mixer = mixitup(containerEl, {
+                animation: {
+                    animateResizeContainer: false,
+                    animateResizeTargets: false
+                },
+                callbacks: {
+                    onMixEnd: function(state) {
+                        containerEl.style.height = '';
+                    }
+                }
+            });
         }
 
         /*------------------

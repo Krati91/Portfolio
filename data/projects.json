@@ -12,8 +12,9 @@
           "subtitle": "Multiplayer Shooter",
           "coverVideo": "assets/Battle-Blasters_FrontPage.webm",
           "about": [
-            "Battle Blasters is a multiplayer shooter prototype focused on implementing server-authoritative networking and gameplay synchronization in Unreal Engine 5.",
-            "The project explores player replication, match state management, and latency handling in real-time multiplayer gameplay."
+            "Battle Blasters is a multiplayer shooter prototype built to implement and validate server-authoritative gameplay systems in Unreal Engine 5.",
+            "The project focuses on real-time player replication, match state management, lag compensation, and gameplay validation under network latency.",
+            "Core goal: design a multiplayer gameplay loop that remains synchronized and responsive across clients while preserving server authority."
           ],
           "projectInfo": {
             "timeFrame": "Ongoing",
@@ -25,23 +26,22 @@
           "coreSystems": [
             {
               "title": "Replication",
-              "description": "Implemented replicated player movement, firing, and state variables using Unreal networking framework."
-            },
+              "description": "Design and implemented replicated player movement, firing logic, and gameplay state variables using Unreal's networking framework. Separated client input from server validation to maintain authoritative control over gameplay actions"            },
             {
               "title": "Match Flow",
-              "description": "Designed game state transactions including lobby, warmup, match start, and match end handling."
+              "description": "Implemented match state transitions including lobby, warmup, match start, and match end using GameMode and GameState ownership rules. Ensured consistent state synchronization across all connected cients."
             },
             {
               "title": "Lag Compensation",
-              "description": "Implemented client-side prediction and server authority validation to reduce perceived latency."
+              "description": "Implemented client-side prediction with server authority validation and reconciliation to minimize perceived latency during movement and firing."
             },
             {
               "title": "Weapon Synchronization",
-              "description": "Server validated hits and synchronized damage events across connected clients."
+              "description": "Server validated hit detection and damage application before replicating results to clients. Prevented client-authoritativedamage events to maintain gameplay integrity"
             },
             {
               "title": "Online Sessions",
-              "description": "Integrated Unreal Online Subsystem for session creation, joining, and matchmaking."
+              "description": "Integrated Unreal Online Subsystem (Steam) to handle session creation, joining, and matchmaking flow."
             }
           ],
           "technicalChallenges": [
@@ -80,8 +80,8 @@
           "subtitle": "Soulslike RPG",
           "coverVideo": "assets/EchoesOfTheLostSands_Large.webm",
           "about": [
-            "Echoes of the Lost Sands is an action RPG prototype focused on melee combat mechanics, enemy behavior, and animation-driven gameplay in Unreal Engine 5",
-            "The project explores character combat interactions, boss encounters, and environment navigation systems."
+            "Echoes of the Lost Sands is a third-person action RPG prototype built to implement animation-driven melee combat, enemy behavior, and boss state logic in Unreal Engine 5.",
+            "The project focuses on responsive combat interactions, animation-based hit detection, boss encounters, and AI decision making. The primary goal was to create a combat loop where player input, animation timing, and enemy reactions remain tightly synchronized."
           ],
           "projectInfo": {
             "timeFrame": "3 months",
@@ -93,19 +93,19 @@
           "coreSystems": [
             {
               "title": "Melee Combat",
-              "description": "Created attack combos, damage handling, and hit detection using animation notifies."
+              "description": "Implemented a combo-based melee combat system using animation notifies and state-controlled attach chains. Player attacks trigger hit detection windows during animation frames, ensuring damage occurs only during valid contact timing. Handled damage application, hit reactions, and attack interruption logic."
             },
             {
               "title": "Enemy AI",
-              "description": "Behavior Trees control enemy patrol, detection, and attack behavior."
+              "description": "Designed enemy bahevior using Behavior Trees and Blackboard keys. Enemies patrol when idle, detect the player using perception radius, chase and attack within range, disengage when distance exceeds threshold. Navigation mesh pathfinding controls movement and positioning during combat."
             },
             {
               "title": "Boss Logic",
-              "description": "Implemented boss attack patterns and state transitions."
+              "description": "Implemented boss attack patterns using state-driven logic. Boss transitions between attack states, recovery windows, and idle phases, creating readable combat behavior rather than random attacks."
             },
             {
               "title": "Animation Integration",
-              "description": "Used motion Warping and root motion animations for responsive combat."
+              "description": "Used root motion animations and Motion Warping to align attacks with player positioning. Synchronized animation playback with gameplay logic to prevent sliding or mismatched hit registration."
             }
           ],
           "technicalChallenges": [
@@ -134,8 +134,8 @@
           "subtitle": "Third-Person Shooter",
           "coverVideo": "assets/Apex-Ruin_Large.webm",
           "about": [
-            "Apex Ruin is a third-person shooter prototype developed to explore player combat systems, AI behavior, and animation integration in Unreal Engine 4.",
-            "The project focused on implementing gameplay mechanics in C++ and Blueprints, including combat logic, enemy behavior, animation systems, and player feedback loops."
+            "Apex Ruin is a third-person shooter prototype built to implement modular combat systems, enemy AI behavior, and animation-driven aiming in Unreal Engine 4.",
+            "The project focuses on integrating C++ gameplay logic with Blueprint systems to create a responsive combat loop combining weapon mechanics, AI engagement, and player feedback."
           ],
           "projectInfo": {
             "timeFrame": "3 months",
@@ -147,23 +147,23 @@
           "coreSystems": [
             {
               "title": "Combat System",
-              "description": "Implemented hitscan weapon firing, recoil handling, and reload logic using Blueprint and C++ interaction."
+              "description": "Implemented a modular hitscan weapon system using C++ for firing logic and Blueprint for visual feedback. Weapon systems includes fire rate control and reload logic, recoil handling and camera feedback, hit detection and damage application, configurable wepon properties for different weapon types. Seperated input handling from weapon execution logic to maintain clean system ownership."
             },
             {
               "title": "Enemy AI",
-              "description": "Created AI behaviors using Behavior Trees, including patrol, detection, chase, and attack states with navigation mesh pathfinding."
+              "description": "Designed enemy behavior using Behavior Trees and Blackboard keys. Enemies patrol predefined routes, detect the player using perception logic, hase within navigation mesh constraint, attack based on distance and cooldown timers. AI attack behavior integrates with animation states to prevent premature damage triggering."
             },
             {
               "title": "Animation System",
-              "description": "Integrated animation blueprints, blendspaces, aim offsets, and inverse kinematics to synchronize aiming and movement."
+              "description": "Integrated Animation Blueprints, Blendspaces, Aim Offsets, and Inverse Kinematics to synchronize aiming direction with camera orientation. Resolved mismatched aim direction by aligning controller rotation with animation blending."
             },
             {
               "title": "HUD & Feedback",
-              "description": "Implemented dynamic crosshair expansion, health UI, and hit reaction feedback to communicate player actions."
+              "description": "Implemented dynamic crosshair expansion based on firing state and movement speed. Integrated hit reaction feedback and health UI to communicate successful damage events."
             },
             {
               "title": "Inventory and Weapons",
-              "description": "Built weapon switching and inventory management logic with configurable weapon properties."
+              "description": "Built a weapon switching and inventory system supporting multiple weapon types. Weapons exist as configurable actors with shared base class logic to allow reuse and extension."
             }
           ],
           "technicalChallenges": [
@@ -196,7 +196,8 @@
           "subtitle": "Hack-and-Slash",
           "coverVideo": "assets/Crimson-Reign_Large.webm",
           "about": [
-            "Crimson Reign is a third-person melee combat prototype developed in Unreal Engine 4 using C++. The project focuses on implementing core gameplay systems including combat interactions, AI behavior, player damage handling, and interactive world elements. It served as my first full gameplay project where I built reusable gameplay classes, enemy logic, and player combat mechanics using Unreal's gameplay framework."
+            "Crimson Reign is a third-person melee combat prototype developed in Unreal Engine 4 using C++.",
+            "This was my first complete gameplay systems project, where I implemented reusable gameplay classes, enemy AI logic, and player combat systems usng Unreal's gameplay framework. The focus was on understanding system ownership, combat flow, and AI state behavior."
           ],
           "projectInfo": {
             "timeFrame": "2 months",
@@ -208,7 +209,7 @@
           "coreSystems": [
             {
               "title": "Melee Combat System",
-              "description": "Implemented player attack handling, hit detection, damage application, and animation-triggered combat events."
+              "description": "Implemented player attack handling using animation-driven hit detection and state based attack execution. Combat includes attack input handling, damage calculation and application"
             },
             {
               "title": "Enemy AI Behavior",

@@ -3,6 +3,10 @@
 -----------------------*/
 .portfolio {
   background: #100028;
+  /* min-height removed: flex: 1 in responsive CSS handles vertical fill */
+  position: relative;
+  z-index: 1;
+  overflow: visible;
 }
 
 .portfolio__filter {
