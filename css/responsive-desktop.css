@@ -177,12 +177,13 @@
   .project-details small,
   .description ul li {
     font-size: 20px !important;
+    font-weight: 600;
     line-height: 1.9 !important;
   }
 
   .job-card ul li {
     font-size: 20px !important;
-    line-height: 1.9 !important;
+    line-height: 1.7 !important;
   }
 
   .description .heading {
