@@ -16,6 +16,18 @@ body {
   flex-direction: column !important;
 }
 
+body > .header {
+  flex: 0 0 auto !important;
+}
+
+body > #preloder {
+  flex: 0 0 auto !important;
+}
+
+body > #button {
+  flex: 0 0 auto !important;
+}
+
 body > .footer {
   margin-top: auto !important;
 }
@@ -24,6 +36,28 @@ body > .footer {
 section.portfolio.spad {
   flex: 1 !important;
   padding-bottom: 40px !important;
+}
+
+/* Work Section - Expand to fill space on index page */
+section.work {
+  flex: 1 !important;
+  padding-bottom: 100px !important;
+  padding-top: 30px !important;
+}
+
+/* Services Section - Allow flex expansion on index page */
+section.services.spad {
+  flex: 0 0 auto !important;
+}
+
+/* Hero Section - Fixed height on index page */
+section.hero {
+  flex: 0 0 auto !important;
+}
+
+/* Breadcrumb Section - Fixed height */
+section.breadcrumb-option {
+  flex: 0 0 auto !important;
 }
 
 .contact-widget.spad {

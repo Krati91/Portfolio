@@ -68,6 +68,17 @@
             var containerEl = document.querySelector('.portfolio__gallery');
             var mixer = mixitup(containerEl);
         }
+
+        /*------------------
+            Masonry Gallery
+        --------------------*/
+        if ($('.work__gallery').length > 0) {
+            $('.work__gallery').masonry({
+                itemSelector: '.work__item',
+                columnWidth: '.grid-sizer',
+                gutter: 10
+            });
+        }
         
     });
 
@@ -154,23 +165,8 @@
         Background Set
     --------------------*/
     
-    $('.set-bg').each(function () {
-        var elementTop = $(this).offset().top;
-        var windowBottom = $(document).scrollTop() + $(document).height();
-      // Check if the element is in the viewport
-      if (elementTop < windowBottom) {
-            var bg = $(this).data('setbg');
-            $(this).removeClass('lazy-background');
-            $(this).css('background-image', 'url(' + bg + ')'); 
-        }    
-    });
-
-    //Masonary
-    $('.work__gallery').masonry({
-        itemSelector: '.work__item',
-        columnWidth: '.grid-sizer',
-        gutter: 10
-    });
+    // Removed early .set-bg handler to prevent conflict with lazy loading
+    // The IntersectionObserver at the end of the file handles background loading
 
     /*------------------
 		Navigation
@@ -272,30 +268,34 @@
     });
 
 	/*---------------------
- 		Lazy Load
+ 		Load Background Images
    -----------------------*/
-	const lazyDivs = $("div[data-setbg]");
-
-	  if ("IntersectionObserver" in window) {
-	    let observer = new IntersectionObserver(function (entries, obs) {
-	      entries.forEach(function (entry) {
-	        if (entry.isIntersecting) {
-	          let $div = $(entry.target);
-	          $div.css("background-image", "url(" + $div.data("setbg") + ")");
-	          obs.unobserve(entry.target);
+	$(window).on('load', function() {
+	    // Simple approach: load all backgrounds immediately
+	    $("div[data-setbg]").each(function() {
+	        let $div = $(this);
+	        let bgUrl = $div.data("setbg");
+	        if (bgUrl) {
+	            console.log('Setting background: ' + bgUrl);
+	            // Remove lazy background class first
+	            $div.removeClass('lazy-background');
+	            // Set background image - try without quotes first
+	            $div.css("background-image", "url(" + bgUrl + ")");
+	            // Also ensure it has the proper background properties
+	            $div.css({
+	                "background-size": "cover",
+	                "background-position": "center center",
+	                "background-repeat": "no-repeat"
+	            });
 	        }
-	      });
 	    });
-	
-	    lazyDivs.each(function () {
-	      observer.observe(this);
-	    });
-	  } else {
-	    // Fallback for old browsers: just load all backgrounds
-	    lazyDivs.each(function () {
-	      let $div = $(this);
-	      $div.css("background-image", "url(" + $div.data("setbg") + ")");
-	    });
-	  }
+	    
+	    // Re-layout masonry after backgrounds are loaded
+	    setTimeout(function() {
+	        if ($('.work__gallery').length > 0) {
+	            $('.work__gallery').masonry('layout');
+	        }
+	    }, 100);
+	});
 
 })(jQuery);

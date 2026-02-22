@@ -711,12 +711,22 @@ ol {
   Work
 -----------------------*/
 .work {
-  overflow: hidden;
+  overflow: visible;
   background: #100028;
+  padding-bottom: 80px;
+  padding-top: 20px;
 }
 
 .work__gallery {
   margin-right: -10px;
+  min-height: 400px;
+  padding-bottom: 30px;
+}
+
+.work__gallery::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .work__item {
@@ -1098,6 +1108,9 @@ ol {
 -----------------------*/
 .footer {
   background: #0a0119;
+  margin-top: 50px;
+  position: relative;
+  z-index: 1;
 }
 
 .footer__top {
@@ -1767,7 +1780,7 @@ ol {
 .project-block{
   position: relative;
   top: 97px;
-  overflow-y: auto;
+  overflow-y: visible;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1776,8 +1789,9 @@ ol {
           justify-content: center;
   flex: 1;
   flex-basis: 0.000000001px;
-  height: calc(100vh - 97px);
+  min-height: calc(100vh - 97px);
   box-sizing: border-box;
+  padding-bottom: 60px;
 }
 
 .job-card{
@@ -1923,6 +1937,11 @@ ol {
 -----------------------*/
 .portfolio {
   background: #100028;
+  min-height: 100vh;
+}
+
+.portfolio .row {
+  min-height: auto;
 }
 
 .portfolio__filter {
