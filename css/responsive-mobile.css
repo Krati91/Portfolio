@@ -1195,7 +1195,7 @@ html, body {
 /* Project Details Sidebar - Bottom Drawer */
 .portfolio {
   height: auto !important;
-  min-height: auto;
+  min-height: auto !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
   overflow: visible !important;
