@@ -7,15 +7,28 @@
    Author: Kartik Chaturvedi
    ===================================================== */
 
-/* Contact Page Spacing */
+/* Contact Page Spacing Fix */
+
+/* Ensure contact page fits viewport without whitespace */
+body {
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+body > .footer {
+  margin-top: auto !important;
+}
+
 .contact-widget.spad {
   padding-top: 40px !important;
   padding-bottom: 15px !important;
 }
 
 .contact.spad {
-  padding-top: 40px !important;
-  padding-bottom: 282px !important;
+  padding-top: 20px !important;
+  padding-bottom: 30px !important;
+  flex: 1 !important;
 }
 
 .contact__form {

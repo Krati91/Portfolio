@@ -382,11 +382,11 @@ function setupEventHandlers() {
     });
 }
 
-// Collapsible bottom drawer functionality (mobile only)
+// Collapsible bottom drawer functionality (mobile and tablet)
 let drawerInitialized = false;
 
 function initDrawerToggle() {
-    if (window.innerWidth <= 991) {
+    if (window.innerWidth <= 1199) {
         const sidebar = $('.sidebar');
         const body = $('body');
         
@@ -525,7 +525,7 @@ function initDrawerToggle() {
             drawerInitialized = true;
         }
     } else {
-        // Desktop view - accordion functionality
+        // Desktop view (>= 1200px) - accordion functionality
         const sidebar = $('.sidebar');
         const body = $('body');
         sidebar.removeClass('collapsed expanded');

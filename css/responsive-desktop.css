@@ -248,9 +248,26 @@
   }
 
   /* Contact Page Spacing Fix */
+  
+  /* Ensure contact page fits viewport without whitespace */
+  body {
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  body > .footer {
+    margin-top: auto !important;
+  }
+
+  .contact-widget.spad {
+    padding-top: 40px !important;
+    padding-bottom: 20px !important;
+  }
+
   .contact.spad {
-    padding-top: 50px;
-    padding-bottom: calc(100vh - 50.3%);
-    /* padding-bottom: 507.5px; */
+    padding-top: 30px !important;
+    padding-bottom: 40px !important;
+    flex: 1 !important;
   }
 }

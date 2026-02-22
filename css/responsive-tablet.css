@@ -8,12 +8,62 @@
    ===================================================== */
 
 /* Contact Page Spacing Fix */
+
+/* Ensure contact page fits viewport without whitespace */
+body {
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+body > .footer {
+  margin-top: auto !important;
+}
+
+.contact-widget.spad {
+  padding-top: 30px !important;
+  padding-bottom: 20px !important;
+}
+
 .contact.spad {
-  padding-bottom: 289.5px !important;
+  padding-top: 20px !important;
+  padding-bottom: 30px !important;
+  flex: 1 !important;
 }
 
 .contact__form {
-  margin-top: 80px !important;
+  margin-top: 0 !important;
+}
+
+.contact__widget__item {
+  margin-bottom: 15px !important;
+  padding: 15px !important;
+}
+
+.contact__form h3 {
+  margin-bottom: 20px !important;
+  font-size: 24px !important;
+}
+
+.contact__form input,
+.contact__form textarea {
+  margin-bottom: 15px !important;
+}
+
+.contact__form textarea {
+  height: 80px !important;
+  min-height: 80px !important;
+}
+
+.contact__form button {
+  margin-top: 10px !important;
+}
+
+/* Breadcrumb adjustment for contact page */
+body .breadcrumb-option.spad {
+  padding-top: 90px !important;
+  padding-bottom: 0px !important;
+  min-height: 180px !important;
 }
 
 /* Hero Slider */
@@ -363,6 +413,15 @@ html, body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  position: relative;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 .header {
@@ -726,20 +785,16 @@ div[class*="col-lg-3"] {
 .sidebar {
   display: block !important;
   width: 100% !important;
-  max-height: 70vh !important;
   min-height: 50px !important;
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
   background: #0a0119 !important;
   border-top: 2px solid #00bfe7 !important;
   border-left: 2px solid #00bfe7 !important;
   border-right: 2px solid #00bfe7 !important;
   border-bottom: none !important;
-  padding: 50px 15px 30px !important;
   margin-bottom: 0 !important;
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5) !important;
   border-radius: 20px 20px 0 0 !important;
-  transition: max-height 0.3s ease, padding 0.3s ease !important;
+  transition: max-height 0.3s ease, padding 0.3s ease, overflow 0.3s ease !important;
   position: relative !important;
   visibility: visible !important;
   opacity: 1 !important;
@@ -754,7 +809,10 @@ div[class*="col-lg-3"] {
 
 .sidebar.expanded {
   max-height: 70vh !important;
+  overflow: visible !important;
   overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 50px 15px 30px !important;
 }
 
 .sidebar.collapsed .nav {
@@ -931,6 +989,11 @@ body.drawer-expanded .project-block {
 
 .project-block .col-lg-9 {
   right: 0 !important;
+  width: 100% !important;
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
 }
 
 .project-block .col-lg-1 {
@@ -1055,11 +1118,18 @@ body.drawer-expanded .project-block {
 .project-details video,
 .project-details .large__gif {
   width: 100%;
-  height: 270px;
+  height: 310px;
+  max-width: 100%;
 }
 
 .project-details video {
   object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.large__gif {
+  overflow: hidden;
 }
 
 .large__gif h4 {
@@ -1286,13 +1356,27 @@ body > * {
   max-width: 100vw;
 }
 
-.project-block,
-.project-block .container,
+.project-block {
+  overflow: visible !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0px !important;
+}
+
+.project-block .container {
+  overflow: visible !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  padding-bottom: 0px !important;
+}
+
 .project-block .row {
   overflow: visible !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
   padding-bottom: 0px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .footer {

@@ -1,8 +1,8 @@
 {
   "categories": [
     {
-      "id": "ue-5-list",
-      "name": "Unreal Engine 5",
+      "id": "multiplayer-list",
+      "name": "Multiplayer",
       "projects": [
         {
           "id": "battle-blasters",
@@ -65,7 +65,13 @@
           "githubUrl": "https://github.com/Mecha-NOX/Battle-Blasters",
           "youtubeEmbed": "https://www.youtube.com/embed/tLNkaF6ZHlk?si=Zyjq8XHLG_-HEGTM",
           "systemsHeading": "Networking Systems"
-        },
+        }
+      ]
+    },
+    {
+      "id": "ai-list",
+      "name": "AI",
+      "projects": [
         {
           "id": "echoes-of-the-lost-sands",
           "name": "Echoes of the Lost Sands",
@@ -120,63 +126,6 @@
           "youtubeEmbed": "https://www.youtube.com/embed/lVcxVkBG1_8?si=zIZO_4piMP4zqY2U",
           "systemsHeading": "Core Systems Implemented"
         },
-        {
-          "id": "countdown-carnage",
-          "name": "Countdown Carnage",
-          "status": "",
-          "thumbnail": "assets/Countdown-Carnage_Cover.gif",
-          "subtitle": "First-Person Shooter",
-          "coverVideo": "assets/Countdown-Carnage_Large.webm",
-          "about": [
-            "Countdown Carnage is a single-player FPS prototype developed to practice rapid gameplay loop design and Blueprint-based systems in Unreal Engine 5.",
-            "The project focuses on enemy spawning, timed gameplay mechanics, and responsive player feedback systems."
-          ],
-          "projectInfo": {
-            "timeFrame": "3 weeks",
-            "engine": "Unreal Engine 5.3",
-            "genre": "First-Person Shooter (FPS)",
-            "gameMode": "Single-player",
-            "platform": "Windows (PC)"
-          },
-          "coreSystems": [
-            {
-              "title": "Enemy Behavior",
-              "description": "AI drones detect, chase, and attack the player using Blueprint logic and navigation meshes."
-            },
-            {
-              "title": "Timer Gameplay",
-              "description": "Implemented dynamic countdown systems that reward time bonuses for enemy eliminations."
-            },
-            {
-              "title": "Pickups",
-              "description": "Health and ammo pickups spawn and update player state variables."
-            },
-            {
-              "title": "HUD",
-              "description": "Created functional UI displaying player health, timer, and score."
-            }
-          ],
-          "technicalChallenges": [
-            {
-              "title": "AI Navigation",
-              "description": "Drones collided with level geometry. Fixed using improved navigation mesh setup."
-            },
-            {
-              "title": "Timer Accuracy",
-              "description": "Timer desynced during heavy combat events. Solved by moving timer logic to centralized controller."
-            }
-          ],
-          "galleryImages": [],
-          "githubUrl": "https://github.com/Mecha-NOX/Countdown-Carnage",
-          "youtubeEmbed": "https://www.youtube.com/embed/ouyf6i2yRZs?si=3sHCd6igFaClT_8i",
-          "systemsHeading": "Core Systems Implemented"
-        }
-      ]
-    },
-    {
-      "id": "ue-4-list",
-      "name": "Unreal Engine 4",
-      "projects": [
         {
           "id": "apex-ruin",
           "name": "Apex Ruin",
@@ -303,8 +252,65 @@
       ]
     },
     {
-      "id": "raylib-list",
-      "name": "Raylib",
+      "id": "blueprint-list",
+      "name": "Blueprint",
+      "projects": [
+        {
+          "id": "countdown-carnage",
+          "name": "Countdown Carnage",
+          "status": "",
+          "thumbnail": "assets/Countdown-Carnage_Cover.gif",
+          "subtitle": "First-Person Shooter",
+          "coverVideo": "assets/Countdown-Carnage_Large.webm",
+          "about": [
+            "Countdown Carnage is a single-player FPS prototype developed to practice rapid gameplay loop design and Blueprint-based systems in Unreal Engine 5.",
+            "The project focuses on enemy spawning, timed gameplay mechanics, and responsive player feedback systems."
+          ],
+          "projectInfo": {
+            "timeFrame": "3 weeks",
+            "engine": "Unreal Engine 5.3",
+            "genre": "First-Person Shooter (FPS)",
+            "gameMode": "Single-player",
+            "platform": "Windows (PC)"
+          },
+          "coreSystems": [
+            {
+              "title": "Enemy Behavior",
+              "description": "AI drones detect, chase, and attack the player using Blueprint logic and navigation meshes."
+            },
+            {
+              "title": "Timer Gameplay",
+              "description": "Implemented dynamic countdown systems that reward time bonuses for enemy eliminations."
+            },
+            {
+              "title": "Pickups",
+              "description": "Health and ammo pickups spawn and update player state variables."
+            },
+            {
+              "title": "HUD",
+              "description": "Created functional UI displaying player health, timer, and score."
+            }
+          ],
+          "technicalChallenges": [
+            {
+              "title": "AI Navigation",
+              "description": "Drones collided with level geometry. Fixed using improved navigation mesh setup."
+            },
+            {
+              "title": "Timer Accuracy",
+              "description": "Timer desynced during heavy combat events. Solved by moving timer logic to centralized controller."
+            }
+          ],
+          "galleryImages": [],
+          "githubUrl": "https://github.com/Mecha-NOX/Countdown-Carnage",
+          "youtubeEmbed": "https://www.youtube.com/embed/ouyf6i2yRZs?si=3sHCd6igFaClT_8i",
+          "systemsHeading": "Core Systems Implemented"
+        }
+      ]
+    },
+    {
+      "id": "cpp-list",
+      "name": "C++",
       "projects": [
         {
           "id": "retro-games-collection",
