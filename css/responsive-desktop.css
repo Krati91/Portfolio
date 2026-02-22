@@ -247,9 +247,7 @@
     display:none;
   }
 
-  /* Contact Page Spacing Fix */
-  
-  /* Ensure contact page fits viewport without whitespace */
+  /* Body Flexbox Layout for Footer Positioning */
   body {
     min-height: 100vh !important;
     display: flex !important;
@@ -260,6 +258,13 @@
     margin-top: auto !important;
   }
 
+  /* Portfolio Section - Expand to fill space like contact page */
+  section.portfolio.spad {
+    flex: 1 !important;
+    padding-bottom: 50px !important;
+  }
+
+  /* Contact Page Spacing Fix */
   .contact-widget.spad {
     padding-top: 40px !important;
     padding-bottom: 20px !important;
