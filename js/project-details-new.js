@@ -286,12 +286,6 @@ function buildTechnicalChallenges(project) {
             );
         }
 
-        if (ch.screenshot) {
-            const $ssWrap = $('<div>', { 'class': 'pd-challenge-screenshot' });
-            $ssWrap.css('background-image', 'url(' + ch.screenshot + ')');
-            $body.append($ssWrap);
-        }
-
         $card.append($header).append($body);
         $grid.append($card);
     });
