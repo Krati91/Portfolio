@@ -1,0 +1,642 @@
+{
+  "categories": [
+    {
+      "id": "multiplayer-list",
+      "name": "Multiplayer",
+      "projects": [
+        {
+          "id": "battle-blasters",
+          "name": "Battle Blasters",
+          "status": "Ongoing",
+          "thumbnail": "assets/Battle-Blasters_Cover.gif",
+          "subtitle": "Multiplayer Shooter",
+          "subtitleRole": "Multiplayer Programmer Project",
+          "coverVideo": "assets/Battle-Blasters_FrontPage.webm",
+          "role": "Solo Multiplayer Programmer",
+          "duration": "Ongoing",
+          "focus": "Networking & Replication",
+          "tech": [
+            { "iconClass": "fa fa-gamepad", "label": "UE5" },
+            { "iconClass": "fa fa-code", "label": "C++" },
+            { "iconClass": "fa fa-sitemap", "label": "Blueprints" },
+            { "iconClass": "fa fa-wifi", "label": "Networking" }
+          ],
+          "heroFeatures": [
+            "Server-Authoritative Replication",
+            "Lag Compensation & Prediction",
+            "Match State Management",
+            "Weapon Synchronization",
+            "Online Session Integration"
+          ],
+          "about": [
+            "Battle Blasters is a multiplayer shooter prototype built to implement and validate server-authoritative gameplay systems in Unreal Engine 5.",
+            "The project focuses on real-time player replication, match state management, lag compensation, and gameplay validation under network latency.",
+            "Core goal: design a multiplayer gameplay loop that remains synchronized and responsive across clients while preserving server authority."
+          ],
+          "projectInfo": {
+            "timeFrame": "Ongoing",
+            "engine": "Unreal Engine 5.2",
+            "genre": "Multiplayer Shooter",
+            "gameMode": "Deathmatch, Capture the Flag",
+            "platform": "Windows (PC)"
+          },
+          "skillKeywords": [
+            { "label": "Replication", "highlighted": true },
+            { "label": "RPC Calls" },
+            { "label": "Server Validation" },
+            { "label": "Lag Compensation" },
+            { "label": "Client Prediction" },
+            { "label": "Match State" },
+            { "label": "Online Subsystem", "highlighted": true },
+            { "label": "GameMode / GameState" },
+            { "label": "Hit Detection" },
+            { "label": "Session Management" }
+          ],
+          "systemsShowcase": [
+            {
+              "title": "Replication",
+              "description": "Replicated player movement, firing logic, and gameplay state variables with server authority.",
+              "image": "assets/Battle-Blasters_Cover.gif"
+            },
+            {
+              "title": "Match Flow",
+              "description": "Lobby, warmup, match start, and end state transitions using GameMode/GameState.",
+              "image": "assets/Battle-Blasters_Second.gif"
+            },
+            {
+              "title": "Lag Compensation",
+              "description": "Client-side prediction with server reconciliation for responsive movement under latency.",
+              "image": "assets/Battle-Blasters_Cover.gif"
+            },
+            {
+              "title": "Online Sessions",
+              "description": "Steam subsystem integration for session creation, joining, and matchmaking.",
+              "image": "assets/Battle-Blasters_Third.gif"
+            }
+          ],
+          "technicalChallenges": [
+            {
+              "title": "Network Desync (C++)",
+              "problem": "Players experienced hit registration delay due to unsynchronized RPC timing.",
+              "solution": "Used server validation and corrected timing of RPC calls.",
+              "result": "Consistent hit registration across clients with reduced perceived latency.",
+              "screenshot": ""
+            },
+            {
+              "title": "Match Stability",
+              "problem": "Player disconnections caused match state inconsistency across clients.",
+              "solution": "Handled disconnect events in GameMode with state cleanup and re-broadcast.",
+              "result": "Stable match flow regardless of mid-game disconnections.",
+              "screenshot": ""
+            }
+          ],
+          "codeSamples": [
+            {
+              "title": "Replication Setup (C++)",
+              "language": "cpp",
+              "code": "void ABlasterCharacter::GetLifetimeReplicatedProps(\n    TArray<FLifetimeProperty>& OutLifetimeProps) const\n{\n    Super::GetLifetimeReplicatedProps(OutLifetimeProps);\n    DOREPLIFETIME_CONDITION(ABlasterCharacter, Health, COND_OwnerOnly);\n    DOREPLIFETIME(ABlasterCharacter, bIsEliminated);\n    DOREPLIFETIME(ABlasterCharacter, OverlappingWeapon);\n}"
+            }
+          ],
+          "galleryImages": [
+            "assets/Battle-Blasters_Second.gif",
+            "assets/Battle-Blasters_Third.gif"
+          ],
+          "githubUrl": "https://github.com/Mecha-NOX/Battle-Blasters",
+          "youtubeEmbed": "https://www.youtube.com/embed/tLNkaF6ZHlk?si=Zyjq8XHLG_-HEGTM",
+          "systemsHeading": "Networking Systems"
+        }
+      ]
+    },
+    {
+      "id": "ai-list",
+      "name": "AI",
+      "projects": [
+        {
+          "id": "echoes-of-the-lost-sands",
+          "name": "Echoes of the Lost Sands",
+          "status": "",
+          "thumbnail": "assets/EchoesOfTheLostSands_Cover.gif",
+          "subtitle": "Soulslike RPG",
+          "subtitleRole": "Gameplay Programmer Project",
+          "coverVideo": "assets/EchoesOfTheLostSands_Large.webm",
+          "role": "Solo Gameplay Programmer",
+          "duration": "3 Months",
+          "focus": "Combat & AI Systems",
+          "tech": [
+            { "iconClass": "fa fa-gamepad", "label": "UES" },
+            { "iconClass": "fa fa-code", "label": "C++" },
+            { "iconClass": "fa fa-sitemap", "label": "Blueprints" },
+            { "iconClass": "fa fa-share-alt", "label": "Behavior Trees" }
+          ],
+          "heroFeatures": [
+            "Melee Combo Combat",
+            "Enemy AI Behaviors",
+            "Boss State Machine",
+            "Animation Hit Detection",
+            "Lock-On System"
+          ],
+          "about": [
+            "Echoes of the Lost Sands is a third-person action RPG prototype built to implement animation-driven melee combat, enemy behavior, and boss state logic in Unreal Engine 5.",
+            "The project focuses on responsive combat interactions, animation-based hit detection, boss encounters, and AI decision making. The primary goal was to create a combat loop where player input, animation timing, and enemy reactions remain tightly synchronized."
+          ],
+          "projectInfo": {
+            "timeFrame": "3 months",
+            "engine": "Unreal Engine 5.2",
+            "genre": "RPG",
+            "gameMode": "Single-player",
+            "platform": "Windows (PC)"
+          },
+          "skillKeywords": [
+            { "label": "Combat System", "highlighted": true },
+            { "label": "Animation Notifies" },
+            { "label": "Root Motion" },
+            { "label": "Motion Warping" },
+            { "label": "Behavior Trees" },
+            { "label": "Perception System" },
+            { "label": "State Machines" },
+            { "label": "Hit Detection" },
+            { "label": "Boss AI", "highlighted": true },
+            { "label": "Lock-On Targeting" }
+          ],
+          "systemsShowcase": [
+            {
+              "title": "Combat System",
+              "description": "Animation-driven combo system with cancel windows and stamina cost.",
+              "image": "assets/EchoesOfTheLostSands_Cover.gif"
+            },
+            {
+              "title": "Enemy AI",
+              "description": "Behavior Tree AI with chase, attack, and disengage states.",
+              "image": "assets/EchoesOfTheLostSands_Second.gif"
+            },
+            {
+              "title": "Boss Logic",
+              "description": "State machine controlling attack patterns and cooldowns.",
+              "image": "assets/EchoesOfTheLostSands_Cover.gif"
+            },
+            {
+              "title": "Lock-On Targeting",
+              "description": "Target selection based on distance / camera direction.",
+              "image": "assets/EchoesOfTheLostSands_Third.gif"
+            }
+          ],
+          "technicalChallenges": [
+            {
+              "title": "Combat System (C++)",
+              "problem": "Weapon damage triggered before contact.",
+              "solution": "Activated damage window using animation notify frames.",
+              "result": "Accurate hit feedback and improved responsiveness.",
+              "screenshot": "assets/EchoesOfTheLostSands_Second.gif"
+            },
+            {
+              "title": "AI Attack Range Issue",
+              "problem": "Enemies attacked at stipation + attack distance thresholds.",
+              "solution": "Balanced detection radius and attack distance thresholds.",
+              "result": "Readable and fair combat behavior.",
+              "screenshot": "assets/EchoesOfTheLostSands_Third.gif"
+            }
+          ],
+          "codeSamples": [
+            {
+              "title": "Combat System (C++)",
+              "language": "cpp",
+              "code": "void ACombatCharacter::ActivateDamageWindow()\n{\n    if (!bAttacking) return;\n\n    TArray<FHitResult> HitResults;\n    FVector Start = GetMesh()->GetSocketLocation(WeaponSocket);\n    FVector End = Start + GetActorForwardVector() * AttackRange;\n\n    FCollisionQueryParams Params;\n    Params.AddIgnoredActor(this);\n\n    bool bHit = GetWorld()->SweepMultiByChannel(\n        HitResults, Start, End,\n        FQuat::Identity,\n        ECC_Pawn,\n        FCollisionShape::MakeSphere(AttackRadius),\n        Params\n    );\n\n    for (auto& Hit : HitResults)\n    {\n        AActor* HitActor = Hit.GetActor();\n        if (HitActor && HitActor != this)\n        {\n            UGameplayStatics::ApplyDamage(\n                HitActor, AttackDamage,\n                GetController(), this,\n                UDamageType::StaticClass()\n            );\n        }\n    }\n}"
+            },
+            {
+              "title": "Enemy Behavior Tree Service (C++)",
+              "language": "cpp",
+              "code": "void UBTService_UpdateCombatState::TickNode(\n    UBehaviorTreeComponent& OwnerComp,\n    uint8* NodeMemory, float DeltaSeconds)\n{\n    Super::TickNode(OwnerComp, NodeMemory, DeltaSeconds);\n\n    UBlackboardComponent* BB = OwnerComp.GetBlackboardComponent();\n    AActor* Target = Cast<AActor>(\n        BB->GetValueAsObject(TargetKey.SelectedKeyName));\n\n    if (!Target) return;\n\n    APawn* OwnerPawn = OwnerComp.GetAIOwner()->GetPawn();\n    float Dist = FVector::Dist(\n        OwnerPawn->GetActorLocation(),\n        Target->GetActorLocation()\n    );\n\n    BB->SetValueAsBool(InAttackRangeKey.SelectedKeyName,\n        Dist <= AttackRange);\n    BB->SetValueAsBool(InChaseRangeKey.SelectedKeyName,\n        Dist <= ChaseRange);\n}"
+            }
+          ],
+          "galleryImages": [
+            "assets/EchoesOfTheLostSands_Second.gif",
+            "assets/EchoesOfTheLostSands_Third.gif"
+          ],
+          "githubUrl": "https://github.com/Mecha-NOX/Echoes-of-the-Lost-Sands",
+          "youtubeEmbed": "https://www.youtube.com/embed/lVcxVkBG1_8?si=zIZO_4piMP4zqY2U",
+          "systemsHeading": "Core Systems Implemented"
+        },
+        {
+          "id": "apex-ruin",
+          "name": "Apex Ruin",
+          "status": "",
+          "thumbnail": "assets/Apex-Ruin_Cover.gif",
+          "subtitle": "Third-Person Shooter",
+          "subtitleRole": "Gameplay Programmer Project",
+          "coverVideo": "assets/Apex-Ruin_Large.webm",
+          "role": "Solo Gameplay Programmer",
+          "duration": "3 Months",
+          "focus": "Combat & AI Systems",
+          "tech": [
+            { "iconClass": "fa fa-gamepad", "label": "UE4" },
+            { "iconClass": "fa fa-code", "label": "C++" },
+            { "iconClass": "fa fa-sitemap", "label": "Blueprints" },
+            { "iconClass": "fa fa-share-alt", "label": "Behavior Trees" }
+          ],
+          "heroFeatures": [
+            "Hitscan Weapon System",
+            "Enemy AI Behavior",
+            "Aim Offset & IK",
+            "Dynamic Crosshair HUD",
+            "Inventory & Weapon Switching"
+          ],
+          "about": [
+            "Apex Ruin is a third-person shooter prototype built to implement modular combat systems, enemy AI behavior, and animation-driven aiming in Unreal Engine 4.",
+            "The project focuses on integrating C++ gameplay logic with Blueprint systems to create a responsive combat loop combining weapon mechanics, AI engagement, and player feedback."
+          ],
+          "projectInfo": {
+            "timeFrame": "3 months",
+            "engine": "Unreal Engine 4.26",
+            "genre": "Third-Person Shooter",
+            "gameMode": "Single-player",
+            "platform": "Windows (PC)"
+          },
+          "skillKeywords": [
+            { "label": "Hitscan Weapons", "highlighted": true },
+            { "label": "Fire Rate & Reload" },
+            { "label": "Recoil System" },
+            { "label": "Behavior Trees" },
+            { "label": "Perception AI" },
+            { "label": "Aim Offsets" },
+            { "label": "Inverse Kinematics" },
+            { "label": "Blendspaces" },
+            { "label": "Dynamic HUD", "highlighted": true },
+            { "label": "Inventory System" }
+          ],
+          "systemsShowcase": [
+            {
+              "title": "Combat System",
+              "description": "Modular hitscan weapons with fire rate control, recoil, and damage application.",
+              "image": "assets/Apex-Ruin_Cover.gif"
+            },
+            {
+              "title": "Enemy AI",
+              "description": "Behavior Tree AI with patrol, detection, chase, and attack states.",
+              "image": "assets/Apex-Ruin_Second.gif"
+            },
+            {
+              "title": "Animation System",
+              "description": "Aim Offsets and IK synchronized with camera orientation for accurate aiming.",
+              "image": "assets/Apex-Ruin_Cover.gif"
+            },
+            {
+              "title": "HUD & Feedback",
+              "description": "Dynamic crosshair expansion based on movement and firing state.",
+              "image": "assets/Apex-Ruin_Third.gif"
+            }
+          ],
+          "technicalChallenges": [
+            {
+              "title": "AI Tuning",
+              "problem": "Enemies over-aggressively chased the player with no cooldown.",
+              "solution": "Adjusted perception radius and added attack cooldown logic.",
+              "result": "Balanced, readable combat engagement.",
+              "screenshot": ""
+            },
+            {
+              "title": "Animation Synchronization",
+              "problem": "Aim direction mismatched camera orientation during movement.",
+              "solution": "Used Aim Offset blending and controller rotation alignment.",
+              "result": "Accurate weapon and camera alignment in all stances.",
+              "screenshot": ""
+            }
+          ],
+          "codeSamples": [
+            {
+              "title": "Weapon Fire Logic (C++)",
+              "language": "cpp",
+              "code": "void AWeaponBase::Fire(const FVector& HitTarget)\n{\n    if (!bCanFire || CurrentAmmo <= 0) return;\n\n    bCanFire = false;\n    CurrentAmmo--;\n    PlayFireEffects();\n\n    FHitResult FireHit;\n    FVector Start = GetMuzzleLocation();\n    FVector End = Start +\n        (HitTarget - Start).GetSafeNormal() * 10000.f;\n\n    FCollisionQueryParams Params;\n    Params.AddIgnoredActor(this);\n    Params.AddIgnoredActor(GetOwner());\n\n    GetWorld()->LineTraceSingleByChannel(\n        FireHit, Start, End,\n        ECC_Visibility, Params\n    );\n\n    if (FireHit.bBlockingHit)\n        ApplyHitDamage(FireHit);\n\n    GetWorldTimerManager().SetTimer(\n        FireTimer, this,\n        &AWeaponBase::ResetFire,\n        FireRate\n    );\n}"
+            }
+          ],
+          "galleryImages": [
+            "assets/Apex-Ruin_Second.gif",
+            "assets/Apex-Ruin_Third.gif"
+          ],
+          "githubUrl": "https://github.com/Mecha-NOX/Apex-Ruin",
+          "youtubeEmbed": "https://www.youtube.com/embed/0dnEvv-QNS8?si=cR5NfQR7Np3qZIyC",
+          "systemsHeading": "Core Systems Implemented"
+        },
+        {
+          "id": "crimson-reign",
+          "name": "Crimson Reign",
+          "status": "",
+          "thumbnail": "assets/Crimson-Reign.gif",
+          "subtitle": "Hack-and-Slash",
+          "subtitleRole": "Gameplay Programmer Project",
+          "coverVideo": "assets/Crimson-Reign_Large.webm",
+          "role": "Solo Gameplay Programmer",
+          "duration": "2 Months",
+          "focus": "Melee Combat & AI",
+          "tech": [
+            { "iconClass": "fa fa-gamepad", "label": "UE4" },
+            { "iconClass": "fa fa-code", "label": "C++" },
+            { "iconClass": "fa fa-sitemap", "label": "Blueprints" }
+          ],
+          "heroFeatures": [
+            "Melee Combat System",
+            "Enemy AI Behavior",
+            "Health & Damage System",
+            "Interactive Environment",
+            "Player HUD"
+          ],
+          "about": [
+            "Crimson Reign is a third-person melee combat prototype developed in Unreal Engine 4 using C++.",
+            "This was my first complete gameplay systems project, where I implemented reusable gameplay classes, enemy AI logic, and player combat systems using Unreal's gameplay framework."
+          ],
+          "projectInfo": {
+            "timeFrame": "2 months",
+            "engine": "Unreal Engine 4.25",
+            "genre": "Hack-and-Slash",
+            "gameMode": "Single-player",
+            "platform": "Windows (PC)"
+          },
+          "skillKeywords": [
+            { "label": "Melee Combat", "highlighted": true },
+            { "label": "Animation Notifies" },
+            { "label": "Behavior Trees" },
+            { "label": "NavMesh Pathfinding" },
+            { "label": "Health System" },
+            { "label": "Damage Calculation" },
+            { "label": "Gameplay Framework", "highlighted": true },
+            { "label": "HUD & UI" },
+            { "label": "Actor Components" }
+          ],
+          "systemsShowcase": [
+            {
+              "title": "Melee Combat",
+              "description": "Attack input handling with animation-driven hit detection and state execution.",
+              "image": "assets/Crimson-Reign.gif"
+            },
+            {
+              "title": "Enemy AI",
+              "description": "Patrol, chase, and attack behaviors via Behavior Trees and NavMesh.",
+              "image": "assets/Crimson-Reign_Second.gif"
+            },
+            {
+              "title": "Health System",
+              "description": "Modular health with damage calculation, death handling, and combat feedback.",
+              "image": "assets/Crimson-Reign.gif"
+            },
+            {
+              "title": "Environment",
+              "description": "C++ triggers, moving platforms, and timed interactions.",
+              "image": "assets/Crimson-Reign_Third.gif"
+            }
+          ],
+          "technicalChallenges": [
+            {
+              "title": "AI Pathfinding",
+              "problem": "Enemy navigation mesh wasn't accounting for dynamic obstacles.",
+              "solution": "Ensured proper NavMesh setup and used dynamic obstacle avoidance.",
+              "result": "Smooth enemy navigation during combat and exploration.",
+              "screenshot": ""
+            },
+            {
+              "title": "Combat Feedback",
+              "problem": "Hit reactions and damage indicators felt delayed and unresponsive.",
+              "solution": "Synchronized hit reaction animations with damage events using notifies.",
+              "result": "Satisfying and responsive combat feel.",
+              "screenshot": ""
+            }
+          ],
+          "codeSamples": [
+            {
+              "title": "Melee Hit Detection (C++)",
+              "language": "cpp",
+              "code": "void APlayerCharacter::OnAttackNotify()\n{\n    TArray<FHitResult> Hits;\n    FVector Origin = GetMesh()->\n        GetSocketLocation(\"WeaponSocket\");\n\n    UKismetSystemLibrary::SphereTraceMulti(\n        GetWorld(), Origin,\n        Origin + GetActorForwardVector() * 80.f,\n        35.f,\n        UEngineTypes::ConvertToTraceType(ECC_Pawn),\n        false, { this }, EDrawDebugTrace::None,\n        Hits, true\n    );\n\n    for (const FHitResult& Hit : Hits)\n    {\n        if (ABaseEnemy* Enemy =\n            Cast<ABaseEnemy>(Hit.GetActor()))\n        {\n            Enemy->TakeDamage(AttackDamage,\n                FDamageEvent(), GetController(), this);\n            break;\n        }\n    }\n}"
+            }
+          ],
+          "galleryImages": [
+            "assets/Crimson-Reign_Second.gif",
+            "assets/Crimson-Reign_Third.gif"
+          ],
+          "githubUrl": "https://github.com/Mecha-NOX/Crimson-Reign",
+          "youtubeEmbed": "https://www.youtube.com/embed/D1x6mGoV0V0?si=TMk8ckTKqgUpOHCU",
+          "systemsHeading": "Core Systems Implemented"
+        }
+      ]
+    },
+    {
+      "id": "blueprint-list",
+      "name": "Blueprint",
+      "projects": [
+        {
+          "id": "countdown-carnage",
+          "name": "Countdown Carnage",
+          "status": "",
+          "thumbnail": "assets/Countdown-Carnage_Cover.gif",
+          "subtitle": "First-Person Shooter",
+          "subtitleRole": "Blueprint Programmer Project",
+          "coverVideo": "assets/Countdown-Carnage_Large.webm",
+          "role": "Solo Designer & Programmer",
+          "duration": "3 Weeks",
+          "focus": "Blueprint Systems & FPS Loop",
+          "tech": [
+            { "iconClass": "fa fa-gamepad", "label": "UE5" },
+            { "iconClass": "fa fa-sitemap", "label": "Blueprints" }
+          ],
+          "heroFeatures": [
+            "Enemy AI Drones",
+            "Dynamic Countdown Timer",
+            "Health & Ammo Pickups",
+            "Player HUD",
+            "Score System"
+          ],
+          "about": [
+            "Countdown Carnage is a single-player FPS prototype developed to practice rapid gameplay loop design and Blueprint-based systems in Unreal Engine 5.",
+            "The project focuses on enemy spawning, timed gameplay mechanics, and responsive player feedback systems."
+          ],
+          "projectInfo": {
+            "timeFrame": "3 weeks",
+            "engine": "Unreal Engine 5.3",
+            "genre": "First-Person Shooter (FPS)",
+            "gameMode": "Single-player",
+            "platform": "Windows (PC)"
+          },
+          "skillKeywords": [
+            { "label": "Blueprint AI", "highlighted": true },
+            { "label": "Enemy Drones" },
+            { "label": "Timer System" },
+            { "label": "Pickup System" },
+            { "label": "NavMesh Navigation" },
+            { "label": "Player HUD", "highlighted": true },
+            { "label": "Score Tracking" },
+            { "label": "Spawn Management" }
+          ],
+          "systemsShowcase": [
+            {
+              "title": "Enemy AI",
+              "description": "Drones detect, chase, and attack the player using Blueprint and NavMesh.",
+              "image": "assets/Countdown-Carnage_Cover.gif"
+            },
+            {
+              "title": "Timer System",
+              "description": "Dynamic countdown rewarding time bonuses for enemy eliminations.",
+              "image": "assets/Countdown-Carnage_Cover.gif"
+            },
+            {
+              "title": "Pickups",
+              "description": "Health and ammo pickups that spawn and update player state variables.",
+              "image": "assets/Countdown-Carnage_Cover.gif"
+            },
+            {
+              "title": "HUD",
+              "description": "Functional UI displaying player health, timer, and score.",
+              "image": "assets/Countdown-Carnage_Cover.gif"
+            }
+          ],
+          "technicalChallenges": [
+            {
+              "title": "AI Navigation",
+              "problem": "Drones collided with level geometry during pathing.",
+              "solution": "Improved NavMesh setup and agent radius configuration.",
+              "result": "Smooth drone navigation without geometry clipping.",
+              "screenshot": ""
+            },
+            {
+              "title": "Timer Accuracy",
+              "problem": "Timer desynced during heavy combat events.",
+              "solution": "Moved timer logic to a centralized game controller.",
+              "result": "Stable and accurate countdown under all gameplay conditions.",
+              "screenshot": ""
+            }
+          ],
+          "codeSamples": [],
+          "galleryImages": [],
+          "githubUrl": "https://github.com/Mecha-NOX/Countdown-Carnage",
+          "youtubeEmbed": "https://www.youtube.com/embed/ouyf6i2yRZs?si=3sHCd6igFaClT_8i",
+          "systemsHeading": "Core Systems Implemented"
+        }
+      ]
+    },
+    {
+      "id": "cpp-list",
+      "name": "2D Games",
+      "projects": [
+        {
+          "id": "retro-games-collection",
+          "name": "Retro Games Collection",
+          "status": "",
+          "thumbnail": "assets/Dapper-Dasher.gif",
+          "subtitle": "Retro Games Collection",
+          "subtitleRole": "C++ Programmer Project",
+          "coverImage": "assets/Dapper-Dasher_HighRes.gif",
+          "role": "Solo Programmer",
+          "duration": "2 Weeks",
+          "focus": "2D Gameplay & Collision",
+          "tech": [
+            { "iconClass": "fa fa-code", "label": "C++" },
+            { "iconClass": "fa fa-gamepad", "label": "Raylib" }
+          ],
+          "heroFeatures": [
+            "Snake",
+            "Tetris",
+            "Space Invaders",
+            "Ping Pong",
+            "Dapper Dasher"
+          ],
+          "about": [
+            "Retro Games Collection is a set of classic arcade games recreated in C++ using the Raylib library to practice low-level gameplay programming and collision systems."
+          ],
+          "projectInfo": {
+            "timeFrame": "2 weeks",
+            "engine": "Raylib",
+            "genre": "Arcade",
+            "gameMode": "Single Player",
+            "platform": "Windows (PC)"
+          },
+          "skillKeywords": [
+            { "label": "Collision Detection", "highlighted": true },
+            { "label": "Game State Machine" },
+            { "label": "Input Handling" },
+            { "label": "2D Rendering" },
+            { "label": "Raylib API" },
+            { "label": "Data Structures", "highlighted": true },
+            { "label": "Animation Frames" }
+          ],
+          "games": [
+            {
+              "name": "Snake",
+              "image": "./assets/Retro-Snake_HighRes.gif",
+              "description": "Navigate a snake to collect food while avoiding collisions. Each collected item increases the snake's length.",
+              "githubUrl": "https://github.com/Mecha-NOX/Retro-Snake"
+            },
+            {
+              "name": "Tetris",
+              "image": "./assets/Retro-Tetris_HighRes.gif",
+              "description": "Arrange falling blocks into complete rows to clear them and earn points. Increasing speeds add a thrilling challenge.",
+              "githubUrl": "https://github.com/Mecha-NOX/Retro-Tetris"
+            },
+            {
+              "name": "Space Invaders",
+              "image": "./assets/Space-Invaders_HighRes.gif",
+              "description": "Defend against waves of alien invaders in this classic arcade shooter. Aim, shoot, and survive as enemies accelerate.",
+              "githubUrl": "https://github.com/Mecha-NOX/Retro-Space-Invaders"
+            },
+            {
+              "name": "Ping Pong",
+              "image": "./assets/Ping-Pong_HighRes.gif",
+              "description": "A dynamic two-player game where players control paddles to bounce the ball and score by getting it past their opponent.",
+              "githubUrl": "https://github.com/Mecha-NOX/Retro-Ping-Pong"
+            },
+            {
+              "name": "Dapper Dasher",
+              "image": "./assets/Dapper-Dasher_HighRes.gif",
+              "description": "A fast-paced platformer where players dodge obstacles and collect rewards while navigating challenging levels.",
+              "githubUrl": "https://github.com/Mecha-NOX/Dapper-Dasher"
+            }
+          ],
+          "systemsShowcase": [
+            {
+              "title": "Collision Detection",
+              "description": "Manual bounding box collision for player-object and object-object interactions.",
+              "image": "assets/Dapper-Dasher_HighRes.gif"
+            },
+            {
+              "title": "Game States",
+              "description": "Menu, gameplay, and game-over state machines across all games.",
+              "image": "assets/Retro-Snake_HighRes.gif"
+            },
+            {
+              "title": "Input Handling",
+              "description": "Keyboard input processing for movement and game actions.",
+              "image": "assets/Space-Invaders_HighRes.gif"
+            },
+            {
+              "title": "2D Animation",
+              "description": "Smooth sprite animation using Raylib's frame-based rendering.",
+              "image": "assets/Ping-Pong_HighRes.gif"
+            }
+          ],
+          "technicalChallenges": [
+            {
+              "title": "2D Character Animation",
+              "problem": "Sprite animations were stuttery and frame-timing was inconsistent.",
+              "solution": "Utilized Raylib's built-in animation capabilities with frame-based delta timing.",
+              "result": "Smooth, consistent character animations across all games.",
+              "screenshot": ""
+            },
+            {
+              "title": "Collision Bugs",
+              "problem": "Collisions triggered incorrectly at overlapping boundaries.",
+              "solution": "Systematic debugging by tracing logic and testing individual modules.",
+              "result": "Reliable, pixel-accurate collision detection.",
+              "screenshot": ""
+            }
+          ],
+          "codeSamples": [
+            {
+              "title": "Snake Collision Detection (C++)",
+              "language": "cpp",
+              "code": "bool Snake::CheckSelfCollision()\n{\n    // Check if head collides with any body segment\n    for (int i = 1; i < body.size(); i++)\n    {\n        if (body[0].x == body[i].x &&\n            body[0].y == body[i].y)\n        {\n            return true;\n        }\n    }\n    return false;\n}\n\nbool Snake::CheckWallCollision(int cols, int rows)\n{\n    return (body[0].x < 0 || body[0].x >= cols ||\n            body[0].y < 0 || body[0].y >= rows);\n}"
+            }
+          ],
+          "galleryImages": [],
+          "githubUrl": "",
+          "youtubeEmbed": "",
+          "systemsHeading": "Core Systems Implemented"
+        }
+      ]
+    }
+  ]
+}
