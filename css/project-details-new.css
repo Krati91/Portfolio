@@ -80,6 +80,15 @@
     letter-spacing: 0.03em;
 }
 
+.pd-hero__subtitle-role {
+    color: #60a5fa;
+    font-size: 0.75rem;
+    margin: 2px 0 0 0;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
 .pd-hero__features {
     list-style: none;
     padding: 0;
@@ -262,11 +271,74 @@
     font-weight: 600;
 }
 
+/* ── Architecture Flow Diagram ──────────────────────────────────────────── */
+.pd-arch-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 16px;
+    background: rgba(20, 22, 40, 0.7);
+    border: 1px solid rgba(96, 165, 250, 0.15);
+    border-radius: 8px;
+}
+
+.pd-arch-node {
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(96, 165, 250, 0.4);
+    color: #93c5fd;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.pd-arch-arrow {
+    color: #4b5563;
+    font-size: 1rem;
+    line-height: 1;
+    user-select: none;
+}
+
+/* ── Bullet List (Architecture / Repository Highlights) ─────────────────── */
+.pd-bullet-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pd-bullet-list__item {
+    position: relative;
+    padding-left: 18px;
+    font-size: 0.9rem;
+    color: #d1d5db;
+    line-height: 1.5;
+}
+
+.pd-bullet-list__item::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #60a5fa;
+    font-size: 0.8rem;
+    top: 1px;
+}
+
 /* ── Systems Showcase Grid ───────────────────────────────────────────────── */
+/* ── Systems Showcase: adaptive grid ────────────────────────────────────── */
 .pd-showcase-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 14px;
+}
+
+/* 4 modules stays 2×2 on desktop */
+.pd-showcase-grid--4 {
+    grid-template-columns: 1fr 1fr;
 }
 
 .pd-showcase-card {
@@ -275,6 +347,8 @@
     border-radius: 8px;
     overflow: hidden;
     transition: border-color 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
 }
 
 .pd-showcase-card:hover {
@@ -285,9 +359,17 @@
 .pd-showcase-card__img-wrap {
     position: relative;
     height: 160px;
-    background-size: cover;
-    background-position: center;
     background-color: #111827;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.pd-showcase-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 .pd-showcase-card__img-title {
@@ -302,12 +384,204 @@
     letter-spacing: 0.04em;
 }
 
+.pd-showcase-card__body {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
 .pd-showcase-card__desc {
     color: #9ca3af;
     font-size: 0.8rem;
-    padding: 12px 14px;
     margin: 0;
     line-height: 1.5;
+}
+
+.pd-showcase-card__focus {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pd-showcase-card__focus li {
+    font-size: 0.72rem;
+    color: #60a5fa;
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.4;
+}
+
+.pd-showcase-card__focus li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: rgba(96, 165, 250, 0.6);
+}
+
+/* ── Hero Layout: single system full-width ───────────────────────────────── */
+.pd-showcase-hero {
+    display: flex;
+    gap: 28px;
+    background: rgba(20, 22, 40, 0.88);
+    border: 1px solid rgba(96, 165, 250, 0.12);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.pd-showcase-hero__media {
+    flex: 0 0 45%;
+    background: #111827;
+    overflow: hidden;
+    min-height: 220px;
+}
+
+.pd-showcase-hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.pd-showcase-hero__content {
+    flex: 1;
+    padding: 24px 24px 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+}
+
+.pd-showcase-hero__title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin: 0;
+    letter-spacing: 0.03em;
+}
+
+.pd-showcase-hero__desc {
+    color: #9ca3af;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.pd-showcase-hero__focus {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pd-showcase-hero__focus li {
+    font-size: 0.8rem;
+    color: #60a5fa;
+    padding-left: 18px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.pd-showcase-hero__focus li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: rgba(96, 165, 250, 0.6);
+}
+
+/* ── Collection Layout: sub-project grid ─────────────────────────────────── */
+.pd-collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.pd-collection-card {
+    background: rgba(20, 22, 40, 0.88);
+    border: 1px solid rgba(96, 165, 250, 0.12);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.pd-collection-card:hover {
+    border-color: rgba(96, 165, 250, 0.35);
+    transform: translateY(-2px);
+}
+
+.pd-collection-card__img-wrap {
+    height: 150px;
+    background: #111827;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.pd-collection-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.pd-collection-card__body {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.pd-collection-card__title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin: 0;
+    letter-spacing: 0.03em;
+}
+
+.pd-collection-card__desc {
+    color: #9ca3af;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.pd-collection-card__focus {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #60a5fa;
+    background: rgba(96, 165, 250, 0.08);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 4px;
+    padding: 3px 7px;
+    margin-top: auto;
+}
+
+.pd-collection-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    color: #60a5fa;
+    text-decoration: none;
+    margin-top: 6px;
+}
+
+.pd-collection-card__link:hover {
+    color: #93c5fd;
 }
 
 /* ── Technical Challenges Grid ───────────────────────────────────────────── */
@@ -578,7 +852,8 @@
     }
 
     /* Grids: 2-col on tablet */
-    .pd-showcase-grid {
+    .pd-showcase-grid,
+    .pd-showcase-grid--4 {
         grid-template-columns: 1fr 1fr;
         gap: 12px;
     }
@@ -588,8 +863,23 @@
         gap: 12px;
     }
 
-    .pd-showcase-card__img-wrap {
-        height: 140px;
+    .pd-collection-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .pd-showcase-hero {
+        gap: 20px;
+    }
+
+    .pd-showcase-hero__media {
+        flex: 0 0 42%;
+        min-height: 190px;
+    }
+
+    .pd-showcase-card__img-wrap,
+    .pd-collection-card__img-wrap {
+        height: 130px;
     }
 
     /* Gallery */
@@ -701,7 +991,8 @@
     }
 
     /* Grids: single column on mobile */
-    .pd-showcase-grid {
+    .pd-showcase-grid,
+    .pd-showcase-grid--4 {
         grid-template-columns: 1fr;
         gap: 10px;
     }
@@ -711,8 +1002,30 @@
         gap: 10px;
     }
 
-    .pd-showcase-card__img-wrap {
-        height: 130px;
+    .pd-collection-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    /* Hero: stack vertically on mobile */
+    .pd-showcase-hero {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .pd-showcase-hero__media {
+        flex: none;
+        width: 100%;
+        min-height: 180px;
+    }
+
+    .pd-showcase-hero__content {
+        padding: 16px;
+    }
+
+    .pd-showcase-card__img-wrap,
+    .pd-collection-card__img-wrap {
+        height: 120px;
     }
 
     .pd-challenge-card__title {

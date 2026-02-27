@@ -6,12 +6,12 @@ let projectsData = null;
 
 // ─── Data Loading ────────────────────────────────────────────────────────────
 function loadProjectsData() {
-    return $.getJSON('data/projects-new.json')
+    return $.getJSON('data/projects-new-2.json')
         .done(function(data) {
             projectsData = data;
         })
         .fail(function(jqxhr, textStatus, error) {
-            console.error('Failed to load projects-new.json:', textStatus, error);
+            console.error('Failed to load projects-new-2.json:', textStatus, error);
         });
 }
 
@@ -22,27 +22,40 @@ function renderSidebar() {
     const $sidebar = $('.sidebar .nav');
     $sidebar.empty();
 
-    projectsData.categories.forEach(function(category) {
+    // Group projects by primaryDiscipline, sorted by priority
+    const sortedProjects = projectsData.projects.slice().sort(function(a, b) {
+        return (a.priority || 99) - (b.priority || 99);
+    });
+    const catMap = {};
+    const catOrder = [];
+    sortedProjects.forEach(function(project) {
+        const catName = project.primaryDiscipline || 'Other';
+        if (!catMap[catName]) {
+            catMap[catName] = [];
+            catOrder.push(catName);
+        }
+        catMap[catName].push(project);
+    });
+
+    catOrder.forEach(function(catName, idx) {
+        const catId = 'cat-discipline-' + idx;
+
         const $header = $('<h4>', {
             'class': 'list-group-item',
             'data-toggle': 'collapse',
-            'href': '#' + category.id,
+            'href': '#' + catId,
             'role': 'button',
             'aria-expanded': 'false',
-            'aria-controls': category.id,
-            text: category.name
+            'aria-controls': catId,
+            text: catName
         });
 
         const $container = $('<div>', {
             'class': 'container collapse',
-            'id': category.id
+            'id': catId
         });
 
-        category.projects.forEach(function(project) {
-            const displayName = project.status
-                ? project.name + ' (' + project.status + ')'
-                : project.name;
-
+        catMap[catName].forEach(function(project) {
             const $link = $('<a>', {
                 'class': 'sidebar-link',
                 'href': '?name=' + project.id,
@@ -56,7 +69,7 @@ function renderSidebar() {
             });
 
             const $titleDiv = $('<div>', { 'class': 'col-lg-8 thumbnail__title' });
-            $titleDiv.append($('<h5>', { text: displayName }));
+            $titleDiv.append($('<h5>', { text: project.name }));
             $titleDiv.append($('<small>', { text: project.subtitle }));
 
             $link.append($thumb).append($titleDiv);
@@ -80,47 +93,52 @@ function buildHeroSection(project) {
 
     // Background media (video or image)
     const $mediaBg = $('<div>', { 'class': 'pd-hero__bg' });
+    const fallback = project.thumbnail || '';
     if (project.coverVideo) {
         const $video = $('<video>', {
             playsinline: '',
             loop: '',
             autoplay: '',
             muted: '',
-            preload: 'metadata'
+            preload: 'metadata',
+            poster: fallback
         });
         $video.append($('<source>', { src: project.coverVideo, type: 'video/webm' }));
         $mediaBg.append($video);
-    } else if (project.coverImage) {
-        $mediaBg.css('background-image', 'url(' + project.coverImage + ')');
-        $mediaBg.addClass('pd-hero__bg--img');
+    } else {
+        const imgSrc = project.coverImage || project.thumbnail || '';
+        if (imgSrc) {
+            $mediaBg.css('background-image', 'url(' + imgSrc + ')');
+            $mediaBg.addClass('pd-hero__bg--img');
+        }
     }
 
     // Info overlay card
     const $card = $('<div>', { 'class': 'pd-hero__card' });
     $card.append($('<h2>', { 'class': 'pd-hero__title', text: project.name }));
-    $card.append($('<p>', { 'class': 'pd-hero__subtitle', text: project.subtitleRole || project.subtitle }));
+    $card.append($('<p>', { 'class': 'pd-hero__subtitle', text: project.subtitle || project.primaryDiscipline }));
+    if (project.subtitleRole) {
+        $card.append($('<p>', { 'class': 'pd-hero__subtitle-role', text: project.subtitleRole }));
+    }
 
-    // Feature bullet list
-    if (project.heroFeatures && project.heroFeatures.length) {
+    // Ownership / feature bullet list
+    const bulletSource = project.ownership || project.heroFeatures;
+    if (bulletSource && bulletSource.length) {
         const $ul = $('<ul>', { 'class': 'pd-hero__features' });
-        project.heroFeatures.forEach(function(f) {
+        bulletSource.forEach(function(f) {
             $ul.append($('<li>', { text: f }));
         });
         $card.append($ul);
     }
 
-    // Tech tags
-    if (project.tech && project.tech.length) {
+    // Tech tags (techStack is a flat array of strings)
+    if (project.techStack && project.techStack.length) {
         const $tech = $('<div>', { 'class': 'pd-hero__tech' });
-        const $techLabel = $('<span>', { 'class': 'pd-hero__tech-label', text: 'Tech:' });
-        $tech.append($techLabel);
+        $tech.append($('<span>', { 'class': 'pd-hero__tech-label', text: 'Tech:' }));
 
-        project.tech.forEach(function(t, i) {
-            const $tag = $('<span>', { 'class': 'pd-hero__tech-tag' });
-            if (t.iconClass) $tag.append($('<i>', { 'class': t.iconClass }));
-            $tag.append(document.createTextNode(' ' + t.label));
-            $tech.append($tag);
-            if (i < project.tech.length - 1) {
+        project.techStack.forEach(function(t, i) {
+            $tech.append($('<span>', { 'class': 'pd-hero__tech-tag', text: t }));
+            if (i < project.techStack.length - 1) {
                 $tech.append($('<span>', { 'class': 'pd-hero__tech-dot', text: '·' }));
             }
         });
@@ -135,13 +153,13 @@ function buildHeroSection(project) {
 
 function buildMetaBar(project) {
     const $bar = $('<div>', { 'class': 'pd-meta-bar' });
-    const info = project.projectInfo || {};
 
     const metas = [
         { icon: 'fa fa-user', label: 'Role', value: project.role || '—' },
-        { icon: 'fa fa-clock-o', label: 'Duration', value: project.duration || info.timeFrame || '—' },
-        { icon: 'fa fa-gear', label: 'Engine', value: info.engine || '—' },
-        { icon: 'fa fa-crosshairs', label: 'Focus', value: project.focus || '—' }
+        { icon: 'fa fa-clock-o', label: 'Duration', value: project.duration || '—' },
+        { icon: 'fa fa-gear', label: 'Engine', value: project.engineVersion || '—' },
+        { icon: 'fa fa-crosshairs', label: 'Discipline', value: project.primaryDiscipline || '—' },
+        { icon: 'fa fa-users', label: 'Team Size', value: project.teamSize != null ? String(project.teamSize) : '—' }
     ];
 
     metas.forEach(function(m) {
@@ -197,32 +215,197 @@ function buildSkillKeywords(project) {
     return $section;
 }
 
-function buildSystemsShowcase(project) {
-    if (!project.systemsShowcase || !project.systemsShowcase.length) return null;
+function buildOwnership(project) {
+    if (!project.ownership || !project.ownership.length) return null;
 
-    const heading = project.systemsHeading || 'Systems Showcase';
     const $section = $('<div>', { 'class': 'pd-section' });
-    $section.append($('<h3>', { 'class': 'pd-section__title', text: 'Systems Showcase' }));
+    $section.append($('<h3>', { 'class': 'pd-section__title', text: 'What I Built' }));
 
-    const $grid = $('<div>', { 'class': 'pd-showcase-grid' });
+    const $list = $('<ul>', { 'class': 'pd-bullet-list' });
+    project.ownership.forEach(function(item) {
+        $list.append($('<li>', { 'class': 'pd-bullet-list__item', text: item }));
+    });
 
-    project.systemsShowcase.forEach(function(sys) {
+    $section.append($list);
+    return $section;
+}
+
+function buildArchitectureDiagram(project) {
+    return null;
+    const diag = project.architectureDiagram;
+    if (!diag || !diag.nodes || !diag.nodes.length) return null;
+
+    const $section = $('<div>', { 'class': 'pd-section' });
+    $section.append($('<h3>', { 'class': 'pd-section__title', text: 'Architecture Flow' }));
+
+    const $flow = $('<div>', { 'class': 'pd-arch-flow' });
+
+    diag.nodes.forEach(function(node, i) {
+        $flow.append($('<span>', { 'class': 'pd-arch-node', text: node }));
+        if (i < diag.nodes.length - 1) {
+            $flow.append($('<span>', { 'class': 'pd-arch-arrow' }).html('&#8594;'));
+        }
+    });
+
+    $section.append($flow);
+    return $section;
+}
+
+function buildArchitectureHighlights(project) {
+    if (!project.architectureHighlights || !project.architectureHighlights.length) return null;
+
+    const $section = $('<div>', { 'class': 'pd-section' });
+    $section.append($('<h3>', { 'class': 'pd-section__title', text: 'Architecture Highlights' }));
+
+    const $list = $('<ul>', { 'class': 'pd-bullet-list' });
+    project.architectureHighlights.forEach(function(item) {
+        $list.append($('<li>', { 'class': 'pd-bullet-list__item', text: item }));
+    });
+
+    $section.append($list);
+    return $section;
+}
+
+function buildSystemsShowcase(project) {
+    const modules = project.modules;
+    if (!modules || !modules.length) return null;
+
+    const contentType = project.contentType || 'systems';
+
+    // Dynamic heading
+    function getHeading() {
+        if (contentType === 'collection') return 'Games Included';
+        const disc = (project.primaryDiscipline || '').toLowerCase();
+        if (disc.includes('network'))   return 'Networking Systems';
+        if (disc.includes('blueprint')) return 'Blueprint Systems';
+        if (disc.includes('low-level') || disc.includes('low level')) return 'Core Implementations';
+        return 'Core Systems';
+    }
+
+    const $section = $('<div>', { 'class': 'pd-section' });
+    $section.append($('<h3>', { 'class': 'pd-section__title', text: getHeading() }));
+
+    // ── COLLECTION layout: sub-project grid ────────────────────────────────
+    if (contentType === 'collection') {
+        const $grid = $('<div>', { 'class': 'pd-collection-grid' });
+        modules.forEach(function(mod) {
+            const $card = $('<div>', { 'class': 'pd-collection-card' });
+
+            const $imgWrap = $('<div>', { 'class': 'pd-collection-card__img-wrap' });
+            if (mod.image) {
+                $imgWrap.append($('<img>', {
+                    src: mod.image, alt: mod.title,
+                    'class': 'pd-collection-card__img', loading: 'lazy'
+                }));
+            }
+            $card.append($imgWrap);
+
+            const $body = $('<div>', { 'class': 'pd-collection-card__body' });
+            $body.append($('<h4>', { 'class': 'pd-collection-card__title', text: mod.title }));
+            if (mod.description) {
+                $body.append($('<p>', { 'class': 'pd-collection-card__desc', text: mod.description }));
+            }
+            if (mod.focus) {
+                $body.append($('<span>', { 'class': 'pd-collection-card__focus', text: mod.focus }));
+            }
+            if (mod.githubUrl) {
+                $body.append(
+                    $('<a>', { href: mod.githubUrl, target: '_blank', 'class': 'pd-collection-card__link' }).html(
+                        '<i class="fa fa-github"></i> Source'
+                    )
+                );
+            }
+            $card.append($body);
+            $grid.append($card);
+        });
+        $section.append($grid);
+        return $section;
+    }
+
+    // ── SYSTEMS layout: adaptive grid ──────────────────────────────────────
+    const count = modules.length;
+
+    // 1 module → Hero layout
+    if (count === 1) {
+        const mod = modules[0];
+        const $hero = $('<div>', { 'class': 'pd-showcase-hero' });
+
+        const $media = $('<div>', { 'class': 'pd-showcase-hero__media' });
+        if (mod.image) {
+            $media.append($('<img>', {
+                src: mod.image, alt: mod.title,
+                'class': 'pd-showcase-hero__img', loading: 'lazy'
+            }));
+        }
+        $hero.append($media);
+
+        const $content = $('<div>', { 'class': 'pd-showcase-hero__content' });
+        $content.append($('<h4>', { 'class': 'pd-showcase-hero__title', text: mod.title }));
+        if (mod.description) {
+            $content.append($('<p>', { 'class': 'pd-showcase-hero__desc', text: mod.description }));
+        }
+        if (mod.technicalFocus && mod.technicalFocus.length) {
+            const $ul = $('<ul>', { 'class': 'pd-showcase-hero__focus' });
+            mod.technicalFocus.forEach(function(pt) {
+                $ul.append($('<li>', { text: pt }));
+            });
+            $content.append($ul);
+        }
+        $hero.append($content);
+        $section.append($hero);
+        return $section;
+    }
+
+    // 2-3 modules → 2-column balanced grid
+    // 4+ modules → 2-column flowing grid (2×2 or 2×N)
+    const gridClass = 'pd-showcase-grid pd-showcase-grid--' + (count <= 3 ? '2' : '4');
+    const $grid = $('<div>', { 'class': gridClass });
+
+    modules.forEach(function(mod) {
         const $card = $('<div>', { 'class': 'pd-showcase-card' });
 
-        // Image with title overlay
         const $imgWrap = $('<div>', { 'class': 'pd-showcase-card__img-wrap' });
-        if (sys.image) {
-            $imgWrap.css('background-image', 'url(' + sys.image + ')');
+        if (mod.image) {
+            $imgWrap.append($('<img>', {
+                src: mod.image, alt: mod.title,
+                'class': 'pd-showcase-card__img', loading: 'lazy'
+            }));
         }
-        $imgWrap.append($('<span>', { 'class': 'pd-showcase-card__img-title', text: sys.title }));
+        $imgWrap.append($('<span>', { 'class': 'pd-showcase-card__img-title', text: mod.title }));
         $card.append($imgWrap);
 
-        // Description
-        $card.append($('<p>', { 'class': 'pd-showcase-card__desc', text: sys.description }));
+        const $body = $('<div>', { 'class': 'pd-showcase-card__body' });
+        if (mod.description) {
+            $body.append($('<p>', { 'class': 'pd-showcase-card__desc', text: mod.description }));
+        }
+        if (mod.technicalFocus && mod.technicalFocus.length) {
+            const $ul = $('<ul>', { 'class': 'pd-showcase-card__focus' });
+            mod.technicalFocus.forEach(function(pt) {
+                $ul.append($('<li>', { text: pt }));
+            });
+            $body.append($ul);
+        }
+        $card.append($body);
         $grid.append($card);
     });
 
     $section.append($grid);
+    return $section;
+}
+
+function buildRepositoryHighlights(project) {
+    return null; // hidden for now
+    if (!project.repositoryHighlights || !project.repositoryHighlights.length) return null;
+
+    const $section = $('<div>', { 'class': 'pd-section' });
+    $section.append($('<h3>', { 'class': 'pd-section__title', text: 'Repository Highlights' }));
+
+    const $list = $('<ul>', { 'class': 'pd-bullet-list' });
+    project.repositoryHighlights.forEach(function(item) {
+        $list.append($('<li>', { 'class': 'pd-bullet-list__item', text: item }));
+    });
+
+    $section.append($list);
     return $section;
 }
 
@@ -295,6 +478,7 @@ function buildTechnicalChallenges(project) {
 }
 
 function buildCodeSamples(project) {
+    return null; // hidden for now
     if (!project.codeSamples || !project.codeSamples.length) return null;
 
     const $section = $('<div>', { 'class': 'pd-section' });
@@ -337,6 +521,7 @@ function buildCodeSamples(project) {
 }
 
 function buildGallery(project) {
+    return null; // hidden for now
     if (!project.galleryImages || !project.galleryImages.length) return null;
 
     const $section = $('<div>', { 'class': 'pd-section pd-section--gallery' });
@@ -376,12 +561,12 @@ function buildLinks(project) {
 }
 
 function buildYouTube(project) {
-    if (!project.youtubeEmbed) return null;
+    if (!project.demoVideo) return null;
 
     const $section = $('<div>', { 'class': 'pd-section pd-section--video' });
     const $wrap = $('<div>', { 'class': 'pd-video-wrap' });
     $wrap.append($('<iframe>', {
-        src: project.youtubeEmbed,
+        src: project.demoVideo,
         title: project.name + ' - Gameplay Video',
         frameborder: '0',
         allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
@@ -398,24 +583,31 @@ function renderProjectDetails() {
     const $target = $('.project-block .pd-content');
     $target.empty();
 
-    projectsData.categories.forEach(function(category) {
-        category.projects.forEach(function(project) {
-            const $wrapper = $('<div>', {
-                'class': 'project-details pd-wrapper',
-                'id': project.id,
-                'style': 'display:none;'
-            });
+    const sorted = projectsData.projects.slice().sort(function(a, b) {
+        return (a.priority || 99) - (b.priority || 99);
+    });
 
-            $wrapper.append(buildHeroSection(project));
-            $wrapper.append(buildMetaBar(project));
-            $wrapper.append(buildSkillKeywords(project));
-            $wrapper.append(buildSystemsShowcase(project));
-            $wrapper.append(buildTechnicalChallenges(project));
-            $wrapper.append(buildCodeSamples(project));
-            $wrapper.append(buildYouTube(project));
-
-            $target.append($wrapper);
+    sorted.forEach(function(project) {
+        const $wrapper = $('<div>', {
+            'class': 'project-details pd-wrapper',
+            'id': project.id,
+            'style': 'display:none;'
         });
+
+        $wrapper.append(buildHeroSection(project));
+        $wrapper.append(buildMetaBar(project));
+        $wrapper.append(buildOwnership(project));
+        $wrapper.append(buildSkillKeywords(project));
+        $wrapper.append(buildArchitectureDiagram(project));
+        $wrapper.append(buildArchitectureHighlights(project));
+        $wrapper.append(buildSystemsShowcase(project));
+        $wrapper.append(buildTechnicalChallenges(project));
+        $wrapper.append(buildRepositoryHighlights(project));
+        $wrapper.append(buildCodeSamples(project));
+        $wrapper.append(buildGallery(project));
+        $wrapper.append(buildYouTube(project));
+
+        $target.append($wrapper);
     });
 }
 
