@@ -698,6 +698,8 @@ body > section.ap-section {
   padding-right: 0 !important;
 }
 
+
+
 .about__pic .row {
   margin-left: -5px !important;
   margin-right: -5px !important;
@@ -2121,6 +2123,13 @@ body.drawer-expanded #button {
     will-change: auto !important;
   }
 
+  /* Photo and profile card columns — match zero side-padding of expertise/education columns */
+  .ap-section .col-lg-4.col-md-5,
+  .ap-section .col-lg-8.col-md-7 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
   .ap-photo                 { min-height: 240px; margin-bottom: 20px; }
   .ap-title                 { font-size: 16px; }
   .ap-subtitle              { font-size: 14px; }
@@ -2129,6 +2138,7 @@ body.drawer-expanded #button {
 
   .ap-snapshot-label        { font-size: 10px; margin: 18px 0 12px; }
 
+  .ap-card                  { padding: 30px 10px !important; }
   .ap-exp-card              { padding: 14px 14px; }
   .ap-exp-title             { font-size: 14px; }
   .ap-exp-date              { font-size: 12px; }

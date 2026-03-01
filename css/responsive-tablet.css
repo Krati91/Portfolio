@@ -1741,7 +1741,7 @@ body.drawer-expanded #button {
   }
 
   .ap-section > .container > .row > .col-md-5 {
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem !important;
   }
 
   /* Override global col-lg-3 fixed positioning for about page cards */
