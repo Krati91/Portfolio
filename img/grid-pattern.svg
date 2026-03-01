@@ -1,0 +1,17 @@
+<svg width="120" height="120" viewBox="0 0 120 120"
+     xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="120" fill="none"/>
+
+  <!-- Thin grid lines -->
+  <path d="M0 60 H120 M60 0 V120"
+        stroke="#41BFE7"
+        stroke-width="0.5"/>
+
+  <!-- Corner ticks -->
+  <path d="M0 0 H20 M0 0 V20
+           M120 0 H100 M120 0 V20
+           M0 120 H20 M0 120 V100
+           M120 120 H100 M120 120 V100"
+        stroke="#41BFE7"
+        stroke-width="0.6"/>
+</svg>

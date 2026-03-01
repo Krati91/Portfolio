@@ -1,0 +1,23 @@
+<svg width="180" height="180" viewBox="0 0 180 180"
+     xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="180" fill="none"/>
+
+  <!-- Connections -->
+  <line x1="20" y1="30" x2="100" y2="80"
+        stroke="#41BFE7" stroke-width="2"/>
+  <line x1="100" y1="80" x2="160" y2="40"
+        stroke="#41BFE7" stroke-width="2"/>
+  <line x1="60" y1="140" x2="100" y2="80"
+        stroke="#41BFE7" stroke-width="2"/>
+  <line x1="160" y1="40" x2="160" y2="140"
+        stroke="#41BFE7" stroke-width="1.5"/>
+  <line x1="20" y1="30" x2="60" y2="140"
+        stroke="#41BFE7" stroke-width="1.5"/>
+
+  <!-- Nodes -->
+  <circle cx="20" cy="30" r="5" fill="#41BFE7"/>
+  <circle cx="100" cy="80" r="6" fill="#41BFE7"/>
+  <circle cx="160" cy="40" r="5" fill="#41BFE7"/>
+  <circle cx="60" cy="140" r="5" fill="#41BFE7"/>
+  <circle cx="160" cy="140" r="4" fill="#41BFE7"/>
+</svg>
