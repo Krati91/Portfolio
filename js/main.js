@@ -83,25 +83,40 @@
                 var $wrapper = $('<div>', { 'class': 'portfolio__filter-dropdown' });
                 var $trigger = $('<div>', { 'class': 'portfolio__filter-trigger' });
                 var $label = $('<span>', { 'class': 'portfolio__filter-label', text: 'All' });
+                var $triggerCount = $('<span>', { 'class': 'portfolio__filter-count' });
                 var $arrow = $('<span>', { 'class': 'portfolio__filter-arrow' });
                 var $optList = $('<ul>', { 'class': 'portfolio__filter-options' });
+                var totalCount = $('.portfolio__gallery .mix').length;
 
-                $trigger.append($label).append($arrow);
+                $triggerCount.text(totalCount);
+                $trigger.append($label).append($triggerCount).append($arrow);
 
                 $('.portfolio__filter li').each(function() {
                     var filter = $(this).data('filter') || '*';
                     var text = $(this).text();
-                    var $item = $('<li>', { 'data-filter': filter, text: text });
+                    var count = filter === '*'
+                        ? totalCount
+                        : $('.portfolio__gallery .mix' + filter).length;
+
+                    var $item = $('<li>', { 'data-filter': filter });
+                    var $itemLabel = $('<span>', { text: text });
+                    var $itemCount = $('<span>', { 'class': 'portfolio__filter-count', text: count });
+                    $item.append($itemLabel).append($itemCount);
+
                     if ($(this).hasClass('active')) {
                         $item.addClass('active');
                         $label.text(text);
+                        $triggerCount.text(count);
                     }
                     $item.on('click', function() {
                         var val = $(this).data('filter');
+                        var itemText = $(this).find('span:first').text();
+                        var itemCount = $(this).find('.portfolio__filter-count').text();
                         mixer.filter(val);
                         $optList.find('li').removeClass('active');
                         $(this).addClass('active');
-                        $label.text($(this).text());
+                        $label.text(itemText);
+                        $triggerCount.text(itemCount);
                         $('.portfolio__filter li').removeClass('active');
                         $('.portfolio__filter li[data-filter="' + val + '"]').addClass('active');
                         if (val === '*') $('.portfolio__filter li:first').addClass('active');

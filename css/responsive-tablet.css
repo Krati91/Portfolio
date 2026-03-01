@@ -283,7 +283,7 @@ body .breadcrumb-option.spad {
 .portfolio__filter-trigger {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 8px;
   width: 100%;
   padding: 10px 16px;
   background: #0a0119;
@@ -298,6 +298,27 @@ body .breadcrumb-option.spad {
   box-sizing: border-box;
 }
 
+.portfolio__filter-label {
+  flex: none;
+}
+
+.portfolio__filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  margin-right: 10px;
+  background: rgba(0, 191, 231, 0.15);
+  border: 1px solid rgba(0, 191, 231, 0.4);
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #00bfe7;
+  letter-spacing: 0;
+}
+
 .portfolio__filter-dropdown.open .portfolio__filter-trigger {
   border-radius: 0;
   border-bottom-color: rgba(0, 191, 231, 0.1);
@@ -307,6 +328,7 @@ body .breadcrumb-option.spad {
   display: inline-block;
   width: 12px;
   height: 8px;
+  margin-left: auto;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2300bfe7' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
@@ -349,11 +371,21 @@ body .breadcrumb-option.spad {
   border-radius: 8px;
   margin: 2px 8px;
   transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .portfolio__filter-options li:hover,
 .portfolio__filter-options li.active {
   background: #00bfe7;
+  color: #ffffff;
+}
+
+.portfolio__filter-options li:hover .portfolio__filter-count,
+.portfolio__filter-options li.active .portfolio__filter-count {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
   color: #ffffff;
 }
 
