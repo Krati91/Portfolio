@@ -32,10 +32,26 @@ body {
   height: auto;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
-  scrollbar-color: #482aa1 black;
+  scrollbar-color: #00bfe7 #0a0119;
   scrollbar-width: thin;
   background-color: #100028;
   overflow-x: hidden;
+}
+
+/* Webkit scrollbar (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0119;
+}
+::-webkit-scrollbar-thumb {
+  background: #00bfe7;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00a0c2;
 }
 
 h1,
@@ -2239,6 +2255,12 @@ ol {
 .portfolio__item:hover .portfolio__item__text h4:after {
   opacity: 1;
 }
+.portfolio__item:hover .portfolio__item__text h4 {
+  color: #00bfe7;
+}
+.portfolio__item:hover .portfolio__item__text ul li {
+  color: #ffffff;
+}
 
 .portfolio__item__video {
   height: 240px;
@@ -2252,6 +2274,17 @@ ol {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 28px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  transition: box-shadow 0.3s ease;
+}
+.portfolio__item__video--retro {
+  background-size: auto;
+}
+.portfolio__item:hover .portfolio__item__video {
+  box-shadow: 0 0 24px rgba(0, 191, 231, 0.45), 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 .portfolio__item__video .play-btn {
   display: inline-block;

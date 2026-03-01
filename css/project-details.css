@@ -6,11 +6,16 @@
 
 /* ── Layout ──────────────────────────────────────────────────────────────── */
 .pd-content {
-    padding: 0 0 60px 0;
+    padding: 0;
 }
 
 .pd-wrapper {
     width: 100%;
+}
+
+/* ── Footer margin reset ─────────────────────────────────────────────────── */
+.pd-content .footer {
+    margin-top: 0;
 }
 
 /* ── Hero Section ────────────────────────────────────────────────────────── */
@@ -121,9 +126,9 @@
 }
 
 .pd-hero__tech-tag {
-    background: rgba(0, 191, 231, 0.12);
-    border: 1px solid rgba(0, 191, 231, 0.3);
-    color: #4dd8f0;
+    background: #0a1e26;
+    border: 1px solid #00667a;
+    color: #ffffff;
     font-size: 0.78rem;
     padding: 2px 10px;
     border-radius: 4px;
@@ -199,7 +204,7 @@
 }
 
 .pd-meta-bar__link:hover {
-    color: #4dd8f0;
+    color: #00bfe7;
     text-decoration: underline;
 }
 
@@ -235,24 +240,24 @@
 }
 
 .pd-skill-tag {
-    background: rgba(30, 35, 55, 0.85);
-    border: 1px solid rgba(0, 191, 231, 0.2);
-    color: #d1d5db;
+    background: #1e2337;
+    border: 1px solid #006b82;
+    color: #ffffff;
     font-size: 0.78rem;
     padding: 5px 14px;
-    border-radius: 20px;
+    border-radius: 4px;
     cursor: default;
     transition: border-color 0.2s;
 }
 
 .pd-skill-tag:hover {
-    border-color: rgba(0, 191, 231, 0.55);
+    border-color: #008fa8;
 }
 
 .pd-skill-tag--highlight {
-    background: rgba(0, 191, 231, 0.2);
-    border-color: rgba(0, 191, 231, 0.6);
-    color: #4dd8f0;
+    background: #00bfe7;
+    border-color: #00bfe7;
+    color: #ffffff;
     font-weight: 600;
 }
 
@@ -271,7 +276,7 @@
 .pd-arch-node {
     background: rgba(0, 191, 231, 0.15);
     border: 1px solid rgba(0, 191, 231, 0.4);
-    color: #4dd8f0;
+    color: #00bfe7;
     font-size: 0.78rem;
     font-weight: 600;
     padding: 5px 12px;
@@ -562,7 +567,7 @@
 }
 
 .pd-collection-card__link:hover {
-    color: #4dd8f0;
+    color: #00bfe7;
 }
 
 /* ── Technical Challenges Grid ───────────────────────────────────────────── */
@@ -683,7 +688,7 @@
     flex: 1;
     font-family: 'Orbitron', sans-serif;
     font-size: 0.75rem;
-    color: #4dd8f0;
+    color: #00bfe7;
     font-weight: 600;
     letter-spacing: 0.03em;
 }
@@ -750,7 +755,7 @@
 .pd-link--github {
     background: rgba(30, 35, 55, 0.9);
     border: 1px solid rgba(0, 191, 231, 0.25);
-    color: #4dd8f0;
+    color: #00bfe7;
 }
 
 .pd-link--github:hover {
@@ -784,7 +789,7 @@
 @media only screen and (min-width: 768px) and (max-width: 1199px) {
 
     .pd-content {
-        padding: 0 0 40px 0;
+        padding: 0;
     }
 
     /* Hero */
@@ -886,7 +891,7 @@
 @media only screen and (max-width: 767px) {
 
     .pd-content {
-        padding: 0 0 30px 0;
+        padding: 0;
     }
 
     /* Hero: stack vertically */
