@@ -102,6 +102,11 @@ section.breadcrumb-option {
   flex: 0 0 auto !important;
 }
 
+/* About Page Sections */
+body > section.ap-section {
+  flex: 0 0 auto !important;
+}
+
 .contact-widget.spad {
   padding-top: 40px !important;
   padding-bottom: 15px !important;
@@ -2050,5 +2055,53 @@ body.drawer-expanded #button {
   visibility: hidden !important;
   pointer-events: none !important;
 }
+
+  /* About Page Redesign — Mobile */
+  .ap-section               { padding: 70px 0 0; }
+  .ap-section--inner        { padding-top: 36px; }
+  .ap-section--edu          { padding-top: 24px; }
+
+  /* Override global col-lg-3 fixed positioning for about page cards */
+  .ap-section div[class*="col-lg-3"],
+  .ap-section .col-lg-3 {
+    position: static !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    z-index: auto !important;
+    margin: 0 !important;
+    padding: 0 0 16px !important;
+    flex: 0 0 100% !important;
+    will-change: auto !important;
+  }
+
+  .ap-photo                 { min-height: 240px; margin-bottom: 20px; }
+  .ap-title                 { font-size: 16px; }
+  .ap-subtitle              { font-size: 14px; }
+  .ap-bio                   { font-size: 14px; }
+  .ap-section-label         { font-size: 11px; margin-bottom: 20px; }
+
+  .ap-snapshot-label        { font-size: 10px; margin: 18px 0 12px; }
+
+  .ap-exp-card              { padding: 14px 14px; }
+  .ap-exp-title             { font-size: 14px; }
+  .ap-exp-date              { font-size: 12px; }
+  .ap-list li               { font-size: 13px; }
+
+  .ap-expertise-card        { padding: 14px 12px; }
+  .ap-expertise-title       { font-size: 13px; margin-bottom: 10px; }
+
+  .ap-edu-degree            { font-size: 12px; }
+  .ap-edu-school            { font-size: 11px; }
+  .ap-edu-year              { font-size: 11px; }
+
+  .ap-toggle-btn            { font-size: 13px; }
+  .ap-cta-box               { flex-direction: column; align-items: flex-start; }
+  .ap-cta-text              { font-size: 15px; }
 
 }

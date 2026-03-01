@@ -38,6 +38,11 @@ section.portfolio.spad {
   padding-bottom: 40px !important;
 }
 
+/* About Page Sections */
+body > section.ap-section {
+  flex: 0 0 auto !important;
+}
+
 /* Work Section - Expand to fill space on index page */
 section.work {
   flex: 0 0 auto !important;
@@ -1666,5 +1671,50 @@ body.drawer-expanded #button {
 .about__pic__item {
   background-position: 100% !important;
 }
+
+  /* About Page Redesign — Tablet */
+  .ap-section               { padding: 100px 0 0; }
+  .ap-section--inner        { padding-top: 44px; }
+  .ap-section--edu          { padding-top: 26px; }
+
+  /* Override global col-lg-3 fixed positioning for about page cards */
+  .ap-section div[class*="col-lg-3"],
+  .ap-section .col-lg-3 {
+    position: static !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    width: 50% !important;
+    max-width: 50% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    z-index: auto !important;
+    margin: 0 !important;
+    padding: 0 15px 16px !important;
+    flex: 0 0 50% !important;
+    will-change: auto !important;
+  }
+
+  /* Profile section: reset stretch so card expands to full content height */
+  .ap-section > .container > .row.align-items-stretch { align-items: flex-start !important; }
+  .ap-card                  { height: auto !important; padding: 24px 22px; }
+
+  .ap-photo                 { min-height: 320px; }
+
+  .ap-title                 { font-size: 18px; }
+  .ap-subtitle              { font-size: 15px; }
+  .ap-bio                   { font-size: 15px; }
+  .ap-section-label         { font-size: 12px; }
+
+  .ap-exp-card              { padding: 16px 18px; }
+  .ap-exp-title             { font-size: 15px; }
+  .ap-list li               { font-size: 14px; }
+
+  .ap-expertise-card        { padding: 20px 18px; }
+  .ap-expertise-title       { font-size: 15px; }
+
+  .ap-cta-box               { flex-direction: column; align-items: flex-start; }
+  .ap-cta-text              { font-size: 16px; }
 
 }

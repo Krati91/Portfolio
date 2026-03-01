@@ -140,245 +140,157 @@
     </div>
     <!-- Breadcrumb End -->
 
-    <!-- About Section Begin -->
-    <section class="about spad top-spad" style="padding-bottom: 0;">
+    <!-- Engineer Profile Section Begin -->
+    <section class="ap-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="about__pic">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <div class="about__pic__item about__pic__item--large set-bg"
-                                    data-setbg="img/about/about-4.webp"></div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div class="about__pic__item set-bg" data-setbg="img/about/about-5.webp"></div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <div class="about__pic__item set-bg" data-setbg="img/about/about-6.webp"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="row align-items-stretch">
+                <!-- Photo -->
+                <div class="col-lg-4 col-md-5 mb-4 mb-md-0">
+                    <div class="ap-photo set-bg" data-setbg="img/about/about-4.webp"></div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="about__text">
-                        <div class="section-title">
-                            <span>About Me</span>
-                            <h2>Who am I?</h2>
-                        </div>
-                        <div class="about__text__desc">
-                            <p>Gameplay programmer focused on Unreal Engine multiplayer systems and gameplay architecture.</p>
-                            <p>Experience building server-authoritative multiplayer games, implementing replication ownership, 
-                                session management, and match flow systems using Unreal Engine C++ and Epic Online Services.</p>
-                            <p>I work primarily on gameplay logic, networking reliability, and modular systems design, with an 
-                                emphasis on clean architecture, performance, and maintainable code.</p>
-                            <p>Currently deepening expertise in C++ networking, multiplayer optimization, and scalable gameplay 
-                                frameworks within team-based development environments.</p>
+                <!-- Profile + Experience -->
+                <div class="col-lg-8 col-md-7">
+                    <div class="ap-card">
+                        <h2 class="ap-title">Gameplay Systems &amp; Multiplayer Programmer</h2>
+                        <p class="ap-subtitle">Unreal Engine C++ Developer</p>
+                        <hr class="ap-divider">
+                        <p class="ap-bio">I build server-authoritative multiplayer systems and modular gameplay architectures in Unreal Engine.</p>
+                        <p class="ap-bio">My focus is clean replication ownership, scalable <strong>match flow</strong> systems, and maintainable C++ gameplay frameworks.</p>
+
+                        <!-- Experience Snapshot -->
+                        <div class="ap-snapshot-label">Current Role</div>
+                        <div class="ap-exp-card">
+                            <div class="ap-exp-title">Cyrus365 &mdash; Game Programmer Intern</div>
+                            <div class="ap-exp-date">Feb 2025 &ndash; Present</div>
+                            <ul class="ap-list">
+                                <li>Delivered 2 multiplayer MVPs using EOS with dedicated server authoritative architecture</li>
+                                <li>Engineered replicated gameplay systems supporting lobbies, sessions, and match synchronization</li>
+                                <li>Re-architected fragmented multiplayer systems into Unreal's native gameplay framework, establishing authority, replication ownership, and modular subsystems</li>
+                                <li>Designed match lifecycle systems including game loops and evaluation logic</li>
+                            </ul>
+                            <ul class="ap-list ap-list--more" id="exp-more" style="display:none;">
+                                <li>Built AI teaching assistant chatbot integrated into live gameplay sessions</li>
+                                <li>Developed centralized Game Launcher platform for modular game deployment and access gating</li>
+                                <li>Implemented persistent player data systems via EOS data handling subsystems</li>
+                                <li>Developed reusable Unreal Engine plugins for replay playback, authentication, player data services, UI navigation, and OSS configuration across multiple game builds</li>
+                                <li>Maintained comprehensive technical documentation covering system architecture, gameplay loops, plugin frameworks, and implementation changes</li>
+                                <li>Defined gameplay spatial layouts and implemented level streaming systems, directing asset integration for performance, multiplayer balance, and mobile optimization</li>
+                                <li>Collaborated within a 7-member cross-functional development team</li>
+                                <li>Built CI/CD pipelines using GitHub Actions with locally hosted runners</li>
+                            </ul>
+                            <button class="ap-toggle-btn" id="exp-toggle" onclick="(function(){var m=document.getElementById('exp-more'),b=document.getElementById('exp-toggle');var open=m.style.display!=='none';m.style.display=open?'none':'block';b.textContent=open?'Show more \u25be':'Show less \u25b4';})()">Show more &#9662;</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- About Section End -->
+    <!-- Engineer Profile Section End -->
 
-    <!-- Experience Section Begin -->
-    <section id="about" class="services-page" style="color: #ffffff; padding-top:50px;">
+    <!-- Technical Expertise Section Begin -->
+    <section class="ap-section ap-section--inner">
         <div class="container">
-            <div class="about__text">
-                <div class="section-title courses">
-                    <span>Experience</span>
-                    <h2>What I've done?</h2>
-                </div>
-            </div>    
-            <div class="row mb-4">
-                <div class="col-md-6 col-xs-12 wow fadeInLeft animated experience-box" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInLeft;background-color: rgba(255, 255, 255, 0.1);">
-                    <h4 style="color:#adadad;padding: 15px 0;"><b>Cyrus365, </b>Hong Kong - <i>Game Programmer Intern</i></h4>
-                    <small class="my-1" style="color:#ffffff;">Feb, 2025 - Present</small>
-                    
-                    <ul style="padding: 14px;">
-                        <li><small>Delivered 2 multiplayer MVPs using EOS with dedicated server authoritative architecture.</small></li>
-                        <li><small>Engineered replicated gameplay systems supporting lobbies, sessions, and match synchronization.</small></li>
-                        <li><small>Re-architected fragmented multiplayer systems into Unreal's native gameplay framework, establishing authority, replication ownership, and modular subsystems.</small></li>
-                        <li><small>Designed match lifecycle systems including game loops and evaluation logic.</small></li>
-                        <li><small>Implemented persistent player data systems via EOS data handling subsystems.</small></li>
-                        <li><small>Developed reusable Unreal Engine plugins for replay playback, authentication, player data services, UI navigation, and OSS configuration across multiple game builds.</small></li>
-                        <li><small>Built CI/CD pipelines using GitHub Actions with locally hosted runners.</small></li>
-                    </ul>    
-                </div>
-            </div>
-        </div>
-    </section>    
-    <!-- Experience Section End -->
-
-    <!-- Qualification and skills Section Begin -->
-    <section id="about" class="services-page spad" style="color: #ffffff; padding-top:0px;">
-        <div class="container">
+            <div class="ap-section-label">Technical Expertise</div>
             <div class="row">
-                <div class="col-md-6 col-xs-12 education">
-                    <div class="about__text">
-                        <div class="section-title">
-                            <h2>Education</h2>
-                        </div>
-                    </div>
-                    <div class="wow fadeInRight animated edu-entry" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInRight;">
-                        <div class="degree-name">Post Graduate Diploma in Computer Applications</div>
-                        <div class="school-year">Indira Gandhi National Open University, Jan 2026 – Present</div>
-                    </div>
-                    <div class="wow fadeInRight animated edu-entry" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInRight;">
-                        <div class="degree-name">Bachelors of Architecture</div>
-                        <div class="school-year">Sushant School of Art & Architecture, 2024</div>
-                    </div>
-                    <div class="wow fadeInRight animated edu-entry" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInRight;">
-                        <div class="degree-name">Senior Secondary School</div>
-                        <div class="school-year">Harrow Public School, 2018</div>
-                    </div>
-                    <div class="wow fadeInRight animated edu-entry" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInRight;">
-                        <div class="degree-name">High School</div>
-                        <div class="school-year">Bishop Conrad Senior Secondary School, 2015</div>
+                <!-- Core Systems -->
+                <div class="col-6 col-lg-3 mb-4">
+                    <div class="ap-expertise-card">
+                        <h4 class="ap-expertise-title">Core Systems</h4>
+                        <ul class="ap-list">
+                            <li>Multiplayer Replication</li>
+                            <li>Authority Ownership Design</li>
+                            <li>Gameplay State Machines</li>
+                            <li>AI Behavior Trees</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-6 col-xs-12" id="skills">
-                    <div class="about__text">
-                        <div class="section-title">
-                            <h2>Skills</h2>
-                        </div>
+                <!-- Multiplayer & Networking -->
+                <div class="col-6 col-lg-3 mb-4">
+                    <div class="ap-expertise-card">
+                        <h4 class="ap-expertise-title">Multiplayer &amp; Networking</h4>
+                        <ul class="ap-list">
+                            <li>Server-authoritative architecture</li>
+                            <li>Replication and ownership handling</li>
+                            <li>Session management</li>
+                            <li>Epic Online Services (EOS)</li>
+                            <li>Steam Online Subsystem</li>
+                        </ul>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="services__item">
-                                <h4>Languages</h4>
-                                <ul>
-                                    <li>C++</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="services__item">
-                                <h4>Game Engine</h4>
-                                <ul>
-                                    <li>Unreal Engine 4 & 5</li>
-                                    <li>Blueprint and C++ integration</li>
-                                    <li>Gameplay Framework</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="services__item">
-                                <h4>Multiplayer & Networking</h4>
-                                <ul>
-                                    <li>Server-authoritative architecture</li>
-                                    <li>Replication and ownership handling</li>
-                                    <li>Session management</li>
-                                    <li>Epic Online Services (EOS)</li>
-                                    <li>Steam Online Subsystem</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="services__item">
-                                <h4>Systems and Tools</h4>
-                                <ul>
-                                    <li>Git, Github</li>
-                                    <li>Github Actions (CI/CD)</li>
-                                    <li>Plugin development</li>
-                                    <li>AWS backend integration</li>
-                                </ul>
-                            </div>
-                        </div>
+                </div>
+                <!-- Game Engine & Languages -->
+                <div class="col-6 col-lg-3 mb-4">
+                    <div class="ap-expertise-card">
+                        <h4 class="ap-expertise-title">Game Engine</h4>
+                        <ul class="ap-list">
+                            <li>Unreal Engine 4 &amp; 5</li>
+                            <li>Blueprint and C++ integration</li>
+                            <li>Gameplay Framework</li>
+                            <li>C++</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Tools -->
+                <div class="col-6 col-lg-3 mb-4">
+                    <div class="ap-expertise-card">
+                        <h4 class="ap-expertise-title">Systems &amp; Tools</h4>
+                        <ul class="ap-list">
+                            <li>Git, GitHub</li>
+                            <li>GitHub Actions (CI/CD)</li>
+                            <li>Plugin development</li>
+                            <li>AWS backend integration</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </section>    
-    <!-- Qualification and skills Section End -->
+    </section>
+    <!-- Technical Expertise Section End -->
 
-    <!-- Game Jams Section Begin -->
-    <section id="about" class="services-page" style="color: #ffffff; padding-top:0px;">
+    <!-- Education Section Begin -->
+    <section class="ap-section ap-section--edu pb-5">
         <div class="container">
-            <div class="about__text">
-                <div class="section-title courses">
-                    <span>Game Jams</span>
-                    <h2>Competition Projects</h2>
+            <div class="ap-section-label">Education</div>
+            <div class="row">
+                <div class="col-6 col-lg-3 mb-4">
+                    <div class="ap-expertise-card">
+                        <div class="ap-edu-entry" style="border-left:none; padding-left:0;">
+                            <div class="ap-edu-degree">Post Graduate Diploma in Computer Applications</div>
+                            <div class="ap-edu-school">Indira Gandhi National Open University</div>
+                            <div class="ap-edu-year">Jan 2026 &ndash; Present</div>
+                        </div>
+                    </div>
                 </div>
-            </div>    
-            <div class="row mb-4">
-                <div class="col-md-6 col-xs-12 wow fadeInLeft animated experience-box" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInLeft;background-color: rgba(255, 255, 255, 0.1);">
-                    <h4 style="color:#adadad;padding: 15px 0;"><b>GameDev.tv Game Jam 2025</b> - <i>Game Programmer</i></h4>
-                    <small class="my-1" style="color:#ffffff;">May, 2025</small>
-
-                    <ul style="padding: 14px;">
-                        <li><small>Developed <b>Voyage of the Proteus</b> (also known as <i>U.S.S. Proteus</i>) during a one-week Unreal Engine game jam.</small></li>
-                        <li><small>Piloted a microsubmarine inside the human body in a 3D environment with 6DOF (six degrees of freedom) movement and combat.</small></li>
-                        <li><small>Collaborated with a remote team to handle gameplay logic, level design, and polish within the jam deadline.</small></li>
-                        <li><small>Built using Unreal Engine 5, drawing inspiration from sci-fi classics like <i>Fantastic Voyage</i>.</small></li>
-                        <li><small>Published on itch.io: <a href="https://thegeebus.itch.io/voyage-of-the-proteus" target="_blank" style="color:#00bfff;">View Game</a> | 
-                                                         <a href="https://itch.io/jam/gamedevtv-jam-2025/rate/3590581" target="_blank" style="color:#00bfff;">View Rating</a>
-                            </small>
-                        </li>
-                    </ul>    
+                <div class="col-6 col-lg-3 mb-4">
+                    <div class="ap-expertise-card">
+                        <div class="ap-edu-entry" style="border-left:none; padding-left:0;">
+                            <div class="ap-edu-degree">Bachelors of Architecture</div>
+                            <div class="ap-edu-school">Sushant School of Art &amp; Architecture</div>
+                            <div class="ap-edu-year">2024</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>    
-    <!-- Game Jams Section End -->
-
-    <!-- Courses Section Begin -->
-    <section id="about" class="services-page spad" style="color: #ffffff; padding-top:0px; padding-bottom:50px;">
-        <div class="container">
-            <div class="about__text">
-                <div class="section-title courses">
-                    <span>Courses</span>
-                    <h2>What I learned?</h2>
+                <div class="col-6 col-lg-3 mb-4">
+                    <div class="ap-expertise-card">
+                        <div class="ap-edu-entry" style="border-left:none; padding-left:0;">
+                            <div class="ap-edu-degree">Senior Secondary School</div>
+                            <div class="ap-edu-school">Harrow Public School</div>
+                            <div class="ap-edu-year">2018</div>
+                        </div>
+                    </div>
                 </div>
-            </div>    
-            <div class="row mb-4">
-                <div class="col-md-6 col-xs-12 wow fadeInLeft animated experience-box" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInLeft;background-color: rgba(255, 255, 255, 0.1);">
-                    <h4 style="color:#adadad;padding: 15px 0;">UNREAL ENGINE 5 C++ MULTIPLAYER SHOOTER (Ongoing)</h4>
-                    <ul style="padding: 14px;">
-                        <li><small>Coding multiplayer games with session management and replication</small></li>
-                        <li><small>Optimizing network performance and applied lag compensation techniques</small></li>
-                        <li><small>Programming weapons, pickups, and player actions in multiplayer</small></li>
-                        <li><small>Designing custom game modes and integrated online services like Steam</small></li>
-                    </ul>    
-                </div>
-                <div class="col-md-6 col-xs-12 wow fadeInLeft animated experience-box" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInLeft;">
-                    <h4 style="color:#adadad;padding: 15px 0;">UNREAL ENGINE 5 C++ MULTIPLAYER: MAKE AN ONLINE CO-OP GAME</h4>
-                    <ul style="padding: 14px;">
-                        <li><small>Learned intermediate C++ and UE5 tech to create online multiplayer adventure games</small></li>
-                        <li><small>Created and programmed online multiplayer gameplay sessions using replication</small></li>
-                        <li><small>Used the Online Subsystem and Steam services for internet connectivity</small></li>
-                        <li><small>Designed and developed a 2-player co-op adventure game playable online</small></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row mb-4">
-                <div class="col-md-6 col-xs-12 wow fadeInLeft animated experience-box" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInLeft;">
-                    <h4 style="color:#adadad;padding: 15px 0;">MATH FOR VIDEO GAMES: THE FASTEST WAY TO GET SMARTER AT MATH</h4>
-                    <ul style="padding: 14px;">
-                        <li><small>Mastered vector math, trigonometry, and projectile motion concepts</small></li>
-                        <li><small>Learned number base manipulation and floating-point representation</small></li>
-                        <li><small>Applied combinatorics and probability theory to game mechanics</small></li>
-                        <li><small>Gained a deep understanding of vector spaces in 2D and 3D</small></li>
-                    </ul>
-                </div>
-                <div class="col-md-6 col-xs-12 wow fadeInLeft animated experience-box" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInLeft;background-color: rgba(255, 255, 255, 0.1);">
-                    <h4 style="color:#adadad;padding: 15px 0;">UNREAL ENGINE 4 C++ THE ULTIMATE SHOOTER COURSE</h4>
-                    <ul style="padding: 14px;">
-                        <li><small>Built character systems with advanced animations and weapon mechanics</small></li>
-                        <li><small>Developed dynamic crosshairs, material effects, and full inventory systems</small></li>
-                        <li><small>Programmed enemy AI with behavior trees, blackboards, and health systems</small></li>
-                        <li><small>Created polished levels with lighting, post-processing, and professional assets</small></li>
-                    </ul>
+                <div class="col-6 col-lg-3 mb-4">
+                    <div class="ap-expertise-card">
+                        <div class="ap-edu-entry" style="border-left:none; padding-left:0;">
+                            <div class="ap-edu-degree">High School</div>
+                            <div class="ap-edu-school">Bishop Conrad Senior Secondary School</div>
+                            <div class="ap-edu-year">2015</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>    
-    <!-- Courses Section End -->
+    </section>
+    <!-- Education Section End -->
 
     <footer class="footer">
         <div class="container">

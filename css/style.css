@@ -2854,3 +2854,297 @@ ol {
   background: #ffffff;
   height: 4px;
 }
+
+/* =====================================================
+   ABOUT PAGE — REDESIGN
+   ===================================================== */
+.ap-section {
+  padding: 140px 0 0;
+}
+
+.ap-section--inner {
+  padding-top: 50px;
+}
+
+.ap-section--edu {
+  padding-top: 30px;
+}
+
+/* Section label e.g. "ENGINEER PROFILE" */
+.ap-section-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding-bottom: 8px;
+  margin-bottom: 28px;
+  border-bottom: 2px solid #00bfe7;
+  display: inline-block;
+}
+
+/* Profile photo */
+.ap-photo {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center top;
+}
+
+/* Right-side card */
+.ap-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(0,191,231,0.15);
+  border-radius: 8px;
+  padding: 30px 32px;
+  height: 100%;
+}
+
+.ap-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.ap-subtitle {
+  font-size: 16px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #b0b8c8;
+  margin-bottom: 0;
+}
+
+.ap-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  margin: 18px 0;
+}
+
+.ap-bio {
+  font-size: 16px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #c8d0dc;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.ap-bio strong {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Experience Snapshot sub-label */
+.ap-snapshot-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding-bottom: 6px;
+  margin: 24px 0 16px;
+  border-bottom: 2px solid #00bfe7;
+  display: inline-block;
+}
+
+.ap-exp-card {
+  background: rgba(0,191,231,0.05);
+  border: 1px solid rgba(0,191,231,0.18);
+  border-radius: 6px;
+  padding: 18px 20px;
+}
+
+.ap-exp-title {
+  font-size: 16px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.ap-exp-date {
+  font-size: 14px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #8a96a8;
+  margin-bottom: 12px;
+}
+
+/* Shared bullet list */
+.ap-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+.ap-list li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 15px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #c8d0dc;
+  line-height: 1.65;
+  margin-bottom: 5px;
+}
+
+.ap-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00bfe7;
+}
+
+/* Ghost link button */
+.ap-link-btn {
+  display: inline-block;
+  font-size: 14px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #00bfe7;
+  border: 1px solid #00bfe7;
+  border-radius: 4px;
+  padding: 6px 18px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.ap-link-btn:hover {
+  background: #00bfe7;
+  color: #0a0119;
+  text-decoration: none;
+}
+
+/* Expertise cards */
+.ap-expertise-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(0,191,231,0.15);
+  border-radius: 8px;
+  padding: 24px 22px;
+  height: 100%;
+}
+
+.ap-expertise-title {
+  font-size: 16px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+/* CTA section */
+.ap-cta-section {
+  padding: 50px 0;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.ap-cta-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.ap-cta-text {
+  font-size: 18px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #c8d0dc;
+  margin: 0;
+}
+
+.ap-cta-text strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.ap-cta-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.ap-btn {
+  display: inline-block;
+  font-size: 14px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.ap-btn--primary {
+  background: #00bfe7;
+  color: #0a0119;
+  border: 2px solid #00bfe7;
+}
+
+.ap-btn--primary:hover {
+  background: #00a0c2;
+  border-color: #00a0c2;
+  color: #0a0119;
+  text-decoration: none;
+}
+
+.ap-btn--outline {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255,255,255,0.4);
+}
+
+.ap-btn--outline:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.ap-toggle-btn {
+  background: none;
+  border: none;
+  color: #00bfe7;
+  font-size: 14px;
+  font-family: 'Josefin Sans', sans-serif;
+  cursor: pointer;
+  padding: 6px 0 0;
+  display: block;
+  transition: color 0.2s;
+}
+
+.ap-toggle-btn:hover {
+  color: #ffffff;
+}
+
+.ap-edu-entry {
+  padding: 12px 0;
+  border-left: 2px solid rgba(0,191,231,0.3);
+  padding-left: 14px;
+}
+
+.ap-edu-degree {
+  font-size: 14px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.ap-edu-school {
+  font-size: 13px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #8a96a8;
+  margin-bottom: 3px;
+}
+
+.ap-edu-year {
+  font-size: 12px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #00bfe7;
+}

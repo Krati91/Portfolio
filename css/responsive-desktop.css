@@ -132,11 +132,9 @@
     position: relative;
     overflow-y: auto;
     overscroll-behavior: contain;
-    background: #0a0119;
-    border-top: 2px solid #00bfe7;
-    border-right: 2px solid #00bfe7;
-    border-bottom: 2px solid #00bfe7;
-    padding: 20px 15px 30px;
+    background: transparent;
+    border: none;
+    padding: 20px 15px 30px 0;
   }
 
   .project-block {
@@ -156,26 +154,40 @@
     font-size: 15px;
     font-weight: 600;
     padding: 12px 40px 12px 16px !important;
-    background-color: #0a0119;
-    opacity: 0.7;
-    border: 1px solid #00bfe7;
+    background-color: rgba(20, 20, 35, 0.92) !important;
+    opacity: 1;
+    border: none !important;
+    border-left: 3px solid transparent !important;
     color: #d0d0d0;
-    border-radius: 8px;
+    border-radius: 8px !important;
     transition: all 0.3s ease;
     letter-spacing: 0.3px;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
   .sidebar .list-group-item:hover {
     background-color: #00bfe7;
+    border-left-color: #00bfe7;
     color: #ffffff;
     opacity: 1;
   }
 
-  .sidebar .list-group-item.active-list-group-item {
+  .sidebar .list-group-item.active-list-group-item,
+  .sidebar .list-group-item[aria-expanded="true"] {
     background-color: #00bfe7 !important;
     color: #ffffff !important;
     opacity: 1 !important;
+    border-top: 1px solid rgba(0, 191, 231, 0.12) !important;
+    border-right: 1px solid rgba(0, 191, 231, 0.12) !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    border-radius: 0 8px 0 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* When expanded but not yet active-list-group-item, still remove bottom border */
+  .sidebar .list-group-item[aria-expanded="true"]:not(.active-list-group-item) {
+    border-bottom: none !important;
   }
 
   .sidebar .list-group-item::after {
@@ -201,7 +213,18 @@
 
   .sidebar .collapse {
     transition: all 0.3s ease;
-    padding: 6px 0;
+    padding: 6px 0 8px;
+  }
+
+  /* Combined border box — right + bottom on expanded panel */
+  .sidebar .collapse.show {
+    border: none !important;
+    border-right: 1px solid rgba(0, 191, 231, 0.12) !important;
+    border-bottom: 1px solid rgba(0, 191, 231, 0.12) !important;
+    border-radius: 0 0 8px 0 !important;
+    background-color: rgba(20, 20, 35, 0.92) !important;
+    padding-bottom: 10px !important;
+    margin-bottom: 4px !important;
   }
 
   .sidebar-link {
@@ -209,20 +232,22 @@
     flex-direction: row !important;
     align-items: center;
     width: 100%;
-    padding: 10px;
-    margin-bottom: 8px;
+    padding: 10px 10px 10px 16px;
+    margin-bottom: 6px;
     background: transparent;
-    border-radius: 8px;
+    border-radius: 0 6px 6px 0;
     transition: all 0.2s ease;
+    border-left: 3px solid transparent;
   }
 
   .sidebar-link:hover {
     background: rgba(0, 191, 231, 0.12);
-    transform: translateX(4px);
+    border-left-color: #00bfe7;
   }
 
   .sidebar-link.active {
     background: rgba(0, 191, 231, 0.18);
+    border-left-color: #00bfe7;
   }
 
   .sidebar .thumbnail {
