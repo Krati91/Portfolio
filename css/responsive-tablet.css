@@ -1781,6 +1781,85 @@ body.drawer-expanded #button {
   .ap-expertise-card        { padding: 20px 18px; }
   .ap-expertise-title       { font-size: 15px; }
 
+  /* Education timeline — vertical alternating timeline on tablet */
+  .edu-timeline {
+    display: block;
+    position: relative;
+    padding: 0;
+  }
+  /* Vertical center line */
+  .edu-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 2px;
+    transform: translateX(-50%);
+    background: rgba(0,191,231,0.35);
+    z-index: 0;
+  }
+  .edu-timeline__row        { display: block; margin-bottom: 0; }
+  .edu-timeline__row::before { display: none; }
+
+  /* Each item: 3-col grid — left content | dot | right content */
+  .edu-timeline__item {
+    display: grid;
+    grid-template-columns: 1fr 14px 1fr;
+    column-gap: 14px;
+    width: 100%;
+    margin-bottom: 24px;
+    align-items: start;
+  }
+  .edu-timeline__row .edu-timeline__item:first-child { padding: 0px !important; }
+  .edu-timeline__row .edu-timeline__item:last-child  { padding: 0px !important; }
+
+  /* LEFT items (first in each row) */
+  .edu-timeline__row .edu-timeline__item:first-child .edu-timeline__content {
+    grid-column: 1; grid-row: 1;
+    height: auto !important;
+    justify-content: flex-start; text-align: left;
+  }
+  .edu-timeline__row .edu-timeline__item:first-child .edu-timeline__dot {
+    grid-column: 2; grid-row: 1;
+    align-self: start; margin-top: 18px;
+  }
+  .edu-timeline__row .edu-timeline__item:first-child .edu-timeline__year {
+    grid-column: 3; grid-row: 1;
+    text-align: left; margin-top: 0; align-self: start; padding-top: 18px;
+  }
+  .edu-timeline__row .edu-timeline__item:first-child .ap-edu-degree { text-align: left; }
+  .edu-timeline__row .edu-timeline__item:first-child .ap-edu-school { text-align: left; }
+
+  /* RIGHT items (last in each row) */
+  .edu-timeline__row .edu-timeline__item:last-child .edu-timeline__content {
+    grid-column: 3; grid-row: 1;
+    height: auto !important;
+    justify-content: flex-start; text-align: right;
+  }
+  .edu-timeline__row .edu-timeline__item:last-child .edu-timeline__dot {
+    grid-column: 2; grid-row: 1;
+    align-self: start; margin-top: 18px;
+  }
+  .edu-timeline__row .edu-timeline__item:last-child .edu-timeline__year {
+    grid-column: 1; grid-row: 1;
+    text-align: right; margin-top: 0; align-self: start; padding-top: 18px;
+  }
+  .edu-timeline__row .edu-timeline__item:last-child .ap-edu-degree { text-align: right; }
+  .edu-timeline__row .edu-timeline__item:last-child .ap-edu-school { text-align: right; }
+
+  .edu-timeline__dot        { display: block; width: 12px; height: 12px; background: #00bfe7; border-radius: 50%; box-shadow: 0 0 8px rgba(0,191,231,0.6); position: relative; z-index: 1; }
+  .edu-timeline__year       { font-size: 11px; }
+
+  /* Wrap content in a card like ap-expertise-card */
+  .edu-timeline__content {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(0,191,231,0.15);
+    border-radius: 8px;
+    padding: 14px 14px !important;
+  }
+
   .ap-cta-box               { flex-direction: column; align-items: flex-start; }
   .ap-cta-text              { font-size: 16px; }
 

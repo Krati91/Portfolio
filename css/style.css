@@ -3211,3 +3211,90 @@ ol {
   font-family: 'Josefin Sans', sans-serif;
   color: #00bfe7;
 }
+
+/* =====================================================
+   HORIZONTAL EDUCATION TIMELINE (desktop)
+   ===================================================== */
+.edu-timeline {
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+}
+
+/* Row wrappers are transparent on desktop — items participate directly in the parent flex */
+.edu-timeline__row {
+  display: contents;
+}
+
+/* Connecting horizontal line — sits at the dot row */
+.edu-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(0,191,231,0.45) 6%, rgba(0,191,231,0.45) 94%, transparent 100%);
+  /* content height (140px, border-box) + dot half (7px) - line half (1px) = 146px */
+  top: 146px;
+  z-index: 0;
+}
+
+.edu-timeline__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 16px;
+}
+
+/* Content box above the dot */
+.edu-timeline__content {
+  height: 140px;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 18px;
+  width: 100%;
+}
+
+.edu-timeline__content .ap-edu-degree {
+  font-size: 13px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 6px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.edu-timeline__content .ap-edu-school {
+  font-size: 12px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #8a96a8;
+  text-align: center;
+}
+
+/* Dot on the timeline */
+.edu-timeline__dot {
+  width: 14px;
+  height: 14px;
+  background: #00bfe7;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,191,231,0.6);
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+/* Year label below the dot */
+.edu-timeline__year {
+  font-size: 11px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  color: #00bfe7;
+  letter-spacing: 0.06em;
+  margin-top: 12px;
+  text-align: center;
+}
