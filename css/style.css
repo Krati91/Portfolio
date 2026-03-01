@@ -822,12 +822,15 @@ ol {
 }
 
 .hero__media {
+  display: block;
   position: relative;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 40px rgba(0, 191, 231, 0.2), 0 20px 60px rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(0, 191, 231, 0.2);
   min-height: 280px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .hero__media:hover .work__item__hover {
