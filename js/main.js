@@ -78,13 +78,28 @@
                 }
             });
 
+            // Auto-apply filter from URL param (e.g. portfolio.html?filter=gameplay-ai)
+            var urlParams = new URLSearchParams(window.location.search);
+            var urlFilter = urlParams.get('filter');
+            if (urlFilter) {
+                var filterSel = '.' + urlFilter;
+                mixer.filter(filterSel);
+                $('.portfolio__filter li').removeClass('active');
+                $('.portfolio__filter li[data-filter="' + filterSel + '"]').addClass('active');
+                // sync mobile/tablet dropdown label
+                var $matchedItem = $('.portfolio__filter li[data-filter="' + filterSel + '"]');
+                if ($matchedItem.length) {
+                    $('.portfolio__filter-label').text($matchedItem.text());
+                }
+            }
+
             // Inject custom dropdown for mobile/tablet
             if (window.innerWidth < 1200 && $('.portfolio__filter').length > 0) {
                 var $wrapper = $('<div>', { 'class': 'portfolio__filter-dropdown' });
                 var $trigger = $('<div>', { 'class': 'portfolio__filter-trigger' });
                 var $label = $('<span>', { 'class': 'portfolio__filter-label', text: 'All' });
                 var $triggerCount = $('<span>', { 'class': 'portfolio__filter-count' });
-                var $arrow = $('<span>', { 'class': 'portfolio__filter-arrow' });
+                var $arrow = $('<span>', { 'class': 'portfolio__filter-arrow', html: '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>' });
                 var $optList = $('<ul>', { 'class': 'portfolio__filter-options' });
                 var totalCount = $('.portfolio__gallery .mix').length;
 

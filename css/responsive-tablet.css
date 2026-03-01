@@ -325,13 +325,13 @@ body .breadcrumb-option.spad {
 }
 
 .portfolio__filter-arrow {
-  display: inline-block;
-  width: 12px;
-  height: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
   margin-left: auto;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2300bfe7' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: center;
+  color: #d0d0d0;
   transition: transform 0.2s ease;
   flex-shrink: 0;
 }
@@ -983,7 +983,6 @@ div[class*="col-lg-3"] {
 
 .sidebar.expanded {
   max-height: 70vh !important;
-  overflow: visible !important;
   overflow-y: auto !important;
   overflow-x: hidden !important;
   overscroll-behavior: contain !important;
@@ -1035,9 +1034,10 @@ div[class*="col-lg-3"] {
 }
 
 .sidebar .list-group-item {
+  position: relative;
   font-size: 17px;
   font-weight: 600;
-  padding: 14px 16px;
+  padding: 14px 40px 14px 16px;
   width: 100%;
   margin-bottom: 0;
   background-color: #0a0119;
@@ -1047,6 +1047,23 @@ div[class*="col-lg-3"] {
   border-radius: 8px;
   transition: all 0.3s ease;
   letter-spacing: 0.3px;
+}
+
+.sidebar .list-group-item::after {
+  content: '›';
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  font-size: 22px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  color: currentColor;
+}
+
+.sidebar .list-group-item.active-list-group-item::after,
+.sidebar .list-group-item[aria-expanded="true"]::after {
+  transform: translateY(-50%) rotate(270deg);
 }
 
 .sidebar .list-group-item:hover {
