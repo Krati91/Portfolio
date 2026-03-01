@@ -1468,6 +1468,7 @@ div[class*="col-lg-3"] {
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 130px !important;
+  padding-bottom: 0 !important;
   top: 0 !important;
   min-height: auto !important;
   position: static !important;
@@ -1475,7 +1476,7 @@ div[class*="col-lg-3"] {
 
 body:not(.drawer-expanded) .col-lg-9.project-block,
 body:not(.drawer-expanded) .project-block {
-  margin-bottom: 60px !important;
+  margin-bottom: 55px !important;
 }
 
 body.drawer-expanded .col-lg-9.project-block,
