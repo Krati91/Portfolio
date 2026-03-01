@@ -1,6 +1,6 @@
 /* =============================================================================
-   project-details-new.css
-   Styles for project-details-new.html — new design layout
+   project-details.css
+   Styles for project-details.html — new design layout
    Author: Kartik Chaturvedi
    ============================================================================= */
 
@@ -17,16 +17,14 @@
 .pd-hero {
     position: relative;
     display: flex;
-    min-height: 340px;
+    align-items: stretch;
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 0;
 }
 
 .pd-hero__bg {
-    position: absolute;
-    inset: 0;
-    width: 55%;
+    flex: 0 0 55%;
     overflow: hidden;
 }
 
@@ -34,6 +32,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top;
     display: block;
 }
 
@@ -44,19 +43,15 @@
 
 /* dark gradient overlay blending hero into card */
 .pd-hero__bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, transparent 60%, #1a1a2e 100%);
+    content: none;
 }
 
 .pd-hero__card {
     position: relative;
     z-index: 2;
-    margin-left: auto;
-    width: 48%;
+    flex: 1;
     background: rgba(20, 20, 35, 0.92);
-    border-left: 1px solid rgba(100, 180, 255, 0.15);
+    border-left: 1px solid rgba(0, 191, 231, 0.15);
     padding: 28px 28px 24px 28px;
     display: flex;
     flex-direction: column;
@@ -81,7 +76,7 @@
 }
 
 .pd-hero__subtitle-role {
-    color: #60a5fa;
+    color: #00bfe7;
     font-size: 0.75rem;
     margin: 2px 0 0 0;
     letter-spacing: 0.06em;
@@ -106,7 +101,7 @@
     content: '•';
     position: absolute;
     left: 0;
-    color: #60a5fa;
+    color: #00bfe7;
 }
 
 .pd-hero__tech {
@@ -126,9 +121,9 @@
 }
 
 .pd-hero__tech-tag {
-    background: rgba(96, 165, 250, 0.12);
-    border: 1px solid rgba(96, 165, 250, 0.3);
-    color: #93c5fd;
+    background: rgba(0, 191, 231, 0.12);
+    border: 1px solid rgba(0, 191, 231, 0.3);
+    color: #4dd8f0;
     font-size: 0.78rem;
     padding: 2px 10px;
     border-radius: 4px;
@@ -154,7 +149,7 @@
     align-items: center;
     gap: 0;
     background: rgba(15, 15, 28, 0.9);
-    border: 1px solid rgba(96, 165, 250, 0.12);
+    border: 1px solid rgba(0, 191, 231, 0.12);
     border-top: none;
     padding: 14px 24px;
     margin-bottom: 32px;
@@ -177,7 +172,7 @@
 }
 
 .pd-meta-bar__icon {
-    color: #60a5fa;
+    color: #00bfe7;
     font-size: 0.8rem;
     line-height: 1;
     vertical-align: middle;
@@ -196,25 +191,25 @@
     font-size: 0.8rem;
 }
 .pd-meta-bar__link {
-    color: #60a5fa;
+    color: #00bfe7;
     font-size: 0.8rem;
     text-decoration: none;
     transition: color 0.2s;
 }
 
 .pd-meta-bar__link:hover {
-    color: #93c5fd;
+    color: #4dd8f0;
     text-decoration: underline;
 }
 .pd-meta-bar__link {
-    color: #60a5fa;
+    color: #00bfe7;
     font-size: 0.8rem;
     text-decoration: none;
     transition: color 0.2s;
 }
 
 .pd-meta-bar__link:hover {
-    color: #93c5fd;
+    color: #4dd8f0;
     text-decoration: underline;
 }
 
@@ -239,7 +234,7 @@
     letter-spacing: 0.04em;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgba(96, 165, 250, 0.15);
+    border-bottom: 1px solid rgba(0, 191, 231, 0.15);
 }
 
 /* ── Skill Keywords ──────────────────────────────────────────────────────── */
@@ -251,7 +246,7 @@
 
 .pd-skill-tag {
     background: rgba(30, 35, 55, 0.85);
-    border: 1px solid rgba(96, 165, 250, 0.2);
+    border: 1px solid rgba(0, 191, 231, 0.2);
     color: #d1d5db;
     font-size: 0.78rem;
     padding: 5px 14px;
@@ -261,13 +256,13 @@
 }
 
 .pd-skill-tag:hover {
-    border-color: rgba(96, 165, 250, 0.55);
+    border-color: rgba(0, 191, 231, 0.55);
 }
 
 .pd-skill-tag--highlight {
-    background: rgba(59, 130, 246, 0.2);
-    border-color: rgba(96, 165, 250, 0.6);
-    color: #93c5fd;
+    background: rgba(0, 191, 231, 0.2);
+    border-color: rgba(0, 191, 231, 0.6);
+    color: #4dd8f0;
     font-weight: 600;
 }
 
@@ -279,14 +274,14 @@
     gap: 6px;
     padding: 14px 16px;
     background: rgba(20, 22, 40, 0.7);
-    border: 1px solid rgba(96, 165, 250, 0.15);
+    border: 1px solid rgba(0, 191, 231, 0.15);
     border-radius: 8px;
 }
 
 .pd-arch-node {
-    background: rgba(59, 130, 246, 0.15);
-    border: 1px solid rgba(96, 165, 250, 0.4);
-    color: #93c5fd;
+    background: rgba(0, 191, 231, 0.15);
+    border: 1px solid rgba(0, 191, 231, 0.4);
+    color: #4dd8f0;
     font-size: 0.78rem;
     font-weight: 600;
     padding: 5px 12px;
@@ -323,7 +318,7 @@
     content: '▸';
     position: absolute;
     left: 0;
-    color: #60a5fa;
+    color: #00bfe7;
     font-size: 0.8rem;
     top: 1px;
 }
@@ -343,7 +338,7 @@
 
 .pd-showcase-card {
     background: rgba(20, 22, 40, 0.88);
-    border: 1px solid rgba(96, 165, 250, 0.12);
+    border: 1px solid rgba(0, 191, 231, 0.12);
     border-radius: 8px;
     overflow: hidden;
     transition: border-color 0.2s, transform 0.2s;
@@ -352,13 +347,12 @@
 }
 
 .pd-showcase-card:hover {
-    border-color: rgba(96, 165, 250, 0.4);
+    border-color: rgba(0, 191, 231, 0.4);
     transform: translateY(-2px);
 }
 
 .pd-showcase-card__img-wrap {
     position: relative;
-    height: 160px;
     background-color: #111827;
     overflow: hidden;
     flex-shrink: 0;
@@ -366,20 +360,18 @@
 
 .pd-showcase-card__img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    height: auto;
     display: block;
 }
 
 .pd-showcase-card__img-title {
     position: absolute;
-    top: 10px;
+    bottom: 10px;
     left: 12px;
     font-family: 'Orbitron', sans-serif;
     font-size: 0.78rem;
     font-weight: 700;
-    color: #60a5fa;
+    color: #00bfe7;
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
     letter-spacing: 0.04em;
 }
@@ -410,7 +402,7 @@
 
 .pd-showcase-card__focus li {
     font-size: 0.72rem;
-    color: #60a5fa;
+    color: #00bfe7;
     padding-left: 14px;
     position: relative;
     line-height: 1.4;
@@ -420,24 +412,23 @@
     content: '▸';
     position: absolute;
     left: 0;
-    color: rgba(96, 165, 250, 0.6);
+    color: rgba(0, 191, 231, 0.6);
 }
 
 /* ── Hero Layout: single system full-width ───────────────────────────────── */
 .pd-showcase-hero {
     display: flex;
-    gap: 28px;
+    gap: 0;
     background: rgba(20, 22, 40, 0.88);
-    border: 1px solid rgba(96, 165, 250, 0.12);
+    border: 1px solid rgba(0, 191, 231, 0.12);
     border-radius: 10px;
     overflow: hidden;
 }
 
 .pd-showcase-hero__media {
-    flex: 0 0 45%;
+    flex: 0 0 58%;
     background: #111827;
     overflow: hidden;
-    min-height: 220px;
 }
 
 .pd-showcase-hero__img {
@@ -450,11 +441,14 @@
 
 .pd-showcase-hero__content {
     flex: 1;
-    padding: 24px 24px 24px 0;
+    padding: 20px 18px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     justify-content: center;
+    border-left: 1px solid rgba(0, 191, 231, 0.1);
+    overflow-y: auto;
+    align-self: stretch;
 }
 
 .pd-showcase-hero__title {
@@ -477,14 +471,14 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 12px;
 }
 
 .pd-showcase-hero__focus li {
     font-size: 0.8rem;
-    color: #60a5fa;
+    color: #00bfe7;
     padding-left: 18px;
     position: relative;
     line-height: 1.5;
@@ -494,7 +488,7 @@
     content: '▸';
     position: absolute;
     left: 0;
-    color: rgba(96, 165, 250, 0.6);
+    color: rgba(0, 191, 231, 0.6);
 }
 
 /* ── Collection Layout: sub-project grid ─────────────────────────────────── */
@@ -506,7 +500,7 @@
 
 .pd-collection-card {
     background: rgba(20, 22, 40, 0.88);
-    border: 1px solid rgba(96, 165, 250, 0.12);
+    border: 1px solid rgba(0, 191, 231, 0.12);
     border-radius: 8px;
     overflow: hidden;
     transition: border-color 0.2s, transform 0.2s;
@@ -515,12 +509,11 @@
 }
 
 .pd-collection-card:hover {
-    border-color: rgba(96, 165, 250, 0.35);
+    border-color: rgba(0, 191, 231, 0.35);
     transform: translateY(-2px);
 }
 
 .pd-collection-card__img-wrap {
-    height: 150px;
     background: #111827;
     overflow: hidden;
     flex-shrink: 0;
@@ -528,9 +521,7 @@
 
 .pd-collection-card__img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    height: auto;
     display: block;
 }
 
@@ -562,9 +553,9 @@
     display: inline-block;
     font-size: 0.68rem;
     font-weight: 600;
-    color: #60a5fa;
-    background: rgba(96, 165, 250, 0.08);
-    border: 1px solid rgba(96, 165, 250, 0.2);
+    color: #00bfe7;
+    background: rgba(0, 191, 231, 0.08);
+    border: 1px solid rgba(0, 191, 231, 0.2);
     border-radius: 4px;
     padding: 3px 7px;
     margin-top: auto;
@@ -575,13 +566,13 @@
     align-items: center;
     gap: 5px;
     font-size: 0.72rem;
-    color: #60a5fa;
+    color: #00bfe7;
     text-decoration: none;
     margin-top: 6px;
 }
 
 .pd-collection-card__link:hover {
-    color: #93c5fd;
+    color: #4dd8f0;
 }
 
 /* ── Technical Challenges Grid ───────────────────────────────────────────── */
@@ -593,7 +584,7 @@
 
 .pd-challenge-card {
     background: rgba(20, 22, 40, 0.88);
-    border: 1px solid rgba(96, 165, 250, 0.12);
+    border: 1px solid rgba(0, 191, 231, 0.12);
     border-radius: 8px;
     overflow: hidden;
 }
@@ -609,11 +600,11 @@
 }
 
 .pd-challenge-card__header:hover {
-    background: rgba(96, 165, 250, 0.07);
+    background: rgba(0, 191, 231, 0.07);
 }
 
 .pd-challenge-card__eye {
-    color: #60a5fa;
+    color: #00bfe7;
     font-size: 0.85rem;
     flex-shrink: 0;
 }
@@ -623,7 +614,7 @@
     font-family: 'Orbitron', sans-serif;
     font-size: 0.75rem;
     font-weight: 600;
-    color: #60a5fa;
+    color: #00bfe7;
     letter-spacing: 0.03em;
 }
 
@@ -634,7 +625,7 @@
 }
 
 .pd-challenge-card__body {
-    border-top: 1px solid rgba(96, 165, 250, 0.1);
+    border-top: 1px solid rgba(0, 191, 231, 0.1);
     padding: 14px 16px;
 }
 
@@ -651,7 +642,7 @@
 }
 
 .pd-challenge-label {
-    color: #60a5fa;
+    color: #00bfe7;
     font-weight: 700;
     flex-shrink: 0;
     min-width: 62px;
@@ -667,13 +658,13 @@
     background-size: cover;
     background-position: center;
     border-radius: 6px;
-    border: 1px solid rgba(96, 165, 250, 0.1);
+    border: 1px solid rgba(0, 191, 231, 0.1);
 }
 
 /* ── Code Samples ────────────────────────────────────────────────────────── */
 .pd-code-block {
     background: rgba(15, 17, 30, 0.95);
-    border: 1px solid rgba(96, 165, 250, 0.14);
+    border: 1px solid rgba(0, 191, 231, 0.14);
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 12px;
@@ -690,11 +681,11 @@
 }
 
 .pd-code-block__header:hover {
-    background: rgba(96, 165, 250, 0.07);
+    background: rgba(0, 191, 231, 0.07);
 }
 
 .pd-code-block__icon {
-    color: #60a5fa;
+    color: #00bfe7;
     font-size: 0.85rem;
 }
 
@@ -702,7 +693,7 @@
     flex: 1;
     font-family: 'Orbitron', sans-serif;
     font-size: 0.75rem;
-    color: #93c5fd;
+    color: #4dd8f0;
     font-weight: 600;
     letter-spacing: 0.03em;
 }
@@ -714,7 +705,7 @@
 }
 
 .pd-code-block__body {
-    border-top: 1px solid rgba(96, 165, 250, 0.1);
+    border-top: 1px solid rgba(0, 191, 231, 0.1);
 }
 
 .pd-code-pre {
@@ -728,7 +719,7 @@
     font-family: 'Courier New', 'Consolas', monospace;
     font-size: 0.8rem;
     line-height: 1.7;
-    color: #a5b4fc;
+    color: #7de8f7;
     white-space: pre;
 }
 
@@ -744,7 +735,7 @@
     background-size: cover;
     background-position: center;
     border-radius: 8px;
-    border: 1px solid rgba(96, 165, 250, 0.12);
+    border: 1px solid rgba(0, 191, 231, 0.12);
 }
 
 /* ── Links ───────────────────────────────────────────────────────────────── */
@@ -768,14 +759,14 @@
 
 .pd-link--github {
     background: rgba(30, 35, 55, 0.9);
-    border: 1px solid rgba(96, 165, 250, 0.25);
-    color: #93c5fd;
+    border: 1px solid rgba(0, 191, 231, 0.25);
+    color: #4dd8f0;
 }
 
 .pd-link--github:hover {
-    background: rgba(59, 130, 246, 0.18);
-    border-color: rgba(96, 165, 250, 0.6);
-    color: #bfdbfe;
+    background: rgba(0, 191, 231, 0.18);
+    border-color: rgba(0, 191, 231, 0.6);
+    color: #99edf8;
 }
 
 /* ── Video Embed ─────────────────────────────────────────────────────────── */
@@ -785,7 +776,7 @@
     height: 0;
     overflow: hidden;
     border-radius: 8px;
-    border: 1px solid rgba(96, 165, 250, 0.12);
+    border: 1px solid rgba(0, 191, 231, 0.12);
 }
 
 .pd-video-wrap iframe {
@@ -819,14 +810,14 @@
     }
 
     .pd-hero__bg::after {
-        background: linear-gradient(to bottom, transparent 55%, #1a1a2e 100%);
+        content: none;
     }
 
     .pd-hero__card {
         width: 100%;
         margin-left: 0;
         border-left: none;
-        border-top: 1px solid rgba(100, 180, 255, 0.15);
+        border-top: 1px solid rgba(0, 191, 231, 0.15);
         padding: 22px 20px 20px 20px;
         gap: 10px;
     }
@@ -877,10 +868,7 @@
         min-height: 190px;
     }
 
-    .pd-showcase-card__img-wrap,
-    .pd-collection-card__img-wrap {
-        height: 130px;
-    }
+    /* placeholder — showcase card height now driven by GIF */
 
     /* Gallery */
     .pd-gallery-row {
@@ -925,14 +913,14 @@
     }
 
     .pd-hero__bg::after {
-        background: linear-gradient(to bottom, transparent 50%, #1a1a2e 100%);
+        content: none;
     }
 
     .pd-hero__card {
         width: 100%;
         margin-left: 0;
         border-left: none;
-        border-top: 1px solid rgba(100, 180, 255, 0.15);
+        border-top: 1px solid rgba(0, 191, 231, 0.15);
         padding: 18px 16px 16px 16px;
         gap: 10px;
     }
@@ -1023,10 +1011,7 @@
         padding: 16px;
     }
 
-    .pd-showcase-card__img-wrap,
-    .pd-collection-card__img-wrap {
-        height: 120px;
-    }
+    /* placeholder — showcase card height now driven by GIF */
 
     .pd-challenge-card__title {
         font-size: 0.7rem;
