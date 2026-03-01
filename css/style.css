@@ -34,10 +34,56 @@ body {
   -webkit-font-smoothing: antialiased;
   scrollbar-color: #00bfe7 #0a0119;
   scrollbar-width: thin;
-  background-color: #100028;
+  background: radial-gradient(
+    circle at 30% 20%,
+    #1A1240 0%,
+    #0F0A2A 40%,
+    #07051A 100%
+  );
+  background-attachment: fixed;
   overflow-x: hidden;
 }
 
+/* Layer 1: Starfield */
+.stars-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: url('../img/stars-pattern.svg');
+  background-repeat: repeat;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Layer 2: Subtle scan-line noise */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.015) 0px,
+    rgba(255, 255, 255, 0.015) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Layer 3: Circuit tech overlay — commented out */
+/*
+.tech-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: url('../img/circuit-pattern.svg');
+  background-repeat: repeat;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: -1;
+}
+*/
+
+/* All page content sits above the background overlays */
 /* Webkit scrollbar (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
   width: 6px;
@@ -302,6 +348,7 @@ ol {
   letter-spacing: 2px;
   padding: 14px 34px 12px;
   width: 100%;
+  border-radius: 8px;
 }
 
 
@@ -374,9 +421,11 @@ ol {
   left: 0;
   top: 0;
   width: 100%;
-  background-color: #100028;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 20;
+  background: rgba(10, 5, 30, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 191, 231, 0.1);
+  z-index: 9999;
 }
 
 .header__logo {
@@ -972,7 +1021,7 @@ ol {
 -----------------------*/
 .work {
   overflow: visible;
-  background: #100028;
+  background: transparent;
   padding-bottom: 80px;
   padding-top: 20px;
 }
@@ -1089,7 +1138,10 @@ ol {
 }
 
 .modal-content{
-  background-color: #100028;
+  background-color: rgba(10, 5, 30, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 191, 231, 0.15);
 }
 
 .modal-header{
@@ -1124,7 +1176,7 @@ ol {
   Counter
 -----------------------*/
 .counter {
-  background: #100028;
+  background: transparent;
   height: 840px;
   padding-top: 380px;
   overflow: hidden;
@@ -1292,7 +1344,7 @@ ol {
   Latest
 -----------------------*/
 .latest {
-  background: #100028;
+  background: transparent;
   padding-bottom: 80px;
 }
 
@@ -1334,7 +1386,7 @@ ol {
 }
 .callto.sp__callto {
   padding-top: 0;
-  background: #100028;
+  background: transparent;
 }
 
 .callto__text h2 {
@@ -1367,10 +1419,11 @@ ol {
   Footer
 -----------------------*/
 .footer {
-  background: #0a0119;
+  background: rgba(7, 5, 26, 0.95);
+  border-top: 1px solid rgba(0, 191, 231, 0.1);
   margin-top: 50px;
   position: relative;
-  z-index: 0;
+  z-index: 9999;
 }
 
 .footer__top {
@@ -1550,7 +1603,7 @@ ol {
   About
 -----------------------*/
 .about {
-  background: #100028;
+  background: transparent;
   /* padding-bottom: 150px; */
 }
 
@@ -1773,7 +1826,7 @@ ol {
   Services
 -----------------------*/
 .services {
-  background: #100028;
+  background: transparent;
   padding-bottom: 50px;
   padding-top: 50px;
 }
@@ -1866,7 +1919,7 @@ ol {
   Services Page
 -----------------------*/
 .services-page {
-  background: #100028;
+  background: transparent;
   padding-bottom: 50px;
 }
 
@@ -2201,7 +2254,7 @@ ol {
   Logo
 -----------------------*/
 .logo {
-  background: #100028;
+  background: transparent;
   padding: 100px 20px;
 }
 
@@ -2214,7 +2267,7 @@ ol {
   Portfolio
 -----------------------*/
 .portfolio {
-  background: #100028;
+  background: transparent;
   position: relative;
   z-index: 1;
   overflow: visible;
@@ -2388,7 +2441,7 @@ ol {
     Blog
 -----------------------*/
 .blog {
-  background: #100028;
+  background: transparent;
 }
 
 .blog__item {
@@ -2503,7 +2556,7 @@ ol {
   Blog Details
 -----------------------*/
 .blog-details {
-  background: #100028;
+  background: transparent;
 }
 
 .blog__details__text {
@@ -2720,7 +2773,7 @@ ol {
   Contact Widget
 -----------------------*/
 .contact-widget {
-  background: #100028;
+  background: transparent;
   padding-bottom: 70px;
 }
 
@@ -2761,7 +2814,7 @@ ol {
   Contact
 -----------------------*/
 .contact {
-  background: #100028;
+  background: transparent;
   padding-top: 0;
   overflow: hidden;
 }
@@ -2790,6 +2843,7 @@ ol {
   font-weight: 300;
   margin-right: 20px;
   margin-bottom: 20px;
+  border-radius: 8px;
   -webkit-transition: all, 0.3s;
   -o-transition: all, 0.3s;
   transition: all, 0.3s;
@@ -2812,6 +2866,7 @@ ol {
   font-weight: 300;
   margin-bottom: 14px;
   resize: none;
+  border-radius: 8px;
   -webkit-transition: all, 0.3s;
   -o-transition: all, 0.3s;
   transition: all, 0.3s;

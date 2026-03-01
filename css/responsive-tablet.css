@@ -310,7 +310,9 @@ body .breadcrumb-option.spad {
   gap: 8px;
   width: 100%;
   padding: 10px 16px;
-  background: #0a0119;
+  background: rgba(10, 1, 25, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: #d0d0d0;
   border: 1px solid rgba(0, 191, 231, 0.35);
   border-top: 2px solid #00bfe7;
@@ -370,7 +372,9 @@ body .breadcrumb-option.spad {
   top: 100%;
   left: 0;
   right: 0;
-  background: #0a0119;
+  background: rgba(10, 1, 25, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(0, 191, 231, 0.35);
   border-top: none;
   border-radius: 0 0 12px 12px;
@@ -452,7 +456,11 @@ body .breadcrumb-option.spad {
 }
 
 .slicknav_nav {
-  background: #100028;
+  background: rgba(10, 1, 25, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 191, 231, 0.2);
+  border-top: 2px solid #00bfe7;
 }
 
 
@@ -498,7 +506,9 @@ body .breadcrumb-option.spad {
 
 /* Mobile Social Section */
 #mobile-social {
-  background: #0a0119 !important;
+  background: rgba(10, 1, 25, 0.96) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
   border: 2px solid #00bfe7 !important;
   border-top: none !important;
   border-radius: 0 0 20px 20px !important;
@@ -984,7 +994,8 @@ div[class*="col-lg-3"] {
   display: block !important;
   width: 100% !important;
   min-height: 50px !important;
-  background: #0a0119 !important;
+  background: rgba(10,1,25,0.96) !important;
+  backdrop-filter: blur(12px) !important;
   border-top: 2px solid #00bfe7 !important;
   border-left: 2px solid #00bfe7 !important;
   border-right: 2px solid #00bfe7 !important;
@@ -1064,9 +1075,10 @@ div[class*="col-lg-3"] {
   padding: 14px 40px 14px 16px;
   width: 100%;
   margin-bottom: 0;
-  background-color: #0a0119;
-  opacity: 0.7;
-  border: 1px solid #00bfe7;
+  background-color: rgba(20,20,35,0.92);
+  opacity: 1;
+  border: none;
+  border-left: 3px solid transparent;
   color: #d0d0d0;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -1111,6 +1123,11 @@ div[class*="col-lg-3"] {
 .sidebar .collapse.show {
   display: block !important;
   padding: 10px 0;
+  background-color: rgba(20,20,35,0.92);
+  border-right: 1px solid rgba(0,191,231,0.12);
+  border-bottom: 1px solid rgba(0,191,231,0.12);
+  border-radius: 0 0 8px 0;
+  margin-bottom: 20px;
 }
 
 .sidebar-link {
@@ -1121,19 +1138,21 @@ div[class*="col-lg-3"] {
   padding: 10px;
   margin-bottom: 8px;
   background: transparent;
+  border-left: 3px solid transparent;
   border-radius: 8px;
   transition: all 0.2s ease;
 }
 
 .sidebar-link:hover {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateX(5px);
+  background: rgba(0,191,231,0.12);
+  border-left-color: #00bfe7;
 }
 
 .sidebar-link.active {
   color: #ffffff;
-  background: rgba(0, 191, 231, 0.18);
+  background: rgba(0,191,231,0.18);
+  border-left-color: #00bfe7;
 }
 
 .sidebar .thumbnail {
@@ -1676,6 +1695,24 @@ body.drawer-expanded #button {
   .ap-section               { padding: 100px 0 0; }
   .ap-section--inner        { padding-top: 44px; }
   .ap-section--edu          { padding-top: 26px; }
+
+  /* Profile photo: override fixed px Y offset with responsive percentage */
+  .ap-photo {
+    background-position: center 65% !important;
+    min-height: 360px !important;
+  }
+
+  /* Profile section: stack photo and card to full width */
+  .ap-section > .container > .row > .col-md-5,
+  .ap-section > .container > .row > .col-md-7 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .ap-section > .container > .row > .col-md-5 {
+    margin-bottom: 24px;
+  }
 
   /* Override global col-lg-3 fixed positioning for about page cards */
   .ap-section div[class*="col-lg-3"],
