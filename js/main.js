@@ -354,28 +354,36 @@
     });
 
 	/*---------------------
- 		Load Background Images
+ 		Load Background Images (lazy via IntersectionObserver)
    -----------------------*/
 	$(window).on('load', function() {
-	    // Simple approach: load all backgrounds immediately
-	    $("div[data-setbg]").each(function() {
-	        let $div = $(this);
-	        let bgUrl = $div.data("setbg");
-	        if (bgUrl) {
-	            // console.log('Setting background: ' + bgUrl);
-	            // Remove lazy background class first
-	            $div.removeClass('lazy-background');
-	            // Set background image - try without quotes first
-	            $div.css("background-image", "url(" + bgUrl + ")");
-	            // Also ensure it has the proper background properties
-	            $div.css({
-	                "background-size": "cover",
-	                "background-position": "center center",
-	                "background-repeat": "no-repeat"
+	    function applyBg($div) {
+	        var bgUrl = $div.data("setbg");
+	        if (!bgUrl) return;
+	        $div.removeClass('lazy-background');
+	        $div.css({
+	            "background-image":    "url(" + bgUrl + ")",
+	            "background-size":     "cover",
+	            "background-position": "center center",
+	            "background-repeat":   "no-repeat"
+	        });
+	    }
+
+	    if ('IntersectionObserver' in window) {
+	        var observer = new IntersectionObserver(function (entries) {
+	            entries.forEach(function (entry) {
+	                if (entry.isIntersecting) {
+	                    applyBg($(entry.target));
+	                    observer.unobserve(entry.target);
+	                }
 	            });
-	        }
-	    });
-	    
+	        }, { rootMargin: '200px' });
+
+	        $("div[data-setbg]").each(function () { observer.observe(this); });
+	    } else {
+	        $("div[data-setbg]").each(function () { applyBg($(this)); });
+	    }
+
 	    // Re-layout masonry after backgrounds are loaded
 	    setTimeout(function() {
 	        if ($('.work__gallery').length > 0) {

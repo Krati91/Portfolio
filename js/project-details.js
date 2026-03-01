@@ -687,9 +687,19 @@ function initDrawerToggle() {
         const $sidebar = $('.sidebar');
         const $body = $('body');
 
+        const $cf = $('.project-block .container-fluid');
+        function setDrawerPad(expanded) {
+            if (expanded) {
+                $cf.css('padding-bottom', (window.innerHeight * 0.72 + 20) + 'px');
+            } else {
+                $cf.css('padding-bottom', '60px');
+            }
+        }
+
         if (!drawerInitialized) {
             $sidebar.addClass('collapsed');
             $body.removeClass('drawer-expanded');
+            setDrawerPad(false);
             $('.list-group-item + div').collapse('hide');
 
             $sidebar.off('click').on('click', function(e) {
@@ -702,6 +712,7 @@ function initDrawerToggle() {
                     $sidebar.toggleClass('collapsed expanded');
                     if ($sidebar.hasClass('expanded')) {
                         $body.addClass('drawer-expanded');
+                        setDrawerPad(true);
                         const $active = $('.sidebar-link.active');
                         if ($active.length) {
                             const $pc = $active.closest('.collapse');
@@ -712,6 +723,7 @@ function initDrawerToggle() {
                         }
                     } else {
                         $body.removeClass('drawer-expanded');
+                        setDrawerPad(false);
                         $('.list-group-item + div').collapse('hide');
                     }
                     e.stopPropagation();
@@ -742,6 +754,7 @@ function initDrawerToggle() {
                 window.history.pushState({ path: newUrl }, '', newUrl);
                 $sidebar.removeClass('expanded').addClass('collapsed');
                 $body.removeClass('drawer-expanded');
+                setDrawerPad(false);
             });
 
             drawerInitialized = true;

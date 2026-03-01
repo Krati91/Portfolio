@@ -1244,12 +1244,12 @@ div[class*="col-lg-3"] {
 
 body:not(.drawer-expanded) .col-lg-9.project-block,
 body:not(.drawer-expanded) .project-block {
-  margin-bottom: 55px !important;
+  margin-bottom: 0 !important;
 }
 
 body.drawer-expanded .col-lg-9.project-block,
 body.drawer-expanded .project-block {
-  margin-bottom: calc(70vh + 10px) !important;
+  margin-bottom: 0 !important;
 }
 
 .project-details {
@@ -1639,6 +1639,20 @@ body > * {
   padding-bottom: 0px !important;
 }
 
+.project-block .container-fluid {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  padding-top: 0 !important;
+}
+
+body:not(.drawer-expanded) .project-block .container-fluid {
+  padding-bottom: 60px !important;
+}
+
+body.drawer-expanded .project-block .container-fluid {
+  padding-bottom: 72vh !important;
+}
+
 .project-block .row {
   overflow: visible !important;
   padding-left: 0 !important;
@@ -1657,6 +1671,7 @@ body > * {
   margin-right: -50vw !important;
   padding: 20px 0 !important;
   box-sizing: border-box !important;
+  z-index: auto !important;
 }
 
 .footer .container {
