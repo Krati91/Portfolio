@@ -192,10 +192,10 @@
     // Toggle mobile-social visibility when hamburger is clicked
     // Use setTimeout to ensure slicknav button is created
     setTimeout(function() {
-        console.log('SlickNav button exists:', $('.slicknav_btn').length);
+        // console.log('SlickNav button exists:', $('.slicknav_btn').length);
         
         $(document).on('click', '.slicknav_btn', function(e) {
-            console.log('Hamburger clicked!'); // Debug
+            // console.log('Hamburger clicked!'); // Debug
             e.preventDefault();
             e.stopPropagation();
             $('#mobile-social').slideToggle(300);
@@ -204,7 +204,7 @@
         
         // Also try direct binding as backup
         $('.slicknav_btn').off('click').on('click', function(e) {
-            console.log('Direct click handler!');
+            // console.log('Direct click handler!');
             e.preventDefault();
             e.stopPropagation();
             $('#mobile-social').slideToggle(300);
@@ -286,7 +286,7 @@
 	        let $div = $(this);
 	        let bgUrl = $div.data("setbg");
 	        if (bgUrl) {
-	            console.log('Setting background: ' + bgUrl);
+	            // console.log('Setting background: ' + bgUrl);
 	            // Remove lazy background class first
 	            $div.removeClass('lazy-background');
 	            // Set background image - try without quotes first

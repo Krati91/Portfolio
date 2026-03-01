@@ -193,17 +193,8 @@
 .pd-meta-bar__link {
     color: #00bfe7;
     font-size: 0.8rem;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.pd-meta-bar__link:hover {
-    color: #4dd8f0;
-    text-decoration: underline;
-}
-.pd-meta-bar__link {
-    color: #00bfe7;
-    font-size: 0.8rem;
+    line-height: 1;
+    vertical-align: middle;
     text-decoration: none;
     transition: color 0.2s;
 }
@@ -953,8 +944,19 @@
 
     .pd-meta-bar__item {
         flex: none;
+        display: flex;
+        align-items: center;
         width: 100%;
         padding: 2px 0;
+    }
+
+    .pd-meta-bar__label,
+    .pd-meta-bar__value,
+    .pd-meta-bar__link {
+        align-self: center;
+        line-height: 1;
+        min-height: unset;
+        min-width: unset;
     }
 
     .pd-meta-bar__divider {
