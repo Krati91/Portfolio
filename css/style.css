@@ -3234,8 +3234,8 @@ ol {
   right: 0;
   height: 2px;
   background: linear-gradient(90deg, transparent 0%, rgba(0,191,231,0.45) 6%, rgba(0,191,231,0.45) 94%, transparent 100%);
-  /* content height (140px, border-box) + dot half (7px) - line half (1px) = 146px */
-  top: 146px;
+  /* content height (80px, border-box) + dot half (7px) - line half (1px) = 86px */
+  top: 86px;
   z-index: 0;
 }
 
@@ -3250,7 +3250,7 @@ ol {
 
 /* Content box above the dot */
 .edu-timeline__content {
-  height: 140px;
+  height: 80px;
   overflow: visible;
   display: flex;
   flex-direction: column;
