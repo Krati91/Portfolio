@@ -77,6 +77,52 @@
                     }
                 }
             });
+
+            // Inject custom dropdown for mobile/tablet
+            if (window.innerWidth < 1200 && $('.portfolio__filter').length > 0) {
+                var $wrapper = $('<div>', { 'class': 'portfolio__filter-dropdown' });
+                var $trigger = $('<div>', { 'class': 'portfolio__filter-trigger' });
+                var $label = $('<span>', { 'class': 'portfolio__filter-label', text: 'All' });
+                var $arrow = $('<span>', { 'class': 'portfolio__filter-arrow' });
+                var $optList = $('<ul>', { 'class': 'portfolio__filter-options' });
+
+                $trigger.append($label).append($arrow);
+
+                $('.portfolio__filter li').each(function() {
+                    var filter = $(this).data('filter') || '*';
+                    var text = $(this).text();
+                    var $item = $('<li>', { 'data-filter': filter, text: text });
+                    if ($(this).hasClass('active')) {
+                        $item.addClass('active');
+                        $label.text(text);
+                    }
+                    $item.on('click', function() {
+                        var val = $(this).data('filter');
+                        mixer.filter(val);
+                        $optList.find('li').removeClass('active');
+                        $(this).addClass('active');
+                        $label.text($(this).text());
+                        $('.portfolio__filter li').removeClass('active');
+                        $('.portfolio__filter li[data-filter="' + val + '"]').addClass('active');
+                        if (val === '*') $('.portfolio__filter li:first').addClass('active');
+                        $wrapper.removeClass('open');
+                    });
+                    $optList.append($item);
+                });
+
+                $trigger.on('click', function() {
+                    $wrapper.toggleClass('open');
+                });
+
+                $(document).on('click', function(e) {
+                    if (!$(e.target).closest('.portfolio__filter-dropdown').length) {
+                        $wrapper.removeClass('open');
+                    }
+                });
+
+                $wrapper.append($trigger).append($optList);
+                $('.portfolio__filter').before($wrapper);
+            }
         }
 
         /*------------------

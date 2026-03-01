@@ -268,10 +268,96 @@ body .breadcrumb-option.spad {
   font-weight: 300 !important;
 }
 
-/* Portfolio Filter */
-.portfolio__filter li {
-  padding: 6px 15px;
+/* Portfolio Filter - custom dropdown on tablet */
+.portfolio__filter {
+  display: none !important;
 }
+
+.portfolio__filter-dropdown {
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+  z-index: 100;
+}
+
+.portfolio__filter-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 16px;
+  background: #0a0119;
+  color: #d0d0d0;
+  border: 1px solid rgba(0, 191, 231, 0.35);
+  border-top: 2px solid #00bfe7;
+  border-radius: 0 0 12px 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.portfolio__filter-dropdown.open .portfolio__filter-trigger {
+  border-radius: 0;
+  border-bottom-color: rgba(0, 191, 231, 0.1);
+}
+
+.portfolio__filter-arrow {
+  display: inline-block;
+  width: 12px;
+  height: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2300bfe7' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.portfolio__filter-dropdown.open .portfolio__filter-arrow {
+  transform: rotate(180deg);
+}
+
+.portfolio__filter-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #0a0119;
+  border: 1px solid rgba(0, 191, 231, 0.35);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  z-index: 200;
+  box-sizing: border-box;
+}
+
+.portfolio__filter-dropdown.open .portfolio__filter-options {
+  display: block;
+}
+
+.portfolio__filter-options li {
+  padding: 10px 16px;
+  color: #d0d0d0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: 2px 8px;
+  transition: all 0.2s ease;
+}
+
+.portfolio__filter-options li:hover,
+.portfolio__filter-options li.active {
+  background: #00bfe7;
+  color: #ffffff;
+}
+
+
 
 /* Mobile Social Menu */
 #mobile-social {
