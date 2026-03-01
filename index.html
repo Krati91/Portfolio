@@ -146,17 +146,62 @@
                         </div>
                     </div>
                 </div>
-                <!-- Right: GIF -->
+                <!-- Right: Carousel -->
                 <div class="col-lg-6 col-md-12">
-                    <div class="hero__media">
-                        <img src="assets/Battle-Blasters_FrontPage.gif" alt="Battle Blasters gameplay preview">
-                        <div class="work__item__hover">
-                            <h4>Battle Blasters (Ongoing)</h4>
-                            <ul>
-                                <li>Server-authoritative multiplayer</li>
-                                <li>Replication</li>
-                                <li>Client prediction</li>
-                            </ul>
+                    <div class="hero__carousel">
+                        <div class="hero__carousel-track">
+                            <!-- Slide 1 -->
+                            <div class="hero__slide active">
+                                <div class="hero__media">
+                                    <img src="assets/Battle-Blasters_FrontPage.gif" alt="Battle Blasters gameplay preview">
+                                    <div class="work__item__hover">
+                                        <h4>Battle Blasters (Ongoing)</h4>
+                                        <ul>
+                                            <li>Server-authoritative multiplayer shooter</li>
+                                            <li>Replication</li>
+                                            <li>Client prediction</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="hero__slide">
+                                <div class="hero__media">
+                                    <img data-src="assets/EchoesOfTheLostSands_Large.gif" alt="Echoes of Lost Sands gameplay preview">
+                                    <div class="work__item__hover">
+                                        <h4>Echoes of the Lost Sands</h4>
+                                        <ul>
+                                            <li>Third-person melee combat system</li>
+                                            <li>AI behavior trees</li>
+                                            <li>Animation-driven combat interactions</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="hero__slide">
+                                <div class="hero__media">
+                                    <img data-src="assets/Apex-Ruin_Large.gif" alt="Apex Ruin gameplay preview">
+                                    <div class="work__item__hover">
+                                        <h4>Apex Ruin</h4>
+                                        <ul>
+                                            <li>C++/Blueprint hybrid shooter</li>
+                                            <li>Weapon systems</li>
+                                            <li>Weapon slot HUD</li>
+                                            <li>Animation-synchronized aiming</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Controls -->
+                        <button class="hero__carousel-btn hero__carousel-btn--prev" aria-label="Previous">&#8249;</button>
+                        <button class="hero__carousel-btn hero__carousel-btn--next" aria-label="Next">&#8250;</button>
+                        <!-- Dots -->
+                        <div class="hero__carousel-dots">
+                            <span class="hero__dot active"></span>
+                            <span class="hero__dot"></span>
+                            <span class="hero__dot"></span>
                         </div>
                     </div>
                 </div>
@@ -191,6 +236,38 @@
     <script src="js/masonry.pkgd.min.js" defer></script>
     <script src="js/jquery.slicknav.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script>
+        (function () {
+            var slides, dots, current, timer;
+
+            function init() {
+                slides = document.querySelectorAll('.hero__slide');
+                dots   = document.querySelectorAll('.hero__dot');
+                current = 0;
+
+                document.querySelector('.hero__carousel-btn--prev').addEventListener('click', function () { go(current - 1); });
+                document.querySelector('.hero__carousel-btn--next').addEventListener('click', function () { go(current + 1); });
+                dots.forEach(function (d, i) { d.addEventListener('click', function () { go(i); }); });
+
+                timer = setInterval(function () { go(current + 1); }, 7000);
+            }
+
+            function go(n) {
+                slides[current].classList.remove('active');
+                dots[current].classList.remove('active');
+                current = (n + slides.length) % slides.length;
+                // Lazy-load: swap data-src -> src before showing
+                var img = slides[current].querySelector('img[data-src]');
+                if (img) { img.src = img.getAttribute('data-src'); img.removeAttribute('data-src'); }
+                slides[current].classList.add('active');
+                dots[current].classList.add('active');
+                clearInterval(timer);
+                timer = setInterval(function () { go(current + 1); }, 7000);
+            }
+
+            document.addEventListener('DOMContentLoaded', init);
+        })();
+    </script>
 </body>
 
 </html>
