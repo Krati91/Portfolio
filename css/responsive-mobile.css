@@ -560,7 +560,7 @@ body > section.ap-section {
   width: 16px;
   height: 16px;
   margin-left: auto;
-  color: #00bfe7;
+  color: #ffffff;
   transition: transform 0.2s ease;
   flex-shrink: 0;
 }
