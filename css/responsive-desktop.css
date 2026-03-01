@@ -445,9 +445,23 @@
     flex: 0 0 auto !important;
   }
 
-  /* Hero Section - Fixed height on index page */
-  section.hero {
+  /* Hero Section - Fixed height on non-split pages */
+  section.hero:not(.hero--split) {
     flex: 0 0 auto !important;
+  }
+
+  /* Hero Split desktop overrides */
+  section.hero.hero--split,
+  .hero--split {
+    flex: 1 !important;
+    min-height: 0;
+    padding: 80px 0 50px;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero__title {
+    font-size: 60px;
   }
 
   /* Breadcrumb Section - Fixed height */

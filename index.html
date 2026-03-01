@@ -124,20 +124,39 @@
     <!-- Header End -->
 
     <!-- Hero Section Begin -->
-    <section class="hero">
-        <div class="hero__slider">
-            <div class="hero__item set-bg" data-setbg="img/hero/banner.webp" data-lazy="true" style="background-position: 100% -99px;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <h2 class="hero__name">Kartik</h2>
-                                <span class="hero__subtitle">Gameplay Systems & Multiplayer Programmer
-                                    <br>
-                                    <small>(Unreal Engine | C++ | Networking | AI)</small>
-                                </span>
-                                <a href="./about.html" class="primary-btn">See more about me</a>
-                            </div>
+    <section class="hero hero--split">
+        <div class="container">
+            <div class="row align-items-center hero__row">
+                <!-- Left: Text -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="hero__content">
+                        <h1 class="hero__title">Kartik<br>Chaturvedi</h1>
+                        <p class="hero__role">Gameplay Systems &amp; Multiplayer Programmer</p>
+                        <p class="hero__desc">Unreal Engine C++ developer specializing in server-authoritative multiplayer and gameplay systems.</p>
+                        <div class="hero__cta">
+                            <a href="./portfolio.html" class="hero__btn hero__btn--primary">View Portfolio &rarr;</a>
+                            <a href="./about.html" class="hero__btn hero__btn--outline">Know More About Me</a>
+                        </div>
+                        <div class="hero__tags">
+                            <span>Unreal Engine 5</span>
+                            <span>C++</span>
+                            <span>Multiplayer Replication</span>
+                            <span>AI Behavior Trees</span>
+                            <span>Dedicated Servers</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: GIF -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="hero__media">
+                        <img src="assets/Battle-Blasters_FrontPage.gif" alt="Battle Blasters gameplay preview">
+                        <div class="work__item__hover">
+                            <h4>Battle Blasters (Ongoing)</h4>
+                            <ul>
+                                <li>Server-authoritative multiplayer</li>
+                                <li>Replication</li>
+                                <li>Client prediction</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -145,131 +164,6 @@
         </div>
     </section>
     <!-- Hero Section End -->
-
-     <!-- Skills Section Begin -->
-     <section class="services spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="services__title">
-                        <div class="section-title">
-                            <span>My skills</span>
-                            <h2>What I Do?</h2>
-                        </div>
-                        <p></p>
-                        <a href="./about.html#skills" class="primary-btn skills-btn">View all skills</a>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="services__item">
-                                <h4>Gameplay Systems</h4>
-                                <a href="./portfolio.html?filter=gameplay-ai" class="skill-more">See Work →</a>
-                                <p>Implement player-facing gameplay systems including combat, character state, and interaction logic using Unreal C++ and Blueprints.</p>
-                                <ul>
-                                    <li>Built weapon firing, recoil, and hit-detection handling systems</li>
-                                    <li>Implemented character state machines (movement, combat, death, and transitions)</li>
-                                    <li>Designed inventory, equipment, and weapon switching systems</li>
-                                    <li>Developed player abilities and combat interaction handling</li>
-                                    <li>Implemented gameplay feedback systems (hit reactions, crosshair response, UI events)</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="services__item">
-                                <h4>Multiplayer & Networking</h4>
-                                <a href="./portfolio.html?filter=multiplayer-online" class="skill-more">See Work →</a>
-                                <p>Develop server-authoritative multiplayer gameplay using Unreal replication and RPC communication.</p>
-                                <ul>
-                                    <li>Implemented player state replication and state synchronization</li>
-                                    <li>Created session flow including lobbies and matchmaking</li>
-                                    <li>Designed server validation for gameplay actions</li>
-                                    <li>Applied client prediction and latency handling techniques</li>
-                                    <li>Integrated Online Subsystem services (Steam / EOS)</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="services__item">
-                                <h4>AI & Behavior Systems</h4>
-                                <a href="./portfolio.html?filter=gameplay-ai" class="skill-more">See Work →</a>
-                                <p>Create decision-driven NPC gameplay behavior using Unreal AI framework</p>
-                                <ul>
-                                    <li>Implemented Behavior Trees and Blackboard decision systems</li>
-                                    <li>Designed detection, chase, and attack behavior states</li>
-                                    <li>Built navigation mesh pathfinding and targeting logic</li>
-                                    <li>Implemented combat targeting and aggro behavior</li>
-                                    <li>Synchronized AI actions with animations and combat events</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="services__item">
-                                <h4>Performance & Polish</h4>
-                                <a href="./portfolio.html" class="skill-more">See Work →</a>
-                                <p>Debug, optimize, and integrate gameplay systems for stable runtime performance.</p>
-                                <ul>
-                                    <li>Used visual debugging and logging to diagnose gameplay issues</li>
-                                    <li>Fixed animation-gameplay synchronization problems</li>
-                                    <li>Integrated HUD elements with gameplay systems</li>
-                                    <li>Profiled and optimized gameplay performance</li>
-                                    <li>Reduced update cost and runtime overhead</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Skills Section End -->
-
-     <!-- Work Section Begin -->
-     <section class="work">
-        <div class="work__gallery">
-            <div class="grid-sizer"></div>
-            <a href="./project-details.html?name=echoes-of-the-lost-sands" class="play-btn">
-                <div class="work__item wide__item set-bg" data-setbg="assets/EchoesOfTheLostSands_First.gif" loading="lazy">
-                    <div class="work__item__hover">
-                        <h4>Echoes of Lost Sands</h4>
-                        <ul>
-                            <li>Third-person melee combat system</li>
-                            <li>AI behavior trees</li>
-                            <li>Animation-driven combat interactions</li>
-                        </ul>
-                    </div>
-                </div>
-            </a>
-            <a href="./project-details.html?name=battle-blasters" class="play-btn">
-                <div class="work__item wide__item set-bg" data-setbg="assets/Battle-Blasters_First.gif" loading="lazy">
-                    <div class="work__item__hover">
-                        <h4>Battle Blasters (Ongoing)</h4>
-                        <ul>
-                            <li>Server-authoritative multiplayer shooter</li>
-                            <li>Replication</li>
-                            <li>Matchmaking</li>
-                            <li>Client prediction</li>
-                        </ul>
-                    </div>
-                </div>
-            </a>
-            <a href="./project-details.html?name=apex-ruin" class="play-btn">
-                <div class="work__item wide__item set-bg" data-setbg="assets/Apex-Ruin_First.gif" loading="lazy">
-                    <div class="work__item__hover">
-                        <h4>Apex Ruin</h4>
-                        <ul>
-                            <li>C++/Blueprint hybrid shooter</li>
-                            <li>Weapon systems</li>
-                            <li>Inventory logic</li>
-                            <li>Animation-synchronized aiming</li>
-                        </ul>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </section>
-    <!-- Work Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer">

@@ -55,6 +55,25 @@ section.hero {
   flex: 0 0 auto !important;
 }
 
+/* Hero Split tablet overrides */
+.hero--split {
+  min-height: auto;
+  padding: 150px 0 50px;
+}
+
+.hero__title {
+  font-size: 44px;
+}
+
+.hero__role {
+  font-size: 11px;
+}
+
+.hero__content {
+  padding-right: 40px;
+  padding-bottom: 30px;
+}
+
 /* Breadcrumb Section - Fixed height */
 section.breadcrumb-option {
   flex: 0 0 auto !important;
