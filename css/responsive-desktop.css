@@ -105,6 +105,8 @@
   /* Portfolio container for project details */
   .portfolio {
     height: 100vh !important;
+    padding-top: 97px !important;
+    box-sizing: border-box !important;
     overflow: hidden !important;
     display: flex !important;
     flex-direction: column !important;
@@ -119,7 +121,7 @@
   }
 
   .portfolio > .row > .col-lg-3 {
-    height: 100vh !important;
+    height: 100% !important;
     overflow: hidden !important;
     padding: 0 !important;
   }
@@ -132,16 +134,16 @@
     overscroll-behavior: contain;
     background: #0a0119;
     border-right: 2px solid #00bfe7;
-    padding: 24px 15px 30px;
+    padding: 20px 15px 30px;
   }
 
   .project-block {
     margin-top: 0;
     top: 0 !important;
-    height: 100vh;
+    height: 100%;
     overflow-y: auto;
     overscroll-behavior: contain;
-    padding-top: 97px !important;
+    padding-top: 0 !important;
     padding-bottom: 0 !important;
   }
   
