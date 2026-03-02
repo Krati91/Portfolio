@@ -22,9 +22,9 @@
                          "coverVideo":  "assets/Battle-Blasters_FrontPage.webm",
                          "role":  "Solo Multiplayer Gameplay Engineer",
                          "ownership":  [
-                                           "Designed server-authoritative damage validation",
-                                           "Implemented client prediction with reconciliation",
-                                           "Structured GameMode/GameState authority boundaries",
+                                           "Designed server-authoritative hit & damage validation",
+                                           "Implemented client movement prediction with reconciliation",
+                                           "Structured GameMode authority with GameState / PlayerState replication",
                                            "Integrated Steam Online Subsystem sessions"
                                        ],
                          "duration":  "Ongoing",
@@ -43,8 +43,6 @@
                                            "C++",
                                            "Replication Framework",
                                            "RPC",
-                                           "GameMode",
-                                           "GameState",
                                            "Online Subsystem (Steam)"
                                        ],
                          "skillKeywords":  [
