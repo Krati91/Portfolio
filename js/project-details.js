@@ -108,7 +108,7 @@ function buildHeroSection(project) {
     } else {
         const imgSrc = project.coverImage || project.thumbnail || '';
         if (imgSrc) {
-            $mediaBg.css('background-image', 'url(' + imgSrc + ')');
+            $mediaBg.attr('data-bg', imgSrc);
             $mediaBg.addClass('pd-hero__bg--img');
         }
     }
@@ -635,6 +635,15 @@ function showProject(divID) {
     const $proj = $('#' + divID);
     $proj.show();
     loadBgImages($proj);
+
+    // Lazy-load hero background image (GIF) only when the project is shown
+    const $heroBg = $proj.find('.pd-hero__bg[data-bg]');
+    if ($heroBg.length) {
+        const bg = $heroBg.attr('data-bg');
+        $heroBg.css('background-image', 'url(' + bg + ')');
+        $heroBg.removeAttr('data-bg');
+        $heroBg.addClass('loaded');
+    }
 
     // Scroll to top
     const pb = document.querySelector('.project-block');

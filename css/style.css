@@ -884,6 +884,19 @@ ol {
   min-height: 280px;
   cursor: pointer;
   text-decoration: none;
+  background: linear-gradient(135deg, #0d0120 0%, #1a0535 100%);
+  background-size: 200% 100%;
+  animation: hero-skeleton-shimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes hero-skeleton-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.hero__media.loaded {
+  animation: none;
+  background: none;
 }
 
 .hero__media:hover .work__item__hover {

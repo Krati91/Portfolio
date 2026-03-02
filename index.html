@@ -52,7 +52,6 @@
 
     <!-- Css Styles -->
     <link rel="preload" href="css/style.css" as="style">
-    <link rel="preload" href="assets/Battle-Blasters_FrontPage.gif" as="image" fetchpriority="high">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
@@ -157,7 +156,7 @@
                             <!-- Slide 1 -->
                             <div class="hero__slide active">
                                 <a href="./project-details.html?name=battle-blasters" class="hero__media">
-                                    <img data-src="assets/Battle-Blasters_FrontPage.gif" alt="Battle Blasters gameplay preview" loading="eager">
+                                    <img data-src="assets/Battle-Blasters_FrontPage.gif" alt="Battle Blasters gameplay preview" loading="lazy">
                                     <div class="work__item__hover">
                                         <h4>Battle Blasters (Ongoing)</h4>
                                         <ul>
@@ -249,7 +248,7 @@
 
                 // Lazy-load the first slide immediately
                 var firstImg = slides[0].querySelector('img[data-src]');
-                if (firstImg) { firstImg.src = firstImg.getAttribute('data-src'); firstImg.removeAttribute('data-src'); }
+                if (firstImg) { firstImg.src = firstImg.getAttribute('data-src'); firstImg.removeAttribute('data-src'); firstImg.closest('.hero__media') && firstImg.closest('.hero__media').classList.add('loaded'); }
 
                 document.querySelector('.hero__carousel-btn--prev').addEventListener('click', function () { go(current - 1); });
                 document.querySelector('.hero__carousel-btn--next').addEventListener('click', function () { go(current + 1); });
@@ -264,7 +263,7 @@
                 current = (n + slides.length) % slides.length;
                 // Lazy-load: swap data-src -> src before showing
                 var img = slides[current].querySelector('img[data-src]');
-                if (img) { img.src = img.getAttribute('data-src'); img.removeAttribute('data-src'); }
+                if (img) { img.src = img.getAttribute('data-src'); img.removeAttribute('data-src'); img.closest('.hero__media') && img.closest('.hero__media').classList.add('loaded'); }
                 slides[current].classList.add('active');
                 dots[current].classList.add('active');
                 clearInterval(timer);

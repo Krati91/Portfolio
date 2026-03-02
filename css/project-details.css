@@ -31,6 +31,18 @@
 .pd-hero__bg {
     flex: 0 0 55%;
     overflow: hidden;
+    background: linear-gradient(135deg, #0d0120 0%, #1a0535 100%);
+    background-size: 200% 100%;
+    animation: pd-hero-shimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes pd-hero-shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.pd-hero__bg.loaded {
+    animation: none;
 }
 
 .pd-hero__bg video {
