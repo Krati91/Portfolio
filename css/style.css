@@ -31,14 +31,9 @@ body {
   height: auto;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
-  scrollbar-color: #00bfe7 #0a0119;
+  scrollbar-color: #00bfe7 #070D18;
   scrollbar-width: thin;
-  background: radial-gradient(
-    circle at 30% 20%,
-    #1A1240 0%,
-    #0F0A2A 40%,
-    #07051A 100%
-  );
+  background: #070D18;
   background-attachment: fixed;
   overflow-x: hidden;
 }
@@ -77,7 +72,7 @@ body {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0119;
+  background: #070D18;
 }
 ::-webkit-scrollbar-thumb {
   background: #00bfe7;
@@ -253,9 +248,9 @@ ol {
   top: 0;
   height: 30px;
   width: 30px;
-  border-left: 2px solid #100028;
-  border-top: 2px solid #100028;
-  background-color: #100028;
+  border-left: 2px solid #070D18;
+  border-top: 2px solid #070D18;
+  background-color: #070D18;
   content: "";
   z-index: -1;
   -webkit-transition: all, 0.7s;
@@ -268,9 +263,9 @@ ol {
   bottom: 0;
   height: 30px;
   width: 30px;
-  border-right: 2px solid #100028;
-  border-bottom: 2px solid #100028;
-  background-color: #100028; 
+  border-right: 2px solid #070D18;
+  border-bottom: 2px solid #070D18;
+  background-color: #070D18; 
   content: "";
   z-index: -1;
   -webkit-transition: all, 0.7s;
@@ -284,8 +279,8 @@ ol {
   top: 0;
   height: 30px;
   width: 30px;
-  border-left: 2px solid #100028;
-  border-top: 2px solid #100028;
+  border-left: 2px solid #070D18;
+  border-top: 2px solid #070D18;
   background: transparent;
   content: "";
   z-index: -1;
@@ -299,8 +294,8 @@ ol {
   bottom: 0;
   height: 30px;
   width: 30px;
-  border-right: 2px solid #100028;
-  border-bottom: 2px solid #100028;
+  border-right: 2px solid #070D18;
+  border-bottom: 2px solid #070D18;
   background: transparent;
   content: "";
   z-index: -1;
@@ -347,7 +342,7 @@ ol {
   top: 0;
   left: 0;
   z-index: 999999;
-  background: #0a0119;
+  background: #070D18;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -452,7 +447,7 @@ ol {
   left: 0;
   top: 0;
   width: 100%;
-  background: rgba(10, 5, 30, 0.82);
+  background: rgba(10, 18, 32, 0.93);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(0, 191, 231, 0.1);
@@ -1239,7 +1234,7 @@ ol {
 }
 
 .counter__item {
-  background: #1a083d;
+  background: #070D18;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
       transform: rotate(45deg);
@@ -1471,7 +1466,7 @@ ol {
   Footer
 -----------------------*/
 .footer {
-  background: rgba(7, 5, 26, 0.95);
+  background: #050A15;
   border-top: 1px solid rgba(0, 191, 231, 0.1);
   margin-top: 50px;
   position: relative;
@@ -1992,7 +1987,7 @@ ol {
 
 .sidebar {
   position: absolute;
-  background: #0a0119;
+  background: #070D18;
   transition: all 0.3s ease;
   padding: 0 0 4px 0;
   overflow-y: auto;
@@ -2077,7 +2072,7 @@ ol {
 }
 
 .list-group-item{
-  background-color: #0a0119;
+  background-color: #070D18;
   opacity: 0.6;
   border: 1px solid #00bfe7;
   color: #adadad;

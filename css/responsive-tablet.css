@@ -261,7 +261,7 @@ body .breadcrumb-option.spad {
   margin-left: 0 !important;
   padding: 16px 20px !important;
   border: 1px solid rgba(0, 191, 231, 0.15) !important;
-  background: #0d0118 !important;
+  background: #070D18 !important;
   max-width: calc(100% - 30px) !important;
 }
 
@@ -273,7 +273,7 @@ body .breadcrumb-option.spad {
 /* Remove hover effects */
 .education .edu-entry:hover {
   transform: none !important;
-  background: #0d0118 !important;
+  background: #070D18 !important;
   border-color: rgba(0, 191, 231, 0.15) !important;
 }
 
@@ -310,7 +310,7 @@ body .breadcrumb-option.spad {
   gap: 8px;
   width: 100%;
   padding: 10px 16px;
-  background: rgba(10, 1, 25, 0.96);
+  background: rgba(7, 13, 24, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   color: #d0d0d0;
@@ -374,7 +374,7 @@ body .breadcrumb-option.spad {
   top: 100%;
   left: 0;
   right: 0;
-  background: rgba(10, 1, 25, 0.96);
+  background: rgba(7, 13, 24, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(0, 191, 231, 0.35);
@@ -460,7 +460,7 @@ body .breadcrumb-option.spad {
 }
 
 .slicknav_nav {
-  background: rgba(10, 1, 25, 0.96);
+  background: rgba(7, 13, 24, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(0, 191, 231, 0.2);
@@ -510,7 +510,7 @@ body .breadcrumb-option.spad {
 
 /* Mobile Social Section */
 #mobile-social {
-  background: rgba(10,1,25,0.96) !important;
+  background: rgba(7, 13, 24, 0.96) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
   border: 2px solid #00bfe7 !important;
@@ -546,7 +546,7 @@ body .breadcrumb-option.spad {
   right: 20px !important;
   border-left: 8px solid transparent !important;
   border-right: 8px solid transparent !important;
-  border-bottom: 10px solid #0a0119 !important;
+  border-bottom: 10px solid #070D18 !important;
 }
 
 #mobile-social.open,
@@ -573,7 +573,7 @@ body .breadcrumb-option.spad {
   letter-spacing: 1px !important;
   text-transform: uppercase !important;
   text-align: left !important;
-  background-color: rgba(20,20,35,0.92) !important;
+  background-color: rgba(7, 13, 24, 0.92) !important;
   opacity: 1 !important;
   border: none !important;
   border-left: 3px solid transparent !important;
@@ -605,7 +605,7 @@ body .breadcrumb-option.spad {
   letter-spacing: 1px !important;
   text-transform: uppercase !important;
   text-align: left !important;
-  background-color: rgba(20,20,35,0.92) !important;
+  background-color: rgba(7, 13, 24, 0.92) !important;
   opacity: 1 !important;
   border: none !important;
   border-left: 3px solid transparent !important;
@@ -820,7 +820,7 @@ body {
 
 #mobile-social {
   display: none;
-  background: #0a0119;
+  background: #070D18;
   padding: 15px 15px 0 15px;
   margin: 0;
   border-radius: 12px;
@@ -852,7 +852,7 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
   text-align: left;
-  background-color: rgba(20,20,35,0.92);
+  background-color: rgba(7, 13, 24, 0.92);
   opacity: 1;
   border: none;
   border-left: 3px solid transparent;
@@ -872,7 +872,7 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
   text-align: left;
-  background-color: rgba(20,20,35,0.92);
+  background-color: rgba(7, 13, 24, 0.92);
   opacity: 1;
   border: none;
   border-left: 3px solid transparent;
@@ -1020,7 +1020,7 @@ div[class*="col-lg-3"] {
   display: block !important;
   width: 100% !important;
   min-height: 50px !important;
-  background: rgba(10,1,25,0.96) !important;
+  background: rgba(7, 13, 24, 0.96) !important;
   backdrop-filter: blur(12px) !important;
   border-top: 2px solid #00bfe7 !important;
   border-left: 2px solid #00bfe7 !important;
@@ -1101,7 +1101,7 @@ div[class*="col-lg-3"] {
   padding: 14px 40px 14px 16px;
   width: 100%;
   margin-bottom: 20px;
-  background-color: rgba(20,20,35,0.92);
+  background-color: rgba(7, 13, 24, 0.92);
   opacity: 1;
   border: none;
   border-left: 3px solid transparent;

@@ -264,7 +264,7 @@ body > section.ap-section {
 }
 
 .slicknav_nav {
-  background: rgba(10, 1, 25, 0.96);
+  background: rgba(7, 13, 24, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(0, 191, 231, 0.35);
@@ -437,7 +437,7 @@ body > section.ap-section {
   margin-bottom: 20px !important;
   margin-left: 15px !important;
   padding: 20px !important;
-  background: #0d0118 !important;
+  background: #070D18 !important;
   border: 1px solid rgba(0, 191, 231, 0.12) !important;
   border-radius: 8px !important;
   backdrop-filter: blur(6px);
@@ -511,7 +511,7 @@ body > section.ap-section {
   gap: 8px;
   width: 100%;
   padding: 10px 16px;
-  background: rgba(10, 1, 25, 0.96);
+  background: rgba(7, 13, 24, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   color: #d0d0d0;
@@ -575,7 +575,7 @@ body > section.ap-section {
   top: 100%;
   left: 0;
   right: 0;
-  background: rgba(10, 1, 25, 0.96);
+  background: rgba(7, 13, 24, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(0, 191, 231, 0.35);
@@ -1144,7 +1144,7 @@ html, body {
 
 #mobile-social {
   display: none;
-  background: rgba(10,1,25,0.96);
+  background: rgba(7, 13, 24, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 2px solid #00bfe7;
@@ -1179,7 +1179,7 @@ html, body {
   right: 20px;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 10px solid #0a0119;
+  border-bottom: 10px solid #070D18;
 }
 
 #mobile-social.open,
@@ -1205,7 +1205,7 @@ html, body {
   letter-spacing: 1px;
   text-transform: uppercase;
   text-align: left;
-  background-color: rgba(20,20,35,0.92);
+  background-color: rgba(7, 13, 24, 0.92);
   opacity: 1;
   border: none;
   border-left: 3px solid transparent;
@@ -1237,7 +1237,7 @@ html, body {
   letter-spacing: 1px;
   text-transform: uppercase;
   text-align: left;
-  background-color: rgba(20,20,35,0.92);
+  background-color: rgba(7, 13, 24, 0.92);
   opacity: 1;
   border: none;
   border-left: 3px solid transparent;
@@ -1481,7 +1481,7 @@ div[class*="col-lg-3"] {
   overflow-y: auto !important;
   overflow-x: hidden !important;
   overscroll-behavior: contain !important;
-  background: rgba(10,1,25,0.96) !important;
+  background: rgba(7, 13, 24, 0.96) !important;
   backdrop-filter: blur(12px) !important;
   border-top: 2px solid #00bfe7 !important;
   border-left: 2px solid #00bfe7 !important;
@@ -1560,7 +1560,7 @@ div[class*="col-lg-3"] {
   padding: 14px 40px 14px 16px;
   width: 100%;
   margin-bottom: 20px;
-  background-color: rgba(20,20,35,0.92);
+  background-color: rgba(7, 13, 24, 0.92);
   opacity: 1;
   border: none;
   border-left: 3px solid transparent;
