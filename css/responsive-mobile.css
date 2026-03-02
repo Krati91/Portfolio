@@ -217,12 +217,6 @@ body > section.ap-section {
   margin-left: 0 !important;
 }
 
-/* Hero Section */
-.hero__slider.owl-carousel .owl-dots {
-  max-width: auto;
-  padding: 0 15px;
-}
-
 /* Mobile Navigation */
 #mobile-social {
   display: inline-block;
@@ -788,11 +782,6 @@ body > section.ap-section {
   padding-bottom: 20px !important;
 }
 
-.courses {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
 .services-page .about__text {
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -1290,20 +1279,6 @@ html, body {
   font-size: 11px !important;
 }
 
-.hero__slider,
-.hero__item {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-
-.hero__item {
-  background-position: 50% !important;
-  padding-top: 120px !important;
-  min-height: 550px !important;
-  height: auto !important;
-  padding-bottom: 50px !important;
-}
-
 .breadcrumb-option {
   padding-top: 150px !important;
   padding-bottom: 0px !important;
@@ -1334,11 +1309,6 @@ html, body {
 .services__title {
   margin-bottom: 40px;
   text-align: left;
-}
-
-.services__title .skills-btn {
-  margin: 0;
-  display: inline-block;
 }
 
 .services__item {
@@ -1784,170 +1754,6 @@ body.drawer-expanded .project-block {
   visibility: visible !important;
 }
 
-.row__margin .job-card:not(.set-bg) {
-  padding: 20px 15px !important;
-  margin-bottom: 0 !important;
-  height: auto !important;
-  min-height: auto !important;
-  display: block !important;
-  visibility: visible !important;
-  background: rgb(30, 30, 30) !important;
-}
-
-.row__margin:first-of-type .job-card:first-of-type {
-  margin-bottom: 10px !important;
-}
-
-.job-card h4 {
-  font-size: 20px !important;
-  margin-bottom: 12px;
-  font-weight: 600 !important;
-}
-
-.job-card p {
-  font-size: 16px;
-  line-height: 1.6;
-  font-weight: 500 !important;
-}
-
-.job-card p small {
-  font-size: 16px;
-  font-weight: 500 !important;
-}
-
-.job-card ul {
-  padding-left: 0;
-  margin-bottom: 0;
-}
-
-.job-card ul li {
-  font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: 8px;
-  font-weight: 500 !important;
-}
-
-.job-card ul li small {
-  font-size: 16px;
-  font-weight: 500 !important;
-}
-
-.job-card i {
-  margin-right: 8px;
-  width: 16px;
-  text-align: center;
-}
-
-.project-details video,
-.project-details .large__gif {
-  width: 100%;
-  height: auto;
-}
-
-.large__gif h4 {
-  font-size: 24px;
-}
-
-.description h4 {
-  font-size: 20px !important;
-  margin-top: 25px;
-  margin-bottom: 15px;
-  font-weight: 600 !important;
-}
-
-.description ul {
-  padding-left: 0;
-}
-
-.description ul li {
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 15px;
-}
-
-.description .heading {
-  font-size: 17px !important;
-  display: block;
-  margin-bottom: 5px;
-  font-weight: 600 !important;
-}
-
-.description .d-flex {
-  flex-direction: column !important;
-  gap: 0 !important;
-  height: auto !important;
-  margin-bottom: 30px !important;
-}
-
-.description .d-flex .job-card.set-bg,
-.description .d-flex .job-card {
-  width: 100% !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  margin-bottom: 15px !important;
-  height: auto !important;
-  min-height: 200px !important;
-  max-height: 250px !important;
-  padding: 0 !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  display: block !important;
-  position: relative !important;
-}
-
-/* Retro Games Collection - Mobile Only - Fix order for Tetris and Ping Pong */
-#retro-games-collection .description ul li:nth-child(2) .d-flex,
-#retro-games-collection .description ul li:nth-child(4) .d-flex {
-  flex-direction: column-reverse !important;
-}
-
-/* Retro Games Collection - Mobile - Remove margin-bottom from d-flex containers */
-#retro-games-collection .description .d-flex {
-  margin-bottom: 0px !important;
-}
-
-/* Retro Games Collection - Mobile - Remove padding-bottom from ul */
-#retro-games-collection .description ul {
-  padding-bottom: 0px !important;
-}
-
-/* Retro Games Collection - Mobile - Restore margin for text divs */
-#retro-games-collection .description ul li:nth-child(1) .d-flex > div:not(.job-card),
-#retro-games-collection .description ul li:nth-child(2) .d-flex > div:not(.job-card),
-#retro-games-collection .description ul li:nth-child(3) .d-flex > div:not(.job-card),
-#retro-games-collection .description ul li:nth-child(4) .d-flex > div:not(.job-card),
-#retro-games-collection .description ul li:nth-child(5) .d-flex > div:not(.job-card) {
-  margin: 25px 0 !important;
-}
-
-.description .d-flex .job-card:last-child {
-  margin-bottom: 0 !important;
-}
-
-.description iframe {
-  width: 100%;
-  height: 250px;
-  margin-top: 0px;
-}
-
-.description .github {
-  word-break: break-word;
-}
-
-.project-details {
-  font-size: 16px !important;
-}
-
-.project-details p {
-  font-size: 16px !important;
-  line-height: 1.7;
-}
-
-.project-details a {
-  font-size: 16px !important;
-}
-
 .sidebar::-webkit-scrollbar {
   height: 6px;
 }
@@ -1964,17 +1770,6 @@ body.drawer-expanded .project-block {
 
 .sidebar::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
-}
-
-/* Hero Text - Smaller Screens */
-
-.hero__text h2 {
-  font-size: 30px;
-  line-height: 40px;
-}
-
-.courses {
-  margin-left: auto;
 }
 
 .about__pic__item--large.set-bg {

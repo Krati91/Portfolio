@@ -130,11 +130,6 @@ body .breadcrumb-option.spad {
   min-height: 180px !important;
 }
 
-/* Hero Slider */
-.hero__slider.owl-carousel .owl-dots {
-  max-width: 690px !important;
-}
-
 /* Services Section */
 .services__title {
   margin-bottom: 50px;
@@ -925,21 +920,6 @@ body {
   font-size: 11px !important;
 }
 
-/* Hero Section */
-.hero__slider,
-.hero__item {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-
-.hero__item {
-  background-position: 0% 100% !important;
-  padding-top: 140px !important;
-  min-height: 500px !important;
-  height: auto !important;
-  padding-bottom: 40px !important;
-}
-
 /* Breadcrumb Section */
 .breadcrumb-option {
   padding-top: 111px !important;
@@ -1330,182 +1310,6 @@ body.drawer-expanded .project-block {
   visibility: visible !important;
 }
 
-.row__margin .job-card:not(.set-bg) {
-  padding: 20px 15px !important;
-  margin-bottom: 0 !important;
-  height: auto !important;
-  min-height: auto !important;
-  display: block !important;
-  visibility: visible !important;
-  background: rgb(30, 30, 30) !important;
-}
-
-.row__margin:first-of-type .job-card:first-of-type {
-  margin-bottom: 10px !important;
-}
-
-.job-card h4 {
-  font-size: 20px !important;
-  margin-bottom: 12px;
-  font-weight: 600 !important;
-}
-
-.job-card p {
-  font-size: 16px;
-  line-height: 1.6;
-  font-weight: 500 !important;
-}
-
-.job-card p small {
-  font-size: 16px;
-  font-weight: 500 !important;
-}
-
-.job-card ul {
-  padding-left: 0;
-  margin-bottom: 0;
-}
-
-.job-card ul li {
-  font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: 8px;
-  font-weight: 500 !important;
-}
-
-.job-card ul li small {
-  font-size: 16px;
-  font-weight: 500 !important;
-}
-
-.job-card i {
-  margin-right: 8px;
-  width: 16px;
-  text-align: center;
-}
-
-.project-details video,
-.project-details .large__gif {
-  width: 100%;
-  height: 310px;
-  max-width: 100%;
-}
-
-.project-details video {
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-.large__gif {
-  overflow: hidden;
-}
-
-.large__gif h4 {
-  font-size: 24px;
-}
-
-.description h4 {
-  font-size: 20px !important;
-  margin-top: 25px;
-  margin-bottom: 15px;
-  font-weight: 600 !important;
-}
-
-.description ul {
-  padding-left: 0;
-}
-
-.description ul li {
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 15px;
-}
-
-.description .heading {
-  font-size: 17px !important;
-  display: block;
-  margin-bottom: 5px;
-  font-weight: 600 !important;
-}
-
-.description .d-flex {
-  flex-direction: column !important;
-  gap: 0 !important;
-  height: auto !important;
-  margin-bottom: 30px !important;
-}
-
-.description .d-flex .job-card.set-bg,
-.description .d-flex .job-card {
-  width: 100% !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  margin-bottom: 15px !important;
-  height: auto !important;
-  min-height: 200px !important;
-  max-height: 250px !important;
-  padding: 0 !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  display: block !important;
-  position: relative !important;
-}
-
-/* Retro Games Collection - Tablet Only Layout (768px-991px) */
-@media only screen and (min-width: 768px) {
-  #retro-games-collection .description .d-flex {
-    flex-direction: row !important;
-    gap: 10px !important;
-    align-items: flex-start !important;
-  }
-
-  #retro-games-collection .description .d-flex .job-card.set-bg,
-  #retro-games-collection .description .d-flex .job-card {
-    width: 30% !important;
-    flex-shrink: 0 !important;
-  }
-
-  #retro-games-collection .description .d-flex > div:not(.job-card) {
-    width: 70% !important;
-    flex-grow: 0 !important;
-    flex-shrink: 1 !important;
-  }
-
-  /* Ping Pong - Remove margin from text div */
-  #retro-games-collection .description ul li:nth-child(4) .d-flex > div:not(.job-card) {
-    margin: 0px !important;
-  }
-}
-
-.description .d-flex .job-card:last-child {
-  margin-bottom: 0 !important;
-}
-
-.description iframe {
-  width: 100%;
-  height: 250px;
-  margin-top: 0px;
-}
-
-.description .github {
-  word-break: break-word;
-}
-
-.project-details {
-  font-size: 16px !important;
-}
-
-.project-details p {
-  font-size: 16px !important;
-  line-height: 1.7;
-}
-
-.project-details a {
-  font-size: 16px !important;
-}
-
 .sidebar::-webkit-scrollbar {
   height: 6px;
 }
@@ -1528,11 +1332,6 @@ body.drawer-expanded .project-block {
 .services__title {
   margin-bottom: 40px;
   text-align: left;
-}
-
-.services__title .skills-btn {
-  margin: 0;
-  display: inline-block;
 }
 
 .services__item {
@@ -1737,7 +1536,7 @@ body.drawer-expanded #button {
 }
 
   /* About Page Redesign — Tablet */
-  .ap-section               { padding: 100px 0 0; }
+  .ap-section               { padding: 90px 0 0; }
   .ap-section--inner        { padding-top: 44px; }
   .ap-section--edu          { padding-top: 26px; }
 

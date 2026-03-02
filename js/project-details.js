@@ -590,28 +590,6 @@ function buildTeamCredits(project) {
 function buildLinks(project) {
     const parts = [];
 
-    if (project.githubUrl) {
-        parts.push(
-            $('<a>', {
-                'class': 'pd-link pd-link--github',
-                href: project.githubUrl,
-                target: '_blank'
-            }).append($('<i>', { 'class': 'fa fa-github' }))
-              .append($('<span>', { text: ' GitHub Repository' }))
-        );
-    }
-
-    if (project.itchUrl) {
-        parts.push(
-            $('<a>', {
-                'class': 'pd-link pd-link--itch',
-                href: project.itchUrl,
-                target: '_blank'
-            }).append($('<i>', { 'class': 'fa fa-gamepad' }))
-              .append($('<span>', { text: ' Play on itch.io' }))
-        );
-    }
-
     if (project.jamRatingUrl) {
         parts.push(
             $('<a>', {

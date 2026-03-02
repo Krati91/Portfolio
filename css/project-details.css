@@ -771,30 +771,6 @@
     transition: background 0.2s, border-color 0.2s;
 }
 
-.pd-link--github {
-    background: rgba(30, 35, 55, 0.9);
-    border: 1px solid rgba(0, 191, 231, 0.25);
-    color: #00bfe7;
-}
-
-.pd-link--github:hover {
-    background: rgba(0, 191, 231, 0.18);
-    border-color: rgba(0, 191, 231, 0.6);
-    color: #99edf8;
-}
-
-.pd-link--itch {
-    background: rgba(30, 35, 55, 0.9);
-    border: 1px solid rgba(0, 191, 231, 0.25);
-    color: #00bfe7;
-}
-
-.pd-link--itch:hover {
-    background: rgba(0, 191, 231, 0.18);
-    border-color: rgba(0, 191, 231, 0.6);
-    color: #99edf8;
-}
-
 .pd-link--jam {
     background: rgba(30, 35, 55, 0.9);
     border: 1px solid rgba(0, 191, 231, 0.25);
