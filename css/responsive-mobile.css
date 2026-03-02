@@ -448,7 +448,7 @@ body > section.ap-section {
 .education .edu-entry:hover {
   border-color: rgba(0, 191, 231, 0.45) !important;
   transform: translateX(3px) !important;
-  background: #12021f !important;
+  background: #0d1a2e !important;
 }
 
 .education .edu-entry:last-child {
