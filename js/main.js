@@ -31,6 +31,17 @@
     /*------------------
         Preloader
     --------------------*/
+    // Show loader name only after fonts are ready to avoid FOUT flash
+    document.addEventListener('DOMContentLoaded', function () {
+        var el = document.querySelector('.loader__name');
+        if (!el) return;
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(function () { el.classList.add('visible'); });
+        } else {
+            setTimeout(function () { el.classList.add('visible'); }, 200);
+        }
+    });
+
     $(window).on('load', function () {
         $(".loader").fadeOut();
         $("#preloder").delay(200).fadeOut("slow");
