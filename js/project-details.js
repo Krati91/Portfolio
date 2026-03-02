@@ -573,8 +573,10 @@ function buildTeamCredits(project) {
     const $list = $('<div>', { 'class': 'pd-team-credits' });
     project.teamMembers.forEach(function(member) {
         const $chip = $('<span>', { 'class': 'pd-team-member' + (member.isOwner ? ' pd-team-member--owner' : '') });
-        $chip.append($('<i>', { 'class': 'fa fa-user-o pd-team-member__icon' }));
-        $chip.append($('<span>', { 'class': 'pd-team-member__name', text: member.name }));
+        const $name = $('<span>', { 'class': 'pd-team-member__name' });
+        $name.append($('<i>', { 'class': 'fa fa-user-o pd-team-member__icon' }));
+        $name.append(document.createTextNode('\u00a0' + member.name));
+        $chip.append($name);
         if (member.role) {
             $chip.append($('<span>', { 'class': 'pd-team-member__role', text: member.role }));
         }
