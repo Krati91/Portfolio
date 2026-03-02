@@ -742,11 +742,16 @@ function initDrawerToggle() {
             $('.list-group-item').off('click').on('click', function(e) {
                 e.preventDefault(); e.stopPropagation();
                 const $target = $($(this).attr('href'));
-                if ($(this).hasClass('active-list-group-item') && $target.hasClass('show')) return;
-                $('.list-group-item + div').collapse('hide');
-                $('.list-group-item').removeClass('active-list-group-item');
-                $target.collapse('show');
-                $(this).addClass('active-list-group-item');
+                const open = $target.hasClass('show');
+                $('.list-group-item + div').not($target).collapse('hide');
+                $('.list-group-item').not(this).removeClass('active-list-group-item');
+                if (open) {
+                    $target.collapse('hide');
+                    $(this).removeClass('active-list-group-item');
+                } else {
+                    $target.collapse('show');
+                    $(this).addClass('active-list-group-item');
+                }
             });
 
             $('.sidebar-link').off('click').on('click', function(e) {
