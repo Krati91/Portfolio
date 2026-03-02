@@ -2830,27 +2830,31 @@ ol {
 }
 
 .contact__widget__item {
+  display: flex;
+  align-items: center;
   margin-bottom: 30px;
 }
 
 .contact__widget__item__icon {
-  height: 70px;
-  width: 70px;
-  border: 1px solid rgba(225, 225, 225, 0.5);
-  line-height: 80px;
-  text-align: center;
-  border-radius: 50%;
-  float: left;
-  margin-right: 30px;
+  height: 58px;
+  width: 58px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 24px;
 }
+
 .contact__widget__item__icon i {
-  font-size: 30px;
+  font-size: 22px;
   color: #ffffff;
 }
 
 .contact__widget__item__text {
-  overflow: hidden;
-  padding-top: 7px;
+  flex: 1;
 }
 .contact__widget__item__text h4 {
   font-size: 22px;
