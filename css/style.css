@@ -1626,13 +1626,15 @@ ol {
 }
 
 .sidebar {
-  position: absolute;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  max-height: 100vh;
   background: #070D18;
   transition: all 0.3s ease;
   padding: 0 0 4px 0;
   overflow-y: auto;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  height: 100%;
   width: 100%;
   border-bottom: none;
 }

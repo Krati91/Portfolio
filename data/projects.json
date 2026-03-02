@@ -846,6 +846,136 @@
                                              "githubUrl":  "https://github.com/Mecha-NOX/Dapper-Dasher"
                                          }
                                      ]
+                     },
+                     {
+                         "id":  "voyage-of-the-proteus",
+                         "priority":  7,
+                         "name":  "Voyage of the Proteus",
+                         "status":  "",
+                         "subtitle":  "GameDev.tv Game Jam 2025 — 6DOF Submarine Shooter",
+                         "subtitleRole":  "Game Jam Project",
+                         "thumbnail":  "assets/Voyage-of-the-Proteus_Cover.gif",
+                         "coverVideo":  "assets/Voyage-of-the-Proteus_Large.webm",
+                         "role":  "Gameplay Programmer",
+                         "ownership":  [
+                                           "Implemented full 6DOF submarine movement controller",
+                                           "Built combat systems including weapon switching and lock-on torpedo targeting",
+                                           "Shipped a playable submission within a one-week jam deadline"
+                                       ],
+                         "duration":  "1 Week",
+                         "engineVersion":  "UE5",
+                         "primaryDiscipline":  "Game Jam",
+                         "complexityLevel":  "Intermediate",
+                         "teamSize":  5,
+                         "projectInfo":  {
+                                             "timeFrame":  "1 week (May 2025)",
+                                             "engine":  "Unreal Engine 5",
+                                             "genre":  "6DOF Shooter",
+                                             "theme":  "Tiny World",
+                                             "gameMode":  "Single-player",
+                                             "platform":  "Windows (PC)"
+                                         },
+                         "techStack":  [
+                                           "Unreal Engine 5",
+                                           "Blueprints",
+                                           "6DOF Movement"
+                                       ],
+                         "skillKeywords":  [
+                                               {
+                                                   "label":  "6DOF Movement",
+                                                   "highlighted":  true
+                                               },
+                                               {
+                                                   "label":  "Lock-On Targeting",
+                                                   "highlighted":  true
+                                               },
+                                               {
+                                                   "label":  "Weapon Switching"
+                                               },
+                                               {
+                                                   "label":  "Thruster System"
+                                               },
+                                               {
+                                                   "label":  "Team Collaboration"
+                                               },
+                                               {
+                                                   "label":  "Game Jam"
+                                               },
+                                               {
+                                                   "label":  "Combat Systems"
+                                               }
+                                           ],
+                         "teamMembers":  [
+                                             { "name": "Kartik Chaturvedi", "role": "Gameplay Programmer", "isOwner": true },
+                                             { "name": "Kevin Buckley", "role": "" },
+                                             { "name": "Graham Wells", "role": "" },
+                                             { "name": "Greg Bussell", "role": "" },
+                                             { "name": "Luis Vitorio Cargnini", "role": "" }
+                                         ],
+                         "architectureDiagram":  {
+                                                     "type":  "flow",
+                                                     "nodes":  [
+                                                                   "Player Input",
+                                                                   "6DOF Movement",
+                                                                   "Lock-On Target",
+                                                                   "Weapon Switch",
+                                                                   "Combat / Fire"
+                                                               ],
+                                                     "connections":  [
+                                                                         [
+                                                                             "Player Input",
+                                                                             "6DOF Movement"
+                                                                         ],
+                                                                         [
+                                                                             "Player Input",
+                                                                             "Lock-On Target"
+                                                                         ],
+                                                                         [
+                                                                             "Player Input",
+                                                                             "Weapon Switch"
+                                                                         ],
+                                                                         [
+                                                                             "Lock-On Target",
+                                                                             "Combat / Fire"
+                                                                         ],
+                                                                         [
+                                                                             "Weapon Switch",
+                                                                             "Combat / Fire"
+                                                                         ]
+                                                                     ]
+                                                 },
+                         "technicalChallenges":  [
+                                                     {
+                                                         "title":  "6DOF Control Feel",
+                                                         "problem":  "Submarine movement felt floaty and imprecise navigating 3D biological environments.",
+                                                         "solution":  "Tuned acceleration, damping and rotation rates to give a responsive but weighty submarine feel.",
+                                                         "result":  "Intuitive 6DOF piloting that felt grounded within the jam's constrained timeline."
+                                                     },
+                                                     {
+                                                         "title":  "Jam Scope & Deadline",
+                                                         "problem":  "Full gameplay loop — movement, combat, weapon switching, targeting — needed scoping and shipping in one week across a 5-person remote team.",
+                                                         "solution":  "Prioritised core movement and combat loop; deferred secondary features and polish to post-jam updates.",
+                                                         "result":  "Shipped a playable, polished v1 on day 7; continued post-jam to v3."
+                                                     }
+                                                 ],
+                         "itchUrl":  "https://thegeebus.itch.io/voyage-of-the-proteus",
+                         "jamRatingUrl":  "https://itch.io/jam/gamedevtv-jam-2025/rate/3590581",
+                         "githubUrl":  "",
+                         "demoVideo":  "https://www.youtube.com/embed/nHEqQAxCJik?start=348",
+                         "contentType":  "systems",
+                         "modules":  [
+                                         {
+                                             "type":  "system",
+                                             "title":  "6DOF Movement & Combat",
+                                             "image":  "assets/Voyage-of-the-Proteus_Cover.gif",
+                                             "description":  "Full six degrees of freedom submarine controller with thruster boost, paired with a lock-on torpedo targeting system, weapon switching, and target cycling.",
+                                             "technicalFocus":  [
+                                                                    "6DOF movement controller",
+                                                                    "Lock-on target acquisition",
+                                                                    "Weapon type switching"
+                                                                ]
+                                         }
+                                     ]
                      }
                  ]
 }

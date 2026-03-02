@@ -162,6 +162,10 @@ function buildMetaBar(project) {
         { icon: 'fa fa-users', label: 'Team Size', value: project.teamSize != null ? String(project.teamSize) : '—' }
     ];
 
+    if (project.projectInfo && project.projectInfo.theme) {
+        metas.push({ icon: 'fa fa-flag', label: 'Jam Theme', value: project.projectInfo.theme });
+    }
+
     metas.forEach(function(m) {
         const $item = $('<div>', { 'class': 'pd-meta-bar__item' });
         $item.append(
@@ -194,6 +198,27 @@ function buildMetaBar(project) {
             })
         );
         $bar.append($ghItem);
+    }
+
+    // itch.io link
+    if (project.itchUrl) {
+        const $itchItem = $('<div>', { 'class': 'pd-meta-bar__item' });
+        $itchItem.append(
+            $('<span>', { 'class': 'pd-meta-bar__label' }).append(
+                $('<i>', { 'class': 'fa fa-gamepad pd-meta-bar__icon' })
+            ).append(
+                $('<strong>', { text: 'Play: ' })
+            )
+        );
+        $itchItem.append(
+            $('<a>', {
+                'class': 'pd-meta-bar__link',
+                href: project.itchUrl,
+                target: '_blank',
+                text: 'itch.io'
+            })
+        );
+        $bar.append($itchItem);
     }
 
     return $bar;
@@ -539,6 +564,27 @@ function buildGallery(project) {
     return $section;
 }
 
+function buildTeamCredits(project) {
+    if (!project.teamMembers || !project.teamMembers.length) return null;
+
+    const $section = $('<div>', { 'class': 'pd-section' });
+    $section.append($('<h3>', { 'class': 'pd-section__title', text: 'Team' }));
+
+    const $list = $('<div>', { 'class': 'pd-team-credits' });
+    project.teamMembers.forEach(function(member) {
+        const $chip = $('<span>', { 'class': 'pd-team-member' + (member.isOwner ? ' pd-team-member--owner' : '') });
+        $chip.append($('<i>', { 'class': 'fa fa-user-o pd-team-member__icon' }));
+        $chip.append($('<span>', { 'class': 'pd-team-member__name', text: member.name }));
+        if (member.role) {
+            $chip.append($('<span>', { 'class': 'pd-team-member__role', text: member.role }));
+        }
+        $list.append($chip);
+    });
+
+    $section.append($list);
+    return $section;
+}
+
 function buildLinks(project) {
     const parts = [];
 
@@ -550,6 +596,28 @@ function buildLinks(project) {
                 target: '_blank'
             }).append($('<i>', { 'class': 'fa fa-github' }))
               .append($('<span>', { text: ' GitHub Repository' }))
+        );
+    }
+
+    if (project.itchUrl) {
+        parts.push(
+            $('<a>', {
+                'class': 'pd-link pd-link--itch',
+                href: project.itchUrl,
+                target: '_blank'
+            }).append($('<i>', { 'class': 'fa fa-gamepad' }))
+              .append($('<span>', { text: ' Play on itch.io' }))
+        );
+    }
+
+    if (project.jamRatingUrl) {
+        parts.push(
+            $('<a>', {
+                'class': 'pd-link pd-link--jam',
+                href: project.jamRatingUrl,
+                target: '_blank'
+            }).append($('<i>', { 'class': 'fa fa-trophy' }))
+              .append($('<span>', { text: ' View Jam Rating' }))
         );
     }
 
@@ -605,6 +673,8 @@ function renderProjectDetails() {
         $wrapper.append(buildRepositoryHighlights(project));
         $wrapper.append(buildCodeSamples(project));
         $wrapper.append(buildGallery(project));
+        $wrapper.append(buildTeamCredits(project));
+        $wrapper.append(buildLinks(project));
         $wrapper.append(buildYouTube(project));
 
         $target.append($wrapper);
