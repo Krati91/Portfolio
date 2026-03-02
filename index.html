@@ -143,7 +143,7 @@
                         <p class="hero__desc">Unreal Engine C++ developer specializing in server-authoritative multiplayer and gameplay systems.</p>
                         <div class="hero__cta">
                             <a href="./portfolio.html" class="hero__btn hero__btn--primary">View Portfolio &rarr;</a>
-                            <a href="./about.html" class="hero__btn hero__btn--outline">Know More About Me</a>
+                            <a href="./about.html" class="hero__btn hero__btn--outline">Know More About Me <span class="hero__btn-arrow">&rarr;</span></a>
                         </div>
                         <div class="hero__tags">
                             <span>Unreal Engine 5</span>
@@ -271,6 +271,14 @@
                 if (img) { img.src = img.getAttribute('data-src'); img.removeAttribute('data-src'); img.closest('.hero__media') && img.closest('.hero__media').classList.add('loaded'); }
                 slides[current].classList.add('active');
                 dots[current].classList.add('active');
+                // Sync glow burst with slide fade-in
+                var media = slides[current].querySelector('.hero__media');
+                if (media && media.classList.contains('loaded')) {
+                    media.classList.remove('glow-flash');
+                    void media.offsetWidth;
+                    media.classList.add('glow-flash');
+                    setTimeout(function () { media.classList.remove('glow-flash'); }, 800);
+                }
                 clearInterval(timer);
                 timer = setInterval(function () { go(current + 1); }, 7000);
             }
