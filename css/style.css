@@ -1386,6 +1386,40 @@ ol {
 .breadcrumb-option {
   padding-top: 180px;
   padding-bottom: 100px;
+  position: relative;
+  isolation: isolate;
+}
+
+.breadcrumb-option::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 18, 45, 0.72) 0%,
+    rgba(7, 13, 24, 0.88) 100%
+  );
+  mix-blend-mode: color;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.breadcrumb-option::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(7, 13, 24, 0.92) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.breadcrumb-option .container {
+  position: relative;
+  z-index: 2;
 }
 
 .breadcrumb__text h2 {
