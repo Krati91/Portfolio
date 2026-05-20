@@ -1947,11 +1947,36 @@ ol {
   margin-bottom: 4px;
 }
 
+.ap-exp-role-type {
+  font-size: 13px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  color: #00bfe7;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
 .ap-exp-date {
   font-size: 14px;
   font-family: 'Josefin Sans', sans-serif;
   color: #8a96a8;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.ap-exp-focus-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a96a8;
+  margin: 14px 0 8px;
+}
+
+/* Inline highlight for key technical terms */
+.hl {
+  color: #00bfe7;
+  font-weight: 600;
 }
 
 /* Shared bullet list */
